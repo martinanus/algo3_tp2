@@ -6,7 +6,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 
 ## Grupo {Un Numero}
 
-* **Integrante 1** - [Santigo Curetti](https://github.com/SantiC8)
+* **Integrante 1** - [Santiago Curetti](https://github.com/SantiC8)
 * **Integrante 2** - [Abraham Osco](https://github.com/AbrahamOsco)
 * **Integrante 3** - [Ricardo Luizaga ](https://github.com/rluizaga)
 * **Integrante 4** - [Agustín Rodriguez ](https://github.com/agrodriguez98)
