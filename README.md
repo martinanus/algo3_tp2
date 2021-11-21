@@ -4,7 +4,7 @@
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
-## Grupo {Un Numero}
+## Grupo {N}
 
 * **Integrante 1** - [Santiago Curetti](https://github.com/SantiC8)
 * **Integrante 2** - [Abraham Osco](https://github.com/AbrahamOsco)
