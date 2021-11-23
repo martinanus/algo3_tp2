@@ -17,16 +17,16 @@ Ladron o--"1" ObjetoRobado
 Jugador ..>  OrdenDeArresto: emite 
 Ladron -->"1..*" Ciudad
 Jugador -->"1" Ciudad
- Herida <|-- HeridaArma
- Herida <|-- HeridaCuchillo
- Jugador"1" -- "1.." Mision
- Mision  --> "1" Tiempo
- Jugador -right> Herida
- Mision -down> Ladron
- Jugador -> Descripcion: conoce
- Ladron -> Descripcion: tiene
- CuartelGeneral "1"-> Jugador
- CuartelGeneral o-"1..*" Mision
+Herida <|.. HeridaArma
+Herida <|.. HeridaCuchillo
+Jugador"1" -- "1.." Mision
+Mision  --> "1" Tiempo
+Jugador -right> Herida
+Mision -down> Ladron
+Jugador -> Descripcion: conoce
+Ladron -> Descripcion: tiene
+CuartelGeneral "1"-> Jugador
+CuartelGeneral o-"1..*" Mision
 
 class OrdenDeArresto {
 
