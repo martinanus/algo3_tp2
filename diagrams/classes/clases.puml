@@ -1,0 +1,117 @@
+@startuml
+
+Rango <|.. Novato
+Rango <|.. Inspector
+Rango <|.. Detective
+Rango <|.. Sargento
+Jugador ..*"1" Rango
+OrdenDeArresto  ..*"1" Ladron
+ObjetoRobado <|.. Comun
+ObjetoRobado <|.. Valioso
+ObjetoRobado <|.. MuyValioso
+Edificio <|.. Banco
+Edificio <|.. Biblioteca
+Edificio <|.. Puerto
+Edificio ..*"1" Pista
+Pais ..*"3" Edificio
+Ladron ..*"1" ObjetoRobado
+Jugador ..*"1" OrdenDeArresto
+Ladron .>"1" Pais
+
+class OrdenDeArresto {
+
+}
+
+class Edificio{
+
+}
+
+class Pais {
+}
+
+class Ladron {
+}
+
+class Jugador {
+    + entrarEdificio()
+}
+
+interface Rango{
+}
+
+class Novato{
+    + viajar()
+}
+
+class Inspector{
+    + viajar()
+}
+
+class Detective{
+    + viajar()
+}
+
+class Sargento{
+    + viajar()
+}
+
+
+interface ObjetoRobado{
+}
+
+class Comun{
+
+}
+class Valioso{
+
+}
+
+class MuyValioso{
+
+}
+
+interface Pista{
+}
+
+class Banco{
+
+}
+class Biblioteca{
+
+}
+
+class Puerto{
+
+}
+
+Demora <|.. DemoraEdificio
+Demora  <|.. Dormir
+Demora  <|.. Herida
+Herida <|.. HeridaArma
+Herida <|.. HeridaCuchillo
+
+interface Demora {
+
+}
+
+class DemoraEdificio{
+
+}
+
+interface Herida{
+
+}
+
+class HeridaCuchillo{
+
+}
+
+class HeridaArma{
+
+}
+
+class Dormir{
+
+}
+
+@enduml
