@@ -1,62 +1,81 @@
 @startuml
-
 Rango <|.. Novato
 Rango <|.. Inspector
 Rango <|.. Detective
 Rango <|.. Sargento
-Jugador ..*"1" Rango
-OrdenDeArresto  ..*"1" Ladron
-ObjetoRobado <|.. Comun
-ObjetoRobado <|.. Valioso
-ObjetoRobado <|.. MuyValioso
-Edificio <|.. Banco
-Edificio <|.. Biblioteca
-Edificio <|.. Puerto
-Edificio ..*"1" Pista
-Pais ..*"3" Edificio
-Ladron ..*"1" ObjetoRobado
-Jugador ..*"1" OrdenDeArresto
-Ladron .>"1" Pais
+Jugador *-right-"1" Rango
+OrdenDeArresto  --> "1" Ladron
+ObjetoRobado <|-- Comun
+ObjetoRobado <|-- Valioso
+ObjetoRobado <|-- MuyValioso
+Pista "1..*" <-left-  Edificio
+Edificio <|-- Banco
+Edificio <|-- Biblioteca
+Edificio <|-- Puerto
+Ciudad o-- "3" Edificio
+Ladron o--"1" ObjetoRobado
+Jugador ..>  OrdenDeArresto: emite 
+Ladron -->"1..*" Ciudad
+Jugador -->"1" Ciudad
+ Herida <|-- HeridaArma
+ Herida <|-- HeridaCuchillo
+ Jugador"1" -- "1.." Mision
+ Mision  --> "1" Tiempo
+ Jugador -right> Herida
+ Mision -down> Ladron
+ Jugador -> Descripcion: conoce
+ Ladron -> Descripcion: tiene
+ CuartelGeneral "1"-> Jugador
+ CuartelGeneral o-"1..*" Mision
 
 class OrdenDeArresto {
 
 }
 
-class Edificio{
+abstract class Edificio{
+#contadorVisitas:int
++ visitar(): int
 
 }
 
-class Pais {
+class Ciudad {
+    + visitar(e : String): int
 }
 
 class Ladron {
+    - descripcion: String
+
 }
 
 class Jugador {
-    + entrarEdificio()
+    + entrar(e : String)
+    + emitirOrdenArresto(l : Ladron)
+    + dormir():
 }
 
 interface Rango{
+	+ {abstract}  viajar(p : Pais)
 }
 
 class Novato{
-    + viajar()
+    + viajar(p : Pais)
 }
 
 class Inspector{
-    + viajar()
+    + viajar(p : Pais)
 }
 
 class Detective{
-    + viajar()
+    + viajar(p : Pais)
 }
 
 class Sargento{
-    + viajar()
+    + viajar(p : Pais)
 }
 
 
-interface ObjetoRobado{
+class ObjetoRobado{
+    + ciudades():
 }
 
 class Comun{
@@ -70,8 +89,11 @@ class MuyValioso{
 
 }
 
-interface Pista{
+class Pista{
+	+ emitirPista() : String
 }
+
+ 
 
 class Banco{
 
@@ -84,34 +106,36 @@ class Puerto{
 
 }
 
-Demora <|.. DemoraEdificio
-Demora  <|.. Dormir
-Demora  <|.. Herida
-Herida <|.. HeridaArma
-Herida <|.. HeridaCuchillo
-
-interface Demora {
-
-}
-
-class DemoraEdificio{
-
-}
 
 interface Herida{
-
-}
-
+    + {abstract} herida(): int
+ } 
 class HeridaCuchillo{
+    + herida(): int
+ }
 
+ class HeridaArma{
+     + herida(): int
+  } 
+
+
+class Mision{
+    + aumentarTiempo(int horas):
+}
+class Tiempo{
+    + incrementar(int horas):
 }
 
-class HeridaArma{
-
+class CuartelGeneral {
+    +asignarMision():
 }
 
-class Dormir{
+class Descripcion {
+    + comparar(Descripcion):
+}
 
+class AlgoThief {
+    + cargarDatos():
 }
 
 @enduml
