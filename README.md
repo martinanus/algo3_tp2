@@ -6,11 +6,11 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 
 ## Grupo 5
 
-* **Integrante 1** - [Santiago Curetti](https://github.com/SantiC8) Padron:
+* **Integrante 1** - [Santiago Curetti](https://github.com/SantiC8) Padron: 105133
 * **Integrante 2** - [Abraham Osco](https://github.com/AbrahamOsco) Padron: 102256
-* **Integrante 3** - [Ricardo Luizaga ](https://github.com/rluizaga) Padron:
+* **Integrante 3** - [Ricardo Luizaga ](https://github.com/rluizaga) Padron: 87528
 * **Integrante 4** - [Agustín Rodriguez ](https://github.com/agrodriguez98) Padron: 101570
-* **Integrante 5** - [Martín Anús](https://github.com/martinanus) Padron:
+* **Integrante 5** - [Martín Anús](https://github.com/martinanus) Padron: 101033
 
 Corrector: **{Corrector}**
 
