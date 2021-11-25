@@ -7,7 +7,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 ## Grupo {N}
 
 * **Integrante 1** - [Santiago Curetti](https://github.com/SantiC8) Padron:
-* **Integrante 2** - [Abraham Osco](https://github.com/AbrahamOsco) Padron:102256
+* **Integrante 2** - [Abraham Osco](https://github.com/AbrahamOsco) Padron: 102256
 * **Integrante 3** - [Ricardo Luizaga ](https://github.com/rluizaga) Padron:
 * **Integrante 4** - [Agustín Rodriguez ](https://github.com/agrodriguez98) Padron:
 * **Integrante 5** - [Martín Anús](https://github.com/martinanus) Padron:
