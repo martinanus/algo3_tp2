@@ -7,22 +7,24 @@ participant "Jugador" as jugador
 participant "Ciudad" as ciudad
 participant "Banco" as banco
 participant "Mision" as mision
-participant "Tiempo" as tiempo
+participant "tiempo : Tiempo" as tiempo
 participant "Pista" as pista
 
-TestCase -> jugador: entrar("Banco"):
-jugador -> ciudad: visitar("Banco"): int
+TestCase -> jugador: entrar("Banco"): String
+activate jugador
+jugador -> mision: visitar("Banco"): String
+activate mision
+mision -> ciudad: visitar("Banco", tiempo): String
 activate ciudad
-ciudad -> banco: visitar(): int
-activate banco 
-banco -> pista: emitirPista():
+ciudad -> banco: visitar(tiempo): String
+activate banco
+banco -> tiempo: incrementar(1)
+banco -> pista: emitirPista(): String
 activate pista
 return "Pesos Argentinos"
-banco --> TestCase: "Pesos Argentinos" (println)
-return 1
-return 1
-jugador -> mision: aumentarTiempo(1):
-activate mision
-mision -> tiempo: incrementar(1):
+return "Pesos Argentinos"
+return "Pesos Argentinos"
+return "Pesos Argentinos"
+return "Pesos Argentinos"
 
 @enduml
