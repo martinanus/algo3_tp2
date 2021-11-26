@@ -1,5 +1,4 @@
 @startuml
-
 class Edificio {
 - contadorVisitas: int
 - nombre: String
