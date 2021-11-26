@@ -23,9 +23,9 @@ public class Entrega1Test {
         montreal.agregarEdificio(banco);
         montreal.agregarEdificio(biblioteca);
 
-        //Rango rango = new Novato();
+        Rango rango = new Novato();
 
-        Jugador jugador = new Jugador(montreal);
+        Jugador jugador = new Jugador(montreal, rango);
         Reloj reloj = new Reloj();
 
         Pista pista = jugador.visitar(banco, reloj );
@@ -77,9 +77,9 @@ public class Entrega1Test {
         mexico.agregarEdificio(aeropuerto);
         mexico.agregarEdificio(puerto);
 
-        //Rango rango = new Novato();
+        Rango rango = new Novato();
 
-        Jugador jugador = new Novato(montreal);
+        Jugador jugador = new Jugador(montreal, rango);
         Reloj reloj = new Reloj();
 
         jugador.viajar(mexico, reloj );
@@ -106,9 +106,9 @@ public class Entrega1Test {
         mexico.agregarEdificio(aeropuerto);
         mexico.agregarEdificio(puerto);
 
-        //Rango rango = new Novato();
+        Rango rango = new Novato();
 
-        Jugador jugador = new Novato(montreal);
+        Jugador jugador = new Jugador(montreal, rango);
         Reloj reloj = new Reloj();
 
         jugador.viajar(mexico, reloj );

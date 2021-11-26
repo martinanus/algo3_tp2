@@ -30,7 +30,7 @@ public class Ciudad {
         edificios.add(edificio);
     }
 
-    public double viajar(int velocidad) {
+    public double viajar(double velocidad) {
         return distancia / velocidad;
     }
 }
