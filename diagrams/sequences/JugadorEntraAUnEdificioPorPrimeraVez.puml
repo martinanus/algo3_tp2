@@ -1,30 +1,29 @@
 @startuml
 skinparam style strictuml
-
+title:  ElJugadorVisitaPorPrimeraVezUnEdificio
 actor TestCase
 
-participant "Jugador" as jugador
-participant "Ciudad" as ciudad
-participant "Banco" as banco
-participant "Mision" as mision
-participant "tiempo : Tiempo" as tiempo
-participant "Pista" as pista
+participant " : Jugador" as jugador
+participant " : Ciudad" as ciudad
+participant " : Edificio" as banco
+participant "reloj : Reloj" as reloj
+participant " : Mision" as mision
 
-TestCase -> jugador: entrar("Banco"): String
+TestCase -> jugador: visitar("Banco", reloj): Pista
 activate jugador
-jugador -> mision: visitar("Banco"): String
-activate mision
-mision -> ciudad: visitar("Banco", tiempo): String
+jugador -> ciudad: visitar("Banco", reloj): Pista
 activate ciudad
-ciudad -> banco: visitar(tiempo): String
+ciudad -> banco: visitar(reloj): Pista
 activate banco
-banco -> tiempo: incrementar(1)
-banco -> pista: emitirPista(): String
-activate pista
-return "Pesos Argentinos"
-return "Pesos Argentinos"
-return "Pesos Argentinos"
-return "Pesos Argentinos"
-return "Pesos Argentinos"
+banco -> reloj: incrementar(1 hora):
+return pista
+return pista
+jugador -> mision: plazoExcedido(reloj): bool
+activate mision
+mision -> reloj: esMayor(fechaHora): bool
+activate reloj
+return false
+return false
+return pista
 
 @enduml
