@@ -12,7 +12,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 4** - [Agustín Rodriguez ](https://github.com/agrodriguez98) Padron: 101570
 * **Integrante 5** - [Martín Anús](https://github.com/martinanus) Padron: 101033
 
-Corrector: **{Corrector}**
+Corrector: **Diego Sánchez**
 
 ## Informe
 Link: https://www.overleaf.com/project/619c3e3186b017abd0d50282
