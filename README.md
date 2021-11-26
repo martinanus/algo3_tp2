@@ -15,7 +15,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 Corrector: **{Corrector}**
 
 ## Informe
-link:https://www.overleaf.com/project/619c3e3186b017abd0d50282
+Link: https://www.overleaf.com/project/619c3e3186b017abd0d50282
 
 ## Aplicación
 
