@@ -1,141 +1,40 @@
 @startuml
-Rango <|.. Novato
-Rango <|.. Inspector
-Rango <|.. Detective
-Rango <|.. Sargento
-Jugador *-right-"1" Rango
-OrdenDeArresto  --> "1" Ladron
-ObjetoRobado <|-- Comun
-ObjetoRobado <|-- Valioso
-ObjetoRobado <|-- MuyValioso
-Pista "1..*" <-left-  Edificio
-Edificio <|-- Banco
-Edificio <|-- Biblioteca
-Edificio <|-- Puerto
-Ciudad o-- "3" Edificio
-Ladron o--"1" ObjetoRobado
-Jugador ..>  OrdenDeArresto: emite 
-Ladron -->"1..*" Ciudad
-Jugador -->"1" Ciudad
-Herida <|.. HeridaArma
-Herida <|.. HeridaCuchillo
-Jugador"1" -- "1.." Mision
-Mision  --> "1" Tiempo
-Jugador -right> Herida
-Mision -down> Ladron
-Jugador -> Descripcion: conoce
-Ladron -> Descripcion: tiene
-CuartelGeneral "1"-> Jugador
-CuartelGeneral o-"1..*" Mision
 
-class OrdenDeArresto {
-
-}
-
-abstract class Edificio{
-#contadorVisitas:int
-+ visitar(): int
-
+class Edificio {
+- contadorVisitas: int
+- nombre: String
++ visitar(r : Reloj): Pista
 }
 
 class Ciudad {
-    + visitar(e : String): int
-}
-
-class Ladron {
-    - descripcion: String
-
+    + visitar(edificio : String, r : Reloj): Pista
 }
 
 class Jugador {
-    + entrar(e : String)
-    + emitirOrdenArresto(l : Ladron)
-    + dormir():
+    + visitar(edificio:String, r : Reloj): Pista
 }
-
-interface Rango{
-	+ {abstract}  viajar(p : Pais)
-}
-
-class Novato{
-    + viajar(p : Pais)
-}
-
-class Inspector{
-    + viajar(p : Pais)
-}
-
-class Detective{
-    + viajar(p : Pais)
-}
-
-class Sargento{
-    + viajar(p : Pais)
-}
-
-
-class ObjetoRobado{
-    + ciudades():
-}
-
-class Comun{
-
-}
-class Valioso{
-
-}
-
-class MuyValioso{
-
-}
-
-class Pista{
-	+ emitirPista() : String
-}
-
- 
-
-class Banco{
-
-}
-class Biblioteca{
-
-}
-
-class Puerto{
-
-}
-
-
-interface Herida{
-    + {abstract} herida(): int
- } 
-class HeridaCuchillo{
-    + herida(): int
- }
-
- class HeridaArma{
-     + herida(): int
-  } 
-
 
 class Mision{
-    + aumentarTiempo(int horas):
-}
-class Tiempo{
-    + incrementar(int horas):
+    - fechaLimite: DateTime
+    + plazoExcedido(r : Reloj): bool
 }
 
-class CuartelGeneral {
-    +asignarMision():
+class Reloj{
+    - fechaActual: DateTime
+    + incrementar(horas : int): void
+    + esMayor(fecha : DateTime): bool
 }
 
-class Descripcion {
-    + comparar(Descripcion):
+class Pista {
+    - contenido: String
+    + mostrar(): String
 }
 
-class AlgoThief {
-    + cargarDatos():
-}
+Pista "1" <-right-  Edificio
+Ciudad o-- "3" Edificio
+Jugador -->"1" Ciudad: está en una
+Jugador o--"1.." Mision: tiene
+Edificio ..> Reloj: actualiza
+Mision ..> Reloj
 
 @enduml
