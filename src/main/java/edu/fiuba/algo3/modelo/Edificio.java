@@ -7,10 +7,17 @@ public class Edificio {
 
     public Edificio(Pista pistaEdificio) {
         pista = pistaEdificio;
+        contadorDeVisitas = 0;
     }
 
     public Pista visitar(Reloj reloj) {
-        reloj.incrementar(1);
+        contadorDeVisitas = contadorDeVisitas + 1;
+        if (contadorDeVisitas <= 3) {
+            reloj.incrementar(contadorDeVisitas);
+        }
+        else {
+            reloj.incrementar(3);
+        }
         return pista;
     }
 }

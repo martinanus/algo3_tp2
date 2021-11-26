@@ -12,12 +12,13 @@ public class Entrega0Test {
         Pista pistaEdificio = new Pista(contenido);
 
         Edificio edificio = new Edificio(pistaEdificio);
-        Ciudad ciudad = new Ciudad(edificio);
+        Ciudad ciudad = new Ciudad();
+        ciudad.agregarEdificio(edificio);
 
         Jugador jugador = new Jugador(ciudad);
         Reloj reloj = new Reloj();
 
-        Pista pista = jugador.visitar("Banco", reloj );
+        Pista pista = jugador.visitar(edificio, reloj );
 
         assertEquals(contenido,pista.mostrar());
 
