@@ -25,8 +25,14 @@ public class Jugador {
 
     public void viajar(Ciudad ciudad, Reloj reloj) {
         this.ciudad = ciudad;
-        /*double tiempo = this.ciudad.viajar(velocidad);
-        reloj.incrementar(tiempo);*/
         rango.viajar(ciudad, reloj);
+    }
+
+    public void duerme(Reloj reloj) {
+        reloj.incrementar(8); //duerme 8hs
+    }
+
+    public void herir(Arma arma, Reloj reloj) {
+        arma.herir(reloj);
     }
 }

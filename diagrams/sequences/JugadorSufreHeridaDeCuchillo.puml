@@ -1,0 +1,18 @@
+@startuml
+skinparam style strictuml
+title:  El Jugador sufre una herida de Cuchillo
+
+actor TestCase
+
+participant " : Jugador" as jugador
+participant " cuchillo : Cuchillo" as cuchillo
+participant "reloj : Reloj" as reloj
+
+
+TestCase -> jugador: herir(cuchillo, reloj)
+activate jugador
+jugador -> cuchillo: herir(reloj):
+activate reloj
+cuchillo -> reloj: incrementar(1):
+
+@enduml

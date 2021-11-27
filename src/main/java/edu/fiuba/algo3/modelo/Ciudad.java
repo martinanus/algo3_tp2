@@ -31,6 +31,6 @@ public class Ciudad {
     }
 
     public double viajar(double velocidad) {
-        return distancia / velocidad;
+        return  distancia / velocidad;
     }
 }

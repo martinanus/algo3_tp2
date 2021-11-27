@@ -1,17 +1,26 @@
 package edu.fiuba.algo3.modelo;
 
+import java.time.LocalDateTime;
+
 public class Reloj {
-    private double transcurrido;
+    private LocalDateTime fechaHora;
 
     public Reloj() {
-        transcurrido = 0;
+        fechaHora = LocalDateTime.now();
     }
 
-    public void incrementar(double i) {
-        transcurrido = transcurrido + i;
+    //Constructor copia
+    public Reloj(Reloj reloj) {
+        this.fechaHora = reloj.fechaHora;
     }
 
-    public double mostrar() {
-        return transcurrido;
+
+    public void incrementar(double horas) {
+        long segundos = (long) (horas * 3600) ; // 3600 secs en una hora
+        fechaHora = fechaHora.plusSeconds(segundos);
+    }
+
+    public LocalDateTime mostrar() {
+        return fechaHora;
     }
 }

@@ -1,6 +1,6 @@
 @startuml
 skinparam style strictuml
-title:  ElJugadorVisitaPorPrimeraVezUnEdificio
+title:  El Jugador visita por primera vez un Edificio
 actor TestCase
 
 participant " : Jugador" as jugador

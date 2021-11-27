@@ -13,7 +13,6 @@ class Jugador {
     + visitar(edificio:String, r : Reloj): Pista
 }
 
-class Novato
 
 class Mision{
     - fechaLimite: DateTime
@@ -31,8 +30,6 @@ class Pista {
     + mostrar(): String
 }
 Jugador -->"1" Ciudad: está
-Novato --|> Jugador
-Detective --|> Jugador
 Jugador o--"1" Mision: tiene
 Ciudad o-- "3" Edificio
 Edificio ..> Reloj: actualiza

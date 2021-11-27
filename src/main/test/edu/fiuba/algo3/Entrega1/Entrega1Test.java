@@ -3,10 +3,6 @@ package edu.fiuba.algo3.Entrega1;
 import edu.fiuba.algo3.modelo.*;
 import org.junit.jupiter.api.Test;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Entrega1Test {
@@ -28,14 +24,20 @@ public class Entrega1Test {
         Jugador jugador = new Jugador(montreal, rango);
         Reloj reloj = new Reloj();
 
+        Reloj relojTest = new Reloj(reloj);
+
         Pista pista = jugador.visitar(banco, reloj );
 
+
+        //Espero que se incremente 1 hora
+        relojTest.incrementar(1);
+
         assertEquals("pista banco",pista.mostrar());
-        assertEquals(1, reloj.mostrar());
+        assertEquals(relojTest.mostrar(), reloj.mostrar());
     }
 
     @Test
-    public void DetectiveNovatoEnMontrealVisitaUnBancoNuevamenteYVisitaUnBiblioteca( ) {
+    public void JugadorNovatoEnMontrealVisitaUnBancoNuevamenteYVisitaUnBiblioteca( ) {
         Pista pistaBanco = new Pista("pista banco");
         Pista pistaBiblioteca = new Pista("pista biblioteca");
 
@@ -51,14 +53,21 @@ public class Entrega1Test {
         Jugador jugador = new Jugador(montreal);
         Reloj reloj = new Reloj();
 
+        Reloj relojTest = new Reloj(reloj);
+
         jugador.visitar(banco, reloj );
+
+        //Espero que se incremente 4 hora
+        relojTest.incrementar(4);
+
+
         assertEquals("pista banco", jugador.visitar(banco,reloj).mostrar());
         assertEquals("pista biblioteca", jugador.visitar(biblioteca,reloj).mostrar());
-        assertEquals(4, reloj.mostrar());
+        assertEquals(relojTest.mostrar(), reloj.mostrar());
     }
 
     @Test
-    public void DetectiveviajadeMontrealaMéxico() {
+    public void JugadorViajadeMontrealaMéxico() {
         Pista pistaBanco = new Pista("pista banco");
         Pista pistaBiblioteca = new Pista("pista biblioteca");
         Pista pistaAeropuerto = new Pista("pista aeropuerto");
@@ -81,13 +90,18 @@ public class Entrega1Test {
 
         Jugador jugador = new Jugador(montreal, rango);
         Reloj reloj = new Reloj();
+
+        Reloj relojTest = new Reloj(reloj);
+
 
         jugador.viajar(mexico, reloj );
-        assertEquals(1.0, reloj.mostrar());
+
+        relojTest.incrementar(1);
+        assertEquals(relojTest.mostrar(), reloj.mostrar());
     }
 
     @Test
-    public void DetectiveviajadeMontrealaMéxicoVisitaAeropuerto3VecesPuerto55Veces() {
+    public void JugadorViajadeMontrealaMéxicoVisitaAeropuerto3VecesPuerto55Veces() {
         Pista pistaBanco = new Pista("pista banco");
         Pista pistaBiblioteca = new Pista("pista biblioteca");
         Pista pistaAeropuerto = new Pista("pista aeropuerto");
@@ -110,6 +124,8 @@ public class Entrega1Test {
 
         Jugador jugador = new Jugador(montreal, rango);
         Reloj reloj = new Reloj();
+        Reloj relojTest = new Reloj(reloj);
+
 
         jugador.viajar(mexico, reloj );
         for (int i = 0; i < 3; i++) {
@@ -118,6 +134,54 @@ public class Entrega1Test {
         for (int i = 0; i < 55; i++) {
             jugador.visitar(puerto, reloj );
         }
-        assertEquals(169.0, reloj.mostrar());
+
+        //El reloj se debería incrementar 169 horas
+        relojTest.incrementar(169);
+
+        assertEquals(relojTest.mostrar(), reloj.mostrar());
+
+    }
+
+    @Test
+    public void JugadorDuermeYTranscurrenOchoHoras() {
+
+        Ciudad mexico = new Ciudad(900.0);
+
+        Rango rango = new Novato();
+
+        Jugador jugador = new Jugador(mexico, rango);
+        Reloj reloj = new Reloj();
+        Reloj relojTest = new Reloj(reloj);
+
+        jugador.duerme(reloj);
+
+
+        //El reloj se debería incrementar 8 horas al dormir
+        relojTest.incrementar(8);
+
+        assertEquals(relojTest.mostrar(), reloj.mostrar());
+
+    }
+
+
+    @Test
+    public void JugadorSufreHeridaDeCuchillo() {
+
+        Ciudad mexico = new Ciudad(900.0);
+        Rango rango = new Novato();
+        Jugador jugador = new Jugador(mexico, rango);
+
+        Reloj reloj = new Reloj();
+        Reloj relojTest = new Reloj(reloj);
+
+        Cuchillo cuchillo = new Cuchillo();
+        jugador.herir(cuchillo, reloj);
+
+
+        //El reloj se debería incrementar 2 horas por primer ataque cuchillo
+        relojTest.incrementar(2);
+
+        assertEquals(relojTest.mostrar(), reloj.mostrar());
+
     }
 }

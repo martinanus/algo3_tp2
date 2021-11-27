@@ -1,0 +1,54 @@
+@startuml
+
+
+Arma <|-- Cuchillo
+Rango <|.. Novato
+Jugador ..> Arma
+Jugador o--> "1" Rango
+Arma ..> Reloj
+Jugador ..> Reloj
+Rango ..> Reloj
+
+
+
+abstract class Arma {
+    {abstract} + herir(reloj : Reloj) : void
+}
+
+ class Cuchillo{
+     + herir(reloj : Reloj) : void
+}
+
+
+interface Rango {
+    {abstract} + viajar(c: Ciudad,  r : Reloj) : void
+}
+
+
+class Novato {
+    - velocidad
+    + viajar(c: Ciudad,  r : Reloj) : void
+}
+
+class Jugador {
+    - ciudad : Ciudad
+    - mision : Mision
+    + visitar(edificio:String, r : Reloj): Pista
+    + viajar(ciudad : Ciudad , r : Reloj): void
+    + dormir( r : Reloj) : void
+    + herir(a : Armar, r : Reloj) : void
+}
+
+
+class Reloj{
+    - fechaActual: DateTime
+    + incrementar(horas : int): void
+    + esMayor(fecha : DateTime): bool
+}
+
+
+
+
+
+
+@enduml

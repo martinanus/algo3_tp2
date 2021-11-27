@@ -1,0 +1,15 @@
+@startuml
+skinparam style strictuml
+title:  El Jugador duerme
+
+actor TestCase
+
+participant " : Jugador" as jugador
+participant "reloj : Reloj" as reloj
+
+
+TestCase -> jugador: dormir(reloj)
+activate jugador
+jugador -> reloj: incrementar( 1 hora):
+
+@enduml
