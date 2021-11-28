@@ -30,7 +30,21 @@ public class Ciudad {
         edificios.add(edificio);
     }
 
-    public double viajar(double velocidad) {
-        return  distancia / velocidad;
+    public double viajar(Ciudad ciudadDestino, double velocidad) {
+
+        return  distanciaCalcular(ciudadDestino) / velocidad;
     }
+
+    private double distanciaCalcular(Ciudad destino){
+        CalcuDistanciaCiud calculadora = new CalcuDistanciaCiud();
+        double distancia = calculadora.calcularDistancia(this,destino);
+        return distancia;
+    }
+    //PRIMERA SOLUCION una calculadora de distancia que dado dos ciudades nos devuelva
+    // la distancia entre ellas, no nos importa como lo hara.
+    //SEGUNDA SOLUCION: Tener una clase Mapa que tiene una calculadora de distancia
+    //Mapa delega en ciudad viajar y visitar. Jugador le paso la ciudad de destino y el mapa.
+    //Mapa verifica que el destino exista.
+    //Mapa tenga una lista de ciudades,
+
 }
