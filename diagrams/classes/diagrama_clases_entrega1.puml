@@ -7,9 +7,12 @@ Jugador ..> Arma
 Jugador o--> "1" Rango
 Arma ..> Reloj
 Jugador ..> Reloj
+Jugador .> Ciudad
 Rango ..> Reloj
-
-
+Rango ..> Ciudad
+Ciudad ->"1" Posicion
+Ciudad . Ciudad
+Posicion . Posicion
 
 abstract class Arma {
     {abstract} + herir(reloj : Reloj) : void
@@ -31,12 +34,23 @@ class Novato {
 }
 
 class Jugador {
-    - ciudad : Ciudad
+    - ciudadActual : Ciudad
     - mision : Mision
     + visitar(edificio:String, r : Reloj): Pista
-    + viajar(ciudad : Ciudad , r : Reloj): void
+    + viajar(destino : Ciudad , r : Reloj): void
     + dormir( r : Reloj) : void
     + herir(a : Armar, r : Reloj) : void
+}
+
+class Ciudad {
+    + tiempoViaje(destino : Ciudad, velocidad : double): double
+    - calcularDistanciaCon(ciudad : Ciudad): double
+}
+
+class Posicion {
+    - latitud: double
+    - longitud: double
+    + calcularDistanciaCon(posicion : Posicion)
 }
 
 
@@ -45,10 +59,6 @@ class Reloj{
     + incrementar(horas : int): void
     + esMayor(fecha : DateTime): bool
 }
-
-
-
-
 
 
 @enduml

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class Entrega1Test {
 
     @Test
-    public void JugadorNovatoEntraAUnBancoEnMontralYRecibeUnaPista( ) {
+    public void JugadorNovatoEntraAUnBancoEnMontrealYRecibeUnaPista( ) {
         Pista pistaBanco = new Pista("pista banco");
         Pista pistaBiblioteca = new Pista("pista biblioteca");
 
