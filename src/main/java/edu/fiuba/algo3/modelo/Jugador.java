@@ -4,7 +4,6 @@ public class Jugador {
     private Ciudad ciudadActual;
     private Mision mision;
     private Rango rango;
-    protected int velocidad;
 
     public Jugador(Ciudad ciudad) {
         ciudadActual = ciudad;

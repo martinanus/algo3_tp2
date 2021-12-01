@@ -67,7 +67,7 @@ public class Entrega1Test {
     }
 
     @Test
-    public void JugadorViajadeMontrealaMéxico() {
+    public void JugadorViajaDeMontrealAMexico() {
         Pista pistaBanco = new Pista("pista banco");
         Pista pistaBiblioteca = new Pista("pista biblioteca");
         Pista pistaAeropuerto = new Pista("pista aeropuerto");
@@ -78,11 +78,11 @@ public class Entrega1Test {
         Edificio aeropuerto = new Edificio(pistaAeropuerto);
         Edificio puerto = new Edificio(pistaAeropuerto);
 
-        Ciudad montreal = new Ciudad();
+        Ciudad montreal = new Ciudad(new Posicion(45.50861111, -73.58777778));
         montreal.agregarEdificio(banco);
         montreal.agregarEdificio(biblioteca);
 
-        Ciudad mexico = new Ciudad();
+        Ciudad mexico = new Ciudad(new Posicion(19.42833333, -99.1275));
         mexico.agregarEdificio(aeropuerto);
         mexico.agregarEdificio(puerto);
 
@@ -101,7 +101,7 @@ public class Entrega1Test {
     }
 
     @Test
-    public void JugadorViajadeMontrealaMéxicoVisitaAeropuerto3VecesPuerto55Veces() {
+    public void JugadorViajaDeMontrealAMexicoYVisitaAeropuerto3VecesPuerto55Veces() {
         Pista pistaBanco = new Pista("pista banco");
         Pista pistaBiblioteca = new Pista("pista biblioteca");
         Pista pistaAeropuerto = new Pista("pista aeropuerto");
@@ -112,11 +112,11 @@ public class Entrega1Test {
         Edificio aeropuerto = new Edificio(pistaAeropuerto);
         Edificio puerto = new Edificio(pistaAeropuerto);
 
-        Ciudad montreal = new Ciudad();
+        Ciudad montreal = new Ciudad(new Posicion(45.50861111, -73.58777778));
         montreal.agregarEdificio(banco);
         montreal.agregarEdificio(biblioteca);
 
-        Ciudad mexico = new Ciudad();
+        Ciudad mexico = new Ciudad(new Posicion(19.42833333, -99.1275));
         mexico.agregarEdificio(aeropuerto);
         mexico.agregarEdificio(puerto);
 

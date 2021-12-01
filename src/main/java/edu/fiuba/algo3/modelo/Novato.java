@@ -12,7 +12,7 @@ public class Novato implements Rango{
 
     @Override
     public void viajar(Ciudad ciudadOrigen, Ciudad ciudadDestino, Reloj reloj) {
-        double tiempo = ciudadDestino.viajar(ciudadOrigen,velocidad);
+        double tiempo = (int)(ciudadDestino.tiempoViaje(ciudadOrigen, velocidad));
         reloj.incrementar(tiempo);
     }
 }
