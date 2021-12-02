@@ -2,7 +2,7 @@
 
 
 Arma <|-- Cuchillo
-Rango <|.. Novato
+Rango <|.right. Novato
 Jugador ..> Arma
 Jugador o--> "1" Rango
 Arma ..> Reloj
@@ -11,7 +11,7 @@ Jugador .> Ciudad
 Rango ..> Reloj
 Rango ..> Ciudad
 Ciudad ->"1" Posicion
-Ciudad . Ciudad
+Ciudad "1"-left>"**" Edificio
 Posicion . Posicion
 
 abstract class Arma {
@@ -60,5 +60,11 @@ class Reloj{
     + esMayor(fecha : DateTime): bool
 }
 
+class Edificio{
+    - Pista pista
+    - int contadorDeVisitas
+    + visitar(Reloj reloj): Pista
+
+}
 
 @enduml
