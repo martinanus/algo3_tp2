@@ -76,7 +76,7 @@ public class Entrega1Test {
         Edificio banco = new Edificio(pistaBanco);
         Edificio biblioteca = new Edificio(pistaBiblioteca);
         Edificio aeropuerto = new Edificio(pistaAeropuerto);
-        Edificio puerto = new Edificio(pistaAeropuerto);
+        Edificio puerto = new Edificio(pistaPuerto);
 
         Ciudad montreal = new Ciudad(new Posicion(45.50861111, -73.58777778));
         montreal.agregarEdificio(banco);
@@ -110,7 +110,7 @@ public class Entrega1Test {
         Edificio banco = new Edificio(pistaBanco);
         Edificio biblioteca = new Edificio(pistaBiblioteca);
         Edificio aeropuerto = new Edificio(pistaAeropuerto);
-        Edificio puerto = new Edificio(pistaAeropuerto);
+        Edificio puerto = new Edificio(pistaPuerto);
 
         Ciudad montreal = new Ciudad(new Posicion(45.50861111, -73.58777778));
         montreal.agregarEdificio(banco);
