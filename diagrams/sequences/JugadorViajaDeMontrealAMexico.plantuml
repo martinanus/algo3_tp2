@@ -1,0 +1,33 @@
+@startuml
+skinparam style strictuml
+
+title: JugadorViajaDeMontrealAMexico
+
+actor TestCase
+
+participant " : Jugador" as jugador
+participant " rango : Novato" as rango
+participant " montreal : Ciudad" as montreal
+participant " mexico : Ciudad" as mexico
+participant " posMontreal : Posicion" as posicionMontreal
+participant " posMexico : Posicion" as posicionMexico
+participant "reloj : Reloj" as reloj
+
+TestCase -> jugador: viajar(mexico, reloj): void
+jugador -> rango: viajar(montreal, mexico, reloj): void
+rango -> mexico: tiempoViaje(montreal, 900): double
+activate mexico
+mexico -> mexico: calcularDistanciaCon(montreal): double
+activate mexico
+mexico -> posicionMexico: calcularDistanciaCon(posMontreal): double
+activate posicionMexico
+posicionMexico -> posicionMontreal: calcularDistancia(19.43, -99.13): double
+activate posicionMontreal
+return 3728.32 km
+return 3728.32 km
+deactivate mexico
+return 4 horas
+rango -> reloj: incrementar(4 horas): void
+
+
+@enduml
