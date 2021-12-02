@@ -10,6 +10,6 @@ participant "reloj : Reloj" as reloj
 
 TestCase -> jugador: dormir(reloj)
 activate jugador
-jugador -> reloj: incrementar( 8 horas):
+jugador -> reloj: incrementar(8):
 
 @enduml
