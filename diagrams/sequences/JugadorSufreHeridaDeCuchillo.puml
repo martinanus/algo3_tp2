@@ -13,6 +13,6 @@ TestCase -> jugador: herir(cuchillo, reloj)
 activate jugador
 jugador -> cuchillo: herir(reloj):
 activate reloj
-cuchillo -> reloj: incrementar(1):
+cuchillo -> reloj: incrementar(4 horas):
 
 @enduml
