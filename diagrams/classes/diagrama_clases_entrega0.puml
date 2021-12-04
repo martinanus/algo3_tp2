@@ -1,11 +1,12 @@
 @startuml
 class Edificio {
-- contadorVisitas: int
 - nombre: String
+- contadorVisitas: int
 + visitar(r : Reloj): Pista
 }
 
 class Ciudad {
+    - posicion : Posicion
     + visitar(edificio : String, r : Reloj): Pista
 }
 
@@ -14,15 +15,19 @@ class Jugador {
 }
 
 
-class Mision{
-    - fechaLimite: DateTime
-    + plazoExcedido(r : Reloj): bool
-}
+
 
 class Reloj{
-    - fechaActual: DateTime
-    + incrementar(horas : int): void
-    + esMayor(fecha : DateTime): bool
+    + mostrar() : Tiempo
+    + incrementar(tiempo : Tiempo): void
+    - verificarTiempoExcedido() : void
+}
+
+class Tiempo{
+    - horas : double
+    + incrementar(horas : double)
+    + esMayor(tiempo : Tiempo): bool
+
 }
 
 class Pista {
@@ -30,10 +35,10 @@ class Pista {
     + mostrar(): String
 }
 Jugador -->"1" Ciudad: está
-Jugador o--"1" Mision: tiene
 Ciudad o-- "3" Edificio
 Edificio ..> Reloj: actualiza
 Edificio --> "1" Pista
-Mision ..> Reloj
+Reloj o-- "2" Tiempo
+
 
 @enduml
