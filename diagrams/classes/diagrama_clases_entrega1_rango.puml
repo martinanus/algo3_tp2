@@ -7,7 +7,7 @@ Jugador ..> Reloj
 Rango ..> Reloj
 Rango ..> Ciudad
 Posicion "1" --o Ciudad
-
+Ciudad .up.> Posicion
 
 
 interface Rango {
@@ -32,12 +32,14 @@ class Jugador {
 class Ciudad {
     + tiempoViaje(destino : Ciudad, velocidad : double): double
     - calcularDistanciaCon(ciudad : Ciudad): double
+    - calcularDistancia(posicion : Posicion)): double
 }
 
 class Posicion {
     - latitud: double
     - longitud: double
-    + calcularDistanciaCon(posicion : Posicion)
+    + calcularDistanciaCon(posicion : Posicion): double
+    - calcularDistancia(latitud : double, longitud : double): double
 }
 
 
