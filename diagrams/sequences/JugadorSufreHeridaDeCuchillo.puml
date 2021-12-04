@@ -7,12 +7,15 @@ actor TestCase
 participant " : Jugador" as jugador
 participant " cuchillo : Cuchillo" as cuchillo
 participant "reloj : Reloj" as reloj
-
+participant "tiempoTranscurrido : Tiempo" as tiempo
 
 TestCase -> jugador: herir(cuchillo, reloj)
 activate jugador
 jugador -> cuchillo: herir(reloj):
 activate reloj
-cuchillo -> reloj: incrementar(4 horas):
+cuchillo -> reloj: incrementar(new Tiempo(4)):
+reloj -> tiempo: incrementar( 4 horas)
+
+
 
 @enduml

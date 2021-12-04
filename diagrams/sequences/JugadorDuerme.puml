@@ -6,10 +6,13 @@ actor TestCase
 
 participant " : Jugador" as jugador
 participant "reloj : Reloj" as reloj
+participant "tiempoTranscurrido : Tiempo" as tiempo
 
 
 TestCase -> jugador: dormir(reloj)
 activate jugador
-jugador -> reloj: incrementar( 8 horas):
+jugador -> reloj: incrementar( new Tiempo(8))
+activate reloj
+reloj -> tiempo: incrementar( 8 horas)
 
 @enduml
