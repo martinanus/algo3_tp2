@@ -11,9 +11,9 @@ public class Cuchillo extends Arma{
     @Override
     public void herir(Reloj reloj) {
         if (contadorAtaques == 0){
-            reloj.incrementar(2);
+            reloj.incrementar(new Tiempo(2));
         } else {
-            reloj.incrementar(1);
+            reloj.incrementar(new Tiempo(1));
         }
         contadorAtaques++;
     }

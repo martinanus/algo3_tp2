@@ -10,13 +10,13 @@ public class Edificio {
         contadorDeVisitas = 0;
     }
 
-    public Pista visitar(Reloj reloj) {
+    public Pista visitar(Reloj reloj){
         contadorDeVisitas = contadorDeVisitas + 1;
         if (contadorDeVisitas <= 3) {
-            reloj.incrementar(contadorDeVisitas);
+            reloj.incrementar(new Tiempo(contadorDeVisitas));
         }
         else {
-            reloj.incrementar(3);
+            reloj.incrementar(new Tiempo(3));
         }
         return pista;
     }

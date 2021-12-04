@@ -1,26 +1,28 @@
 package edu.fiuba.algo3.modelo;
 
-import java.time.LocalDateTime;
 
 public class Reloj {
-    private LocalDateTime fechaHora;
+    private Tiempo tiempoMaximo;
+    private Tiempo tiempoTranscurrido;
 
-    public Reloj() {
-        fechaHora = LocalDateTime.now();
-    }
-
-    //Constructor copia
-    public Reloj(Reloj reloj) {
-        this.fechaHora = reloj.fechaHora;
+    public Reloj(Tiempo tiempoMaximo) {
+        this.tiempoMaximo = tiempoMaximo;
+        this.tiempoTranscurrido = new Tiempo(0);
     }
 
 
-    public void incrementar(double horas) {
-        long segundos = (long) (horas * 3600) ; // 3600 secs en una hora
-        fechaHora = fechaHora.plusSeconds(segundos);
+    public void incrementar(Tiempo tiempo) {
+        tiempoTranscurrido.incrementar(tiempo);
+        verificarTiempoExcedido();
     }
 
-    public LocalDateTime mostrar() {
-        return fechaHora;
+    private void verificarTiempoExcedido() {
+        if(tiempoTranscurrido.esMayor(tiempoMaximo)){
+            //throw new Exception("TERMINO EL JUEGO; TIEMPO MAXIMO EXCEDIDO");
+        }
+    }
+
+    public Tiempo mostrar() {
+        return tiempoTranscurrido;
     }
 }

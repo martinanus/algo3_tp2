@@ -22,17 +22,14 @@ public class Entrega1Test {
         Rango rango = new Novato();
 
         Jugador jugador = new Jugador(montreal, rango);
-        Reloj reloj = new Reloj();
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
-        //Reloj relojTest = new Reloj(reloj);
 
         Pista pista = jugador.visitar(banco, reloj );
 
-        //Espero que se incremente 1 hora
-        //relojTest.incrementar(1);
 
         assertEquals("pista banco",pista.mostrar());
-        //assertEquals(relojTest.mostrar(), reloj.mostrar());
+        assertEquals(new Tiempo(1), reloj.mostrar());
     }
 
 
@@ -51,19 +48,17 @@ public class Entrega1Test {
         //Rango rango = new Novato();
 
         Jugador jugador = new Jugador(montreal);
-        Reloj reloj = new Reloj();
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
-        Reloj relojTest = new Reloj(reloj);
+
         //Jugador visita por primera vez un banco
         jugador.visitar(banco, reloj );
 
-        //Espero que se incremente 4 hora
-        relojTest.incrementar(4);
 
         //Jugador visita por segunda vez un banco
         assertEquals("pista banco", jugador.visitar(banco,reloj).mostrar());
         assertEquals("pista biblioteca", jugador.visitar(biblioteca,reloj).mostrar());
-        assertEquals(relojTest.mostrar(), reloj.mostrar());
+        assertEquals(new Tiempo(4), reloj.mostrar());
     }
 
     @Test
@@ -89,15 +84,14 @@ public class Entrega1Test {
         Rango rango = new Novato();
 
         Jugador jugador = new Jugador(montreal, rango);
-        Reloj reloj = new Reloj();
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
-        Reloj relojTest = new Reloj(reloj);
 
 
         jugador.viajar(mexico, reloj );
 
-        relojTest.incrementar(4);
-        assertEquals(relojTest.mostrar(), reloj.mostrar());
+
+        assertEquals(new Tiempo(4), reloj.mostrar());
     }
 
     @Test
@@ -123,8 +117,8 @@ public class Entrega1Test {
         Rango rango = new Novato();
 
         Jugador jugador = new Jugador(montreal, rango);
-        Reloj reloj = new Reloj();
-        Reloj relojTest = new Reloj(reloj);
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+
 
 
         jugador.viajar(mexico, reloj );
@@ -134,10 +128,8 @@ public class Entrega1Test {
         for (int i = 0; i < 55; i++) {
             jugador.visitar(puerto, reloj ); // 1 + 2 +3*53 = 162
         }
-        //El reloj se debería incrementar 172  horas
-        relojTest.incrementar(172);
 
-        assertEquals(relojTest.mostrar(), reloj.mostrar());
+        assertEquals(new Tiempo(172), reloj.mostrar());
 
     }
 
@@ -149,16 +141,13 @@ public class Entrega1Test {
         Rango rango = new Novato();
 
         Jugador jugador = new Jugador(mexico, rango);
-        Reloj reloj = new Reloj();
-        Reloj relojTest = new Reloj(reloj);
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+
 
         jugador.duerme(reloj);
 
 
-        //El reloj se debería incrementar 8 horas al dormir
-        relojTest.incrementar(8);
-
-        assertEquals(relojTest.mostrar(), reloj.mostrar());
+        assertEquals(new Tiempo(8), reloj.mostrar());
 
     }
 
@@ -170,8 +159,8 @@ public class Entrega1Test {
         Rango rango = new Novato();
         Jugador jugador = new Jugador(mexico, rango);
 
-        Reloj reloj = new Reloj();
-        Reloj relojTest = new Reloj(reloj);
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+
 
         Cuchillo cuchillo = new Cuchillo();
         jugador.herir(cuchillo, reloj);
@@ -180,9 +169,11 @@ public class Entrega1Test {
         //edificio tiene una demora de visitar,
 
         //El reloj se debería incrementar 2 horas por primer ataque cuchillo
-        relojTest.incrementar(2);
 
-        assertEquals(relojTest.mostrar(), reloj.mostrar());
+
+        assertEquals(new Tiempo(2), reloj.mostrar());
 
     }
+
+
 }

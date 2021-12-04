@@ -18,7 +18,7 @@ public class Jugador {
 
     public Pista visitar(Edificio edificio ,Reloj reloj ){
         Pista pista =  ciudadActual.visitar(edificio,reloj);
-        Boolean plazo = mision.plazoExcedido(reloj);
+        //Boolean plazo = mision.plazoExcedido(reloj);
         return pista;
     }
 
@@ -28,10 +28,12 @@ public class Jugador {
     }
 
     public void duerme(Reloj reloj) {
-        reloj.incrementar(8); //duerme 8hs
+        reloj.incrementar(new Tiempo(8)); //duerme 8hs
     }
 
     public void herir(Arma arma, Reloj reloj) {
         arma.herir(reloj);
     }
 }
+
+

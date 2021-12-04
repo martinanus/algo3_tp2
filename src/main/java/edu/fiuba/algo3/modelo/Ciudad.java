@@ -38,6 +38,7 @@ public class Ciudad {
         return this.posicion.calcularDistanciaCon(destino.getPosicion());
     }
 
+
     public Posicion getPosicion() {
         return this.posicion;
     }
