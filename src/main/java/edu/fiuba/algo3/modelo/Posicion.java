@@ -15,7 +15,7 @@ public class Posicion {
         this.longitud = longitud;
     }
 
-    public double calcularDistancia(double latitud, double longitud) {
+    private double calcularDistancia(double latitud, double longitud) {
         double difLatitud = toRadians(latitud - this.latitud);
         double difLongitud = toRadians(longitud - this.longitud);
 

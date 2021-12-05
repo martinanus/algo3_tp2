@@ -1,26 +1,13 @@
 @startuml
 
 
-Arma <|-- Cuchillo
-Rango <|.right. Novato
-Jugador ..> Arma
+Rango <|.. Novato
 Jugador o--> "1" Rango
-Arma ..> Reloj
 Jugador ..> Reloj
-Jugador .> Ciudad
 Rango ..> Reloj
 Rango ..> Ciudad
-Ciudad ->"1" Posicion
-Ciudad "1"-left>"**" Edificio
-Posicion . Posicion
-
-abstract class Arma {
-    {abstract} + herir(reloj : Reloj) : void
-}
-
- class Cuchillo{
-     + herir(reloj : Reloj) : void
-}
+Posicion "1" --o Ciudad
+Ciudad .up.> Posicion
 
 
 interface Rango {
@@ -45,26 +32,26 @@ class Jugador {
 class Ciudad {
     + tiempoViaje(destino : Ciudad, velocidad : double): double
     - calcularDistanciaCon(ciudad : Ciudad): double
+    - calcularDistancia(posicion : Posicion)): double
 }
 
 class Posicion {
     - latitud: double
     - longitud: double
-    + calcularDistanciaCon(posicion : Posicion)
+    + calcularDistanciaCon(posicion : Posicion): double
+    - calcularDistancia(latitud : double, longitud : double): double
 }
 
 
 class Reloj{
-    - fechaActual: DateTime
-    + incrementar(horas : int): void
-    + esMayor(fecha : DateTime): bool
+    - tiempoTranscurrido: Tiempo
+    - tiempoMaximo: Tiempo
+    + mostrar() : Tiempo
+    + incrementar(tiempo : Tiempo): void
+    - verificarTiempoExcedido() : void
 }
 
-class Edificio{
-    - Pista pista
-    - int contadorDeVisitas
-    + visitar(Reloj reloj): Pista
 
-}
 
 @enduml
+

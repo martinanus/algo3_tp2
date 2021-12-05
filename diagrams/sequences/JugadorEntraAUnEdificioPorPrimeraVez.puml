@@ -7,7 +7,8 @@ participant " : Jugador" as jugador
 participant " : Ciudad" as ciudad
 participant " : Edificio" as banco
 participant "reloj : Reloj" as reloj
-participant " : Mision" as mision
+participant "tiempoTranscurrido : Tiempo" as tiempo
+
 
 TestCase -> jugador: visitar("Banco", reloj): Pista
 activate jugador
@@ -15,15 +16,10 @@ jugador -> ciudad: visitar("Banco", reloj): Pista
 activate ciudad
 ciudad -> banco: visitar(reloj): Pista
 activate banco
-banco -> reloj: incrementar(1 hora):
+banco -> reloj: incrementar(new Tiempo(1)):
+reloj -> tiempo: incrementar(1 hora):
 return pista
 return pista
-jugador -> mision: plazoExcedido(reloj): bool
-activate mision
-mision -> reloj: esMayor(fechaHora): bool
-activate reloj
-return false
-return false
 return pista
 
 @enduml

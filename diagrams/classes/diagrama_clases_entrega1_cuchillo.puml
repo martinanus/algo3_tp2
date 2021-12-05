@@ -1,0 +1,46 @@
+
+@startuml
+
+
+Arma <|-- Cuchillo
+Jugador ..> Arma
+Arma ..> Reloj
+Jugador ..> Reloj
+
+
+
+abstract class Arma {
+    {abstract} + herir(reloj : Reloj) : void
+}
+
+ class Cuchillo{
+    - contadorAtaques : int
+     + herir(reloj : Reloj) : void
+}
+
+
+
+
+
+class Jugador {
+    - ciudadActual : Ciudad
+    - mision : Mision
+    - rango : Rango
+    + visitar(edificio:String, r : Reloj): Pista
+    + viajar(destino : Ciudad , r : Reloj): void
+    + dormir( r : Reloj) : void
+    + herir(a : Armar, r : Reloj) : void
+}
+
+
+
+class Reloj{
+    - tiempoTranscurrido: Tiempo
+    - tiempoMaximo: Tiempo
+    + mostrar() : Tiempo
+    + incrementar(tiempo : Tiempo): void
+    - verificarTiempoExcedido() : void
+}
+
+
+@enduml

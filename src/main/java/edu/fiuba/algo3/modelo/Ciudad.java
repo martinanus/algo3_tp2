@@ -35,11 +35,11 @@ public class Ciudad {
     }
 
     private double calcularDistanciaCon(Ciudad destino) {
-        return this.posicion.calcularDistanciaCon(destino.getPosicion());
+        return destino.calcularDistancia(this.posicion);
     }
 
-    public Posicion getPosicion() {
-        return this.posicion;
+    private double calcularDistancia(Posicion posicion) {
+        return this.posicion.calcularDistanciaCon(posicion);
     }
 
 }

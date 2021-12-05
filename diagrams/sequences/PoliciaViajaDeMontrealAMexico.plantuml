@@ -1,7 +1,7 @@
 @startuml
 skinparam style strictuml
 
-title: JugadorViajaDeMontrealAMexico
+title: Policía viaja de Montreal a México
 
 actor TestCase
 
@@ -19,15 +19,18 @@ rango -> mexico: tiempoViaje(montreal, 900): double
 activate mexico
 mexico -> mexico: calcularDistanciaCon(montreal): double
 activate mexico
-mexico -> posicionMexico: calcularDistanciaCon(posMontreal): double
-activate posicionMexico
-posicionMexico -> posicionMontreal: calcularDistancia(19.43, -99.13): double
+mexico -> montreal: calcularDistancia(posMexico): double
+activate montreal
+montreal -> posicionMontreal: calcularDistanciaCon(posMexico): double
 activate posicionMontreal
+posicionMontreal -> posicionMexico: calcularDistancia(45.51, -73.59): double
+activate posicionMexico
+return 3728.32 km
 return 3728.32 km
 return 3728.32 km
 deactivate mexico
-return 4 horas
-rango -> reloj: incrementar(4 horas): void
+return 3728.32 km / 900 km/hora = 4 horas
+rango -> reloj: incrementar(new Tiempo(4 horas): void
 
 
 @enduml

@@ -16,7 +16,9 @@ public class Entrega0Test {
         ciudad.agregarEdificio(edificio);
 
         Jugador jugador = new Jugador(ciudad);
-        Reloj reloj = new Reloj();
+
+        Tiempo tiempoMaximo = new Tiempo(168.0); //hs en 1 semana
+        Reloj reloj = new Reloj(tiempoMaximo);
 
         Pista pista = jugador.visitar(edificio, reloj );
 
