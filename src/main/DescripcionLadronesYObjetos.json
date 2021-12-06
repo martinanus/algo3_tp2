@@ -1,5 +1,5 @@
 {
-	"DescripcionDeLadron":[{"Nombre":"Nick Brunch","Sexo":"Masculino","Hobby":"Alpinismo","Cabello":"Negro","Seña":"Anillo","Vehiculo":"Moto"},
+	"DescripcionesLadrones":[{"Nombre":"Nick Brunch","Sexo":"Masculino","Hobby":"Alpinismo","Cabello":"Negro","Seña":"Anillo","Vehiculo":"Moto"},
 		{"Nombre":"Len Bulk","Sexo":"Masculino","Hobby":"Alpinismo","Cabello":"Rojo","Seña":"Tatuaje","Vehiculo":"Descapotable"},
 		{"Nombre":"Ihor Ihorovitch","Sexo":"Masculino","Hobby":"Croquet","Cabello":"Rubio","Seña":"Tatuaje","Vehiculo":"Limusina"},
 		{"Nombre":"Merey Laroc","Sexo":"Femenino","Hobby":"Alpinismo","Cabello":"Castaño","Seña":"Joyas","Vehiculo":"Limusina"},
