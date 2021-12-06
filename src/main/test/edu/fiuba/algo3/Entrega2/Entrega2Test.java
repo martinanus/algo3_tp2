@@ -2,9 +2,13 @@ package edu.fiuba.algo3.Entrega2;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.lector.Lector;
+import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class Entrega2Test {
 
@@ -61,8 +65,18 @@ public class Entrega2Test {
 
         Lector lector = new Lector();
 
-        String nombreCiudad = lector.cargaDatos();
+        String nombreCiudad = lector.cargaDatos("/jsons/ciudades.json");
 
         assertEquals("Athens", nombreCiudad);
+    }
+
+    @Test
+    public void SeQuierenCargarDatosConRutaDesconocia() {
+
+        Lector lector = new Lector();
+
+        String nombreCiudad = lector.cargaDatos("/jsons/ciuddes.json");
+
+        assertEquals("", nombreCiudad);
     }
 }

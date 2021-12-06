@@ -11,17 +11,17 @@ import java.io.IOException;
 
 public class Lector {
 
-    public String cargaDatos(){
+    public String cargaDatos(String ruta){
+        String nombreCiudad = "";
 
         Object ob = null;
         try {
-            ob = this.leerJson();
+            ob = this.leerJson(ruta);
         } catch (IOException | ParseException e) {
-            e.printStackTrace();
+            return nombreCiudad;
         }
         // typecasting ob to JSONObject
         JSONArray ciudades = (JSONArray) ob;
-        String nombreCiudad = "";
 
         assert ciudades != null;
         for (Object ciudad: ciudades){
@@ -34,8 +34,8 @@ public class Lector {
         return nombreCiudad;
     }
 
-    private Object leerJson() throws IOException, org.json.simple.parser.ParseException{
+    private Object leerJson(String ruta) throws IOException, org.json.simple.parser.ParseException{
         //Object ob = new JSONParser().parse(new FileReader(System.getProperty("user.dir") + "/jsons/ciudades.json"));
-        return new JSONParser().parse(new FileReader(System.getProperty("user.dir") + "/jsons/ciudades.json"));
+        return new JSONParser().parse(new FileReader(System.getProperty("user.dir") + ruta));
     }
 }
