@@ -21,11 +21,11 @@ public class Entrega1Test {
 
         Rango rango = new Novato();
 
-        Jugador jugador = new Jugador(montreal, rango);
+        Policia policia = new Policia(montreal, rango);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
 
-        Pista pista = jugador.visitar(banco, reloj );
+        Pista pista = policia.visitar(banco, reloj );
 
 
         assertEquals("pista banco",pista.mostrar());
@@ -47,17 +47,17 @@ public class Entrega1Test {
 
         //Rango rango = new Novato();
 
-        Jugador jugador = new Jugador(montreal);
+        Policia policia = new Policia(montreal);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
 
         //Jugador visita por primera vez un banco
-        jugador.visitar(banco, reloj );
+        policia.visitar(banco, reloj );
 
 
         //Jugador visita por segunda vez un banco
-        assertEquals("pista banco", jugador.visitar(banco,reloj).mostrar());
-        assertEquals("pista biblioteca", jugador.visitar(biblioteca,reloj).mostrar());
+        assertEquals("pista banco", policia.visitar(banco,reloj).mostrar());
+        assertEquals("pista biblioteca", policia.visitar(biblioteca,reloj).mostrar());
         assertEquals(new Tiempo(4), reloj.mostrar());
     }
 
@@ -83,12 +83,12 @@ public class Entrega1Test {
 
         Rango rango = new Novato();
 
-        Jugador jugador = new Jugador(montreal, rango);
+        Policia policia = new Policia(montreal, rango);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
 
 
-        jugador.viajar(mexico, reloj );
+        policia.viajar(mexico, reloj );
 
 
         assertEquals(new Tiempo(4), reloj.mostrar());
@@ -116,17 +116,17 @@ public class Entrega1Test {
 
         Rango rango = new Novato();
 
-        Jugador jugador = new Jugador(montreal, rango);
+        Policia policia = new Policia(montreal, rango);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
 
 
-        jugador.viajar(mexico, reloj );
+        policia.viajar(mexico, reloj );
         for (int i = 0; i < 3; i++) {
-            jugador.visitar(aeropuerto, reloj ); // (1+2+3 = 6 )
+            policia.visitar(aeropuerto, reloj ); // (1+2+3 = 6 )
         }
         for (int i = 0; i < 55; i++) {
-            jugador.visitar(puerto, reloj ); // 1 + 2 +3*53 = 162
+            policia.visitar(puerto, reloj ); // 1 + 2 +3*53 = 162
         }
 
         assertEquals(new Tiempo(172), reloj.mostrar());
@@ -140,11 +140,11 @@ public class Entrega1Test {
 
         Rango rango = new Novato();
 
-        Jugador jugador = new Jugador(mexico, rango);
+        Policia policia = new Policia(mexico, rango);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
 
-        jugador.duerme(reloj);
+        policia.duerme(reloj);
 
 
         assertEquals(new Tiempo(8), reloj.mostrar());
@@ -157,13 +157,13 @@ public class Entrega1Test {
 
         Ciudad mexico = new Ciudad();
         Rango rango = new Novato();
-        Jugador jugador = new Jugador(mexico, rango);
+        Policia policia = new Policia(mexico, rango);
 
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
 
         Cuchillo cuchillo = new Cuchillo();
-        jugador.herir(cuchillo, reloj);
+        policia.herir(cuchillo, reloj);
         //ladron.herir(cuchillo,jugador)
         // si visita a un edificio no sabes si saldra el ladron o la pista.
         //edificio tiene una demora de visitar,

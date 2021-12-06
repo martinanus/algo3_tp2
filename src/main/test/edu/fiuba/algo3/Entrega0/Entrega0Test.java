@@ -15,12 +15,12 @@ public class Entrega0Test {
         Ciudad ciudad = new Ciudad();
         ciudad.agregarEdificio(edificio);
 
-        Jugador jugador = new Jugador(ciudad);
+        Policia policia = new Policia(ciudad);
 
         Tiempo tiempoMaximo = new Tiempo(168.0); //hs en 1 semana
         Reloj reloj = new Reloj(tiempoMaximo);
 
-        Pista pista = jugador.visitar(edificio, reloj );
+        Pista pista = policia.visitar(edificio, reloj );
 
         assertEquals(contenido,pista.mostrar());
 

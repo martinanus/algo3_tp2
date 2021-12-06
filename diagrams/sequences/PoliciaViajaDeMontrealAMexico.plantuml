@@ -5,7 +5,7 @@ title: Policía viaja de Montreal a México
 
 actor TestCase
 
-participant " : Jugador" as jugador
+participant " : Jugador" as policia
 participant " rango : Novato" as rango
 participant " montreal : Ciudad" as montreal
 participant " mexico : Ciudad" as mexico
@@ -13,8 +13,8 @@ participant " posMontreal : Posicion" as posicionMontreal
 participant " posMexico : Posicion" as posicionMexico
 participant "reloj : Reloj" as reloj
 
-TestCase -> jugador: viajar(mexico, reloj): void
-jugador -> rango: viajar(montreal, mexico, reloj): void
+TestCase -> policia: viajar(mexico, reloj): void
+policia -> rango: viajar(montreal, mexico, reloj): void
 rango -> mexico: tiempoViaje(montreal, 900): double
 activate mexico
 mexico -> mexico: calcularDistanciaCon(montreal): double
