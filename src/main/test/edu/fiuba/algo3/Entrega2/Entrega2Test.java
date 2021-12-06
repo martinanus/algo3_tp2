@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Entrega2;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.lector.Lector;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -53,5 +54,15 @@ public class Entrega2Test {
         policia.viajar(mexico, reloj );
 
         assertEquals(new Tiempo(2), reloj.mostrar());
+    }
+
+    @Test
+    public void SeCargarLosDatosDeCiudades() {
+
+        Lector lector = new Lector();
+
+        String nombreCiudad = lector.cargaDatos();
+
+        assertEquals("Athens", nombreCiudad);
     }
 }
