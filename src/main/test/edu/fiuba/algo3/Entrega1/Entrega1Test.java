@@ -174,6 +174,15 @@ public class Entrega1Test {
         assertEquals(new Tiempo(2), reloj.mostrar());
 
     }
+    @Test
+    public void ElTiempoTranscurridoDelRelojDeberiaSerMenorQueUnTiempoMasGrande(){
+        Reloj reloj = new Reloj(new Tiempo(168.0));
+        Tiempo unTiempo = new Tiempo(120);
+        reloj.incrementar(unTiempo);
+        Tiempo otroTiempo = new Tiempo(188);
+        boolean esMayor = reloj.mostrar().esMayor(otroTiempo);
+        assertEquals(false,esMayor);
+    }
 
 
 }

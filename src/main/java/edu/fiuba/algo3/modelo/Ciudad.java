@@ -30,12 +30,12 @@ public class Ciudad {
         edificios.add(edificio);
     }
 
-    public double tiempoViaje(Ciudad ciudadDestino, double velocidad) {
-        return  calcularDistanciaCon(ciudadDestino) / velocidad;
+    public double tiempoViaje(Ciudad origen, double velocidad) {
+        return  calcularDistanciaCon(origen) / velocidad;
     }
 
-    private double calcularDistanciaCon(Ciudad destino) {
-        return destino.calcularDistancia(this.posicion);
+    private double calcularDistanciaCon(Ciudad origen) {
+        return origen.calcularDistancia(this.posicion);
     }
 
     private double calcularDistancia(Posicion posicion) {
