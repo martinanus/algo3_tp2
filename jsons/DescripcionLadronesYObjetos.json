@@ -1,0 +1,15 @@
+{
+	"DescripcionDeLadron":[{"ObjetoRobado":"Calavarera de cristal","Nombre":"Nick Brunch","Sexo":"Masculino","Hobby":"Alpinismo","Cabello":"Negro","Seña":"Anillo","Vehiculo":"Moto"},			
+	{"ObjetoRobado":"Ojo de Horus","Nombre":"Len Bulk","Sexo":"Masculino","Hobby":"Alpinismo","Cabello":"Rojo","Seña":"Tatuaje","Vehiculo":"Descapotable"},
+	{"ObjetoRobado":"Salvator Mundi","Nombre":"Ihor Ihorovitch","Sexo":"Masculino","Hobby":"Croquet","Cabello":"Rubio","Seña":"Tatuaje","Vehiculo":"Limusina"}
+	{"ObjetoRobado":"Huevo de 1000 años","Nombre":"Merey Laroc","Sexo":"Femenino","Hobby":"Alpinismo","Cabello":"Castaño","Seña":"Joyas","Vehiculo":"Limusina"}
+	{"ObjetoRobado":"Joyas de la corona","Nombre":"Lady Agatha","Sexo":"Femenino","Hobby":"Tenis","Cabello":"Rojo","Seña":"Anillo","Vehiculo":"Descapotable"}
+	{"ObjetoRobado":"Buda de oro","Nombre":"Carmen Sandiego","Sexo":"Femenino","Hobby":"Tenis","Cabello":"Castaño","Seña":"Joyeria","Vehiculo":"Descapotable"}
+	],
+
+	"Objetos":[{"Nombre":"Calavarera de cristal","Tipo":"Comun","PaisesQueLadronTransita":["Argentina","Bolivia","Chile","Perú"],"PaisFinal":"Bolivia"},
+		{"Nombre":"Huevo de 1000 años","Tipo":"Valioso","PaisesQueLadronTransita":["China","Francia","Alemania","EE.UU"],"PaisFinal":"Alemania"},
+		{"Nombre":"Joyas de la corona","Tipo":"Muy Valioso","PaisesQueLadronTransita":["Londres","Francia","Rusia"],"PaisFinal":"Rusia"},
+	]
+
+}
