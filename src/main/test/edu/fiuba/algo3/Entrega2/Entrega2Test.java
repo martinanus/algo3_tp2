@@ -1,14 +1,11 @@
 package edu.fiuba.algo3.Entrega2;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.lector.Descripcion;
 import edu.fiuba.algo3.modelo.lector.Lector;
-import org.json.simple.parser.ParseException;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Entrega2Test {
 
@@ -61,22 +58,27 @@ public class Entrega2Test {
     }
 
     @Test
-    public void SeCargarLosDatosDeCiudades() {
+    public void SeBuscaEnLaComputadoraUnSospechosoConSexoMasculino() {
+        Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
+        Ladron sospechoso1 = new Ladron(descripcion1);
+        Descripcion descripcion2 = new Descripcion("sospechoso2","femenino","musica","negro","anillo","deportivo");
+        Ladron sospechoso2 = new Ladron(descripcion2);
+        Descripcion descripcion3 = new Descripcion("sospechoso3","femenino","tenis","negro","tatuaje","moto");
+        Ladron sospechoso3 = new Ladron(descripcion3);
+        Descripcion descripcion4 = new Descripcion("","masculino","","","","");
+        Ladron sospechosoBuscado = new Ladron(descripcion4);
+        Computadora computadora = new Computadora();
+        computadora.agregarSopechoso(sospechoso1);
+        computadora.agregarSopechoso(sospechoso2);
+        computadora.agregarSopechoso(sospechoso3);
 
-        Lector lector = new Lector();
-
-        String nombreCiudad = lector.cargaDatos("/jsons/ciudades.json");
-
-        assertEquals("Athens", nombreCiudad);
+        assertTrue(computadora.emitirOrdenDeArresto(sospechosoBuscado));
     }
 
     @Test
-    public void SeQuierenCargarDatosConRutaDesconocia() {
-
-        Lector lector = new Lector();
-
-        String nombreCiudad = lector.cargaDatos("/jsons/ciuddes.json");
-
-        assertEquals("", nombreCiudad);
+    void compararDescripcionesDeSexoYHobby() {
+        Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
+        Descripcion descripcion4 = new Descripcion("","masculino","tenis","","","");
+        assertTrue(descripcion4.comparar(descripcion1));
     }
 }
