@@ -80,5 +80,17 @@ public class Entrega2Test {
         Descripcion descripcion4 = new Descripcion("","masculino","tenis","","","");
         assertTrue(descripcion4.comparar(descripcion1));
     }
+
+    /*Detective Tenga como atributo una orden de Arrestro no Emitida.
+    * Computadora genera la orden de Arrestro le seteamos al policia  ordenDeArrestro Emitiada. Patron state
+    *Detective: Orden de arrestro no Emitida.
+    * CASO POLICIA ATRAPA AL LADRON SIN ORDEN DE ARRESTRO ->
+    *
+    * */
+
+
+
+
+
      
 }

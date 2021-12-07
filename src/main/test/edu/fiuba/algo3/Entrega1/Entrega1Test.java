@@ -23,11 +23,19 @@ public class Entrega1Test {
 
         Policia policia = new Policia(montreal, rango);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
-
-
-        Pista pista = policia.visitar(banco, reloj );
-
-
+        /*
+        Interactuable interactuable = new Pista();
+        Interactuable interactuable = new Ladron();
+        Interactuable interactuable = new Arma();
+        Interactuable interactuable = policia.visitar(banco, reloj );
+        interactuable.interartuar(reloj,this.jugador) ;
+        //Ladron  en el metodo interactuar:
+        // jugador.arrestar()
+        // dentro de la clase jugador tiene el metodo -> arrestar()
+        // en el metodo arrestar():
+        // estadoOrdenArresto.arrestar();
+        */
+        Pista pista = policia.visitar(banco,reloj);
         assertEquals("pista banco",pista.mostrar());
         assertEquals(new Tiempo(1), reloj.mostrar());
     }
