@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.lector;
+package edu.fiuba.algo3.modelo;
 
 public class Descripcion {
     String nombre;

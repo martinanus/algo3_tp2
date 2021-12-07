@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.ArchivoJson;
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.lector.Descripcion;
+import edu.fiuba.algo3.modelo.Descripcion;
 import org.junit.jupiter.api.Test;
 
 
@@ -19,14 +19,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class ArchivoJsonTest {
 
     @Test
-    public void TesteaAperturaDeArchivo() throws IOException {
+    public void SeObtieneLasDescripcionesDeLadronesEnElArchivo() throws IOException {
         String texto = Files.readString(Path.of("src/main/DescripcionLadronesYObjetos.json") );
         JsonObject unJsonObjeto = JsonParser.parseString(texto).getAsJsonObject();
 
         ArrayList<Ladron> arrayLadrones = new ArrayList<>();
 
 
-        JsonArray arrayDescripciones = unJsonObjeto.getAsJsonArray("DescripcionDeLadron");
+        JsonArray arrayDescripciones = unJsonObjeto.getAsJsonArray("DescripcionesLadrones");
         for(JsonElement unJson: arrayDescripciones){
             ArrayList<Descripcion> unasDescripciones = new ArrayList<>();
             String nombre = unJson.getAsJsonObject().get("Nombre").getAsString();
