@@ -83,7 +83,7 @@ public class Entrega2Test {
         Ladron sospechoso1 = new Ladron(descripcion1);
         Descripcion descripcion2 = new Descripcion("sospechoso2","masculino","musica","negro","anillo","deportivo");
         Ladron sospechoso2 = new Ladron(descripcion2);
-        assertTrue(sospechoso1.compararCon(sospechoso2));
+        assertFalse(sospechoso1.compararCon(sospechoso2));
     }
 
     @Test
