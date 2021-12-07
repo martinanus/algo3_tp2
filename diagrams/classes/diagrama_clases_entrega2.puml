@@ -1,0 +1,61 @@
+@startuml
+class Edificio {
+- nombre: String
+- contadorVisitas: int
++ visitar(r : Reloj): Interactuable
+}
+
+class Ciudad {
+    - posicion : Posicion
+    + visitar(edificio : String, r : Reloj): Pista
+}
+
+class Jugador {
+    + visitar(edificio:String, r : Reloj): Pista
+    + arrestar();
+}
+interface EstadoOrdenArresto{
++ {abstract} arrestar():void
+
+}
+class OrdenEmitida{
+    +arrestar():void
+    -aumentarCantidadArrestro(Jugador)
+
+}
+class OrdenNoEmitida{
+    +arrestar():void
+
+}
+
+
+
+class Pista {
+    - contenido: String
+    + mostrar(): String
+    +interactuar(reloj:Reloj, jugador:Jugador):void
+}
+Interface  Interactuable{
+    + {abstract} interactuar(reloj:Reloj, jugador:Jugador):void
+
+}
+class Ladron{
+    +interactuar(reloj:Reloj, jugador:Jugador):void
+
+}
+abstract class Arma{
+     +interactuar(reloj:Reloj, jugador:Jugador):void
+
+}
+OrdenEmitida ..|> EstadoOrdenArresto
+OrdenNoEmitida ..|> EstadoOrdenArresto
+Jugador o-- EstadoOrdenArresto
+Edificio o- Interactuable
+Jugador -->"1" Ciudad: está
+Ciudad o-- "3" Edificio
+Pista ..|>  Interactuable
+Ladron ..|>  Interactuable
+Arma ..|>  Interactuable
+
+
+@enduml
