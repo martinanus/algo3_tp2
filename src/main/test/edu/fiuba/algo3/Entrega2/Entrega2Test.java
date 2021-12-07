@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.Entrega2;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.lector.Descripcion;
-import edu.fiuba.algo3.modelo.lector.Lector;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -75,10 +73,12 @@ public class Entrega2Test {
         assertTrue(computadora.emitirOrdenDeArresto(sospechosoBuscado));
     }
 
+    
     @Test
-    void compararDescripcionesDeSexoYHobby() {
+    public void compararDescripcionesDeSexoYHobby() {
         Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
         Descripcion descripcion4 = new Descripcion("","masculino","tenis","","","");
         assertTrue(descripcion4.comparar(descripcion1));
     }
+     
 }
