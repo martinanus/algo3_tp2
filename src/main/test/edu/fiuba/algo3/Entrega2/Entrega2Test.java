@@ -1,6 +1,10 @@
 package edu.fiuba.algo3.Entrega2;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.arma.Cuchillo;
+import edu.fiuba.algo3.modelo.rango.Investigador;
+import edu.fiuba.algo3.modelo.rango.Novato;
+import edu.fiuba.algo3.modelo.rango.Rango;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -70,15 +74,32 @@ public class Entrega2Test {
         computadora.agregarSopechoso(sospechoso2);
         computadora.agregarSopechoso(sospechoso3);
 
-        assertTrue(computadora.emitirOrdenDeArresto(sospechosoBuscado));
+        assertEquals(1, computadora.emitirOrdenDeArresto(sospechosoBuscado));
     }
-
     
     @Test
     public void compararDescripcionesDeSexoYHobby() {
         Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
+        Ladron sospechoso1 = new Ladron(descripcion1);
+        Descripcion descripcion2 = new Descripcion("sospechoso2","masculino","musica","negro","anillo","deportivo");
+        Ladron sospechoso2 = new Ladron(descripcion2);
+        assertTrue(sospechoso1.compararCon(sospechoso2));
+    }
+
+    @Test
+    public void compararLadronesDescripcionesDeSexoYHobby() {
+        Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
         Descripcion descripcion4 = new Descripcion("","masculino","tenis","","","");
         assertTrue(descripcion4.comparar(descripcion1));
+    }
+
+    @Test
+    public void SeBuscaEnLaComputadoraUnSospechosoConDatosDeLadronesYaCreados() {
+        Computadora computadora = new Computadora();
+        computadora.cargarDatos();
+        Descripcion descripcion4 = new Descripcion("","Masculino","","","","");
+        Ladron sospechosoBuscado = new Ladron(descripcion4);
+        assertEquals(3, computadora.emitirOrdenDeArresto(sospechosoBuscado));
     }
 
     /*Detective Tenga como atributo una orden de Arrestro no Emitida.
@@ -87,10 +108,6 @@ public class Entrega2Test {
     * CASO POLICIA ATRAPA AL LADRON SIN ORDEN DE ARRESTRO ->
     *
     * */
-
-
-
-
 
      
 }

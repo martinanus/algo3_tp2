@@ -1,5 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.arma.Arma;
+import edu.fiuba.algo3.modelo.rango.Rango;
+
 public class Policia {
     private Ciudad ciudadActual;
     private Mision mision;

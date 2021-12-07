@@ -1,6 +1,10 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.arma;
 
-public class Cuchillo extends Arma{
+import edu.fiuba.algo3.modelo.Reloj;
+import edu.fiuba.algo3.modelo.Tiempo;
+import edu.fiuba.algo3.modelo.arma.Arma;
+
+public class Cuchillo extends Arma {
 
     private int contadorAtaques = 0;
 

@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.Objects;
+
 public class Descripcion {
     String nombre;
     String sexo;
@@ -20,19 +22,19 @@ public class Descripcion {
 
     public boolean comparar(Descripcion descripcion) {
         //return sexo==descripcion.getSexo();
-        if(this.sexo != "" && this.sexo != descripcion.getSexo()) {
+        if(!Objects.equals(this.sexo, "") && !Objects.equals(this.sexo, descripcion.getSexo())) {
             return false;
         }
-        if(this.hobby != "" && this.hobby != descripcion.getHobby()) {
+        if(!Objects.equals(this.hobby, "") && !Objects.equals(this.hobby, descripcion.getHobby())) {
             return false;
         }
-        if(this.cabello != "" && this.cabello != descripcion.getCabello()) {
+        if(!Objects.equals(this.cabello, "") && !Objects.equals(this.cabello, descripcion.getCabello())) {
             return false;
         }
-        if(this.seña != "" && this.seña != descripcion.getSeña()) {
+        if(!Objects.equals(this.seña, "") && !Objects.equals(this.seña, descripcion.getSeña())) {
             return false;
         }
-        if(this.vehiculo != "" && this.vehiculo != descripcion.getVehiculo()) {
+        if(!Objects.equals(this.vehiculo, "") && !Objects.equals(this.vehiculo, descripcion.getVehiculo())) {
             return false;
         }
         return true;

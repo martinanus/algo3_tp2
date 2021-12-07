@@ -1,6 +1,11 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.rango;
 
-public class Novato implements Rango{
+import edu.fiuba.algo3.modelo.Ciudad;
+import edu.fiuba.algo3.modelo.Reloj;
+import edu.fiuba.algo3.modelo.Tiempo;
+import edu.fiuba.algo3.modelo.rango.Rango;
+
+public class Novato implements Rango {
     private double velocidad;
     //private int arrestos;
 

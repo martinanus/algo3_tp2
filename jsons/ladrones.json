@@ -1,0 +1,64 @@
+[
+	{
+		"ladron" : {
+			"Nombre":"Nick Brunch",
+			"Sexo":"Masculino",
+			"Hobby":"Alpinismo",
+			"Cabello":"Negro",
+			"Seña":"Anillo",
+			"Vehiculo":"Moto"
+		}
+	},
+	{
+		"ladron" : {
+			"Nombre": "Len Bulk",
+			"Sexo": "Masculino",
+			"Hobby": "Alpinismo",
+			"Cabello": "Rojo",
+			"Seña": "Tatuaje",
+			"Vehiculo": "Descapotable"
+		}
+	},
+
+	{
+		"ladron" : {
+			"Nombre": "Ihor Ihorovitch",
+			"Sexo": "Masculino",
+			"Hobby": "Croquet",
+			"Cabello": "Rubio",
+			"Seña": "Tatuaje",
+			"Vehiculo": "Limusina"
+		}
+	},
+	{
+		"ladron" : {
+			"Nombre": "Merey Laroc",
+			"Sexo": "Femenino",
+			"Hobby": "Alpinismo",
+			"Cabello": "Castaño",
+			"Seña": "Joyas",
+			"Vehiculo": "Limusina"
+		}
+	},
+	{
+		"ladron" : {
+			"Nombre": "Lady Agatha",
+			"Sexo": "Femenino",
+			"Hobby": "Tenis",
+			"Cabello": "Rojo",
+			"Seña": "Anillo",
+			"Vehiculo": "Descapotable"
+		}
+	},
+	{
+		"ladron": {
+			"Nombre": "Carmen Sandiego",
+			"Sexo": "Femenino",
+			"Hobby": "Tenis",
+			"Cabello": "Castaño",
+			"Seña": "Joyeria",
+			"Vehiculo": "Descapotable"
+		}
+	}
+]
+

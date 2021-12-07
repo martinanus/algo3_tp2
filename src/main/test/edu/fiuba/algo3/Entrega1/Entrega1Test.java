@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.Entrega1;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.arma.Cuchillo;
+import edu.fiuba.algo3.modelo.rango.Novato;
+import edu.fiuba.algo3.modelo.rango.Rango;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
