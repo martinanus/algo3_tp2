@@ -78,7 +78,7 @@ public class Entrega2Test {
     }
     
     @Test
-    public void compararDescripcionesDeSexoYHobby() {
+    public void compararDescripciones() {
         Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
         Ladron sospechoso1 = new Ladron(descripcion1);
         Descripcion descripcion2 = new Descripcion("sospechoso2","masculino","musica","negro","anillo","deportivo");
@@ -87,7 +87,7 @@ public class Entrega2Test {
     }
 
     @Test
-    public void compararLadronesDescripcionesDeSexoYHobby() {
+    public void compararLadronesConDescripcionesDeSexoYHobby() {
         Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
         Descripcion descripcion4 = new Descripcion("","masculino","tenis","","","");
         assertTrue(descripcion4.comparar(descripcion1));
@@ -100,6 +100,15 @@ public class Entrega2Test {
         Descripcion descripcion4 = new Descripcion("","Masculino","","","","");
         Ladron sospechosoBuscado = new Ladron(descripcion4);
         assertEquals(3, computadora.emitirOrdenDeArresto(sospechosoBuscado));
+    }
+
+    @Test
+    public void SeBuscaEnLaComputadoraUnSospechosoConSexoYHobbyConDatosDeLadrones() {
+        Computadora computadora = new Computadora();
+        computadora.cargarDatos();
+        Descripcion descripcion4 = new Descripcion("","Masculino","Croquet","","","");
+        Ladron sospechosoBuscado = new Ladron(descripcion4);
+        assertEquals(1, computadora.emitirOrdenDeArresto(sospechosoBuscado));
     }
 
     /*Detective Tenga como atributo una orden de Arrestro no Emitida.
