@@ -19,4 +19,11 @@ public class Ladron {
         return this.descripcion.comparar(otraDescripcion);
     }
 
+    public void capturarse() {
+
+    }
+
+    public void interactuar(Policia policia) {
+        policia.terminarMision();
+    }
 }

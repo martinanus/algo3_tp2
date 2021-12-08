@@ -110,11 +110,31 @@ public class Entrega2Test {
         Ladron sospechosoBuscado = new Ladron(descripcion4);
         assertEquals(1, computadora.emitirOrdenDeArresto(sospechosoBuscado));
     }
+    @Test
+    public void  IntentarAtraparSospechoSinOrdenDeArrestoEmitida(){
+        Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
+        Ladron ladron = new Ladron(descripcion1);
+        Ciudad montreal = new Ciudad(new Posicion(45.50861111, -73.58777778));
+        Rango rango = new Investigador();
+        Policia policia = new Policia(montreal, rango);
+
+         //Arma, Pista, Ladron ->>>> Interactuable postergarlo este refactor
+        //El Quilombo de setear la orden de arresto emitida la computadora y se le asignaba al jugador no esta.
+        ladron.interactuar(policia);
+
+        assertEquals(0,policia.getCantidadArrestos());
+
+    }
+
 
     /*Detective Tenga como atributo una orden de Arrestro no Emitida.
     * Computadora genera la orden de Arrestro le seteamos al policia  ordenDeArrestro Emitiada. Patron state
     *Detective: Orden de arrestro no Emitida.
     * CASO POLICIA ATRAPA AL LADRON SIN ORDEN DE ARRESTRO ->
+    *COMO TERMINA LA Mision?
+    * jugador.
+    *
+    * Cuando la orden de arresto del jugador "arreste" al ladron.
     *
     * */
 

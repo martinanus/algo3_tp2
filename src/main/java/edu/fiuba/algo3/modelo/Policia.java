@@ -7,6 +7,8 @@ public class Policia {
     private Ciudad ciudadActual;
     private Mision mision;
     private Rango rango;
+    private EstadoOrdenArresto orden;
+    private int contadorArrestos;
 
     public Policia(Ciudad ciudad) {
         ciudadActual = ciudad;
@@ -17,6 +19,7 @@ public class Policia {
         ciudadActual = ciudad;
         mision = new Mision();
         this.rango = rango;
+        orden = new OrdenNoEmitida();
     }
 
     public Pista visitar(Edificio edificio ,Reloj reloj ){
@@ -34,6 +37,17 @@ public class Policia {
 
     public void herir(Arma arma, Reloj reloj) {
         arma.herir(reloj);
+    }
+
+    public void terminarMision() {
+        this.orden.terminarMision(this);
+    }
+
+    public void sumarArresto(int arrestoASumar) {
+        contadorArrestos +=arrestoASumar;
+    }
+    public int  getCantidadArrestos() {
+        return this.contadorArrestos;
     }
 }
 
