@@ -12,24 +12,15 @@ public class Ladron implements Interactuable{
     }
 
     public boolean compararCon(Ladron sospechosoBuscado) {
-        return this.descripcion.comparar(sospechosoBuscado.descripcion());
+        return sospechosoBuscado.comparar(this.descripcion);
     }
 
-    private Descripcion descripcion(){
-        return this.descripcion;
-    }
 
     private boolean comparar(Descripcion otraDescripcion) {
         return this.descripcion.comparar(otraDescripcion);
     }
 
-    public void capturarse() {
 
-    }
-
-    public void asignarLugar(){
-
-    }
 
     @Override
     public void interactuar(Policia policia, Reloj reloj) {

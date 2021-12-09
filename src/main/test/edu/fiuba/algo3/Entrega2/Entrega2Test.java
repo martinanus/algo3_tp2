@@ -99,7 +99,7 @@ public class Entrega2Test {
     public void compararLadronesConDescripcionesDeSexoYHobby() {
         Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
         Descripcion descripcion2 = new Descripcion("","masculino","tenis","","","");
-        assertTrue(descripcion2.comparar(descripcion1));
+        assertTrue(descripcion1.comparar(descripcion2));
     }
 
     @Test
