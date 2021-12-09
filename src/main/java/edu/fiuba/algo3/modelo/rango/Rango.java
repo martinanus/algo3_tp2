@@ -6,4 +6,6 @@ import edu.fiuba.algo3.modelo.Reloj;
 public interface Rango {
 
     void viajar(Ciudad ciudadOrigen, Ciudad ciudadDestino, Reloj reloj);
+
+    Rango verificarCantidadArrestos(int contadorArrestos);
 }

@@ -20,4 +20,11 @@ public class Novato implements Rango {
         double tiempo = (int)(ciudadDestino.tiempoViaje(ciudadOrigen, velocidad));
         reloj.incrementar(new Tiempo(tiempo));
     }
+
+    @Override
+    public Rango verificarCantidadArrestos(int contadorArrestos) {
+        if(contadorArrestos >= 5)
+            return new Detective();
+        return this;
+    }
 }

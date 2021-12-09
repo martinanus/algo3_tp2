@@ -31,4 +31,16 @@ public class Computadora {
         ArrayList<Ladron> ladrones = ladronParser.parser("/jsons/ladrones.json");
         this.sospechosos.addAll(ladrones);
     }
+
+
+    public ArrayList<Ladron> cargarDatoSospechoso(Descripcion descripcion4) {
+        Ladron posibleLadron = new Ladron(descripcion4);
+        ArrayList<Ladron> sospechososEncotrados = new ArrayList<>();
+        for (Ladron sospechoso : sospechosos) {
+            if(posibleLadron.compararCon(sospechoso)){
+                sospechososEncotrados.add(sospechoso);
+            }
+        }
+        return sospechososEncotrados;
+    }
 }

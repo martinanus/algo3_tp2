@@ -7,6 +7,8 @@ import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Entrega2Test {
@@ -123,9 +125,39 @@ public class Entrega2Test {
         ladron.interactuar(policia);
 
         assertEquals(0,policia.getCantidadArrestos());
-
     }
 
+    @Test
+    public void JugadorHaceSeisArrestos(){
+        Computadora computadora = new Computadora();
+        computadora.cargarDatos();
+        Ciudad mexico = new Ciudad(new Posicion(19.42833333, -99.1275));
+        Ciudad lima = new Ciudad(new Posicion(-12.04318,  -77.02824));
+        Rango rango = new Novato();
+        Policia policia = new Policia(mexico, rango);
+        policia.sumarArresto(6);
+
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+        policia.viajar(mexico,reloj);
+
+        //assertEquals(6,policia.getCantidadArrestos());
+        //assertEquals(new Tiempo(3),reloj.mostrar() );
+        //Json aparte esta el objeto acoplado a la rareza (asignamos nosotros) y al lugar de origen (analisisi de Requerimiento)
+        // Comun,Valioso, Muy valioso,
+        CuartelGeneral cuartel = new CuartelGeneral();
+        cuartel.asignarMision(policia);
+        policia.viajar(lima,reloj); //Creamos el ladron apartir de las pistas de los edificios.
+        Descripcion descripcion4 = new Descripcion("","Masculino","Croquet","","","");
+        ArrayList<Ladron> ladronesPosibles = computadora.cargarDatoSospechoso(descripcion4); //devuelve lista de sospechosos
+        cuartel.emitirOrden(ladronesPosibles,policia);
+
+        ladronesPosibles.get(0).interactuar(policia);
+
+        //policia viaja a lima entra a los edificios, obtiene pistas , carga a la computadora, le da la orden de arrrestro y captura al ladron .
+        //
+        assertEquals(1,ladronesPosibles.size());
+        assertEquals(7,policia.getCantidadArrestos());
+    }
 
     /*Detective Tenga como atributo una orden de Arrestro no Emitida.
     * Computadora genera la orden de Arrestro le seteamos al policia  ordenDeArrestro Emitiada. Patron state
@@ -135,6 +167,13 @@ public class Entrega2Test {
     * jugador.
     *
     * Cuando la orden de arresto del jugador "arreste" al ladron.
+    *
+    * IDEAS LOGICA:
+    * JSON que contenga ->
+    * Json.Ladron
+    * acoplarlo con la trayectoria que recorre el ladron. DestinoFinal.
+    * Ciudades con sus edificios.
+    * Objetos Comun, Raro, Muy raro,
     *
     * */
 

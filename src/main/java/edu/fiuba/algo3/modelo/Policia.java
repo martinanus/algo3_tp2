@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.arma.Arma;
+import edu.fiuba.algo3.modelo.rango.Investigador;
 import edu.fiuba.algo3.modelo.rango.Rango;
 
 public class Policia {
@@ -20,6 +21,7 @@ public class Policia {
         mision = new Mision();
         this.rango = rango;
         orden = new OrdenNoEmitida();
+        contadorArrestos = 0;
     }
 
     public Pista visitar(Edificio edificio ,Reloj reloj ){
@@ -45,9 +47,13 @@ public class Policia {
 
     public void sumarArresto(int arrestoASumar) {
         contadorArrestos +=arrestoASumar;
+        this.rango = this.rango.verificarCantidadArrestos(contadorArrestos);
     }
     public int  getCantidadArrestos() {
         return this.contadorArrestos;
+    }
+    public void emitirOrdenArresto(){
+        this.orden = new OrdenEmitida();
     }
 }
 
