@@ -21,7 +21,6 @@ public class Descripcion {
 
 
     public boolean comparar(Descripcion descripcion) {
-        //return sexo==descripcion.getSexo();
         if(!Objects.equals(this.sexo, "") && !Objects.equals(this.sexo, descripcion.getSexo())) {
             return false;
         }

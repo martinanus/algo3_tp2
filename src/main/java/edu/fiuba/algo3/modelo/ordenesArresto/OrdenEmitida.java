@@ -7,7 +7,7 @@ public class OrdenEmitida implements EstadoOrdenArresto {
 
 
     @Override
-    public void terminarMision(Policia policia) {
+    public void arrestar(Policia policia) {
         policia.sumarArresto(1);
 
     }

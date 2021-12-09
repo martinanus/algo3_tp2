@@ -179,10 +179,6 @@ public class Entrega1Test {
         Interactuable interactuable = puerto.visitar(reloj);
         interactuable.interactuar(policia,reloj);
 
-        //ladron.herir(cuchillo,jugador)
-        // si visita a un edificio no sabes si saldra el ladron o la pista.
-        //edificio tiene una demora de visitar,
-
         //El reloj se debería incrementar 2 horas por el cuchillo mas 1 hora por visita
         assertEquals(new Tiempo(3), reloj.mostrar());
 
@@ -193,8 +189,10 @@ public class Entrega1Test {
         Tiempo unTiempo = new Tiempo(120);
         reloj.incrementar(unTiempo);
         Tiempo otroTiempo = new Tiempo(188);
+
         boolean esMayor = reloj.mostrar().esMayor(otroTiempo);
-        assertEquals(false,esMayor);
+
+        assertFalse(esMayor);
     }
 
 

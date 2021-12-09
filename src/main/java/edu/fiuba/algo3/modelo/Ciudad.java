@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class Ciudad {
     private ArrayList<Edificio> edificios;
-    private String nombreCiudad;
     private Posicion posicion;
 
     public Ciudad() {
@@ -19,7 +18,6 @@ public class Ciudad {
     }
 
     public Interactuable visitar(Edificio edificioNombre , Reloj reloj){
-        //"this.edificio.nombre() = edificio"
         Edificio edificio= this.buscarEdificio(edificioNombre);
         return edificio.visitar(reloj);
     }
