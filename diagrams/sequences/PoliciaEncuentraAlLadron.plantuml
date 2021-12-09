@@ -1,13 +1,13 @@
 @startuml
 skinparam style strictuml
-title:  El Policía visita por primera vez un Edificio
+title:  El Policía encuentra al Ladrón
 actor TestCase
 
 participant " policia : Policia" as policia
 participant " : Ciudad" as ciudad
 participant " : Edificio" as banco
 participant "reloj : Reloj" as reloj
-participant " pista : Pista" as pista
+participant " ladron : Ladron" as ladron
 
 TestCase -> policia: visitar("Banco", reloj): Interactuable
 activate policia
@@ -16,9 +16,12 @@ activate ciudad
 ciudad -> banco: visitar(reloj): Interactuable
 activate banco
 banco -> reloj: incrementar(1 hora):
-return pista
-return pista
-return pista
-TestCase -> pista: interactuar(policia, reloj): void
+return ladron
+return ladron
+return ladron
+TestCase -> ladron: interactuar(policia, reloj): void
+activate ladron
+ladron -> policia: terminarMision(): void
+deactivate ladron
 
 @enduml
