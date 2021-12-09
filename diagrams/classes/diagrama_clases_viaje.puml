@@ -1,7 +1,5 @@
 @startuml
 
-
-Rango <|.. Novato
 Jugador o--> "1" Rango
 Jugador ..> Reloj
 Rango ..> Reloj
@@ -11,11 +9,6 @@ Posicion "1" --o Ciudad
 
 interface Rango {
     {abstract} + viajar(c: Ciudad,  r : Reloj) : void
-}
-
-class Novato {
-    - velocidad
-    + viajar(c: Ciudad,  r : Reloj) : void
 }
 
 class Jugador {

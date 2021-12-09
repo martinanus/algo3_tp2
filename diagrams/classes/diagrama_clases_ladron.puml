@@ -1,0 +1,19 @@
+@startuml
+
+class Ladron {
+    + compararCon(ladron : Ladron): boolean
+}
+
+class Computadora {
+    + agregarSospechoso(ladron : Ladron): void
+    + emitirOrdenDeArresto(ladron : Ladron): boolean
+}
+
+class Descripcion {
+    + comparar(d : Descripcion): boolean
+}
+
+Ladron ->"1" Descripcion
+Computadora ..> Ladron
+
+@enduml
