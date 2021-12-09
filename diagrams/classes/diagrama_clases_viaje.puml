@@ -7,13 +7,11 @@ Jugador ..> Reloj
 Rango ..> Reloj
 Rango ..> Ciudad
 Posicion "1" --o Ciudad
-Ciudad .up.> Posicion
 
 
 interface Rango {
     {abstract} + viajar(c: Ciudad,  r : Reloj) : void
 }
-
 
 class Novato {
     - velocidad
@@ -22,11 +20,9 @@ class Novato {
 
 class Jugador {
     - ciudadActual : Ciudad
-    - mision : Mision
-    + visitar(edificio:String, r : Reloj): Pista
+    + visitar(edificio: Edificio, r : Reloj): Pista
     + viajar(destino : Ciudad , r : Reloj): void
     + dormir( r : Reloj) : void
-    + herir(a : Armar, r : Reloj) : void
 }
 
 class Ciudad {
@@ -42,16 +38,12 @@ class Posicion {
     - calcularDistancia(latitud : double, longitud : double): double
 }
 
-
 class Reloj{
     - tiempoTranscurrido: Tiempo
     - tiempoMaximo: Tiempo
-    + mostrar() : Tiempo
     + incrementar(tiempo : Tiempo): void
     - verificarTiempoExcedido() : void
 }
-
-
 
 @enduml
 

@@ -1,21 +1,15 @@
-
 @startuml
 
-
-Arma <|-- Cuchillo
-Jugador ..> Arma
-Arma ..> Reloj
+Jugador ..> Cuchillo
 Jugador ..> Reloj
+Cuchillo ..> Reloj
 
 
 
-abstract class Arma {
-    {abstract} + herir(reloj : Reloj) : void
-}
 
  class Cuchillo{
     - contadorAtaques : int
-     + herir(reloj : Reloj) : void
+     + interactuar(p : Policia, reloj : Reloj) : void
 }
 
 
@@ -24,12 +18,10 @@ abstract class Arma {
 
 class Jugador {
     - ciudadActual : Ciudad
-    - mision : Mision
     - rango : Rango
-    + visitar(edificio:String, r : Reloj): Pista
+    + visitar(edificio: Edificio, r : Reloj): Interactuable
     + viajar(destino : Ciudad , r : Reloj): void
     + dormir( r : Reloj) : void
-    + herir(a : Armar, r : Reloj) : void
 }
 
 
