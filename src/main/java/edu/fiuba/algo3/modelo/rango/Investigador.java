@@ -22,7 +22,7 @@ public class Investigador implements Rango {
 
     @Override
     public Rango verificarCantidadArrestos(int contadorArrestos) {
-        if( contadorArrestos == 20)
+        if( contadorArrestos >= 20)
             return new Sargento();
         return this;
     }

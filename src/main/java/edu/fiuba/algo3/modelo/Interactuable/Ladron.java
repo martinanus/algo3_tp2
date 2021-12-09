@@ -1,6 +1,10 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.Interactuable;
 
-public class Ladron {
+import edu.fiuba.algo3.modelo.Descripcion;
+import edu.fiuba.algo3.modelo.Policia;
+import edu.fiuba.algo3.modelo.Reloj;
+
+public class Ladron implements Interactuable{
     private Descripcion descripcion;
 
     public Ladron(Descripcion descripcion) {
@@ -23,7 +27,12 @@ public class Ladron {
 
     }
 
-    public void interactuar(Policia policia) {
+    public void asignarLugar(){
+
+    }
+
+    @Override
+    public void interactuar(Policia policia, Reloj reloj) {
         policia.terminarMision();
     }
 }

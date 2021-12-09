@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
+
 import java.util.ArrayList;
 
 public class Ciudad {
@@ -16,7 +18,7 @@ public class Ciudad {
         this.edificios = new ArrayList<>();
     }
 
-    public Pista visitar(Edificio edificioNombre ,Reloj reloj){
+    public Interactuable visitar(Edificio edificioNombre , Reloj reloj){
         //"this.edificio.nombre() = edificio"
         Edificio edificio= this.buscarEdificio(edificioNombre);
         return edificio.visitar(reloj);

@@ -1,7 +1,9 @@
 package edu.fiuba.algo3.Entrega1;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.arma.Cuchillo;
+import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.Interactuable.Cuchillo;
+import edu.fiuba.algo3.modelo.Interactuable.Pista;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
 import org.junit.jupiter.api.Test;
@@ -38,7 +40,7 @@ public class Entrega1Test {
         // en el metodo arrestar():
         // estadoOrdenArresto.arrestar();
         */
-        Pista pista = policia.visitar(banco,reloj);
+        Pista pista = (Pista) policia.visitar(banco,reloj);
         assertEquals("pista banco",pista.mostrar());
         assertEquals(new Tiempo(1), reloj.mostrar());
     }
@@ -65,10 +67,9 @@ public class Entrega1Test {
         //Jugador visita por primera vez un banco
         policia.visitar(banco, reloj );
 
-
+        policia.visitar(banco, reloj );
+        policia.visitar(biblioteca, reloj );
         //Jugador visita por segunda vez un banco
-        assertEquals("pista banco", policia.visitar(banco,reloj).mostrar());
-        assertEquals("pista biblioteca", policia.visitar(biblioteca,reloj).mostrar());
         assertEquals(new Tiempo(4), reloj.mostrar());
     }
 
@@ -171,18 +172,19 @@ public class Entrega1Test {
         Policia policia = new Policia(mexico, rango);
 
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
-
-
         Cuchillo cuchillo = new Cuchillo();
-        policia.herir(cuchillo, reloj);
+        Edificio puerto = new Edificio(cuchillo);
+
+
+        Interactuable interactuable = puerto.visitar(reloj);
+        interactuable.interactuar(policia,reloj);
+
         //ladron.herir(cuchillo,jugador)
         // si visita a un edificio no sabes si saldra el ladron o la pista.
         //edificio tiene una demora de visitar,
 
-        //El reloj se debería incrementar 2 horas por primer ataque cuchillo
-
-
-        assertEquals(new Tiempo(2), reloj.mostrar());
+        //El reloj se debería incrementar 2 horas por el cuchillo mas 1 hora por visita
+        assertEquals(new Tiempo(3), reloj.mostrar());
 
     }
     @Test

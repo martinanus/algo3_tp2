@@ -1,7 +1,10 @@
 package edu.fiuba.algo3.Entrega2;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.arma.Cuchillo;
+import edu.fiuba.algo3.modelo.Interactuable.Cuchillo;
+import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.Interactuable.Ladron;
+import edu.fiuba.algo3.modelo.Interactuable.Pista;
 import edu.fiuba.algo3.modelo.rango.Investigador;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
@@ -20,13 +23,17 @@ public class Entrega2Test {
         Rango rango = new Novato();
         Policia policia = new Policia(mexico, rango);
 
-        Reloj reloj = new Reloj(new Tiempo(168.0));
-
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
         Cuchillo cuchillo = new Cuchillo();
-        policia.herir(cuchillo, reloj);
+        Edificio puerto = new Edificio(cuchillo);
+
+
+        Interactuable interactuable = puerto.visitar(reloj);
+        interactuable.interactuar(policia,reloj);
+
         policia.duerme(reloj);
 
-        assertEquals(new Tiempo(10), reloj.mostrar());
+        assertEquals(new Tiempo(11), reloj.mostrar());
 
     }
 
@@ -76,7 +83,7 @@ public class Entrega2Test {
         computadora.agregarSopechoso(sospechoso2);
         computadora.agregarSopechoso(sospechoso3);
 
-        assertEquals(1, computadora.emitirOrdenDeArresto(sospechosoBuscado));
+        assertEquals(true, computadora.emitirOrdenDeArresto(sospechosoBuscado));
     }
     
     @Test
@@ -101,7 +108,7 @@ public class Entrega2Test {
         computadora.cargarDatos();
         Descripcion descripcion4 = new Descripcion("","Masculino","","","","");
         Ladron sospechosoBuscado = new Ladron(descripcion4);
-        assertEquals(3, computadora.emitirOrdenDeArresto(sospechosoBuscado));
+        assertEquals(false, computadora.emitirOrdenDeArresto(sospechosoBuscado));
     }
 
     @Test
@@ -110,7 +117,7 @@ public class Entrega2Test {
         computadora.cargarDatos();
         Descripcion descripcion4 = new Descripcion("","Masculino","Croquet","","","");
         Ladron sospechosoBuscado = new Ladron(descripcion4);
-        assertEquals(1, computadora.emitirOrdenDeArresto(sospechosoBuscado));
+        assertEquals(true, computadora.emitirOrdenDeArresto(sospechosoBuscado));
     }
     @Test
     public void  IntentarAtraparSospechoSinOrdenDeArrestoEmitida(){
@@ -122,41 +129,72 @@ public class Entrega2Test {
 
          //Arma, Pista, Ladron ->>>> Interactuable postergarlo este refactor
         //El Quilombo de setear la orden de arresto emitida la computadora y se le asignaba al jugador no esta.
-        ladron.interactuar(policia);
+
+        Edificio puerto = new Edificio(ladron);
+        //montreal.agregarEdificio(puerto);
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+
+        Interactuable interactuable = puerto.visitar(reloj);
+        interactuable.interactuar(policia,reloj);
+
 
         assertEquals(0,policia.getCantidadArrestos());
     }
 
     @Test
-    public void JugadorHaceSeisArrestos(){
+    public void SeEntraAlEdificioCuandoElLadronSeEncuentraAhi(){
+        Ciudad mexico = new Ciudad(new Posicion(19.42833333, -99.1275));
+        Rango rango = new Novato();
+        Policia policia = new Policia(mexico, rango);
+        policia.sumarArresto(6);
+        //Edificio banco = new Edificio(pistaBanco);
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+
+        //Interactuable entidad = policia.visitar(banco,reloj);
+
+        policia.viajar(mexico,reloj);
+        //En el mensaje interactuar  ladron termina mision, pista se muestra, herida aumenta reloj.
+        //Cuando nos devuelve el (interactuable) en el caso del ladron
+        // en el metodo interactuar termina el reloj , y que levanta excpecion, sospechoso encontrardo=true,
+        //Reinciia el reloj, y que le diga al cuarten que la mision esta terminada, (se encontro al reloj).
+        //Si es verdadero , vemos que pasa con la orden de arresto, delegamos
+
+    }
+
+
+    @Test
+    public void JugadorRealiza6ArrestosSeLeAsiganUnCasoYCapturAlLadron(){
         Computadora computadora = new Computadora();
         computadora.cargarDatos();
         Ciudad mexico = new Ciudad(new Posicion(19.42833333, -99.1275));
         Ciudad lima = new Ciudad(new Posicion(-12.04318,  -77.02824));
         Rango rango = new Novato();
-        Policia policia = new Policia(mexico, rango);
-        policia.sumarArresto(6);
+        Policia policia = new Policia(lima, rango);
 
+        policia.sumarArresto(6);
+        Descripcion descripcion1 = new Descripcion("","Masculino","Croquet","","","");
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+        Ladron ladron = new Ladron(descripcion1);
+        //computadora.agregarSopechoso(ladron);
+        Pista pista = new Pista("Una pista ");
+        //Objeto robado,Rareza , descripcion sospechoso, trayectoria Ladron,
+
+        Edificio puerto = new Edificio(ladron);
+        Edificio biblioteca = new Edificio(pista);
+
+        mexico.agregarEdificio(puerto);
+        lima.agregarEdificio(biblioteca);
+        policia.visitar(biblioteca,reloj);
+
         policia.viajar(mexico,reloj);
 
-        //assertEquals(6,policia.getCantidadArrestos());
-        //assertEquals(new Tiempo(3),reloj.mostrar() );
-        //Json aparte esta el objeto acoplado a la rareza (asignamos nosotros) y al lugar de origen (analisisi de Requerimiento)
-        // Comun,Valioso, Muy valioso,
-        CuartelGeneral cuartel = new CuartelGeneral();
-        cuartel.asignarMision(policia);
-        policia.viajar(lima,reloj); //Creamos el ladron apartir de las pistas de los edificios.
-        Descripcion descripcion4 = new Descripcion("","Masculino","Croquet","","","");
-        ArrayList<Ladron> ladronesPosibles = computadora.cargarDatoSospechoso(descripcion4); //devuelve lista de sospechosos
-        cuartel.emitirOrden(ladronesPosibles,policia);
+        policia.emitirOrdenArresto(computadora,ladron);
 
-        ladronesPosibles.get(0).interactuar(policia);
+        Interactuable interactuable = policia.visitar(puerto,reloj);
+        interactuable.interactuar(policia,reloj);
 
-        //policia viaja a lima entra a los edificios, obtiene pistas , carga a la computadora, le da la orden de arrrestro y captura al ladron .
-        //
-        assertEquals(1,ladronesPosibles.size());
         assertEquals(7,policia.getCantidadArrestos());
+
     }
 
     /*Detective Tenga como atributo una orden de Arrestro no Emitida.
@@ -175,6 +213,7 @@ public class Entrega2Test {
     * Ciudades con sus edificios.
     * Objetos Comun, Raro, Muy raro,
     *
+
     * */
 
      

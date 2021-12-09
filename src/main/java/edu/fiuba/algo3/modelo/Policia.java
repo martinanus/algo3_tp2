@@ -1,7 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.arma.Arma;
-import edu.fiuba.algo3.modelo.rango.Investigador;
+import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.Interactuable.Ladron;
+import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
+import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
+import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
 import edu.fiuba.algo3.modelo.rango.Rango;
 
 public class Policia {
@@ -24,7 +27,7 @@ public class Policia {
         contadorArrestos = 0;
     }
 
-    public Pista visitar(Edificio edificio ,Reloj reloj ){
+    public Interactuable visitar(Edificio edificio , Reloj reloj ){
         return ciudadActual.visitar(edificio,reloj);
     }
 
@@ -37,9 +40,6 @@ public class Policia {
         reloj.incrementar(new Tiempo(8)); //duerme 8hs
     }
 
-    public void herir(Arma arma, Reloj reloj) {
-        arma.herir(reloj);
-    }
 
     public void terminarMision() {
         this.orden.terminarMision(this);
@@ -52,9 +52,14 @@ public class Policia {
     public int  getCantidadArrestos() {
         return this.contadorArrestos;
     }
-    public void emitirOrdenArresto(){
-        this.orden = new OrdenEmitida();
+
+
+    public void emitirOrdenArresto(Computadora computadora, Ladron ladron){
+        if(computadora.emitirOrdenDeArresto(ladron)){
+            orden = new OrdenEmitida();
+        }
     }
+
 }
 
 

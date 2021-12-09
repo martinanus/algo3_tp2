@@ -1,16 +1,18 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
+
 public class Edificio {
-    private Pista pista;
+    private Interactuable interactuable;
     private String nombre;
     private int contadorDeVisitas;
 
-    public Edificio(Pista pistaEdificio) {
-        pista = pistaEdificio;
+    public Edificio(Interactuable unInteractuable) {
+        interactuable = unInteractuable ;
         contadorDeVisitas = 0;
     }
 
-    public Pista visitar(Reloj reloj){
+    public Interactuable visitar(Reloj reloj){
         contadorDeVisitas = contadorDeVisitas + 1;
         if (contadorDeVisitas <= 3) {
             reloj.incrementar(new Tiempo(contadorDeVisitas));
@@ -18,6 +20,6 @@ public class Edificio {
         else {
             reloj.incrementar(new Tiempo(3));
         }
-        return pista;
+        return interactuable;
     }
 }

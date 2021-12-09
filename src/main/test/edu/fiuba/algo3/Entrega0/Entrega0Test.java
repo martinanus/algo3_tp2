@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.Entrega0;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.Interactuable.Pista;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,7 +21,7 @@ public class Entrega0Test {
         Tiempo tiempoMaximo = new Tiempo(168.0); //hs en 1 semana
         Reloj reloj = new Reloj(tiempoMaximo);
 
-        Pista pista = policia.visitar(edificio, reloj );
+        Pista pista = (Pista) policia.visitar(edificio, reloj );
 
         assertEquals(contenido,pista.mostrar());
 

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.Interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.LadronParser;
 
 import java.util.ArrayList;
@@ -16,14 +17,14 @@ public class Computadora {
         this.sospechosos.add(sospechoso);
     }
 
-    public int emitirOrdenDeArresto(Ladron sospechosoBuscado) {
+    public boolean emitirOrdenDeArresto(Ladron sospechosoBuscado) {
         ArrayList<Ladron> sospechososEncotrados = new ArrayList<>();
         for (Ladron sospechoso : sospechosos) {
             if(sospechosoBuscado.compararCon(sospechoso)){
                 sospechososEncotrados.add(sospechoso);
             }
         }
-        return sospechososEncotrados.size();
+        return (sospechososEncotrados.size()==1) ;
     }
 
     public void cargarDatos() {
@@ -32,15 +33,4 @@ public class Computadora {
         this.sospechosos.addAll(ladrones);
     }
 
-
-    public ArrayList<Ladron> cargarDatoSospechoso(Descripcion descripcion4) {
-        Ladron posibleLadron = new Ladron(descripcion4);
-        ArrayList<Ladron> sospechososEncotrados = new ArrayList<>();
-        for (Ladron sospechoso : sospechosos) {
-            if(posibleLadron.compararCon(sospechoso)){
-                sospechososEncotrados.add(sospechoso);
-            }
-        }
-        return sospechososEncotrados;
-    }
 }

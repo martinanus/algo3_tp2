@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.lector;
 
 import edu.fiuba.algo3.modelo.Descripcion;
-import edu.fiuba.algo3.modelo.Ladron;
+import edu.fiuba.algo3.modelo.Interactuable.Ladron;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
