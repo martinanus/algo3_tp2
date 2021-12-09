@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.Interactuable.Cuchillo;
 import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.Interactuable.Ladron;
 import edu.fiuba.algo3.modelo.Interactuable.Pista;
+import edu.fiuba.algo3.modelo.lector.LadronParser;
 import edu.fiuba.algo3.modelo.rango.Investigador;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
@@ -153,9 +154,8 @@ public class Entrega2Test {
         Descripcion descripcion1 = new Descripcion("","Masculino","Croquet","","","");
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
         Ladron ladron = new Ladron(descripcion1);
-        //computadora.agregarSopechoso(ladron);
+
         Pista pista = new Pista("Una pista ");
-        //Objeto robado,Rareza , descripcion sospechoso, trayectoria Ladron,
 
         Edificio puerto = new Edificio(ladron);
         Edificio biblioteca = new Edificio(pista);
@@ -175,24 +175,19 @@ public class Entrega2Test {
 
     }
 
-    /*Detective Tenga como atributo una orden de Arrestro no Emitida.
-    * Computadora genera la orden de Arrestro le seteamos al policia  ordenDeArrestro Emitiada. Patron state
-    *Detective: Orden de arrestro no Emitida.
-    * CASO POLICIA ATRAPA AL LADRON SIN ORDEN DE ARRESTRO ->
-    *COMO TERMINA LA Mision?
-    * jugador.
-    *
-    * Cuando la orden de arresto del jugador "arreste" al ladron.
-    *
-    * IDEAS LOGICA:
-    * JSON que contenga ->
-    * Json.Ladron
-    * acoplarlo con la trayectoria que recorre el ladron. DestinoFinal.
-    * Ciudades con sus edificios.
-    * Objetos Comun, Raro, Muy raro,
-    *
+    @Test
+    public void SeCarganDatosDeLadronCorrectamente() {
+        LadronParser ladronParser = new LadronParser();
+        ArrayList<Ladron> ladrones = ladronParser.parser("/jsons/ladrones.json");
+        assertEquals(6, ladrones.size());
+    }
 
-    * */
+    @Test
+    public void SeCargarDatosDeLadronConRutaInadecuada() {
+        LadronParser ladronParser = new LadronParser();
+        ArrayList<Ladron> ladrones = ladronParser.parser("/jsons/ladron.json");
+        assertEquals(0, ladrones.size());
+    }
 
      
 }
