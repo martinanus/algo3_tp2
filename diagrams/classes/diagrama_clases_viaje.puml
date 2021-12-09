@@ -1,9 +1,10 @@
 @startuml
 
-Jugador o--> "1" Rango
-Jugador ..> Reloj
-Rango ..> Reloj
-Rango ..> Ciudad
+Policia -up> Ciudad
+Policia o-> "1" Rango
+Policia ..> Reloj
+Rango .> Reloj
+Rango .> Ciudad
 Posicion "1" --o Ciudad
 
 
@@ -11,8 +12,7 @@ interface Rango {
     {abstract} + viajar(c: Ciudad,  r : Reloj) : void
 }
 
-class Jugador {
-    - ciudadActual : Ciudad
+class Policia {
     + visitar(edificio: Edificio, r : Reloj): Pista
     + viajar(destino : Ciudad , r : Reloj): void
     + dormir( r : Reloj) : void

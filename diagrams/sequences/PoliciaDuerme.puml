@@ -1,10 +1,10 @@
 @startuml
 skinparam style strictuml
-title:  El Jugador duerme
+title:  El Policía duerme
 
 actor TestCase
 
-participant " : Jugador" as jugador
+participant " : Policia" as jugador
 participant "reloj : Reloj" as reloj
 participant "tiempoTranscurrido : Tiempo" as tiempo
 

@@ -1,7 +1,7 @@
 @startuml
 
-Jugador ..> Cuchillo
-Jugador ..> Reloj
+Policia ..> Cuchillo
+Policia ..> Reloj
 Cuchillo ..> Reloj
 
 
@@ -16,7 +16,7 @@ Cuchillo ..> Reloj
 
 
 
-class Jugador {
+class Policia {
     - ciudadActual : Ciudad
     - rango : Rango
     + visitar(edificio: Edificio, r : Reloj): Interactuable
