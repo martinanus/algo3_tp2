@@ -140,28 +140,6 @@ public class Entrega2Test {
 
         assertEquals(0,policia.getCantidadArrestos());
     }
-
-    @Test
-    public void SeEntraAlEdificioCuandoElLadronSeEncuentraAhi(){
-        Ciudad mexico = new Ciudad(new Posicion(19.42833333, -99.1275));
-        Rango rango = new Novato();
-        Policia policia = new Policia(mexico, rango);
-        policia.sumarArresto(6);
-        //Edificio banco = new Edificio(pistaBanco);
-        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
-
-        //Interactuable entidad = policia.visitar(banco,reloj);
-
-        policia.viajar(mexico,reloj);
-        //En el mensaje interactuar  ladron termina mision, pista se muestra, herida aumenta reloj.
-        //Cuando nos devuelve el (interactuable) en el caso del ladron
-        // en el metodo interactuar termina el reloj , y que levanta excpecion, sospechoso encontrardo=true,
-        //Reinciia el reloj, y que le diga al cuarten que la mision esta terminada, (se encontro al reloj).
-        //Si es verdadero , vemos que pasa con la orden de arresto, delegamos
-
-    }
-
-
     @Test
     public void JugadorRealiza6ArrestosSeLeAsiganUnCasoYCapturAlLadron(){
         Computadora computadora = new Computadora();
