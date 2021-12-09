@@ -183,7 +183,7 @@ public class Entrega2Test {
     }
 
     @Test
-    public void SeCargarDatosDeLadronConRutaInadecuada() {
+    public void SeQuierenCarganDatosDeLadronConRutaInadecuada() {
         LadronParser ladronParser = new LadronParser();
         ArrayList<Ladron> ladrones = ladronParser.parser("/jsons/ladron.json");
         assertEquals(0, ladrones.size());
