@@ -4,7 +4,6 @@ import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
 
 public class Edificio {
     private Interactuable interactuable;
-    private String nombre;
     private int contadorDeVisitas;
 
     public Edificio(Interactuable unInteractuable) {

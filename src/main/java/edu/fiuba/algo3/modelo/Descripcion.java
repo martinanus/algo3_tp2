@@ -21,20 +21,19 @@ public class Descripcion {
 
 
     public boolean comparar(Descripcion descripcion) {
-        //return sexo==descripcion.getSexo();
-        if(!Objects.equals(this.sexo, "") && !Objects.equals(this.sexo, descripcion.getSexo())) {
+        if(!Objects.equals(descripcion.getSexo(), "") && !Objects.equals(this.sexo, descripcion.getSexo())) {
             return false;
         }
-        if(!Objects.equals(this.hobby, "") && !Objects.equals(this.hobby, descripcion.getHobby())) {
+        if(!Objects.equals(descripcion.getHobby(), "") && !Objects.equals(this.hobby, descripcion.getHobby())) {
             return false;
         }
-        if(!Objects.equals(this.cabello, "") && !Objects.equals(this.cabello, descripcion.getCabello())) {
+        if(!Objects.equals(descripcion.getCabello(), "") && !Objects.equals(this.cabello, descripcion.getCabello())) {
             return false;
         }
-        if(!Objects.equals(this.seña, "") && !Objects.equals(this.seña, descripcion.getSeña())) {
+        if(!Objects.equals(descripcion.getSeña(), "") && !Objects.equals(this.seña, descripcion.getSeña())) {
             return false;
         }
-        if(!Objects.equals(this.vehiculo, "") && !Objects.equals(this.vehiculo, descripcion.getVehiculo())) {
+        if(!Objects.equals(descripcion.getVehiculo(), "") && !Objects.equals(this.vehiculo, descripcion.getVehiculo())) {
             return false;
         }
         return true;

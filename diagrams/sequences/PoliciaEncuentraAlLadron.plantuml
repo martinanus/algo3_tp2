@@ -5,13 +5,13 @@ actor TestCase
 
 participant " policia : Policia" as policia
 participant " : Ciudad" as ciudad
-participant " : Edificio" as banco
+participant " banco : Edificio" as banco
 participant "reloj : Reloj" as reloj
 participant " ladron : Ladron" as ladron
 
-TestCase -> policia: visitar("Banco", reloj): Interactuable
+TestCase -> policia: visitar(banco, reloj): Interactuable
 activate policia
-policia -> ciudad: visitar("Banco", reloj): Interactuable
+policia -> ciudad: visitar(banco , reloj): Interactuable
 activate ciudad
 ciudad -> banco: visitar(reloj): Interactuable
 activate banco

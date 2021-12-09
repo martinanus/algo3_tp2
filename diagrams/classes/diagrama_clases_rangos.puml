@@ -1,0 +1,37 @@
+@startuml
+
+interface Rango {
+    {abstract} + viajar(c: Ciudad,  r : Reloj) : void
+    + {abstract} verificarCantidadArrestos(arrestos : int): Rango
+}
+
+class Novato {
+    - velocidad
+    + viajar(c: Ciudad,  r : Reloj) : void
+    + verificarCantidadArrestos(arrestos : int): Rango
+}
+
+class Detective {
+    - velocidad
+    + viajar(c: Ciudad,  r : Reloj) : void
+    + verificarCantidadArrestos(arrestos : int): Rango
+}
+
+class Investigador {
+    - velocidad
+    + viajar(c: Ciudad,  r : Reloj) : void
+    + verificarCantidadArrestos(arrestos : int): Rango
+}
+
+class Sargento{
+    - velocidad
+    + viajar(c: Ciudad,  r : Reloj) : void
+    + verificarCantidadArrestos(arrestos : int): Rango
+}
+
+Novato ..up|> Rango
+Detective ..up|> Rango
+Investigador ..up|> Rango
+Sargento ..up|> Rango
+
+@enduml

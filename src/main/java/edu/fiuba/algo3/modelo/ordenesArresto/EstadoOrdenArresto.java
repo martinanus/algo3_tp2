@@ -4,5 +4,5 @@ import edu.fiuba.algo3.modelo.Policia;
 
 public interface EstadoOrdenArresto {
 
-    public void terminarMision(Policia policia);
+    public void arrestar(Policia policia);
 }
