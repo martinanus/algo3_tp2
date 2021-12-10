@@ -25,7 +25,9 @@ public class Policia {
     }
 
     public Interactuable visitar(Edificio edificio , Reloj reloj ){
-        return ciudadActual.visitar(edificio,reloj);
+        Interactuable interac =ciudadActual.visitar(edificio,reloj);
+        interac.interactuar(this,reloj);
+        return  interac;
     }
 
     public void viajar(Ciudad ciudadDestino, Reloj reloj) {
@@ -40,11 +42,15 @@ public class Policia {
 
     public void terminarMision() {
         this.orden.arrestar(this);
+        //mision.terminarMision(); //incrementa reloj al tiempo max,
+    }
+    public void terminarMisionDefinitivo(){
+        //mision.terminarMision();
     }
 
     public void sumarArresto(int arrestoASumar) {
         contadorArrestos +=arrestoASumar;
-        this.rango = this.rango.verificarCantidadArrestos(contadorArrestos);
+        this.rango = this.rango.arrestar(contadorArrestos);
     }
     public int  getCantidadArrestos() {
         return this.contadorArrestos;
@@ -53,7 +59,7 @@ public class Policia {
 
     public void emitirOrdenArresto(Computadora computadora, Ladron ladron){
         if(computadora.emitirOrdenDeArresto(ladron)){
-            orden = new OrdenEmitida();
+            orden = new OrdenEmitida();   //meotod privad con true false ok , metodo publico esta mal.Leer patron rival.
         }
     }
 

@@ -20,7 +20,7 @@ public class Sargento implements Rango {
 
 
     @Override
-    public Rango verificarCantidadArrestos(int contadorArrestos) {
+    public Rango arrestar(int contadorArrestos) {
         if( contadorArrestos >= 20)
             return new Sargento();
         return this;

@@ -18,7 +18,7 @@ public class Detective implements Rango {
     }
 
     @Override
-    public Rango verificarCantidadArrestos(int contadorArrestos) {
+    public Rango arrestar(int contadorArrestos) {
         if( contadorArrestos >= 10)
             return new Investigador();
         return this;

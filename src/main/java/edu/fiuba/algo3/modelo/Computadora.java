@@ -24,7 +24,7 @@ public class Computadora {
                 sospechososEncotrados.add(sospechoso);
             }
         }
-        return (sospechososEncotrados.size()==1) ;
+        return (sospechososEncotrados.size()==1) ; //Esto debe devolver la orden de arresto no un boolean.(no pasa nada que haya otro if.)
     }
 
     public void cargarDatos() {

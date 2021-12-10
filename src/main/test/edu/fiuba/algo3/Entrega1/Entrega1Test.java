@@ -42,7 +42,7 @@ public class Entrega1Test {
         */
         Pista pista = (Pista) policia.visitar(banco,reloj);
         assertEquals("pista banco",pista.mostrar());
-        assertEquals(new Tiempo(1), reloj.mostrar());
+        assertEquals(new Tiempo(1), reloj.tiempoTranscurrido());
     }
 
 
@@ -70,7 +70,7 @@ public class Entrega1Test {
         policia.visitar(banco, reloj );
         policia.visitar(biblioteca, reloj );
         //Jugador visita por segunda vez un banco
-        assertEquals(new Tiempo(4), reloj.mostrar());
+        assertEquals(new Tiempo(4), reloj.tiempoTranscurrido());
     }
 
     @Test
@@ -103,7 +103,7 @@ public class Entrega1Test {
         policia.viajar(mexico, reloj );
 
 
-        assertEquals(new Tiempo(4), reloj.mostrar());
+        assertEquals(new Tiempo(4), reloj.tiempoTranscurrido());
     }
 
     @Test
@@ -141,7 +141,7 @@ public class Entrega1Test {
             policia.visitar(puerto, reloj ); // 1 + 2 +3*53 = 162
         }
 
-        assertEquals(new Tiempo(172), reloj.mostrar());
+        assertEquals(new Tiempo(172 /* 162+6 + viaje*/ ), reloj.tiempoTranscurrido());
 
     }
 
@@ -159,7 +159,7 @@ public class Entrega1Test {
         policia.duerme(reloj);
 
 
-        assertEquals(new Tiempo(8), reloj.mostrar());
+        assertEquals(new Tiempo(8), reloj.tiempoTranscurrido());
 
     }
 
@@ -180,17 +180,17 @@ public class Entrega1Test {
         interactuable.interactuar(policia,reloj);
 
         //El reloj se debería incrementar 2 horas por el cuchillo mas 1 hora por visita
-        assertEquals(new Tiempo(3), reloj.mostrar());
+        assertEquals(new Tiempo(3), reloj.tiempoTranscurrido());
 
     }
-    @Test
+    @Test //En RelojTest prueba de acepta falla, haces el ciclo de unit test, prueba u
     public void ElTiempoTranscurridoDelRelojDeberiaSerMenorQueUnTiempoMasGrande(){
         Reloj reloj = new Reloj(new Tiempo(168.0));
         Tiempo unTiempo = new Tiempo(120);
         reloj.incrementar(unTiempo);
         Tiempo otroTiempo = new Tiempo(188);
 
-        boolean esMayor = reloj.mostrar().esMayor(otroTiempo);
+        boolean esMayor = reloj.tiempoTranscurrido().esMayor(otroTiempo);
 
         assertFalse(esMayor);
     }

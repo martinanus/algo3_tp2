@@ -18,11 +18,12 @@ public class Reloj {
 
     private void verificarTiempoExcedido() {
         if(tiempoTranscurrido.esMayor(tiempoMaximo)){
-            //throw new Exception("TERMINO EL JUEGO; TIEMPO MAXIMO EXCEDIDO");
+            //Lanzamos la excepcion directamente,
+            //throw new Exception("TERMINO EL JUEGO; TIEMPO MAXIMO EXCEDIDO"); RELOJ NO TIENE QUE SABER JUEGO
         }
     }
 
-    public Tiempo mostrar() {
+    public Tiempo tiempoTranscurrido() {
         return tiempoTranscurrido;
     }
 

@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.Interactuable.Ladron;
 import edu.fiuba.algo3.modelo.Interactuable.Pista;
 import edu.fiuba.algo3.modelo.lector.LadronParser;
+import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
 import edu.fiuba.algo3.modelo.rango.Investigador;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
@@ -24,17 +25,14 @@ public class Entrega2Test {
         Rango rango = new Novato();
         Policia policia = new Policia(mexico, rango);
 
-        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana no esta claro el timpo max
         Cuchillo cuchillo = new Cuchillo();
         Edificio puerto = new Edificio(cuchillo);
-
-
-        Interactuable interactuable = puerto.visitar(reloj);
-        interactuable.interactuar(policia,reloj);
-
+        mexico.agregarEdificio(puerto);
+        Interactuable interactuable = policia.visitar(puerto,reloj);
         policia.duerme(reloj);
 
-        assertEquals(new Tiempo(11), reloj.mostrar());
+        assertEquals(new Tiempo(11), reloj.tiempoTranscurrido());
 
     }
 
@@ -66,7 +64,7 @@ public class Entrega2Test {
 
         policia.viajar(mexico, reloj );
 
-        assertEquals(new Tiempo(2), reloj.mostrar());
+        assertEquals(new Tiempo(2), reloj.tiempoTranscurrido());
     }
 
     @Test
@@ -130,16 +128,16 @@ public class Entrega2Test {
 
          //Arma, Pista, Ladron ->>>> Interactuable postergarlo este refactor
         //El Quilombo de setear la orden de arresto emitida la computadora y se le asignaba al jugador no esta.
-
+        //ARREGLAR DIAGRAMAS DE SEC,
         Edificio puerto = new Edificio(ladron);
         //montreal.agregarEdificio(puerto);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
-        Interactuable interactuable = puerto.visitar(reloj);
-        interactuable.interactuar(policia,reloj);
 
-
-        assertEquals(0,policia.getCantidadArrestos());
+        assertThrows(OrdenNoEmitidadError.class, ()-> {
+            Interactuable interactuable = puerto.visitar(reloj);
+            interactuable.interactuar(policia,reloj);   //
+        } );
     }
     @Test
     public void JugadorRealiza6ArrestosSeLeAsiganUnCasoYCapturAlLadron(){
@@ -150,12 +148,12 @@ public class Entrega2Test {
         Rango rango = new Novato();
         Policia policia = new Policia(lima, rango);
 
-        policia.sumarArresto(6);
+        policia.sumarArresto(6);  //rango deberia conocer la # de arrestos
         Descripcion descripcion1 = new Descripcion("","Masculino","Croquet","","","");
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
         Ladron ladron = new Ladron(descripcion1);
 
-        Pista pista = new Pista("Una pista ");
+        Pista pista = new Pista("Una pista "); //
 
         Edificio puerto = new Edificio(ladron);
         Edificio biblioteca = new Edificio(pista);
@@ -169,9 +167,14 @@ public class Entrega2Test {
         policia.emitirOrdenArresto(computadora,ladron);
 
         Interactuable interactuable = policia.visitar(puerto,reloj);
-        interactuable.interactuar(policia,reloj);
 
-        assertEquals(7,policia.getCantidadArrestos());
+        assertEquals(7,policia.getCantidadArrestos()); //fijarnos el rango del policia,
+        //Cuando el chavon hace el 7timo arresto, deberiamos fijarnos el rango sea Detective,Sargento,etc
+        //medimos el rango,  cambie rango.
+        //Clase Juego -> pasarSiguienteMision(); Intercae agarra la exocpcion y se propaga para arriba,
+        // y en algun lugar van aestar las clas qeu reaccionan a eso.
+        //AUMENTA ACOPLAMIENTO, no viene al tema, mas adelante, puede ser que aparezca no ahora.
+        //
 
     }
 
