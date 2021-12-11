@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
-import edu.fiuba.algo3.modelo.Interactuable.Ladron;
+import edu.fiuba.algo3.modelo.interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
-import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
 import edu.fiuba.algo3.modelo.rango.Rango;
 
@@ -11,7 +10,7 @@ public class Policia {
     private Ciudad ciudadActual;
     private Rango rango;
     private EstadoOrdenArresto orden;
-    private int contadorArrestos;
+
 
     public Policia(Ciudad ciudad) {
         ciudadActual = ciudad;
@@ -21,7 +20,6 @@ public class Policia {
         ciudadActual = ciudad;
         this.rango = rango;
         orden = new OrdenNoEmitida();
-        contadorArrestos = 0;
     }
 
     public Interactuable visitar(Edificio edificio , Reloj reloj ){
@@ -44,25 +42,19 @@ public class Policia {
         this.orden.arrestar(this);
         //mision.terminarMision(); //incrementa reloj al tiempo max,
     }
-    public void terminarMisionDefinitivo(){
-        //mision.terminarMision();
-    }
 
     public void sumarArresto(int arrestoASumar) {
-        contadorArrestos +=arrestoASumar;
-        this.rango = this.rango.arrestar(contadorArrestos);
-    }
-    public int  getCantidadArrestos() {
-        return this.contadorArrestos;
+        this.rango = this.rango.sumarArrestos(arrestoASumar);
     }
 
 
     public void emitirOrdenArresto(Computadora computadora, Ladron ladron){
-        if(computadora.emitirOrdenDeArresto(ladron)){
-            orden = new OrdenEmitida();   //meotod privad con true false ok , metodo publico esta mal.Leer patron rival.
-        }
+        orden = computadora.emitirOrdenDeArresto(ladron);
     }
 
+    public Rango rangoPolicia() {
+        return this.rango;
+    }
 }
 
 

@@ -7,5 +7,5 @@ public interface Rango {
 
     void viajar(Ciudad ciudadOrigen, Ciudad ciudadDestino, Reloj reloj);
 
-    Rango arrestar(int contadorArrestos);
+    Rango sumarArrestos(int arrestoASumar);
 }

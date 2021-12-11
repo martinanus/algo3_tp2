@@ -1,15 +1,15 @@
-package edu.fiuba.algo3.Entrega0;
+package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.*;
+
 import edu.fiuba.algo3.modelo.interactuable.Pista;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Entrega0Test {
+public class EdificioTest {
 
     @Test
-    public void JugadorEntraAUnEdificioPorPrimeraVezYRecibeUnaPista( ) {
+    public void SeCreaUnEdificioConUnaPista() {
         String contenido = "El ladron se fue en un auto de cuya bandera tenia colores  amarillo y verde";
         Pista pistaEdificio = new Pista(contenido);
 

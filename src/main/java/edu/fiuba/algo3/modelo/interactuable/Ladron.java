@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.Interactuable;
+package edu.fiuba.algo3.modelo.interactuable;
 
 import edu.fiuba.algo3.modelo.Descripcion;
 import edu.fiuba.algo3.modelo.Policia;

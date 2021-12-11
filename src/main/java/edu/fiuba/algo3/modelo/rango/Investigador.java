@@ -7,10 +7,12 @@ import edu.fiuba.algo3.modelo.rango.Rango;
 
 public class Investigador implements Rango {
     private double velocidad;
+    private int contadorArrestos;
 
 
     public Investigador() {
         velocidad = 1300;
+        contadorArrestos = 10;
     }
 
     @Override
@@ -19,12 +21,11 @@ public class Investigador implements Rango {
         reloj.incrementar(new Tiempo(tiempo));
     }
 
-
     @Override
-    public Rango arrestar(int contadorArrestos) {
-        if( contadorArrestos >= 20)
+    public Rango sumarArrestos(int arrestoASumar) {
+        this.contadorArrestos += arrestoASumar;
+        if( contadorArrestos >= 10)
             return new Sargento();
         return this;
     }
-
 }

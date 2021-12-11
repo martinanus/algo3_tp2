@@ -1,18 +1,17 @@
 package edu.fiuba.algo3.Entrega2;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Interactuable.Cuchillo;
-import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
-import edu.fiuba.algo3.modelo.Interactuable.Ladron;
-import edu.fiuba.algo3.modelo.Interactuable.Pista;
-import edu.fiuba.algo3.modelo.lector.LadronParser;
+import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
+import edu.fiuba.algo3.modelo.interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.interactuable.Ladron;
+import edu.fiuba.algo3.modelo.interactuable.Pista;
+import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
+import edu.fiuba.algo3.modelo.rango.Detective;
 import edu.fiuba.algo3.modelo.rango.Investigador;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,7 +28,7 @@ public class Entrega2Test {
         Cuchillo cuchillo = new Cuchillo();
         Edificio puerto = new Edificio(cuchillo);
         mexico.agregarEdificio(puerto);
-        Interactuable interactuable = policia.visitar(puerto,reloj);
+        policia.visitar(puerto,reloj);
         policia.duerme(reloj);
 
         assertEquals(new Tiempo(11), reloj.tiempoTranscurrido());
@@ -82,42 +81,9 @@ public class Entrega2Test {
         computadora.agregarSopechoso(sospechoso2);
         computadora.agregarSopechoso(sospechoso3);
 
-        assertEquals(true, computadora.emitirOrdenDeArresto(sospechosoBuscado));
-    }
-    
-    @Test
-    public void compararDescripciones() {
-        Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
-        Ladron sospechoso1 = new Ladron(descripcion1);
-        Descripcion descripcion2 = new Descripcion("sospechoso2","masculino","musica","negro","anillo","deportivo");
-        Ladron sospechoso2 = new Ladron(descripcion2);
-        assertFalse(sospechoso1.compararCon(sospechoso2));
+        assertEquals(OrdenEmitida.class, computadora.emitirOrdenDeArresto(sospechosoBuscado).getClass());
     }
 
-    @Test
-    public void compararLadronesConDescripcionesDeSexoYHobby() {
-        Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
-        Descripcion descripcion4 = new Descripcion("","masculino","tenis","","","");
-        assertTrue(descripcion1.comparar(descripcion4));
-    }
-
-    @Test
-    public void SeBuscaEnLaComputadoraUnSospechosoConDatosDeLadronesYaCreados() {
-        Computadora computadora = new Computadora();
-        computadora.cargarDatos();
-        Descripcion descripcion4 = new Descripcion("","Masculino","","","","");
-        Ladron sospechosoBuscado = new Ladron(descripcion4);
-        assertEquals(false, computadora.emitirOrdenDeArresto(sospechosoBuscado));
-    }
-
-    @Test
-    public void SeBuscaEnLaComputadoraUnSospechosoConSexoYHobbyConDatosDeLadrones() {
-        Computadora computadora = new Computadora();
-        computadora.cargarDatos();
-        Descripcion descripcion4 = new Descripcion("","Masculino","Croquet","","","");
-        Ladron sospechosoBuscado = new Ladron(descripcion4);
-        assertEquals(true, computadora.emitirOrdenDeArresto(sospechosoBuscado));
-    }
     @Test
     public void  IntentarAtraparSospechoSinOrdenDeArrestoEmitida(){
         Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
@@ -126,11 +92,7 @@ public class Entrega2Test {
         Rango rango = new Investigador();
         Policia policia = new Policia(montreal, rango);
 
-         //Arma, Pista, Ladron ->>>> Interactuable postergarlo este refactor
-        //El Quilombo de setear la orden de arresto emitida la computadora y se le asignaba al jugador no esta.
-        //ARREGLAR DIAGRAMAS DE SEC,
         Edificio puerto = new Edificio(ladron);
-        //montreal.agregarEdificio(puerto);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
 
@@ -139,8 +101,9 @@ public class Entrega2Test {
             interactuable.interactuar(policia,reloj);   //
         } );
     }
+
     @Test
-    public void JugadorRealiza6ArrestosSeLeAsiganUnCasoYCapturAlLadron(){
+    public void JugadorRealiza4ArrestosSeLeAsiganUnCasoYCapturAlLadron(){
         Computadora computadora = new Computadora();
         computadora.cargarDatos();
         Ciudad mexico = new Ciudad(new Posicion(19.42833333, -99.1275));
@@ -148,7 +111,7 @@ public class Entrega2Test {
         Rango rango = new Novato();
         Policia policia = new Policia(lima, rango);
 
-        policia.sumarArresto(6);  //rango deberia conocer la # de arrestos
+        policia.sumarArresto(4);  //rango deberia conocer la # de arrestos
         Descripcion descripcion1 = new Descripcion("","Masculino","Croquet","","","");
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
         Ladron ladron = new Ladron(descripcion1);
@@ -166,31 +129,8 @@ public class Entrega2Test {
 
         policia.emitirOrdenArresto(computadora,ladron);
 
-        Interactuable interactuable = policia.visitar(puerto,reloj);
+        policia.visitar(puerto,reloj);
 
-        assertEquals(7,policia.getCantidadArrestos()); //fijarnos el rango del policia,
-        //Cuando el chavon hace el 7timo arresto, deberiamos fijarnos el rango sea Detective,Sargento,etc
-        //medimos el rango,  cambie rango.
-        //Clase Juego -> pasarSiguienteMision(); Intercae agarra la exocpcion y se propaga para arriba,
-        // y en algun lugar van aestar las clas qeu reaccionan a eso.
-        //AUMENTA ACOPLAMIENTO, no viene al tema, mas adelante, puede ser que aparezca no ahora.
-        //
-
+        assertEquals(Detective.class, policia.rangoPolicia().getClass());
     }
-
-    @Test
-    public void SeCarganDatosDeLadronCorrectamente() {
-        LadronParser ladronParser = new LadronParser();
-        ArrayList<Ladron> ladrones = ladronParser.parser("/jsons/ladrones.json");
-        assertEquals(6, ladrones.size());
-    }
-
-    @Test
-    public void SeQuierenCarganDatosDeLadronConRutaInadecuada() {
-        LadronParser ladronParser = new LadronParser();
-        ArrayList<Ladron> ladrones = ladronParser.parser("/jsons/ladron.json");
-        assertEquals(0, ladrones.size());
-    }
-
-     
 }

@@ -7,7 +7,7 @@ import edu.fiuba.algo3.modelo.rango.Rango;
 
 public class Novato implements Rango {
     private double velocidad;
-    //private int arrestos;
+    private int contadorArrestos;
 
 
     public Novato() {
@@ -22,8 +22,9 @@ public class Novato implements Rango {
     }
 
     @Override
-    public Rango arrestar(int contadorArrestos) {
-        if(contadorArrestos >= 5)
+    public Rango sumarArrestos(int arrestoASumar) {
+        this.contadorArrestos += arrestoASumar;
+        if( contadorArrestos >= 5)
             return new Detective();
         return this;
     }

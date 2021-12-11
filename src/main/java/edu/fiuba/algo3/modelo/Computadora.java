@@ -1,7 +1,10 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Interactuable.Ladron;
+import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.LadronParser;
+import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
+import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
+import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
 
 import java.util.ArrayList;
 
@@ -17,14 +20,17 @@ public class Computadora {
         this.sospechosos.add(sospechoso);
     }
 
-    public boolean emitirOrdenDeArresto(Ladron sospechosoBuscado) {
+    public EstadoOrdenArresto emitirOrdenDeArresto(Ladron sospechosoBuscado) {
         ArrayList<Ladron> sospechososEncotrados = new ArrayList<>();
         for (Ladron sospechoso : sospechosos) {
             if(sospechosoBuscado.compararCon(sospechoso)){
                 sospechososEncotrados.add(sospechoso);
             }
         }
-        return (sospechososEncotrados.size()==1) ; //Esto debe devolver la orden de arresto no un boolean.(no pasa nada que haya otro if.)
+        if (sospechososEncotrados.size()==1){
+            return new OrdenEmitida();
+        }
+        return new OrdenNoEmitida();
     }
 
     public void cargarDatos() {

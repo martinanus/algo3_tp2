@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 
 import java.util.ArrayList;
 

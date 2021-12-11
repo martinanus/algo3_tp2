@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.Entrega1;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.Interactuable.Interactuable;
-import edu.fiuba.algo3.modelo.Interactuable.Cuchillo;
-import edu.fiuba.algo3.modelo.Interactuable.Pista;
+import edu.fiuba.algo3.modelo.interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
+import edu.fiuba.algo3.modelo.interactuable.Pista;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
 import org.junit.jupiter.api.Test;
@@ -28,18 +28,7 @@ public class Entrega1Test {
 
         Policia policia = new Policia(montreal, rango);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
-        /*
-        Interactuable interactuable = new Pista();
-        Interactuable interactuable = new Ladron();
-        Interactuable interactuable = new Arma();
-        Interactuable interactuable = policia.visitar(banco, reloj );
-        interactuable.interartuar(reloj,this.jugador) ;
-        //Ladron  en el metodo interactuar:
-        // jugador.arrestar()
-        // dentro de la clase jugador tiene el metodo -> arrestar()
-        // en el metodo arrestar():
-        // estadoOrdenArresto.arrestar();
-        */
+
         Pista pista = (Pista) policia.visitar(banco,reloj);
         assertEquals("pista banco",pista.mostrar());
         assertEquals(new Tiempo(1), reloj.tiempoTranscurrido());
@@ -58,7 +47,6 @@ public class Entrega1Test {
         montreal.agregarEdificio(banco);
         montreal.agregarEdificio(biblioteca);
 
-        //Rango rango = new Novato();
 
         Policia policia = new Policia(montreal);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
@@ -163,7 +151,6 @@ public class Entrega1Test {
 
     }
 
-
     @Test
     public void JugadorSufreHeridaDeCuchillo() {
 
@@ -183,17 +170,5 @@ public class Entrega1Test {
         assertEquals(new Tiempo(3), reloj.tiempoTranscurrido());
 
     }
-    @Test //En RelojTest prueba de acepta falla, haces el ciclo de unit test, prueba u
-    public void ElTiempoTranscurridoDelRelojDeberiaSerMenorQueUnTiempoMasGrande(){
-        Reloj reloj = new Reloj(new Tiempo(168.0));
-        Tiempo unTiempo = new Tiempo(120);
-        reloj.incrementar(unTiempo);
-        Tiempo otroTiempo = new Tiempo(188);
-
-        boolean esMayor = reloj.tiempoTranscurrido().esMayor(otroTiempo);
-
-        assertFalse(esMayor);
-    }
-
 
 }

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.Interactuable;
+package edu.fiuba.algo3.modelo.interactuable;
 
 import edu.fiuba.algo3.modelo.Policia;
 import edu.fiuba.algo3.modelo.Reloj;
@@ -6,5 +6,5 @@ import edu.fiuba.algo3.modelo.Reloj;
 public interface Interactuable {
     
 
-    public void interactuar(Policia policia, Reloj reloj);
+    void interactuar(Policia policia, Reloj reloj);
 }
