@@ -9,7 +9,7 @@ participant "banco : Edificio" as banco
 participant "reloj : Reloj" as reloj
 participant "tiempo : Tiempo" as tiempo
 participant "ladron : Ladron" as ladron
-participant "orden : OrdenNoEmitida" as ordenArresto
+participant "orden : OrdenEmitida" as ordenArresto
 
 TestCase -> policia: visitar(banco, reloj): Interactuable
 activate policia
@@ -26,5 +26,5 @@ activate ladron
 ladron -> policia : arrestar() : void
 policia -> ordenArresto : arrestar(policia)
 activate ordenArresto
-ordenArresto -> OrdenNoEmitidaError ** : OrdenNoEmitidaError()
+ordenArresto -> policia: sumarOrdenArresto(1)
 @enduml

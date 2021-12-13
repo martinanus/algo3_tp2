@@ -25,6 +25,6 @@ public class Ladron implements Interactuable{
     @Override
     public void interactuar(Policia policia, Reloj reloj) {
 
-        policia.terminarMision();
+        policia.arrestar();
     }
 }

@@ -38,7 +38,7 @@ public class Policia {
     }
 
 
-    public void terminarMision() {
+    public void arrestar() {
         this.orden.arrestar(this);
         //mision.terminarMision(); //incrementa reloj al tiempo max,
     }

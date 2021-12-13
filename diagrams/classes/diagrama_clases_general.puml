@@ -11,7 +11,7 @@ class Ciudad {
 
 class Policia {
     + visitar(edificio : Edificio, r : Reloj): Interactuable
-    + terminarMision();
+    + arrestar();
     + emitirOrdenArresto(c : Computadora, ladron : Ladron): void
 }
 interface EstadoOrdenArresto{
