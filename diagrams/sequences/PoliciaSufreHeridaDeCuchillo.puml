@@ -1,26 +1,27 @@
 @startuml
 skinparam style strictuml
-title:  El Policía entra a un edificio y sufre una herida de cuchillo por primera vez
+title:  Un policia novato entra por primera vez a un banco en montreal y recibe una herida de cuchillo
 actor TestCase
 
-participant " policia : Policia" as policia
-participant " : Ciudad" as ciudad
-participant " banco : Edificio" as banco
+participant "policia : Policia" as policia
+participant "montreal : Ciudad" as ciudad
+participant "banco : Edificio" as banco
 participant "reloj : Reloj" as reloj
+participant "tiempoVisita : Tiempo" as tiempoVisita
+participant "tiempoHerida : Tiempo" as tiempoHerida
 participant "arma : Cuchillo" as arma
 
 TestCase -> policia: visitar(banco, reloj): Interactuable
 activate policia
 policia -> ciudad: visitar(banco, reloj): Interactuable
 activate ciudad
+ciudad -> ciudad: buscarEdificio(banco)
 ciudad -> banco: visitar(reloj): Interactuable
 activate banco
-banco -> reloj: incrementar(1 hora):
-return arma
-return arma
-return arma
-TestCase -> arma: interactuar(policia, reloj): void
-activate arma
-arma -> reloj: incrementar(2 horas): void
-
+banco -> tiempoVisita ** : Tiempo(1)
+banco -> reloj: incrementar(tiempoVisita):
+activate reloj
+policia -> arma : interactuar(policia,reloj) : void
+arma -> tiempoHerida ** : Tiempo(2)
+arma -> reloj: incrementar(tiempoHerida)
 @enduml

@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class Entrega1Test {
 
     @Test
-    public void JugadorNovatoEntraAUnBancoEnMontrealYRecibeUnaPista( ) {
+    public void PoliciaNovatoEntraAUnBancoEnMontrealYRecibeUnaPista( ) {
         Pista pistaBanco = new Pista("pista banco");
         Pista pistaBiblioteca = new Pista("pista biblioteca");
 
@@ -36,7 +36,7 @@ public class Entrega1Test {
 
 
     @Test
-    public void JugadorNovatoEnMontrealVisitaUnBancoNuevamenteYVisitaUnBiblioteca( ) {
+    public void PoliciaNovatoEnMontrealVisitaUnBancoNuevamenteYVisitaUnBiblioteca( ) {
         Pista pistaBanco = new Pista("pista banco");
         Pista pistaBiblioteca = new Pista("pista biblioteca");
 
@@ -62,7 +62,7 @@ public class Entrega1Test {
     }
 
     @Test
-    public void JugadorViajaDeMontrealAMexico() {
+    public void PoliciaViajaDeMontrealAMexico() {
         Pista pistaBanco = new Pista("pista banco");
         Pista pistaBiblioteca = new Pista("pista biblioteca");
         Pista pistaAeropuerto = new Pista("pista aeropuerto");
@@ -134,7 +134,7 @@ public class Entrega1Test {
     }
 
     @Test
-    public void JugadorDuermeYTranscurrenOchoHoras() {
+    public void PoliciaDuermeYTranscurrenOchoHoras() {
 
         Ciudad mexico = new Ciudad();
 
@@ -152,23 +152,21 @@ public class Entrega1Test {
     }
 
     @Test
-    public void JugadorSufreHeridaDeCuchillo() {
-
-        Ciudad mexico = new Ciudad();
-        Rango rango = new Novato();
-        Policia policia = new Policia(mexico, rango);
-
-        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+    public void PoliciaSufreHeridaDeCuchillo() {
         Cuchillo cuchillo = new Cuchillo();
-        Edificio puerto = new Edificio(cuchillo);
 
+        Edificio banco = new Edificio(cuchillo);
 
-        Interactuable interactuable = puerto.visitar(reloj);
-        interactuable.interactuar(policia,reloj);
+        Ciudad montreal = new Ciudad();
+        montreal.agregarEdificio(banco);
 
-        //El reloj se debería incrementar 2 horas por el cuchillo mas 1 hora por visita
+        Rango rango = new Novato();
+
+        Policia policia = new Policia(montreal, rango);
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+
+        policia.visitar(banco,reloj);
         assertEquals(new Tiempo(3), reloj.tiempoTranscurrido());
-
     }
 
 }

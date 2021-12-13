@@ -88,17 +88,19 @@ public class Entrega2Test {
     public void  IntentarAtraparSospechoSinOrdenDeArrestoEmitida(){
         Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
         Ladron ladron = new Ladron(descripcion1);
-        Ciudad montreal = new Ciudad(new Posicion(45.50861111, -73.58777778));
-        Rango rango = new Investigador();
-        Policia policia = new Policia(montreal, rango);
 
-        Edificio puerto = new Edificio(ladron);
+        Edificio banco = new Edificio(ladron);
+
+        Ciudad montreal = new Ciudad();
+        montreal.agregarEdificio(banco);
+
+        Rango rango = new Novato();
+
+        Policia policia = new Policia(montreal, rango);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
-
         assertThrows(OrdenNoEmitidadError.class, ()-> {
-            Interactuable interactuable = puerto.visitar(reloj);
-            interactuable.interactuar(policia,reloj);   //
+            policia.visitar(banco, reloj);
         } );
     }
 

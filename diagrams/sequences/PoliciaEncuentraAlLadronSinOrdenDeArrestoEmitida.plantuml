@@ -1,6 +1,6 @@
 @startuml
 skinparam style strictuml
-title:  Un policia novato entra por primera vez a un banco en montreal y recibe una pista
+title:  Un policía entra por primera vez a un banco en montreal y encuentra al ladrón sin una orden de arresto emitida
 actor TestCase
 
 participant "policia : Policia" as policia
@@ -8,7 +8,8 @@ participant "montreal : Ciudad" as ciudad
 participant "banco : Edificio" as banco
 participant "reloj : Reloj" as reloj
 participant "tiempo : Tiempo" as tiempo
-participant "pista : Pista" as pista
+participant "ladron : Ladron" as ladron
+participant "orden : OrdenNoEmitida" as ordenArresto
 
 TestCase -> policia: visitar(banco, reloj): Interactuable
 activate policia
@@ -18,11 +19,13 @@ ciudad -> ciudad: buscarEdificio(banco)
 ciudad -> banco: visitar(reloj): Interactuable
 activate banco
 banco -> tiempo ** : Tiempo(1)
-activate reloj
-deactivate reloj
 banco -> reloj: incrementar(tiempo):
-return pista
-return pista
-policia -> pista : interactuar(policia,reloj) : void
-return pista
+activate reloj
+policia -> ladron : interactuar(policia,reloj) : void
+activate ladron
+ladron -> policia : arresto() : void
+policia -> ordenArresto : arrestar(policia)
+activate ordenArresto
+ordenArresto -> OrdenNoEmitidaError ** : OrdenNoEmitidaError()
+
 @enduml
