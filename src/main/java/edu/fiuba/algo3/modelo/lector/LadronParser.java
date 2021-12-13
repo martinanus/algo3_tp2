@@ -4,9 +4,6 @@ import edu.fiuba.algo3.modelo.Descripcion;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class LadronParser{
@@ -15,16 +12,8 @@ public class LadronParser{
         ArrayList<Ladron> ladrones = new  ArrayList<>();
         Lector lector = new Lector();
 
-        Object ob;
-        try {
-            ob = lector.leerJson(ruta);
-        } catch (IOException | ParseException e) {
-            return new ArrayList<>();
-        }
-        // typecasting ob to JSONObject
-        JSONArray ladronesJson = (JSONArray) ob;
+        JSONArray ladronesJson = lector.leer(ruta);
 
-        assert ladronesJson != null;
         for (Object ladron: ladronesJson) {
             JSONObject js = (JSONObject) ladron;
             JSONObject jLadron = (JSONObject) js.get("ladron");

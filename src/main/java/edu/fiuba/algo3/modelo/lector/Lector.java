@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo.lector;
 
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -11,8 +10,18 @@ import java.io.IOException;
 
 public class Lector {
 
-    public Object leerJson(String ruta) throws IOException, org.json.simple.parser.ParseException{
-        //Object ob = new JSONParser().parse(new FileReader(System.getProperty("user.dir") + "/jsons/ciudades.json"));
+    private Object leerJson(String ruta) throws IOException, org.json.simple.parser.ParseException{
         return new JSONParser().parse(new FileReader(System.getProperty("user.dir") + ruta));
+    }
+
+    public JSONArray leer(String ruta) {
+        Object ob;
+        try {
+            ob = this.leerJson(ruta);
+        } catch (IOException | ParseException e) {
+            throw new ArchivoNoEncontradoError();
+        }
+        // typecasting ob to JSONObject
+        return (JSONArray) ob;
     }
 }
