@@ -1,16 +1,26 @@
 package edu.fiuba.algo3.modelo.rango;
 
-import edu.fiuba.algo3.modelo.Ciudad;
-import edu.fiuba.algo3.modelo.Reloj;
-import edu.fiuba.algo3.modelo.Tiempo;
+import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.objeto.Objeto;
+import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
+import edu.fiuba.algo3.modelo.objeto.ObjetoValioso;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Detective implements Rango {
     private double velocidad;
     private int contadorArrestos;
+    private ArrayList<Objeto> objetos;
+
 
     public Detective() {
         velocidad = 1100;
         contadorArrestos = 5;
+        objetos = new ArrayList<>();
+        objetos.add(new ObjetoComun());
+        objetos.add(new ObjetoValioso());
     }
 
     @Override
@@ -25,5 +35,12 @@ public class Detective implements Rango {
         if( contadorArrestos >= 5)
             return new Investigador();
         return this;
+    }
+
+    @Override
+    public Caso generarCaso() {
+        Collections.shuffle(objetos);
+
+        return new Caso(objetos.get(0));
     }
 }

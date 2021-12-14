@@ -1,9 +1,7 @@
 package edu.fiuba.algo3.modelo.rango;
 
-import edu.fiuba.algo3.modelo.Ciudad;
-import edu.fiuba.algo3.modelo.Reloj;
-import edu.fiuba.algo3.modelo.Tiempo;
-import edu.fiuba.algo3.modelo.rango.Rango;
+import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
 
 public class Novato implements Rango {
     private double velocidad;
@@ -28,4 +26,10 @@ public class Novato implements Rango {
             return new Detective();
         return this;
     }
+
+    @Override
+    public Caso generarCaso() {
+        return new Caso (new ObjetoComun() );
+    }
+
 }

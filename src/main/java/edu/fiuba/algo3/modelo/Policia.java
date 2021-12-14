@@ -4,12 +4,14 @@ import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
+import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
 
 public class Policia {
     private Ciudad ciudadActual;
     private Rango rango;
     private EstadoOrdenArresto orden;
+    private Caso caso;
 
 
     public Policia(Ciudad ciudad) {
@@ -20,6 +22,10 @@ public class Policia {
         ciudadActual = ciudad;
         this.rango = rango;
         orden = new OrdenNoEmitida();
+    }
+
+    public Policia(Rango rangoInicial) {
+        this.rango = rangoInicial;
     }
 
     public Interactuable visitar(Edificio edificio , Reloj reloj ){
@@ -55,6 +61,15 @@ public class Policia {
     public Rango rangoPolicia() {
         return this.rango;
     }
+
+    public void generarCaso() {
+        this.caso = this.rango.generarCaso();
+    }
+    public int cantidadPaisesParaViajar(){
+        return caso.getCantidadPaises();
+    }
+
+
 }
 
 

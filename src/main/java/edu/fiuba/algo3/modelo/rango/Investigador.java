@@ -1,9 +1,8 @@
 package edu.fiuba.algo3.modelo.rango;
 
-import edu.fiuba.algo3.modelo.Ciudad;
-import edu.fiuba.algo3.modelo.Reloj;
-import edu.fiuba.algo3.modelo.Tiempo;
-import edu.fiuba.algo3.modelo.rango.Rango;
+import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
+import edu.fiuba.algo3.modelo.objeto.ObjetoMuyValioso;
 
 public class Investigador implements Rango {
     private double velocidad;
@@ -27,5 +26,12 @@ public class Investigador implements Rango {
         if( contadorArrestos >= 10)
             return new Sargento();
         return this;
+    }
+
+    @Override
+    public Caso generarCaso() {
+
+
+        return new Caso(new ObjetoMuyValioso());
     }
 }
