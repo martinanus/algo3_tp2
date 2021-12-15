@@ -1,0 +1,31 @@
+[
+  {
+    "ObjetoRobado": {
+      "Nombre": "Mascara de Oro Inka",
+      "Rareza":"Comun",
+      "CiudadOrigen":"Lima"
+    }
+  },
+  {
+    "ObjetoRobado": {
+      "Nombre": "Espada de San Martin",
+      "Rareza":"Comun",
+      "CiudadOrigen":"Buenos Aires"
+    }
+  },
+  {
+    "ObjetoRobado": {
+      "Nombre": "Corona del rey",
+      "Rareza":"Valioso",
+      "CiudadOrigen":"Madrid"
+    }
+  },
+  {
+    "ObjetoRobado": {
+      "Nombre": "Huevo de Oro",
+      "Rareza":"Muy Valioso",
+      "CiudadOrigen":"Ciudad de Mexico"
+    }
+  }
+
+]

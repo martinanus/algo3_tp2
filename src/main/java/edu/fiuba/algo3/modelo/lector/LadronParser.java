@@ -19,7 +19,7 @@ public class LadronParser{
             JSONObject jLadron = (JSONObject) js.get("ladron");
             ladrones.add(new Ladron(new Descripcion((String) jLadron.get("Nombre"), (String) jLadron.get("Sexo"),
                     (String) jLadron.get("Hobby"),(String) jLadron.get("Cabello"),(String) jLadron.get("Seña"),
-                    (String) jLadron.get("Vehiculo"))));
+                    (String) jLadron.get("Vehiculo")))) ;
         }
         return ladrones;
     }

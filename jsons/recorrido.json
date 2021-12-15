@@ -1,9 +1,10 @@
 {
   "Recorrido1":{
-    "CiudadesVisitadas": ["Buenos Aires","Lima","Moscu","La Paz"],"CiudadFinal": "Buenos Aires"
+    "CiudadesVisitadas": ["Buenos Aires","Lima","Moscu","La Paz"],"CiudadFinal": "La Paz"
   },
   "Recorrido2": {
 
   }
+
 
 }

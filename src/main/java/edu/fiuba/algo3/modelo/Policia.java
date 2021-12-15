@@ -62,12 +62,9 @@ public class Policia {
         return this.rango;
     }
 
-    public void generarCaso() {
-        this.caso = this.rango.generarCaso();
-    }
-    public int cantidadPaisesParaViajar(){
-        return caso.getCantidadPaises();
-    }
+    //public int cantidadPaisesParaViajar(){
+    //    return caso.getCantidadPaises();
+    //}
 
 
 }

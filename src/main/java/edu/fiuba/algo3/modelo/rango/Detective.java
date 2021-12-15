@@ -19,8 +19,6 @@ public class Detective implements Rango {
         velocidad = 1100;
         contadorArrestos = 5;
         objetos = new ArrayList<>();
-        objetos.add(new ObjetoComun());
-        objetos.add(new ObjetoValioso());
     }
 
     @Override
@@ -37,10 +35,9 @@ public class Detective implements Rango {
         return this;
     }
 
-    @Override
-    public Caso generarCaso() {
-        Collections.shuffle(objetos);
-
-        return new Caso(objetos.get(0));
-    }
+    //@Override
+    //public Caso generarCaso() {
+    //    Collections.shuffle(objetos);
+    //    return new Caso(objetos.get(0));
+    //}
 }

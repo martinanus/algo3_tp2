@@ -28,10 +28,9 @@ public class Investigador implements Rango {
         return this;
     }
 
-    @Override
-    public Caso generarCaso() {
+    //@Override
+    //public Caso generarCaso() {
 
-
-        return new Caso(new ObjetoMuyValioso());
-    }
+    //    return new Caso(new ObjetoMuyValioso("Huevo de Oro"));
+    //}
 }

@@ -1,338 +1,124 @@
 [
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad": {
+            "Nombre": "Lima",
+            "Latitud": -12.04318,
+            "Longitud": -77.02824,
+            "Bandera": "Rojo y Blanco",
+            "Moneda": "Soles",
+            "Monumento": "Machu Picchu",
+            "Idioma": "Español"
         }
     },
     {
-        "city": {
-            "Name": "Buenos Aires",
-            "Flag": [
-                "Light blue",
-                "White"
-            ],
-            "Currency": "Pesos",
-            "Landmarks": [
-                "Country",
-                "Soccer"
-            ],
-            "Industries": [
-                "Soy",
-                "Corn"
-            ],
-            "Languages": "Spanish",
-            "Food": "Milanesa",
-            "Neighbors": "Bolivia"
+        "Ciudad":{
+            "Nombre": "Buenos Aires",
+            "Latitud":-34.61305556,
+            "Longitud":-77.02824,
+            "Bandera":"Celeste, Blanco y un sol al medio ",
+            "Moneda": "Pesos",
+            "Monumento":"El Obelisco",
+            "Idioma": "Español"
         }
     },
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad":{
+            "Nombre": "Ciudad de Mexico",
+            "Latitud":23.634501,
+            "Longitud":-102.552784,
+            "Bandera":"Verde, blanco y rojo ",
+            "Moneda": "Pesos",
+            "Monumento":"Templo de Kukulkán",
+            "Idioma": "Español"
         }
     },
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad":{
+            "Nombre": "Madrid",
+            "Latitud":40.4165,
+            "Longitud":-3.70256,
+            "Bandera":"amarillo y rojo ",
+            "Moneda": "Euros",
+            "Monumento":"Puerta de Alcalá",
+            "Idioma": "Español"
         }
     },
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad":{
+            "Nombre": "Beijing",
+            "Latitud":39.9075,
+            "Longitud":-116.39723,
+            "Bandera":"rojo y amarilla con estrellas ",
+            "Moneda": "yuan",
+            "Monumento":"La gran muralla",
+            "Idioma": "Mandarin"
         }
     },
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad":{
+            "Nombre": "Seul",
+            "Latitud":37.566,
+            "Longitud":126.9784,
+            "Bandera":"blanca, roja y azul",
+            "Moneda": "Won",
+            "Monumento":"Fortaleza de Hwasong",
+            "Idioma": "Coreano"
         }
     },
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad":{
+            "Nombre": "Paris",
+            "Latitud":48.85341,
+            "Longitud":2.3488,
+            "Bandera":"roja, azul y blanca",
+            "Moneda": "euro",
+            "Monumento":"La torre Eiffel",
+            "Idioma": "Frances"
         }
     },
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad":{
+            "Nombre": "Montreal",
+            "Latitud":45.50884,
+            "Longitud":-73.58781,
+            "Bandera":"roja y blanca",
+            "Moneda": "Dolar",
+            "Monumento":"Monumento a George-Étienne Cartier",
+            "Idioma": "Francés e Inglés"
         }
     },
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad":{
+            "Nombre": "Tokyo",
+            "Latitud":35.6895,
+            "Longitud":139.69171,
+            "Bandera":"Roja y blanca ",
+            "Moneda": "yen",
+            "Monumento":"Templo de Sensō-ji",
+            "Idioma": "Japones"
         }
     },
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad":{
+            "Nombre": "El Cairo",
+            "Latitud":30.06263,
+            "Longitud":31.24967,
+            "Bandera":"Roja, blanca y negra ",
+            "Moneda": "La Libra",
+            "Monumento":"La gran piramide de Guiza",
+            "Idioma": "Árabe"
         }
     },
     {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
-        }
-    },
-    {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
-        }
-    },
-    {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
-        }
-    },
-    {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
-        }
-    },
-    {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
-        }
-    },
-    {
-        "city": {
-            "Name": "Athens",
-            "Flag": [
-                "Blue",
-                "White"
-            ],
-            "Currency": "Drachmas",
-            "Landmarks": [
-                "Aegean Sea",
-                "Pindus Mountains"
-            ],
-            "Industries": [
-                "Figs",
-                "Olives"
-            ],
-            "Languages": "Greek",
-            "Food": "Mezze",
-            "Neighbors": "Yugoslavia"
+        "Ciudad":{
+            "Nombre": "Roma",
+            "Latitud":41.89193,
+            "Longitud":12.51133,
+            "Bandera":"Roja, verde y blanca ",
+            "Moneda": "euro",
+            "Monumento":"El Gran coliseo",
+            "Idioma": "Italiano"
         }
     }
+
 ]

@@ -10,5 +10,5 @@ public interface Rango {
 
     Rango sumarArrestos(int arrestoASumar);
 
-    Caso generarCaso();
+    //Caso generarCaso();
 }

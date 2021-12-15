@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.ArchivoNoEncontradoError;
 import edu.fiuba.algo3.modelo.lector.CiudadParser;
 import edu.fiuba.algo3.modelo.lector.LadronParser;
+import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +36,7 @@ public class LectorTest {
     public void SeCarganDatosDeCiudadesCorrectamente() {
         CiudadParser ciudadParser = new CiudadParser();
         ArrayList<Ciudad> ciudades = ciudadParser.parser("/jsons/ciudades.json");
-        assertEquals(16, ciudades.size());
+        assertEquals(11, ciudades.size());
     }
 
     @Test

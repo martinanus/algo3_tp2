@@ -39,4 +39,5 @@ public class Computadora {
         this.sospechosos.addAll(ladrones);
     }
 
+
 }

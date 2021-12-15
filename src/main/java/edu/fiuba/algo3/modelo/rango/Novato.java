@@ -27,9 +27,9 @@ public class Novato implements Rango {
         return this;
     }
 
-    @Override
-    public Caso generarCaso() {
-        return new Caso (new ObjetoComun() );
-    }
+    //@Override
+    //public Caso generarCaso() {
+    //    return new Caso (new ObjetoComun() );
+    //}
 
 }
