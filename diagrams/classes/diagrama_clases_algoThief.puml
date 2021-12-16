@@ -11,7 +11,17 @@ Objeto <|-- ObjetoComun
 Objeto <|-- ObjetoValioso
 Objeto <|-- ObjetoMuyValioso
 
+Caso o-- AlgoThief
+Caso o-- Objeto
+Caso o-- Ladron
+Caso o-- Ciudades
 
+ class Caso {
+ + cargarEdificios() : void
+ + cargarPistasLadron() : void
+ + finalizar() : void
+ + finalizarSinExito() : void
+}
 
 class AlgoThief {
     - descripcionSospechoso : Descripcion
