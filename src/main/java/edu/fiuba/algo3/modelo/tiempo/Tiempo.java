@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.tiempo;
 
 public class Tiempo {
     private double horas;
@@ -42,10 +42,7 @@ public class Tiempo {
     }
 
     private boolean esMayor(double horas) {
-        if(this.horas > horas){
-            return true;
-        }
-        return false;
+        return this.horas > horas;
     }
     public double getTiempo(){
         return this.horas;

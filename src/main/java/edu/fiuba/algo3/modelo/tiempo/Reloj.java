@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.tiempo;
 
 
 public class Reloj {
@@ -18,8 +18,7 @@ public class Reloj {
 
     private void verificarTiempoExcedido() {
         if(tiempoTranscurrido.esMayor(tiempoMaximo)){
-            //Lanzamos la excepcion directamente,
-            //throw new Exception("TERMINO EL JUEGO; TIEMPO MAXIMO EXCEDIDO"); RELOJ NO TIENE QUE SABER JUEGO
+            throw new TiempoExcedidoError();
         }
     }
 

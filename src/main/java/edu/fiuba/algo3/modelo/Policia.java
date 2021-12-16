@@ -7,6 +7,8 @@ import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
+import edu.fiuba.algo3.modelo.tiempo.Reloj;
+import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 
 import java.util.ArrayList;
 import java.util.HashMap;

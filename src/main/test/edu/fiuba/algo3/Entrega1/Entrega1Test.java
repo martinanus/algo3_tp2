@@ -1,11 +1,14 @@
 package edu.fiuba.algo3.Entrega1;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
 import edu.fiuba.algo3.modelo.interactuable.Pista;
+import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
+import edu.fiuba.algo3.modelo.tiempo.Reloj;
+import edu.fiuba.algo3.modelo.tiempo.Tiempo;
+import edu.fiuba.algo3.modelo.tiempo.TiempoExcedidoError;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -125,11 +128,11 @@ public class Entrega1Test {
         for (int i = 0; i < 3; i++) {
             policia.visitar(aeropuerto, reloj ); // (1+2+3 = 6 )
         }
-        for (int i = 0; i < 55; i++) {
-            policia.visitar(puerto, reloj ); // 1 + 2 +3*53 = 162
-        }
-
-        assertEquals(new Tiempo(172 /* 162+6 + viaje*/ ), reloj.tiempoTranscurrido());
+        assertThrows(TiempoExcedidoError.class, ()-> {
+            for (int i = 0; i < 55; i++) {
+                policia.visitar(puerto, reloj ); // 1 + 2 +3*53 = 162
+            }
+        } );
 
     }
 

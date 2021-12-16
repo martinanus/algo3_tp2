@@ -2,6 +2,8 @@ package edu.fiuba.algo3.modelo;
 
 
 import edu.fiuba.algo3.modelo.interactuable.Pista;
+import edu.fiuba.algo3.modelo.tiempo.Reloj;
+import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

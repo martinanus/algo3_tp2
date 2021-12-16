@@ -2,7 +2,6 @@ package edu.fiuba.algo3.Entrega2;
 
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
-import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.interactuable.Pista;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
@@ -11,6 +10,8 @@ import edu.fiuba.algo3.modelo.rango.Detective;
 import edu.fiuba.algo3.modelo.rango.Investigador;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
+import edu.fiuba.algo3.modelo.tiempo.Reloj;
+import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -99,9 +100,7 @@ public class Entrega2Test {
         Policia policia = new Policia(montreal, rango);
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
-        assertThrows(OrdenNoEmitidadError.class, ()-> {
-            policia.visitar(banco, reloj);
-        } );
+        assertThrows(OrdenNoEmitidadError.class, ()-> policia.visitar(banco, reloj));
     }
 
     @Test
