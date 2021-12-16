@@ -1,0 +1,73 @@
+@startuml
+
+
+AlgoThief o-- Ciudad
+AlgoThief o-- Objeto
+AlgoThief o-- Computadora
+
+Computadora o-- Ladron
+
+Objeto <|-- ObjetoComun
+Objeto <|-- ObjetoValioso
+Objeto <|-- ObjetoMuyValioso
+
+
+
+class AlgoThief {
+    - descripcionSospechoso : Descripcion
+    - reloj : Reloj
+    + generarPartida(policia : Policia) : void
+    + cargarCiudades() : void
+    + cargarObjetosRobados() : void
+    + cargarRutasLadron(ciudades : ArrayList<Ciudad>) : void
+    + cargarLadrones() : void
+    + visitar(policia : Policia , nombreEdificio: String) : Interactuable
+    + viajar(nombreCiudad : String ,policia : Policia ) : void
+    + generarOrdenDeArresto(policia : Policia) : void
+    + finalizar(objetoRobado: Objeto , ladron: Ladron ) : void
+}
+
+class Ciudad {
+    - edificios : ArrayList<Edificio>
+    - posicion : Posicion
+    - nombre : String
+    - descripcionCiudad : DescripcionCiudad
+
+    + agregarCiudadDestino(ciudad : Ciudad) : void
+    + visitar(edificio : Edificio, r : Reloj): Interactuable
+}
+
+abstract class Objeto {
+    - nombre : String;
+    - nombreCiudad : String;
+
+    + getCiudadOrigen() : String
+}
+
+class ObjetoComun {
+}
+
+class ObjetoValioso {
+}
+
+class ObjetoMuyValioso {
+}
+
+
+
+class Computadora {
+    + agregarSopechoso(ladron : Ladron) : void
+    + emitirOrdenDeArresto(sospechoso : Ladron) : EstadoOrdenArresto
+    + cargarDatos() : ArrayList<Ladron>
+}
+
+class Ladron {
+    - descripcion : Descripcion
+    + generarPista() : Pista
+    + compararCon(ladron : Ladron) : boolean
+}
+
+
+
+
+@enduml
