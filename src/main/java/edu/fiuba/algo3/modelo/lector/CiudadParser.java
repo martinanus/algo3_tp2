@@ -28,8 +28,8 @@ public class CiudadParser {
             String Moneda = (String) jcity.get("Moneda");
             String Monumento = (String) jcity.get("Monumento");
             String Idioma = (String) jcity.get("Idioma");
-            DescripcionCiudad descripcion = new DescripcionCiudad(coloresBandera,Moneda,Monumento,Idioma);
-            Ciudad ciudadActual = new Ciudad(posicion,NombreCiudad,descripcion);
+            //ArrayList<String> ciudadesDesitno = (ArrayList<String>) jcity.get("CiudadesDestino");
+            Ciudad ciudadActual = new Ciudad(posicion,NombreCiudad);
             Edificio banco = new Edificio(new Pista("No hemos visto al ladron"),"banco");
             Edificio biblioteca = new Edificio(new Pista("No hemos visto al ladron"),"biblioteca");
             Edificio puerto = new Edificio(new Pista("No hemos visto al ladron"),"puerto");

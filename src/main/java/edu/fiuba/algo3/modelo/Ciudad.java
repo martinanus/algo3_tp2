@@ -11,18 +11,18 @@ public class Ciudad {
     private ArrayList<Edificio> edificios;
     private Posicion posicion;
     private String nombre;
-    private DescripcionCiudad descripcion;
+    private ArrayList<DescripcionCiudad> descripcionCiudades;
+    private DescripcionCiudad descripcionCiudad;
     private ArrayList<Ciudad> ciudadesDestino;
 
     public Ciudad() {
         this.edificios = new ArrayList<>();
     }
 
-    public Ciudad(Posicion posicion,String Nombre,DescripcionCiudad descripcion) {
+    public Ciudad(Posicion posicion,String Nombre) {
         this.posicion = posicion;
         this.edificios = new ArrayList<>();
         this.nombre = Nombre;
-        this.descripcion = descripcion;
         this.ciudadesDestino = new ArrayList<>();
     }
 
@@ -91,6 +91,21 @@ public class Ciudad {
     }
 
     private ArrayList<Pista> generaPistas() {
-        return this.descripcion.generarPistas();
+        return this.descripcionCiudad.generarPistas();
+    }
+
+    public void setDescripciones(ArrayList<DescripcionCiudad> descripcionesCiudades) {
+        //System.out.println(descripcionesCiudades);
+        this.descripcionCiudades = descripcionesCiudades;
+    }
+
+    public void tomarPistasFacil() {
+        this.descripcionCiudad = descripcionCiudades.get(0);
+    }
+    public void tomarPistasMedias() {
+        this.descripcionCiudad = descripcionCiudades.get(1);
+    }
+    public void tomarPistasDificil() {
+        this.descripcionCiudad = descripcionCiudades.get(2);
     }
 }

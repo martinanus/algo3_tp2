@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.CiudadParser;
 import edu.fiuba.algo3.modelo.lector.ObjetoParser;
+import edu.fiuba.algo3.modelo.lector.PistaParser;
 import edu.fiuba.algo3.modelo.lector.RutasDeEscapeParser;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
@@ -30,30 +31,33 @@ public class AlgoThief {
         cargarCiudades();
         cargarObjetosRobados();
         cargarRutasLadron(ciudades);
+        cargarPistas(ciudades);
         reloj = new Reloj(new Tiempo(168));
-        this.policia = new Policia("Pepe");
     }
 
-    public void generarPartida() {
+    public void generarPartida(Policia policia) {
         Ladron ladron= ladrones.get(0);
         //ladrones.remove(0); Si gana el ladron refactor de esto
-        this.policia.generarCaso(objetosRobados,recorridoLadron,ladron); //refactor nombre
+        //System.out.println(recorridoLadron);
+        policia.generarCaso(objetosRobados,recorridoLadron,ladron); //refactor nombre
 
     }
+
+
     //refactor  para cargar todo esto en una clase aparte
     //private Inicializar iniciador;
     // iniciador(ciudades,objetosRobados,Recorridos);
-    public void cargarCiudades(){
+    private void cargarCiudades(){
        CiudadParser parseador = new CiudadParser();
        ArrayList<Ciudad> ciudades  =  parseador.parser("/jsons/ciudades.json"); //Puede haber un refactor
        this.ciudades = ciudades;
     }
-   public void cargarObjetosRobados(){
+    private void cargarObjetosRobados(){
        ObjetoParser parseador = new ObjetoParser();
        ArrayList<Objeto> objetos  =  parseador.parser("/jsons/objetosRobados.json"); //Puede haber un refactor
        this.objetosRobados = objetos;
     }
-   public void cargarRutasLadron(ArrayList<Ciudad> ciudades){
+    private void cargarRutasLadron(ArrayList<Ciudad> ciudades){
        RutasDeEscapeParser parseardorRuta = new RutasDeEscapeParser();
        HashMap<String,ArrayList<Ciudad>> unHashMap = parseardorRuta.parser("/jsons/rutasDeEscape.json",ciudades);
        this.recorridoLadron=unHashMap;
@@ -62,12 +66,12 @@ public class AlgoThief {
         this.ladrones = this.computadora.cargarDatos();
     }
 
-    public Interactuable visitar(String nombreEdificio) {
+    public Interactuable visitar(Policia policia, String nombreEdificio) {
         return policia.visitar(nombreEdificio,reloj);
     }
 
 
-    public void viajar(String nombreCiudad) {
+    public void viajar(String nombreCiudad,Policia policia) {
         for(Ciudad ciudad: ciudades){
             if(Objects.equals(ciudad.getNombre(), nombreCiudad )){ //falta verificar la lista de ciudades destino
                 policia.viajar(ciudad,reloj);
@@ -83,8 +87,13 @@ public class AlgoThief {
 
     }
 
-    public void generarOrdenDeArresto() {
+    public void generarOrdenDeArresto(Policia policia) {
         Ladron ladronSopechoso = new Ladron(descripcionSospechoso);
         policia.emitirOrdenArresto(computadora,ladronSopechoso);
+    }
+
+    private void cargarPistas(ArrayList<Ciudad> ciudades){
+        PistaParser parseador = new PistaParser();
+        parseador.parser("/jsons/pistas.json",ciudades); //Puede haber un refactor
     }
 }

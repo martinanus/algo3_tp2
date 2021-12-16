@@ -37,12 +37,18 @@ public class Detective implements Rango {
 
     @Override
     public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron) {
-        return null;
-    }
+        Objeto objetoRobado= new Objeto();
+        for (Objeto objeto : objetosRobados) {
+            if (objeto.esDeRareza("Comun")) {
+                objetoRobado = objeto;
+                //objetosRobados.remove(objeto); //si el jugador gana // Se queda con el ultimo si gana el caso se elimina
+            }
+        }           //HashMap = <"Lima;<ArrayList> >   =  <"Lima, [Lima,BuenosAires,El Cairo]  >
+        ArrayList<Ciudad> ciudadesRecorridas =recorridoLadron.get( objetoRobado.getCiudadOrigen() );
+        for(Ciudad ciudad: ciudadesRecorridas){
+            ciudad.tomarPistasMedias();
+        }
 
-    //@Override
-    //public Caso generarCaso() {
-    //    Collections.shuffle(objetos);
-    //    return new Caso(objetos.get(0));
-    //}
+        return new Caso(objetoRobado,ciudadesRecorridas,ladron);
+    }
 }

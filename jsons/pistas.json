@@ -1,0 +1,67 @@
+[
+  {
+    "Pista": {
+      "Ciudad": "Lima",
+      "PistasFacil":["Su moneda principal son los Soles","Machu Picchu","Bandera color roja y blanca"],
+      "PistasMedia":["Gas de Camisea", "La ciudad de Cuzco","Bandera color roja y blanca" ],
+      "PistasDificil":["Explotacion de metales","Terrorismo de 1980","se habla español"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Buenos Aires",
+      "PistasFacil":["Su moneda principal son los Pesos","Obelisco","Bandera Celeste y Blanca"],
+      "PistasMedia":["Agricultura", "Glaciar Perito Moreno","Bandera con un sol" ],
+      "PistasDificil":["Pesca","Cataratas del Iguazu","Español"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Beijing",
+      "PistasFacil":["Su moneda principal son los Yuanes","Lugar Famoso Gran Murralla","Bandera rojo y amarilla"],
+      "PistasMedia":["Es una potencia economica", "Lugar Famoso Templo Del Cielo","Bandera con estrellas" ],
+      "PistasDificil":["Industria Tecnologica","Religion Budismo","Bandera con estrellas"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "El Cairo",
+      "PistasFacil":["Su moneda principal es la libra","Lugar famoso la gran piramide de Guiza","Bandera rojo blanco y negro"],
+      "PistasMedia":["mineria", "Lugar Famoso tumba de los faraones","Bandera color roja y blanca" ],
+      "PistasDificil":["Turismo","desierto del Sinaí","La bandera tiene un Aguila"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Roma",
+      "PistasFacil":["Su moneda principal es el euro","Lugar famoso el gran Coliceo","Roja, verde y blanca"],
+      "PistasMedia":["Turismos como una actividad economica", "gastronomía mediterránea ","Idioma Principal Italino" ],
+      "PistasDificil":["Tiene actividad Industrial","Destaca el artista Miguel Ángel en su arquitectura","El Emblema nacional tiene una estrella"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Ciudad de Mexico",
+      "PistasFacil":["pesos mexicanos ricardo","Templo de Kukulkan","Roja, verde y blanca"],
+      "PistasMedia":["Turismos como una actividad economica", "gastronomía mediterránea ","Idioma Principal Italino" ],
+      "PistasDificil":["Tiene actividad Industrial","Destaca el artista Miguel Ángel en su arquitectura","El Emblema nacional tiene una estrella"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Seul",
+      "PistasFacil":["Won","Fortaleza de Hwasong","blanca, roja y azul"],
+      "PistasMedia":["Turismos como una actividad economica", "gastronomía mediterránea ","Idioma Principal Italino" ],
+      "PistasDificil":["Tiene actividad Industrial","Destaca el artista Miguel Ángel en su arquitectura","El Emblema nacional tiene una estrella"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Paris",
+      "PistasFacil":["euro","La torre Eiffel","roja, azul y blanca"],
+      "PistasMedia":["Turismos como una actividad economica", "gastronomía mediterránea ","Idioma Principal Italino" ],
+      "PistasDificil":["Tiene actividad Industrial","Destaca el artista Miguel Ángel en su arquitectura","El Emblema nacional tiene una estrella"]
+    }
+  }
+
+]

@@ -31,11 +31,20 @@ public class Sargento implements Rango {
         contadorArrestos += arrestoASumar;
         return this;
     }
-
     @Override
     public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron) {
-        return null;
+        Objeto objetoRobado= new Objeto();
+        for (Objeto objeto : objetosRobados) {
+            if (objeto.esDeRareza("Comun")) {
+                objetoRobado = objeto;
+                //objetosRobados.remove(objeto); //si el jugador gana // Se queda con el ultimo si gana el caso se elimina
+            }
+        }           //HashMap = <"Lima;<ArrayList> >   =  <"Lima, [Lima,BuenosAires,El Cairo]  >
+        ArrayList<Ciudad> ciudadesRecorridas =recorridoLadron.get( objetoRobado.getCiudadOrigen() );
+        for(Ciudad ciudad: ciudadesRecorridas){
+            ciudad.tomarPistasDificil();
+        }
+        return new Caso(objetoRobado,ciudadesRecorridas,ladron);
     }
-
 
 }

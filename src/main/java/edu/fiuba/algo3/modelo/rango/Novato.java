@@ -43,11 +43,13 @@ public class Novato implements Rango {
                objetoRobado = objeto;
                //objetosRobados.remove(objeto); //si el jugador gana // Se queda con el ultimo si gana el caso se elimina
             }
+        }           //HashMap = <"Lima;<ArrayList> >   =  <"Lima, [Lima,BuenosAires,El Cairo]  >
+        ArrayList<Ciudad> ciudadesRecorridas =recorridoLadron.get( objetoRobado.getCiudadOrigen() );
+        for(Ciudad ciudad: ciudadesRecorridas){
+            ciudad.tomarPistasFacil();
         }
 
-        Caso caso = new Caso(objetoRobado,recorridoLadron.get( objetoRobado.getCiudadOrigen() ),ladron);
-        caso.cargarEdificios();
-        return caso;
+        return new Caso(objetoRobado,ciudadesRecorridas,ladron);
     }
 
 }

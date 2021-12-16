@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class Policia {
     private Ciudad ciudadActual;
     private Rango rango;
-    private EstadoOrdenArresto orden;
+    private EstadoOrdenArresto orden = new OrdenNoEmitida();
     private Caso caso;
     private String nombre;
 
@@ -39,7 +39,10 @@ public class Policia {
         this.rango = new Novato();
         this.nombre = nombre;
     }
-
+    public Policia(String nombre,Rango rangoInicial) {
+        this.rango = rangoInicial;
+        this.nombre = nombre;
+    }
 
     public Interactuable visitar(Edificio edificio , Reloj reloj ){
         Interactuable interac =ciudadActual.visitar(edificio,reloj);

@@ -17,8 +17,9 @@ public class Caso {
         this.objeto = objeto;
         this.ciudadesVisitaLadron = ciudadesVisitaLadron;
         this.ladron = ladron;
+        this.cargarEdificios();
     }
-    public void  cargarEdificios(){
+    private void  cargarEdificios(){
         Iterator<Ciudad> iterador = ciudadesVisitaLadron.iterator();
         Ciudad ciudadActual = iterador.next(); //Devuelve Primera ciudad
         while(iterador.hasNext()){
