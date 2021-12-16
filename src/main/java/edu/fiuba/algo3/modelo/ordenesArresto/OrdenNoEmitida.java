@@ -7,9 +7,6 @@ public class OrdenNoEmitida implements EstadoOrdenArresto {
 
     @Override
     public void arrestar(Policia policia) {
-        policia.sumarArresto(0); //esto es un error, notificamos a alguien
         throw new  OrdenNoEmitidadError();
-        // error que dice NO EMITIO el policia la orden ade arresto no puedo detenr al sospechoso.
-        //policia.fallarArresto(); if(contadorArresto=0) esta mal ,
     }
 }

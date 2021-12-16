@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo.rango;
 
 import edu.fiuba.algo3.modelo.Caso;
 import edu.fiuba.algo3.modelo.Ciudad;
-import edu.fiuba.algo3.modelo.Reloj;
+import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 

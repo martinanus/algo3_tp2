@@ -3,11 +3,11 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.CiudadParser;
-import edu.fiuba.algo3.modelo.lector.LadronParser;
 import edu.fiuba.algo3.modelo.lector.ObjetoParser;
 import edu.fiuba.algo3.modelo.lector.RutasDeEscapeParser;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
-import edu.fiuba.algo3.modelo.rango.Rango;
+import edu.fiuba.algo3.modelo.tiempo.Reloj;
+import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 
 import java.util.ArrayList;
 import java.util.HashMap;

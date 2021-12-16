@@ -9,4 +9,5 @@ module edu.fiuba.algo3 {
     exports edu.fiuba.algo3.modelo.ordenesArresto;
     exports edu.fiuba.algo3.modelo.objeto;
     exports edu.fiuba.algo3.JavaFX;
+    exports edu.fiuba.algo3.modelo.tiempo;
 }
