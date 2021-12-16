@@ -31,7 +31,7 @@ public class Detective implements Rango {
     @Override
     public Rango sumarArrestos(int arrestoASumar) {
         this.contadorArrestos += arrestoASumar;
-        if( contadorArrestos >= 5)
+        if( contadorArrestos >= 10)
             return new Investigador();
         return this;
     }

@@ -30,7 +30,7 @@ public class RangoTest {
 
         Rango investigador = new Investigador();
 
-        assertEquals(Sargento.class, investigador.sumarArrestos(5).getClass());
+        assertEquals(Sargento.class, investigador.sumarArrestos(10).getClass());
     }
 
 

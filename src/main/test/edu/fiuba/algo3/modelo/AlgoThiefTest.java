@@ -1,12 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
-import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
-
 import edu.fiuba.algo3.modelo.interactuable.Pista;
-import edu.fiuba.algo3.modelo.rango.Detective;
-import edu.fiuba.algo3.modelo.rango.Sargento;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import org.junit.jupiter.api.Test;
 
@@ -60,7 +56,7 @@ public class AlgoThiefTest {
 
 
         assertEquals("Su moneda principal es el won",interactuable.mostrar()  );
-        assertEquals("Anillo",interactuable2.mostrar());
+        assertEquals("Anillo", interactuable2.mostrar());
         assertEquals("Bandera roja y azul",interactuable3.mostrar());
 
         juego.viajar("Seul",unPolicia); //(11+13)=24
