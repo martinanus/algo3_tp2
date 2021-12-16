@@ -22,12 +22,12 @@ public class AlgoThiefTest {
         Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
         Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
         assertEquals("pesos mexicanos ricardo",interactuable.mostrar()  );
-        assertEquals("Templo de Kukulkan",interactuable2.mostrar());
+        assertEquals("Moto",interactuable2.mostrar());
         assertEquals("Roja, verde y blanca",interactuable3.mostrar());
     }
 
     @Test
-    public void test02SeCreaUnCasoYSeViajaALaSiguienteCiudadaQueVisitoElLadron(){
+    public void test02SeCreaUnCasoYSeViajaAUnPaisDondeNoEstuvoElLadron(){
         AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepe");
         juego.generarPartida(unPolicia);
@@ -46,6 +46,10 @@ public class AlgoThiefTest {
         AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepito");
         juego.generarPartida(unPolicia);
+        Pista interactuable0 = (Pista) juego.visitar(unPolicia,"biblioteca");
+
+        assertEquals("Moto",interactuable0.mostrar());
+
         juego.viajar("Ciudad de Mexico",unPolicia);
         Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
         Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
@@ -53,7 +57,7 @@ public class AlgoThiefTest {
 
 
         assertEquals("Won",interactuable.mostrar()  );
-        assertEquals("Fortaleza de Hwasong",interactuable2.mostrar());
+        assertEquals("Anillo",interactuable2.mostrar());
         assertEquals("blanca, roja y azul",interactuable3.mostrar());
 
         juego.viajar("Seul",unPolicia); //(11+13)=24
@@ -62,7 +66,7 @@ public class AlgoThiefTest {
         Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
 
         assertEquals("euro",interactuable4.mostrar()  );
-        assertEquals("La torre Eiffel",interactuable5.mostrar());
+        assertEquals("Negro",interactuable5.mostrar());
         assertEquals("roja, azul y blanca",interactuable6.mostrar());
 
         juego.viajar("Paris",unPolicia);//(27+10)=37

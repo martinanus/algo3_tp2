@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.interactuable.Pista;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 
@@ -85,9 +86,9 @@ public class Ciudad {
         Edificio banco = new Edificio(pistas.get(0),"banco");
         Edificio biblioteca = new Edificio(pistas.get(1),"biblioteca");
         Edificio puerto = new Edificio(pistas.get(2),"puerto");
-        this.agregarEdificio(banco);
-        this.agregarEdificio(biblioteca);
-        this.agregarEdificio(puerto);
+        this.edificios.set(0, banco);
+        this.edificios.set(1, biblioteca);
+        this.edificios.set(2, puerto);
     }
 
     private ArrayList<Pista> generaPistas() {
@@ -107,5 +108,9 @@ public class Ciudad {
     }
     public void tomarPistasDificil() {
         this.descripcionCiudad = descripcionCiudades.get(2);
+    }
+
+    public void llenarPistaLadron(Ladron ladron) {
+        this.edificios.set(1, new Edificio(ladron.generarPista(), "biblioteca"));
     }
 }

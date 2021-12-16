@@ -18,6 +18,7 @@ public class Caso {
         this.ciudadesVisitaLadron = ciudadesVisitaLadron;
         this.ladron = ladron;
         this.cargarEdificios();
+        this.cargarPistasLadron();
     }
     private void  cargarEdificios(){
         Iterator<Ciudad> iterador = ciudadesVisitaLadron.iterator();
@@ -34,6 +35,11 @@ public class Caso {
         ciudadActual.agregarEdificio(banco);
         ciudadActual.agregarEdificio(biblioteca);
         ciudadActual.agregarEdificio(puerto);
+    }
+
+    private void cargarPistasLadron() {
+        for (int i = 0; i < ciudadesVisitaLadron.size() - 1; i++)
+            ciudadesVisitaLadron.get(i).llenarPistaLadron(ladron);
     }
 
 

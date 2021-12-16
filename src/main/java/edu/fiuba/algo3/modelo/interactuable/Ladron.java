@@ -27,4 +27,8 @@ public class Ladron implements Interactuable{
 
         policia.arrestar();
     }
+
+    public Pista generarPista() {
+        return this.descripcion.generarPista();
+    }
 }

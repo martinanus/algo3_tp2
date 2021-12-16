@@ -1,5 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.interactuable.Pista;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 
 public class Descripcion {
@@ -9,6 +13,8 @@ public class Descripcion {
     String cabello;
     String seña;
     String vehiculo;
+    ArrayList<String> pistas;
+    Iterator<String> iterador;
 
     public Descripcion(String nombre, String sexo, String Hobby, String cabello, String seña, String vehiculo){
             this.nombre = nombre;
@@ -17,6 +23,10 @@ public class Descripcion {
             this.cabello = cabello;
             this.seña = seña;
             this.vehiculo = vehiculo;
+            this.pistas = new ArrayList<>() {{
+                add(vehiculo); add(seña); add(cabello); add(hobby);
+            }};
+            this.iterador = pistas.iterator();
     }
 
     public Descripcion() {
@@ -61,5 +71,10 @@ public class Descripcion {
 
     private String getSexo() {
         return sexo;
+    }
+
+    public Pista generarPista() {
+        String pistaLadron = iterador.next();
+        return new Pista(pistaLadron);
     }
 }
