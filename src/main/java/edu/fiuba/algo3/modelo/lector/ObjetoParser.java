@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo.lector;
 
 import edu.fiuba.algo3.modelo.objeto.Objeto;
+import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
+import edu.fiuba.algo3.modelo.objeto.ObjetoMuyValioso;
+import edu.fiuba.algo3.modelo.objeto.ObjetoValioso;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -20,17 +23,15 @@ public class ObjetoParser {
             String NombreObjeto = (String) jobjetoRob.get("Nombre");
             String Rareza = (String) jobjetoRob.get("Rareza");
             String ciudadOrigen = (String) jobjetoRob.get("CiudadOrigen");
-            Objeto objeto;
+            Objeto objeto = new ObjetoComun();
             if(Objects.equals(Rareza, "Comun")){
-                objeto = new Objeto(NombreObjeto,ciudadOrigen,Rareza);
-                objetosRobados.add(objeto);
+                objeto = new ObjetoComun(NombreObjeto, ciudadOrigen);
             }else if(Objects.equals(Rareza, "Valioso")){
-                objeto = new Objeto(NombreObjeto,ciudadOrigen,Rareza);
-                objetosRobados.add(objeto);
+                objeto = new ObjetoValioso(NombreObjeto, ciudadOrigen);
             }else if(Objects.equals(Rareza, "Muy Valioso")){
-                objeto = new Objeto(NombreObjeto,ciudadOrigen,Rareza);
-                objetosRobados.add(objeto);
+                objeto = new ObjetoMuyValioso(NombreObjeto, ciudadOrigen);
             }
+            objetosRobados.add(objeto);
         }
         return objetosRobados;
     }

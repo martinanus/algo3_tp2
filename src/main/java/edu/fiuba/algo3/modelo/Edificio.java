@@ -18,6 +18,10 @@ public class Edificio {
         this.nombreEdificio = nombreEdificio;
     }
 
+    public Edificio() {
+
+    }
+
     public Interactuable visitar(Reloj reloj){
         contadorDeVisitas = contadorDeVisitas + 1;
         if (contadorDeVisitas <= 3) {

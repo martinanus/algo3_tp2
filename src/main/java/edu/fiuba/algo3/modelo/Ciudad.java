@@ -44,7 +44,7 @@ public class Ciudad {
         return edificio.visitar(reloj);
     }
     public Interactuable visitar(String edificioNombre , Reloj reloj){
-        Edificio edificioViejo= new Edificio(new Pista("hola"));
+        Edificio edificioViejo = new Edificio();
         for(Edificio edificio: edificios){
             if(Objects.equals(edificio.getNombre(), edificioNombre)){
                 edificioViejo = edificio;

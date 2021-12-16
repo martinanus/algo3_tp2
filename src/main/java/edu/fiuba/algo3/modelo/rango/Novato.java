@@ -3,6 +3,7 @@ package edu.fiuba.algo3.modelo.rango;
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
+import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 
@@ -33,18 +34,16 @@ public class Novato implements Rango {
         return this;
     }
 
-    //Novato Solo va a ejecutar casos con objetos Comunes.
-    //Aca el policia todavia no sabe nisiquiera en donde esta parado y el objeto nos dice en donde estan parado
+
     @Override
     public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron, AlgoThief algoThief) {
-        Objeto objetoRobado= new Objeto();
+        Objeto objetoRobado= new ObjetoComun();
         for (Objeto objeto : objetosRobados) {
-           if (objeto.esDeRareza("Comun")) {
+           if (objeto instanceof ObjetoComun) {
                objetoRobado = objeto;
-               //objetosRobados.remove(objeto); //si el jugador gana // Se queda con el ultimo si gana el caso se elimina
             }
-        }           //HashMap = <"Lima;<ArrayList> >   =  <"Lima, [Lima,BuenosAires,El Cairo]  >
-        ArrayList<Ciudad> ciudadesRecorridas =recorridoLadron.get( objetoRobado.getCiudadOrigen() );
+        }
+        ArrayList<Ciudad> ciudadesRecorridas = recorridoLadron.get( objetoRobado.getCiudadOrigen() );
         for(Ciudad ciudad: ciudadesRecorridas){
             ciudad.tomarPistasFacil();
         }
