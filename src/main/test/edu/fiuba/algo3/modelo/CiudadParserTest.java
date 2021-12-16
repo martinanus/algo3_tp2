@@ -16,6 +16,30 @@ public class CiudadParserTest {
         ArrayList<Ciudad> ciudades  =  parseador.parser("/jsons/ciudades.json");
         assertEquals(11,ciudades.size());
     }
+    @Test
+    public void test02LasCiudadesSeCarganCorrectamenteConSusCiudadesVecinasCasoMontreal() {
+        CiudadParser parseador = new CiudadParser();
+        ArrayList<Ciudad> ciudades  =  parseador.parser("/jsons/ciudades.json");
+        ArrayList<Ciudad> ciudadPrueba = new ArrayList<>();
+        for(Ciudad ciudad: ciudades){
+            if(ciudad.conNombreIgualA("Montreal")){
+                ciudadPrueba.addAll(ciudad.getCiudadesDestino());
+            }
+        }
+        assertEquals(3,ciudadPrueba.size());
+    }
+    @Test
+    public void test03LasCiudadesSeCarganCorrectamenteConSusCiudadesVecinasCasoLima() {
+        CiudadParser parseador = new CiudadParser();
+        ArrayList<Ciudad> ciudades  =  parseador.parser("/jsons/ciudades.json");
+        ArrayList<Ciudad> ciudadPrueba = new ArrayList<>();
+        for(Ciudad ciudad: ciudades){
+            if(ciudad.conNombreIgualA("Lima")){
+                ciudadPrueba.addAll(ciudad.getCiudadesDestino());
+            }
+        }
+        assertEquals(4,ciudadPrueba.size());
+    }
 
 }
 

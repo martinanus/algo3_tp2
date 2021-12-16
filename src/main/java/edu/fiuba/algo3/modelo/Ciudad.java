@@ -11,6 +11,7 @@ public class Ciudad {
     private Posicion posicion;
     private String nombre;
     private DescripcionCiudad descripcion;
+    private ArrayList<Ciudad> ciudadesDestino;
 
     public Ciudad() {
         this.edificios = new ArrayList<>();
@@ -21,11 +22,19 @@ public class Ciudad {
         this.edificios = new ArrayList<>();
         this.nombre = Nombre;
         this.descripcion = descripcion;
+        this.ciudadesDestino = new ArrayList<>();
     }
 
     public Ciudad(Posicion posicion) {
         this.posicion = posicion;
         this.edificios = new ArrayList<>();
+    }
+    public void agregarCiudadDestino(Ciudad unaCiudad){
+        ciudadesDestino.add(unaCiudad);
+    }
+
+    public ArrayList<Ciudad> getCiudadesDestino(){
+        return ciudadesDestino;
     }
 
     public Interactuable visitar(Edificio edificioNombre , Reloj reloj){

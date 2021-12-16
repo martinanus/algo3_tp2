@@ -47,5 +47,8 @@ public class Tiempo {
         }
         return false;
     }
+    public double getTiempo(){
+        return this.horas;
+    }
 }
 

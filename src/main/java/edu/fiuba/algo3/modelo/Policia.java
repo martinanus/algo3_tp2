@@ -54,6 +54,7 @@ public class Policia {
         rango.viajar(ciudadActual,ciudadDestino, reloj);
         this.ciudadActual = ciudadDestino;
     }
+    
 
     public void duerme(Reloj reloj) {
         reloj.incrementar(new Tiempo(8)); //duerme 8hs

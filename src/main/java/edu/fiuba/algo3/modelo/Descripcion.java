@@ -19,6 +19,10 @@ public class Descripcion {
             this.vehiculo = vehiculo;
     }
 
+    public Descripcion() {
+
+    }
+
 
     public boolean comparar(Descripcion descripcion) {
         if(!Objects.equals(descripcion.getSexo(), "") && !Objects.equals(this.sexo, descripcion.getSexo())) {

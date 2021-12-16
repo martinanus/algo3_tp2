@@ -11,6 +11,7 @@ import edu.fiuba.algo3.modelo.rango.Rango;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class AlgoThief {
     private ArrayList<Ciudad> ciudades;
@@ -20,8 +21,10 @@ public class AlgoThief {
     private ArrayList<Ladron> ladrones;
     private Reloj reloj;
     private Policia policia;
+    private Descripcion descripcionSospechoso;
 
     public AlgoThief(){
+        descripcionSospechoso = new Descripcion();
         computadora = new Computadora();
         cargarLadrones();
         cargarCiudades();
@@ -58,11 +61,30 @@ public class AlgoThief {
     public void cargarLadrones(){
         this.ladrones = this.computadora.cargarDatos();
     }
-    public void juegoVisitar(){
-
-    }
 
     public Interactuable visitar(String nombreEdificio) {
         return policia.visitar(nombreEdificio,reloj);
+    }
+
+
+    public void viajar(String nombreCiudad) {
+        for(Ciudad ciudad: ciudades){
+            if(Objects.equals(ciudad.getNombre(), nombreCiudad )){ //falta verificar la lista de ciudades destino
+                policia.viajar(ciudad,reloj);
+            }
+        }
+    }
+    public Reloj getReloj(){
+        return this.reloj;
+    }
+
+    public void cargarDescripcion(Descripcion descripcion) {
+        descripcionSospechoso = descripcion;
+
+    }
+
+    public void generarOrdenDeArresto() {
+        Ladron ladronSopechoso = new Ladron(descripcionSospechoso);
+        policia.emitirOrdenArresto(computadora,ladronSopechoso);
     }
 }
