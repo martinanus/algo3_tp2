@@ -108,19 +108,19 @@ public class AlgoThiefTest {
         assertEquals("Anillo",interactuable2.mostrar());
         assertEquals("Bandera roja y azul",interactuable3.mostrar());
 
-        juego.viajar("Seul",unPolicia); //(11+13)=24
-        Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");//(24+1)=25
-        Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");//(25+1)=26
-        Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
+        juego.viajar("Seul",unPolicia);
+        Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");
+        Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");
+        Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");
 
         assertEquals("Su moneda principal es el euro",interactuable4.mostrar()  );
         assertEquals("Negro",interactuable5.mostrar());
         assertEquals("Idioma frances",interactuable6.mostrar());
 
-        juego.viajar("Paris",unPolicia);//(27+10)=37
+        juego.viajar("Paris",unPolicia);
 
-        Cuchillo interactuable7 = (Cuchillo) juego.visitar(unPolicia,"banco");
-        Cuchillo interactuable9 = (Cuchillo) juego.visitar(unPolicia,"puerto");
+        Cuchillo interactuable7 = (Cuchillo) juego.visitar(unPolicia,"banco");//38
+        Cuchillo interactuable9 = (Cuchillo) juego.visitar(unPolicia,"puerto");//40
         Ladron interactuable8 = (Ladron) juego.visitar(unPolicia,"biblioteca");
 
         assertEquals(new Tiempo(0), juego.getReloj().tiempoTranscurrido());

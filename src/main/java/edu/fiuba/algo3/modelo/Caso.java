@@ -31,9 +31,10 @@ public class Caso {
             ciudadActual = ciudadProxima;  //Segunda ciudad 2-daItera la pisamos con ciudad3
         }
 
-        Edificio banco = new Edificio(new Cuchillo(),"banco");
+        Cuchillo cuchillo = new Cuchillo();
+        Edificio banco = new Edificio(cuchillo,"banco");
         Edificio biblioteca = new Edificio(ladron,"biblioteca");
-        Edificio puerto = new Edificio(new Cuchillo(),"puerto");
+        Edificio puerto = new Edificio(cuchillo,"puerto");
         ciudadActual.agregarEdificio(banco);
         ciudadActual.agregarEdificio(biblioteca);
         ciudadActual.agregarEdificio(puerto);
