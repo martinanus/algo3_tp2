@@ -46,15 +46,18 @@ class Cuchillo{
      +interactuar(p : Policia, reloj:Reloj):void
 
 }
-OrdenEmitida ..|> EstadoOrdenArresto
-OrdenNoEmitida ..|> EstadoOrdenArresto
+
+EstadoOrdenArresto <|.. OrdenEmitida
+EstadoOrdenArresto <|.. OrdenNoEmitida
 Policia o-- EstadoOrdenArresto
 Edificio o- Interactuable
 Policia -->"1" Ciudad: está
 Ciudad o-- "3" Edificio
-Pista ..|>  Interactuable
-Ladron ..|>  Interactuable
-Cuchillo ..|>  Interactuable
+
+Interactuable <|.. Pista
+Interactuable <|.. Ladron
+Interactuable <|.. Cuchillo
+
 
 
 @enduml
