@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.interactuable.Pista;
 import edu.fiuba.algo3.modelo.rango.Detective;
 import edu.fiuba.algo3.modelo.rango.Investigador;
 import edu.fiuba.algo3.modelo.rango.Novato;
@@ -9,59 +11,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AlgoThiefTest {
-    /*
-    @Test
-    public void test01SeInicializaElRecorridoDelLadronConObjetoComun(){
-        //Cambiar de nombre a AlgoThief
-        /*Inicializar las pistas
-        Inicializar las armas y los cuchillos, en las edifciios de las ciudades
-        *->Inicializar objetosEnEdificios() pistas como los cuchillos.
-        *->
-        *->
-        *
-        AlgoThief juego = new AlgoThief();
-
-        Policia unPolicia = new Policia(new Novato());
-        juego.generarPartida(unPolicia);
-
-        assertEquals(4, unPolicia.cantidadPaisesParaViajar()  );
-
-    }
 
     @Test
-    public void test02SeInicializaElRecorridoDeLadronConObjetoValiosoRobado(){
+    public void test01SeCreaUnCasoYSeVisitaLos3EdificiosDeLaCiudadOrigen(){
         AlgoThief juego = new AlgoThief();
-
-        Policia unPolicia = new Policia(new Detective());
-        juego.generarPartida(unPolicia);
-        int cantidad = unPolicia.cantidadPaisesParaViajar();
-        assertTrue( cantidad==4 | cantidad ==5);
-
-
+        juego.generarPartida();
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
+        assertEquals("Pesos",interactuable.mostrar()  );
+        assertEquals("Templo de Kukulkán",interactuable2.mostrar());
+        assertEquals("Verde, blanca y roja",interactuable3.mostrar());
     }
-
-    @Test
-    public void test03SeInicializaElRecorridoDeLadronConObjetoMuyValiosoRobado(){
-        AlgoThief juego = new AlgoThief();
-
-        Policia unPolicia = new Policia(new Investigador());
-        juego.generarPartida(unPolicia);
-
-        assertEquals(7, unPolicia.cantidadPaisesParaViajar()  );
-
-    }
-
-    @Test
-    public void test04SeInicializaElRecorridoDeLadronConObjetoMuyValiosoRobado(){
-        AlgoThief juego = new AlgoThief();
-
-        Policia unPolicia = new Policia(new Investigador());
-        juego.generarPartida(unPolicia);
-
-        assertEquals(7, unPolicia.cantidadPaisesParaViajar()  );
-
-    }
-    */
-
 
 }

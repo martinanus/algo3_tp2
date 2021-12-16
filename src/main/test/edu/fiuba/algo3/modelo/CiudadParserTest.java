@@ -1,10 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.CiudadParser;
-import edu.fiuba.algo3.modelo.objeto.Objeto;
-import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
-import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

@@ -17,8 +17,6 @@ public class RutaDeEscapeParserTest {
         ArrayList<Ciudad> ciudades  =  parseador.parser("/jsons/ciudades.json");
         RutasDeEscapeParser parseardorRuta = new RutasDeEscapeParser();
         HashMap<String,ArrayList<Ciudad>> unHashMap = parseardorRuta.parser("/jsons/rutasDeEscape.json",ciudades);
-        System.out.println(unHashMap.get("Lima").get(3).getNombre());
-        System.out.println(unHashMap.get("Buenos Aires").get(2).getNombre());
         assertEquals(3,unHashMap.size());
     }
 }

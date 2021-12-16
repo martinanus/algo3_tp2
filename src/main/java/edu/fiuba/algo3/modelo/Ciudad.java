@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.interactuable.Interactuable;
+import edu.fiuba.algo3.modelo.interactuable.Pista;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -31,6 +32,15 @@ public class Ciudad {
         Edificio edificio= this.buscarEdificio(edificioNombre);
         return edificio.visitar(reloj);
     }
+    public Interactuable visitar(String edificioNombre , Reloj reloj){
+        Edificio edificioViejo= new Edificio(new Pista("hola"));
+        for(Edificio edificio: edificios){
+            if(Objects.equals(edificio.getNombre(), edificioNombre)){
+                edificioViejo = edificio;
+            }
+        }
+        return edificioViejo.visitar(reloj);
+    }
 
     private Edificio buscarEdificio(Edificio edificioNombre) {
         return edificios.get(edificios.indexOf(edificioNombre));
@@ -58,5 +68,19 @@ public class Ciudad {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public void llenarPistas(Ciudad ciudadProxima) {
+        ArrayList<Pista> pistas = ciudadProxima.generaPistas();
+        Edificio banco = new Edificio(pistas.get(0),"banco");
+        Edificio biblioteca = new Edificio(pistas.get(1),"biblioteca");
+        Edificio puerto = new Edificio(pistas.get(2),"puerto");
+        this.agregarEdificio(banco);
+        this.agregarEdificio(biblioteca);
+        this.agregarEdificio(puerto);
+    }
+
+    private ArrayList<Pista> generaPistas() {
+        return this.descripcion.generarPistas();
     }
 }

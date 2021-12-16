@@ -33,10 +33,11 @@ public class Computadora {
         return new OrdenNoEmitida();
     }
 
-    public void cargarDatos() {
+    public ArrayList<Ladron> cargarDatos() {
         LadronParser ladronParser = new LadronParser();
         ArrayList<Ladron> ladrones = ladronParser.parser("/jsons/ladrones.json");
         this.sospechosos.addAll(ladrones);
+        return ladrones;
     }
 
 

@@ -1,13 +1,11 @@
 package edu.fiuba.algo3.modelo.rango;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
-import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
-import edu.fiuba.algo3.modelo.objeto.ObjetoValioso;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 
 public class Detective implements Rango {
     private double velocidad;
@@ -33,6 +31,11 @@ public class Detective implements Rango {
         if( contadorArrestos >= 5)
             return new Investigador();
         return this;
+    }
+
+    @Override
+    public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron) {
+        return null;
     }
 
     //@Override

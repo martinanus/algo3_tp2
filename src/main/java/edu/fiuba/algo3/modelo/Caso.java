@@ -1,24 +1,42 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class Caso {
     private Objeto objeto;
     private Ladron ladron;
-    private ArrayList<Ciudad> cantidadPaises;
+    private ArrayList<Ciudad> ciudadesVisitaLadron;
 
-    public Caso(Objeto objetoComun) {
-        this.objeto = objetoComun;
-        cantidadPaises = this.objeto.crearRutaEscape(); //Esta ruta de escape del ladron no del policia.
+    public Caso(Objeto objeto, ArrayList<Ciudad> ciudadesVisitaLadron,Ladron ladron) {
+        this.objeto = objeto;
+        this.ciudadesVisitaLadron = ciudadesVisitaLadron;
+        this.ladron = ladron;
+    }
+    public void  cargarEdificios(){
+        Iterator<Ciudad> iterador = ciudadesVisitaLadron.iterator();
+        Ciudad ciudadActual = iterador.next(); //Devuelve Primera ciudad
+        while(iterador.hasNext()){
+            Ciudad ciudadProxima = iterador.next(); //1eraIter-Segunda ciudad -2doIteracion le da 3eraCiudad
+            ciudadActual.llenarPistas(ciudadProxima);
+            ciudadActual = ciudadProxima;  //Segunda ciudad 2-daItera la pisamos con ciudad3
+        }
 
-
+        Edificio banco = new Edificio(new Cuchillo(),"banco");
+        Edificio biblioteca = new Edificio(ladron,"biblioteca");
+        Edificio puerto = new Edificio(new Cuchillo(),"puerto");
+        ciudadActual.agregarEdificio(banco);
+        ciudadActual.agregarEdificio(biblioteca);
+        ciudadActual.agregarEdificio(puerto);
     }
 
-    //public int getCantidadPaises() {
-    //    return cantidadPaises;
-    //}
+
+    public Ciudad getCiudadOrigen() {
+        return ciudadesVisitaLadron.get(0);
+    }
 }

@@ -2,16 +2,21 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
+import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Policia {
     private Ciudad ciudadActual;
     private Rango rango;
     private EstadoOrdenArresto orden;
     private Caso caso;
+    private String nombre;
 
 
     public Policia(Ciudad ciudad) {
@@ -28,8 +33,19 @@ public class Policia {
         this.rango = rangoInicial;
     }
 
+    public Policia(String nombre) {
+        this.rango = new Novato();
+        this.nombre = nombre;
+    }
+
+
     public Interactuable visitar(Edificio edificio , Reloj reloj ){
         Interactuable interac =ciudadActual.visitar(edificio,reloj);
+        interac.interactuar(this,reloj);
+        return  interac;
+    }
+    public Interactuable visitar(String nombreEdificio , Reloj reloj ){
+        Interactuable interac =ciudadActual.visitar(nombreEdificio,reloj);
         interac.interactuar(this,reloj);
         return  interac;
     }
@@ -62,11 +78,13 @@ public class Policia {
         return this.rango;
     }
 
-    //public int cantidadPaisesParaViajar(){
-    //    return caso.getCantidadPaises();
-    //}
 
+    public void generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron,Ladron ladron) {
+        Caso unCaso =  rango.generarCaso(objetosRobados,recorridoLadron,ladron);
+        this.ciudadActual= (unCaso.getCiudadOrigen());
+        this.caso = unCaso;
 
+    }
 }
 
 
