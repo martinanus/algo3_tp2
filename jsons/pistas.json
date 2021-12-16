@@ -18,7 +18,7 @@
   {
     "Pista": {
       "Ciudad": "Beijing",
-      "PistasFacil":["Su moneda principal son los Yuanes","Lugar Famoso Gran Murralla","Bandera rojo y amarilla"],
+      "PistasFacil":["Su moneda principal son los Yuanes","Lugar Famoso Gran Murralla","Bandera roja y amarilla"],
       "PistasMedia":["Es una potencia economica", "Lugar Famoso Templo Del Cielo","Bandera con estrellas" ],
       "PistasDificil":["Industria Tecnologica","Religion Budismo","Bandera con estrellas"]
     }
@@ -26,7 +26,7 @@
   {
     "Pista": {
       "Ciudad": "El Cairo",
-      "PistasFacil":["Su moneda principal es la libra","Lugar famoso la gran piramide de Guiza","Bandera rojo blanco y negro"],
+      "PistasFacil":["Su moneda principal es la libra","Lugar famoso la gran piramide de Guiza","Bandera roja blanca y negra"],
       "PistasMedia":["mineria", "Lugar Famoso tumba de los faraones","Bandera color roja y blanca" ],
       "PistasDificil":["Turismo","desierto del Sinaí","La bandera tiene un Aguila"]
     }
@@ -34,7 +34,7 @@
   {
     "Pista": {
       "Ciudad": "Roma",
-      "PistasFacil":["Su moneda principal es el euro","Lugar famoso el gran Coliceo","Roja, verde y blanca"],
+      "PistasFacil":["Su moneda principal es el euro","Lugar famoso el gran Coliceo","Roja, Bandera verde y blanca"],
       "PistasMedia":["Turismos como una actividad economica", "gastronomía mediterránea ","Idioma Principal Italino" ],
       "PistasDificil":["Tiene actividad Industrial","Destaca el artista Miguel Ángel en su arquitectura","El Emblema nacional tiene una estrella"]
     }
@@ -42,26 +42,49 @@
   {
     "Pista": {
       "Ciudad": "Ciudad de Mexico",
-      "PistasFacil":["pesos mexicanos ricardo","Templo de Kukulkan","Roja, verde y blanca"],
-      "PistasMedia":["Turismos como una actividad economica", "gastronomía mediterránea ","Idioma Principal Italino" ],
-      "PistasDificil":["Tiene actividad Industrial","Destaca el artista Miguel Ángel en su arquitectura","El Emblema nacional tiene una estrella"]
+      "PistasFacil":["Su moneda principal es el peso","Lugar famoso Monte Popocatepetl","Bandera Verde, Blanca y Roja"],
+      "PistasMedia":["Agricultura", "Lugar Famoso zona Arqueológica de Tulum","Idioma Principal Español" ],
+      "PistasDificil":["Turismo","Lugar Famoso Sierra Madre","La bandera tiene un Aguila"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Madrid",
+      "PistasFacil":["Su moneda principal es el Euro","Lugar famoso Museo Nacional del Prado","Bandera roja amarilla"],
+      "PistasMedia":["agricultura", "Lugar Famoso El Palacio de Cristal","El escudo tiene una corona" ],
+      "PistasDificil":["Pesca","Lugar Famoso Museo Nacional Centro de Arte Reina Sofía","El escudo tiene el símbolo heraldico "]
     }
   },
   {
     "Pista": {
       "Ciudad": "Seul",
-      "PistasFacil":["Won","Fortaleza de Hwasong","blanca, roja y azul"],
-      "PistasMedia":["Turismos como una actividad economica", "gastronomía mediterránea ","Idioma Principal Italino" ],
-      "PistasDificil":["Tiene actividad Industrial","Destaca el artista Miguel Ángel en su arquitectura","El Emblema nacional tiene una estrella"]
+      "PistasFacil":["Su moneda principal es el won","Lugar famoso Complejo del Palacio de Changdokkung","Bandera roja y azul"],
+      "PistasMedia":["Actividad economica Turismo", "Lugar famoso Deoksugung","La bandera tiene un yin yang" ],
+      "PistasDificil":["Actividad economica Tecnologia","Lugar famoso Gyeongbokgung","La bandera tiene un Aguila"]
     }
   },
   {
     "Pista": {
       "Ciudad": "Paris",
-      "PistasFacil":["euro","La torre Eiffel","roja, azul y blanca"],
-      "PistasMedia":["Turismos como una actividad economica", "gastronomía mediterránea ","Idioma Principal Italino" ],
-      "PistasDificil":["Tiene actividad Industrial","Destaca el artista Miguel Ángel en su arquitectura","El Emblema nacional tiene una estrella"]
+      "PistasFacil":["Su moneda principal es el euro","Lugar famoso Torre Eiffel","Idioma frances"],
+      "PistasMedia":["Actividad Gastronomica", "Lugar Famoso Museo del Louvre","Bandera Azul blanca y roja" ],
+      "PistasDificil":["Turismo","Lugar Famoso Catedral de Notre Dame","El emblema nacional tiene ramas de olivo y de roble"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Montreal",
+      "PistasFacil":["Su moneda principal es el euro","Lugar famoso Basilica Notre-Dame","Bandera blanca y roja"],
+      "PistasMedia":["Comercio", "Lugar Famoso Estadio Olimpico","Idioma Frances e Ingles" ],
+      "PistasDificil":["Turismo","Lugar Famoso Oratorio de San Jose","El escudo tiene un trebol"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Tokyo",
+      "PistasFacil":["Su moneda principal es la libra","Lugar famoso Gimnasio Nacional Yoyogi","Bandera roja y blanca"],
+      "PistasMedia":["Industria Tecnoligica", "Lugar Famoso Templo de Senso-ji","La bandera tiene un circulo rojo" ],
+      "PistasDificil":["Turismo","Lugar Famoso Santuario Meiji","Idioma japones"]
     }
   }
-
 ]

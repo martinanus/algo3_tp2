@@ -34,7 +34,7 @@ public class Investigador implements Rango {
     }
 
     @Override
-    public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron) {
+    public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron, AlgoThief algoThief) {
         Objeto objetoRobado= new Objeto();
         for (Objeto objeto : objetosRobados) {
             if (objeto.esDeRareza("Comun")) {
@@ -47,6 +47,6 @@ public class Investigador implements Rango {
             ciudad.tomarPistasMedias();
         }
 
-        return new Caso(objetoRobado,ciudadesRecorridas,ladron);
+        return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
     }
 }

@@ -21,7 +21,6 @@ public class AlgoThief {
     private Computadora computadora;
     private ArrayList<Ladron> ladrones;
     private Reloj reloj;
-    private Policia policia;
     private Descripcion descripcionSospechoso;
 
     public AlgoThief(){
@@ -39,7 +38,7 @@ public class AlgoThief {
         Ladron ladron= ladrones.get(0);
         //ladrones.remove(0); Si gana el ladron refactor de esto
         //System.out.println(recorridoLadron);
-        policia.generarCaso(objetosRobados,recorridoLadron,ladron); //refactor nombre
+        policia.generarCaso(objetosRobados,recorridoLadron,ladron, this); //refactor nombre
 
     }
 
@@ -95,5 +94,23 @@ public class AlgoThief {
     private void cargarPistas(ArrayList<Ciudad> ciudades){
         PistaParser parseador = new PistaParser();
         parseador.parser("/jsons/pistas.json",ciudades); //Puede haber un refactor
+    }
+
+    public void finalizar(Objeto objetoRobado, Ladron ladron) {
+        this.ladrones.remove(ladron);
+        this.objetosRobados.remove(objetoRobado);
+        this.reloj = new Reloj(new Tiempo(168));
+    }
+
+    public void finalizar() {
+        this.reloj = new Reloj(new Tiempo(168));
+    }
+
+    public int getCantidadLadrones() {
+        return ladrones.size();
+    }
+
+    public int getCantidadObjetosRobados() {
+        return objetosRobados.size();
     }
 }

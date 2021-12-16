@@ -36,7 +36,7 @@ public class Novato implements Rango {
     //Novato Solo va a ejecutar casos con objetos Comunes.
     //Aca el policia todavia no sabe nisiquiera en donde esta parado y el objeto nos dice en donde estan parado
     @Override
-    public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron) {
+    public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron, AlgoThief algoThief) {
         Objeto objetoRobado= new Objeto();
         for (Objeto objeto : objetosRobados) {
            if (objeto.esDeRareza("Comun")) {
@@ -49,7 +49,7 @@ public class Novato implements Rango {
             ciudad.tomarPistasFacil();
         }
 
-        return new Caso(objetoRobado,ciudadesRecorridas,ladron);
+        return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
     }
 
 }

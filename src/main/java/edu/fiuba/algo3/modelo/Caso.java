@@ -9,14 +9,16 @@ import java.util.Iterator;
 
 
 public class Caso {
+    private AlgoThief algoThief;
     private Objeto objeto;
     private Ladron ladron;
     private ArrayList<Ciudad> ciudadesVisitaLadron;
 
-    public Caso(Objeto objeto, ArrayList<Ciudad> ciudadesVisitaLadron,Ladron ladron) {
+    public Caso(Objeto objeto, ArrayList<Ciudad> ciudadesVisitaLadron,Ladron ladron, AlgoThief algoThief) {
         this.objeto = objeto;
         this.ciudadesVisitaLadron = ciudadesVisitaLadron;
         this.ladron = ladron;
+        this.algoThief = algoThief;
         this.cargarEdificios();
         this.cargarPistasLadron();
     }
@@ -45,5 +47,13 @@ public class Caso {
 
     public Ciudad getCiudadOrigen() {
         return ciudadesVisitaLadron.get(0);
+    }
+
+    public void finalizar() {
+        this.algoThief.finalizar(this.objeto, this.ladron);
+    }
+
+    public void finalizarSinExito() {
+        this.algoThief.finalizar();
     }
 }

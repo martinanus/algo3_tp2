@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.rango;
 
+import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.Caso;
 import edu.fiuba.algo3.modelo.Ciudad;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
@@ -15,7 +16,7 @@ public interface Rango {
 
     Rango sumarArrestos(int arrestoASumar);
 
-    Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron);
+    Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron, AlgoThief algoThief);
 
     //Caso generarCaso();
 }

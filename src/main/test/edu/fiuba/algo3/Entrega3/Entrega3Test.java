@@ -6,6 +6,7 @@ import edu.fiuba.algo3.modelo.Policia;
 import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.interactuable.Pista;
+import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,12 +35,14 @@ public class Entrega3Test {
         Cuchillo interactuable7 = (Cuchillo) juego.visitar(unPolicia,"banco");
         Cuchillo interactuable9 = (Cuchillo) juego.visitar(unPolicia,"puerto");
         Ladron interactuable8 = (Ladron) juego.visitar(unPolicia,"biblioteca");
-        //Caso1: ATRAPAS AL LADRON PORQUE METISTE LA ORDEN DE ARRESTO. Lo que tiene que pasar es
-        //Se elimina el ladron y el objeto robado y se asigna un nuevo caso.
-        //
-        //Caso2: NO ATRAPAS AL LADRON PORQUE NO emiten la orden de arresto
-        //No se deberia eliminar el ladron ni el objeto robado,
-        // independientemente de lo que pase se debe asignar otro caso.
+
+        juego.generarPartida(unPolicia);
+        juego.visitar(unPolicia,"banco");
+        juego.visitar(unPolicia,"biblioteca");
+        juego.visitar(unPolicia,"banco");
+
+        assertEquals(new Tiempo(4), juego.getReloj().tiempoTranscurrido());
+
         //Herida por arma de fuego: 4 hs cada vez.
         // Dormir: 8 hs por noche.
 

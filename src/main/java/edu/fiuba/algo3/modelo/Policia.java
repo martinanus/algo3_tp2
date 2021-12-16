@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
+import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
@@ -67,8 +68,15 @@ public class Policia {
 
 
     public void arrestar() {
-        this.orden.arrestar(this);
-        //mision.terminarMision(); //incrementa reloj al tiempo max,
+        if (caso != null)
+            try {
+                this.orden.arrestar(this);
+                caso.finalizar();
+            } catch(OrdenNoEmitidadError e) {
+                caso.finalizarSinExito();
+            }
+        else
+            this.orden.arrestar(this);
     }
 
     public void sumarArresto(int arrestoASumar) {
@@ -85,8 +93,8 @@ public class Policia {
     }
 
 
-    public void generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron,Ladron ladron) {
-        Caso unCaso =  rango.generarCaso(objetosRobados,recorridoLadron,ladron);
+    public void generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron,Ladron ladron, AlgoThief algoThief) {
+        Caso unCaso =  rango.generarCaso(objetosRobados,recorridoLadron,ladron, algoThief);
         this.ciudadActual= (unCaso.getCiudadOrigen());
         this.caso = unCaso;
 

@@ -32,7 +32,7 @@ public class Sargento implements Rango {
         return this;
     }
     @Override
-    public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron) {
+    public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron, AlgoThief algoThief) {
         Objeto objetoRobado= new Objeto();
         for (Objeto objeto : objetosRobados) {
             if (objeto.esDeRareza("Comun")) {
@@ -44,7 +44,7 @@ public class Sargento implements Rango {
         for(Ciudad ciudad: ciudadesRecorridas){
             ciudad.tomarPistasDificil();
         }
-        return new Caso(objetoRobado,ciudadesRecorridas,ladron);
+        return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
     }
 
 }
