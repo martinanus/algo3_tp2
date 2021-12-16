@@ -96,7 +96,6 @@ public class Ciudad {
     }
 
     public void setDescripciones(ArrayList<DescripcionCiudad> descripcionesCiudades) {
-        //System.out.println(descripcionesCiudades);
         this.descripcionCiudades = descripcionesCiudades;
     }
 

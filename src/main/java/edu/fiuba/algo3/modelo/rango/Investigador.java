@@ -3,7 +3,6 @@ package edu.fiuba.algo3.modelo.rango;
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
-import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
 import edu.fiuba.algo3.modelo.objeto.ObjetoValioso;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
@@ -30,7 +29,7 @@ public class Investigador implements Rango {
     @Override
     public Rango sumarArrestos(int arrestoASumar) {
         this.contadorArrestos += arrestoASumar;
-        if( contadorArrestos >= 10)
+        if( contadorArrestos >= 20)
             return new Sargento();
         return this;
     }
