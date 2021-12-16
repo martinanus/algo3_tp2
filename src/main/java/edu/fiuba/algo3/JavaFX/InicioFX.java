@@ -78,8 +78,9 @@ public class InicioFX extends Application {
     private Scene crearSceneCiudad() {
 
         Label descrPais = new Label();
-        descrPais.setText("Egipto fue cuna de la antigua civilización \n" +
-                " egipcia, que junto con la mesopotámica \n" +
+        descrPais.setText(
+                "Egipto fue cuna de la antigua civilización \n" +
+                "egipcia, que junto con la mesopotámica \n" +
                 "fue el origen de la actual cultura \n" +
                 "occidental");
         descrPais.setFont(Font.font(14));
