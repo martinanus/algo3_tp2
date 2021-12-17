@@ -81,8 +81,9 @@ public class Entrega2Test {
         computadora.agregarSopechoso(sospechoso1);
         computadora.agregarSopechoso(sospechoso2);
         computadora.agregarSopechoso(sospechoso3);
+        Reloj reloj = new Reloj(new Tiempo(168));
 
-        assertEquals(OrdenEmitida.class, computadora.emitirOrdenDeArresto(sospechosoBuscado).getClass());
+        assertEquals(OrdenEmitida.class, computadora.emitirOrdenDeArresto(sospechosoBuscado,reloj).getClass());
     }
 
     @Test
@@ -128,7 +129,7 @@ public class Entrega2Test {
 
         policia.viajar(mexico,reloj);
 
-        policia.emitirOrdenArresto(computadora,ladron);
+        policia.emitirOrdenArresto(computadora,ladron,reloj);
 
         policia.visitar(puerto,reloj);
 

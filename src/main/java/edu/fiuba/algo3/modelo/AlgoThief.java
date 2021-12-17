@@ -31,7 +31,11 @@ public class AlgoThief {
         cargarObjetosRobados();
         cargarRutasLadron(ciudades);
         cargarPistas(ciudades);
-        reloj = new Reloj(new Tiempo(168));
+        reloj = new Reloj(new Tiempo(168)); // 17+24*6+17=178
+    }
+
+    public void inicializarDia() {
+        reloj.incrementar(new Tiempo(7));
     }
 
     public void generarPartida(Policia policia) {
@@ -66,6 +70,9 @@ public class AlgoThief {
     }
 
     public Interactuable visitar(Policia policia, String nombreEdificio) {
+        /*if(reloj.horaDormir()){
+            policia.duerme(reloj);
+        }*/
         return policia.visitar(nombreEdificio,reloj);
     }
 
@@ -88,7 +95,7 @@ public class AlgoThief {
 
     public void generarOrdenDeArresto(Policia policia) {
         Ladron ladronSopechoso = new Ladron(descripcionSospechoso);
-        policia.emitirOrdenArresto(computadora,ladronSopechoso);
+        policia.emitirOrdenArresto(computadora,ladronSopechoso,reloj);
     }
 
     private void cargarPistas(ArrayList<Ciudad> ciudades){

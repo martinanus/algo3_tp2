@@ -5,6 +5,8 @@ import edu.fiuba.algo3.modelo.lector.LadronParser;
 import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
+import edu.fiuba.algo3.modelo.tiempo.Reloj;
+import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 
 import java.util.ArrayList;
 
@@ -20,8 +22,9 @@ public class Computadora {
         this.sospechosos.add(sospechoso);
     }
 
-    public EstadoOrdenArresto emitirOrdenDeArresto(Ladron sospechosoBuscado) {
+    public EstadoOrdenArresto emitirOrdenDeArresto(Ladron sospechosoBuscado, Reloj reloj) {
         ArrayList<Ladron> sospechososEncotrados = new ArrayList<>();
+        reloj.incrementar(new Tiempo(3));
         for (Ladron sospechoso : sospechosos) {
             if(sospechosoBuscado.compararCon(sospechoso)){
                 sospechososEncotrados.add(sospechoso);

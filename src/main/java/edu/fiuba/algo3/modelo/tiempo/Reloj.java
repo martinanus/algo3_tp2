@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo.tiempo;
 
 
+import java.util.ArrayList;
+
 public class Reloj {
     private Tiempo tiempoMaximo;
     private Tiempo tiempoTranscurrido;
@@ -26,4 +28,15 @@ public class Reloj {
         return tiempoTranscurrido;
     }
 
+    public boolean horaDormir() {
+        int[] cotaInferior = new int[]{22, 47, 71, 95, 119, 141};
+        int[] cotaSuperior = new int[]{24, 49, 73, 97, 121, 145};
+        boolean resultado = false;
+        for (int i = 0; i < 6; i++) {
+            if (tiempoTranscurrido().getTiempo() >= cotaInferior[i] && tiempoTranscurrido().getTiempo() <= cotaSuperior[i]) {
+                resultado=true;
+            }
+        }
+        return resultado;
+    }
 }

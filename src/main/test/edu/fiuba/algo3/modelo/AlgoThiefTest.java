@@ -73,9 +73,9 @@ public class AlgoThiefTest {
         juego.cargarDescripcion(descripcion);
         juego.generarOrdenDeArresto(unPolicia); //refactor generar orden de arresto incluido cargarDescripcion.
 
-        Cuchillo interactuable7 = (Cuchillo) juego.visitar(unPolicia,"banco");
-        Cuchillo interactuable9 = (Cuchillo) juego.visitar(unPolicia,"puerto");
-        Ladron interactuable8 = (Ladron) juego.visitar(unPolicia,"biblioteca");
+        juego.visitar(unPolicia,"banco");
+        juego.visitar(unPolicia,"puerto");
+        juego.visitar(unPolicia,"biblioteca");
 
 
         assertEquals(new Tiempo(0), juego.getReloj().tiempoTranscurrido());
@@ -115,9 +115,9 @@ public class AlgoThiefTest {
 
         juego.viajar("Paris",unPolicia);
 
-        Cuchillo interactuable7 = (Cuchillo) juego.visitar(unPolicia,"banco");//38
-        Cuchillo interactuable9 = (Cuchillo) juego.visitar(unPolicia,"puerto");//40
-        Ladron interactuable8 = (Ladron) juego.visitar(unPolicia,"biblioteca");
+        juego.visitar(unPolicia,"banco");//38
+        juego.visitar(unPolicia,"puerto");//40
+        juego.visitar(unPolicia,"biblioteca");
 
         assertEquals(new Tiempo(0), juego.getReloj().tiempoTranscurrido());
         assertEquals(ladronesIniciales, juego.getCantidadLadrones());

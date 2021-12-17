@@ -84,8 +84,8 @@ public class Policia {
     }
 
 
-    public void emitirOrdenArresto(Computadora computadora, Ladron ladron){
-        orden = computadora.emitirOrdenDeArresto(ladron);
+    public void emitirOrdenArresto(Computadora computadora, Ladron ladron, Reloj reloj){
+        orden = computadora.emitirOrdenDeArresto(ladron, reloj);
     }
 
     public Rango rangoPolicia() {

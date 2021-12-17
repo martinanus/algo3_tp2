@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.interactuable.ArmaDeFuego;
 import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
@@ -31,10 +32,9 @@ public class Caso {
             ciudadActual = ciudadProxima;  //Segunda ciudad 2-daItera la pisamos con ciudad3
         }
 
-        Cuchillo cuchillo = new Cuchillo();
-        Edificio banco = new Edificio(cuchillo,"banco");
+        Edificio banco = new Edificio(new ArmaDeFuego(),"banco");
         Edificio biblioteca = new Edificio(ladron,"biblioteca");
-        Edificio puerto = new Edificio(cuchillo,"puerto");
+        Edificio puerto = new Edificio(new Cuchillo(),"puerto");
         ciudadActual.agregarEdificio(banco);
         ciudadActual.agregarEdificio(biblioteca);
         ciudadActual.agregarEdificio(puerto);
