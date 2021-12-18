@@ -15,6 +15,8 @@ public class Reloj {
 
     public void incrementar(Tiempo tiempo) {
         tiempoTranscurrido.incrementar(tiempo);
+        tiempoTranscurrido.actualizar();
+        horaDeDormir();
         verificarTiempoExcedido();
     }
 
@@ -38,5 +40,17 @@ public class Reloj {
             }
         }
         return resultado;
+    }
+
+    private void horaDeDormir() {
+        this.tiempoTranscurrido.horaDeDormir(this);
+    }
+
+    public String getDia() {
+        return this.tiempoTranscurrido.getDia();
+    }
+
+    public double getHoraActual() {
+        return this.tiempoTranscurrido.getHoraActual();
     }
 }

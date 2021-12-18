@@ -14,8 +14,8 @@
     {
         "Ciudad":{
             "Nombre": "Buenos Aires",
-            "Latitud":-34.61305556,
-            "Longitud":-77.02824,
+            "Latitud":-34.61315,
+            "Longitud":-58.37723,
             "Bandera":"Celeste, Blanco y un sol al medio ",
             "Moneda": "Pesos",
             "Monumento":"El Obelisco",
@@ -26,8 +26,8 @@
     {
         "Ciudad":{
             "Nombre": "Ciudad de Mexico",
-            "Latitud":23.634501,
-            "Longitud":-102.552784,
+            "Latitud":19.42847,
+            "Longitud":-99.12766,
             "Bandera":"Verde, blanca y roja",
             "Moneda": "Pesos",
             "Monumento":"Templo de Kukulkan",
@@ -52,7 +52,7 @@
         "Ciudad":{
             "Nombre": "Beijing",
             "Latitud":39.9075,
-            "Longitud":-116.39723,
+            "Longitud":116.39723,
             "Bandera":"rojo y amarilla con estrellas ",
             "Moneda": "yuan",
             "Monumento":"La gran muralla",

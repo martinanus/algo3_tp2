@@ -31,4 +31,18 @@ public class DistanciaTest {
         /* Assert */
         assertEquals(3700, distancia, 50);
     }
+
+    @Test
+    public void test03SeCalculaLaDistanciaEntreSeulYParis() {
+        /* Arrange */
+        Posicion posicionSeul = new Posicion(37.566, 126.9784);
+        Posicion posicionParis = new Posicion(48.85341, 2.3488);
+
+        /* Act */
+        double distancia = posicionSeul.calcularDistanciaCon(posicionParis);
+        System.out.println(distancia / 900);
+
+        /* Assert */
+        assertEquals(8970, distancia, 50);
+    }
 }

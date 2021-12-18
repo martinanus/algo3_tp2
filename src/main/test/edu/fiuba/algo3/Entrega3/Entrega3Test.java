@@ -58,22 +58,22 @@ public class Entrega3Test {
         Policia unPolicia = new Policia("Pepito", new Investigador());
         unPolicia.sumarArresto(9);
         juego.generarPartida(unPolicia);
-        juego.viajar("Ciudad de Mexico",unPolicia);
+        juego.viajar("Ciudad de Mexico",unPolicia); // 5 hs viaje
         Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
         Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
         Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
 
-        juego.viajar("Seul",unPolicia);
+        juego.viajar("Seul",unPolicia); // 9 hs viaje
         Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");//(24+1)=25
         Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");//(25+1)=26
         Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
 
-        juego.viajar("Paris",unPolicia);
+        juego.viajar("Paris",unPolicia); // 6 hs viaje
         Descripcion descripcion = new Descripcion("","Masculino","Croquet","","","");
         juego.cargarDescripcion(descripcion);
-        assertEquals(25, juego.getReloj().tiempoTranscurrido().getTiempo());
+        assertEquals(34, juego.getReloj().tiempoTranscurrido().getTiempo());
         juego.generarOrdenDeArresto(unPolicia); //refactor generar orden de arresto incluido cargarDescripcion.
-        assertEquals(28, juego.getReloj().tiempoTranscurrido().getTiempo());
+        assertEquals(37, juego.getReloj().tiempoTranscurrido().getTiempo());
         juego.visitar(unPolicia,"banco");
         juego.visitar(unPolicia,"puerto");
         juego.visitar(unPolicia,"biblioteca");
@@ -87,23 +87,23 @@ public class Entrega3Test {
         AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepito");
         juego.generarPartida(unPolicia);
-        juego.viajar("Ciudad de Mexico",unPolicia);
+        juego.viajar("Ciudad de Mexico",unPolicia); // 8 hs viaje
         Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
         Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
         Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
 
-        juego.viajar("Seul",unPolicia); //(11+13)=24
+        juego.viajar("Seul",unPolicia); // 32 hs // 13 hs viaje
         Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");//(24+1)=25
         Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");//(25+1)=26
         Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
 
-        juego.viajar("Paris",unPolicia);//(27+10)=37
+        juego.viajar("Paris",unPolicia); // 9 hs
         Descripcion descripcion = new Descripcion("","Masculino","Croquet","","","");
         juego.cargarDescripcion(descripcion);
         juego.generarOrdenDeArresto(unPolicia); //refactor generar orden de arresto incluido cargarDescripcion.
-        assertEquals(37, juego.getReloj().tiempoTranscurrido().getTiempo());
+        assertEquals(55, juego.getReloj().tiempoTranscurrido().getTiempo());
         ArmaDeFuego interactuable7 = (ArmaDeFuego) juego.visitar(unPolicia,"banco");
-        assertEquals(42, juego.getReloj().tiempoTranscurrido().getTiempo());
+        assertEquals(60, juego.getReloj().tiempoTranscurrido().getTiempo());
         Cuchillo interactuable9 = (Cuchillo) juego.visitar(unPolicia,"puerto");
         Ladron interactuable8 = (Ladron) juego.visitar(unPolicia,"biblioteca");
 
