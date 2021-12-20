@@ -40,7 +40,6 @@ public class DistanciaTest {
 
         /* Act */
         double distancia = posicionSeul.calcularDistanciaCon(posicionParis);
-        System.out.println(distancia / 900);
 
         /* Assert */
         assertEquals(8970, distancia, 50);
