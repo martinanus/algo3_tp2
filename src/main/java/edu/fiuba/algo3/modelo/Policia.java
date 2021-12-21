@@ -12,7 +12,6 @@ import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Policia {
     private Ciudad ciudadActual;
@@ -98,8 +97,8 @@ public class Policia {
     }
 
 
-    public void generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron,Ladron ladron, AlgoThief algoThief) {
-        Caso unCaso =  rango.generarCaso(objetosRobados,recorridoLadron,ladron, algoThief);
+    public void generarCaso(ArrayList<Objeto> objetosRobados, ArrayList<Ciudad> ciudades,Ladron ladron, AlgoThief algoThief) {
+        Caso unCaso =  rango.generarCaso(objetosRobados, ciudades,ladron, algoThief);
         this.ciudadActual= (unCaso.getCiudadOrigen());
         this.caso = unCaso;
 

@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.JavaFX;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.modelo.Policia;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -63,7 +64,7 @@ public class InicioFX extends Application {
         botonInicio.setOnAction(botonInicioHandler);
 
         botonContinuar.setOnAction(value ->  {
-            juego.setNombreJugador(textNombre.getText());
+            juego.setPolicia(new Policia(textNombre.getText()));
             descripcionJugador.setText("Hola " + textNombre.getText() + " tienes rango " + juego.mostrarRango());
         });
 

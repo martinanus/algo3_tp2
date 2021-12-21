@@ -36,14 +36,14 @@ public class Sargento implements Rango {
         return this;
     }
     @Override
-    public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron, AlgoThief algoThief) {
+    public Caso generarCaso(ArrayList<Objeto> objetosRobados,  ArrayList<Ciudad> ciudades, Ladron ladron, AlgoThief algoThief) {
         Objeto objetoRobado= new ObjetoMuyValioso();
         for (Objeto objeto : objetosRobados) {
             if (objeto instanceof ObjetoMuyValioso) {
                 objetoRobado = objeto;
             }
         }
-        ArrayList<Ciudad> ciudadesRecorridas = recorridoLadron.get( objetoRobado.getCiudadOrigen() );
+        ArrayList<Ciudad> ciudadesRecorridas = objetoRobado.generarRecorrido(ciudades);;
         for(Ciudad ciudad: ciudadesRecorridas){
             ciudad.tomarPistasDificil();
         }

@@ -1,17 +1,13 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.ArchivoNoEncontradoError;
 import edu.fiuba.algo3.modelo.lector.CiudadParser;
 import edu.fiuba.algo3.modelo.lector.LadronParser;
-import edu.fiuba.algo3.modelo.lector.RutasDeEscapeParser;
-import edu.fiuba.algo3.modelo.objeto.Objeto;
-import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -48,15 +44,5 @@ public class LectorTest {
         assertThrows(ArchivoNoEncontradoError.class, ()-> {
             ciudadParser.parser("/jsons/ladron.json");  //
         } );
-    }
-
-    @Test
-    public void SeCarganDatosDeRutasDeEscapeCorrectamente() {
-        CiudadParser ciudadParser = new CiudadParser();
-        ArrayList<Ciudad> ciudades = ciudadParser.parser("/jsons/ciudades.json");
-
-        RutasDeEscapeParser rutasParser = new RutasDeEscapeParser();
-        HashMap<String, ArrayList<Ciudad>> rutasDeEscape = rutasParser.parser("/jsons/rutasDeEscape.json", ciudades);
-        assertEquals(3, rutasDeEscape.size());
     }
 }

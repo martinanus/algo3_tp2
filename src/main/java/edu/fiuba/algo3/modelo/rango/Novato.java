@@ -8,7 +8,6 @@ import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Novato implements Rango {
     private double velocidad;
@@ -38,14 +37,14 @@ public class Novato implements Rango {
 
 
     @Override
-    public Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron, AlgoThief algoThief) {
+    public Caso generarCaso(ArrayList<Objeto> objetosRobados, ArrayList<Ciudad> ciudades, Ladron ladron, AlgoThief algoThief) {
         Objeto objetoRobado= new ObjetoComun();
         for (Objeto objeto : objetosRobados) {
            if (objeto instanceof ObjetoComun) {
                objetoRobado = objeto;
             }
         }
-        ArrayList<Ciudad> ciudadesRecorridas = recorridoLadron.get( objetoRobado.getCiudadOrigen() );
+        ArrayList<Ciudad> ciudadesRecorridas = objetoRobado.generarRecorrido(ciudades);
         for(Ciudad ciudad: ciudadesRecorridas){
             ciudad.tomarPistasFacil();
         }

@@ -1,9 +1,7 @@
 package edu.fiuba.algo3.modelo.lector;
 
 import edu.fiuba.algo3.modelo.Ciudad;
-import edu.fiuba.algo3.modelo.Descripcion;
 import edu.fiuba.algo3.modelo.DescripcionCiudad;
-import edu.fiuba.algo3.modelo.interactuable.Pista;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 

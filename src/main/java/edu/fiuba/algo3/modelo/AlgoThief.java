@@ -2,26 +2,21 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
-import edu.fiuba.algo3.modelo.lector.CiudadParser;
-import edu.fiuba.algo3.modelo.lector.ObjetoParser;
 import edu.fiuba.algo3.modelo.lector.PistaParser;
-import edu.fiuba.algo3.modelo.lector.RutasDeEscapeParser;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
-import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import edu.fiuba.algo3.modelo.tiempo.TiempoExcedidoError;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Objects;
 
 public class AlgoThief {
     private ArrayList<Ciudad> ciudades;
     private ArrayList<Objeto> objetosRobados;
-    private HashMap<String,ArrayList<Ciudad>> recorridoLadron;
     private Computadora computadora;
     private ArrayList<Ladron> ladrones;
+    private CargadorDatos cargadorDatos;
     private Reloj reloj;
     private Descripcion descripcionSospechoso;
     private Policia jugador;
@@ -29,26 +24,14 @@ public class AlgoThief {
     public AlgoThief(){
         descripcionSospechoso = new Descripcion();
         computadora = new Computadora();
-        cargarLadrones();
-        cargarCiudades();
-        cargarObjetosRobados();
-        cargarRutasLadron(ciudades);
+        cargadorDatos = new CargadorDatos();
+        this.ladrones = cargadorDatos.cargarLadrones(computadora);
+        this.ciudades = cargadorDatos.cargarCiudades();
+        this.objetosRobados = cargadorDatos.cargarObjetosRobados();
         cargarPistas(ciudades);
         reloj = new Reloj(new Tiempo(154)); // Lunes 7 a.m. + 154 hs = Domingo 5 p.m. (17)
-        jugador = new Policia();
     }
 
-    public AlgoThief(Policia jugador){
-        descripcionSospechoso = new Descripcion();
-        computadora = new Computadora();
-        cargarLadrones();
-        cargarCiudades();
-        cargarObjetosRobados();
-        cargarRutasLadron(ciudades);
-        cargarPistas(ciudades);
-        reloj = new Reloj(new Tiempo(154)); // Lunes 7 a.m. + 154 hs = Domingo 5 p.m. (17)
-        this.jugador = jugador;
-    }
 
     public void inicializarDia() {
         reloj.incrementar(new Tiempo(7));
@@ -56,33 +39,7 @@ public class AlgoThief {
 
     public void generarPartida() {
         Ladron ladron= ladrones.get(0);
-        //ladrones.remove(0); Si gana el ladron refactor de esto
-        //System.out.println(recorridoLadron);
-        jugador.generarCaso(objetosRobados,recorridoLadron,ladron, this); //refactor nombre
-
-    }
-
-
-    //refactor  para cargar todo esto en una clase aparte
-    //private Inicializar iniciador;
-    // iniciador(ciudades,objetosRobados,Recorridos);
-    private void cargarCiudades(){
-       CiudadParser parseador = new CiudadParser();
-       ArrayList<Ciudad> ciudades  =  parseador.parser("/jsons/ciudades.json"); //Puede haber un refactor
-       this.ciudades = ciudades;
-    }
-    private void cargarObjetosRobados(){
-       ObjetoParser parseador = new ObjetoParser();
-       ArrayList<Objeto> objetos  =  parseador.parser("/jsons/objetosRobados.json"); //Puede haber un refactor
-       this.objetosRobados = objetos;
-    }
-    private void cargarRutasLadron(ArrayList<Ciudad> ciudades){
-       RutasDeEscapeParser parseardorRuta = new RutasDeEscapeParser();
-       HashMap<String,ArrayList<Ciudad>> unHashMap = parseardorRuta.parser("/jsons/rutasDeEscape.json",ciudades);
-       this.recorridoLadron=unHashMap;
-    }
-    public void cargarLadrones(){
-        this.ladrones = this.computadora.cargarDatos();
+        jugador.generarCaso(objetosRobados,ciudades,ladron, this); //refactor nombre
     }
 
 
@@ -94,8 +51,6 @@ public class AlgoThief {
         }
         return null;
     }
-
-
 
     public void viajar(String nombreCiudad) {
         for(Ciudad ciudad: ciudades){
@@ -141,14 +96,6 @@ public class AlgoThief {
         this.reloj = new Reloj(new Tiempo(154));
     }
 
-    public int getCantidadLadrones() {
-        return ladrones.size();
-    }
-
-    public int getCantidadObjetosRobados() {
-        return objetosRobados.size();
-    }
-
     public String descripcionCiudad() {
         return "Egipto fue cuna de la antigua civilización \n" +
                 "egipcia, que junto con la mesopotámica \n" +
@@ -160,8 +107,8 @@ public class AlgoThief {
         return jugador.mostrarCiudadActual();
     }
 
-    public void setNombreJugador(String nombre) {
-        jugador.setNombre(nombre);
+    public void setPolicia(Policia unPolicia){
+        this.jugador = unPolicia;
     }
 
     public String mostrarRango() {

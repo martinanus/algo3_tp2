@@ -16,7 +16,7 @@ public interface Rango {
 
     Rango sumarArrestos(int arrestoASumar);
 
-    Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron, AlgoThief algoThief);
+    Caso generarCaso(ArrayList<Objeto> objetosRobados, ArrayList<Ciudad> ciudades, Ladron ladron, AlgoThief algoThief);
 
     String mostrarRango();
 

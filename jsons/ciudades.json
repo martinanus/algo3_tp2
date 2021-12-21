@@ -7,8 +7,7 @@
             "Bandera": "Rojo y Blanco",
             "Moneda": "Soles",
             "Monumento": "Machu Picchu",
-            "Idioma": "Español",
-            "CiudadesDestino":["Buenos Aires","Beijing","El Cairo","Roma"]
+            "Idioma": "Español"
         }
     },
     {
@@ -19,8 +18,7 @@
             "Bandera":"Celeste, Blanco y un sol al medio ",
             "Moneda": "Pesos",
             "Monumento":"El Obelisco",
-            "Idioma": "Español",
-            "CiudadesDestino":["Lima","Ciudad de Mexico","Tokyo","Montreal"]
+            "Idioma": "Español"
         }
     },
     {
@@ -31,8 +29,7 @@
             "Bandera":"Verde, blanca y roja",
             "Moneda": "Pesos",
             "Monumento":"Templo de Kukulkan",
-            "Idioma": "Español",
-            "CiudadesDestino":["Buenos Aires","Beijing","Madrid","Seul"]
+            "Idioma": "Español"
         }
     },
     {
@@ -43,9 +40,7 @@
             "Bandera":"amarillo y rojo ",
             "Moneda": "Euros",
             "Monumento":"Puerta de Alcalá",
-            "Idioma": "Español",
-            "CiudadesDestino":["Beijing","Ciudad de Mexico","Seul","Paris"]
-
+            "Idioma": "Español"
         }
     },
     {
@@ -56,9 +51,7 @@
             "Bandera":"rojo y amarilla con estrellas ",
             "Moneda": "yuan",
             "Monumento":"La gran muralla",
-            "Idioma": "Mandarin",
-            "CiudadesDestino":["Lima","Ciudad de Mexico","Madrid","Roma"]
-
+            "Idioma": "Mandarin"
         }
     },
     {
@@ -69,9 +62,7 @@
             "Bandera":"blanca, roja y azul",
             "Moneda": "Won",
             "Monumento":"Fortaleza de Hwasong",
-            "Idioma": "Coreano",
-            "CiudadesDestino":["Madrid","Ciudad de Mexico","Montreal","Paris"]
-
+            "Idioma": "Coreano"
         }
     },
     {
@@ -82,9 +73,7 @@
             "Bandera":"roja, azul y blanca",
             "Moneda": "euro",
             "Monumento":"La torre Eiffel",
-            "Idioma": "Frances",
-            "CiudadesDestino":["Madrid","El Cairo","Montreal","Seul"]
-
+            "Idioma": "Frances"
         }
     },
     {
@@ -95,9 +84,7 @@
             "Bandera":"roja y blanca",
             "Moneda": "Dolar",
             "Monumento":"Monumento a George-Étienne Cartier",
-            "Idioma": "Francés e Inglés",
-            "CiudadesDestino":["Buenos Aires","Seul","Paris"]
-
+            "Idioma": "Francés e Inglés"
         }
     },
     {
@@ -108,22 +95,18 @@
             "Bandera":"Roja y blanca ",
             "Moneda": "yen",
             "Monumento":"Templo de Sensō-ji",
-            "Idioma": "Japones",
-            "CiudadesDestino":["Buenos Aires","El Cairo"]
-
+            "Idioma": "Japones"
         }
     },
     {
-        "Ciudad":{
+        "Ciudad": {
             "Nombre": "El Cairo",
-            "Latitud":30.06263,
-            "Longitud":31.24967,
-            "Bandera":"Roja, blanca y negra ",
+            "Latitud": 30.06263,
+            "Longitud": 31.24967,
+            "Bandera": "Roja, blanca y negra ",
             "Moneda": "La Libra",
-            "Monumento":"La gran piramide de Guiza",
-            "Idioma": "Árabe",
-            "CiudadesDestino":["Lima","Paris","Roma","Tokyo"]
-
+            "Monumento": "La gran piramide de Guiza",
+            "Idioma": "Árabe"
         }
     },
     {
@@ -134,9 +117,7 @@
             "Bandera":"Roja, verde y blanca ",
             "Moneda": "euro",
             "Monumento":"El Gran coliseo",
-            "Idioma": "Italiano",
-            "CiudadesDestino":["Lima","Beijing","El Cairo"]
-
+            "Idioma": "Italiano"
         }
     }
 
