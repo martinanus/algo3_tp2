@@ -8,11 +8,15 @@ public class DescripcionCiudad {
     private String bandera;
     private String moneda;
     private String monumento;
+    private String descripcionCiudad;
 
     public DescripcionCiudad(String economico,String geografico,String internacional){
         this.bandera = internacional;
         this.moneda = economico;
         this.monumento = geografico;
+    }
+    public DescripcionCiudad(String descripcionCiudad){
+        this.descripcionCiudad = descripcionCiudad;
     }
 
     public ArrayList<Pista> generarPistas() {
