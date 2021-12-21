@@ -175,4 +175,8 @@ public class AlgoThief {
     public String pathImagenCiudad() {
         return "imgs/egipto.jpg";
     }
+
+    public String mostrarCiudadesDisponibles() {
+        return jugador.mostrarCiudadesDisponibles();
+    }
 }

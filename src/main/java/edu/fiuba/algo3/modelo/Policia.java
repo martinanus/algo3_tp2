@@ -116,6 +116,10 @@ public class Policia {
     public String mostrarRango() {
         return rango.mostrarRango();
     }
+
+    public String mostrarCiudadesDisponibles() {
+        return ciudadActual.mostrarCiudadesDisponibles();
+    }
 }
 
 

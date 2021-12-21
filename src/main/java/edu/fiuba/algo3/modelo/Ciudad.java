@@ -112,4 +112,12 @@ public class Ciudad {
     public void llenarPistaLadron(Ladron ladron) {
         this.edificios.set(1, new Edificio(ladron.generarPista(), "biblioteca"));
     }
+
+    public String mostrarCiudadesDisponibles() {
+        String nombreCiudades = "";
+        for(Ciudad ciudad :ciudadesDestino) {
+            nombreCiudades = nombreCiudades + ciudad.getNombre() + "\n";
+        }
+        return nombreCiudades;
+    }
 }

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.JavaFX;
 
+import edu.fiuba.algo3.modelo.AlgoThief;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -7,15 +8,19 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
+import java.security.AlgorithmConstraints;
+
 public class BotonVerHandler implements EventHandler<ActionEvent> {
+    private AlgoThief juego;
     private Button miBoton;
     private VBox cuadroAccion;
     private boolean pulsado;
 
-    public BotonVerHandler(Button botonVer, VBox  cuadroAccion) {
+    public BotonVerHandler(Button botonVer, VBox  cuadroAccion, AlgoThief juego) {
         this.miBoton = botonVer;
         this.cuadroAccion = cuadroAccion;
         this.pulsado = false;
+        this.juego = juego;
     }
 
     @Override
@@ -33,7 +38,7 @@ public class BotonVerHandler implements EventHandler<ActionEvent> {
             System.out.println("Desplegar Ciudades \ndisponibles");
             miBoton.setText("Ocultar");
             Label ciudades = new Label();
-            ciudades.setText("Argentina \n\nBrasil \n\nMarruecos \n\nIndonesia ");
+            ciudades.setText(juego.mostrarCiudadesDisponibles());
             ciudades.setFont(Font.font(16));
             cuadroAccion.getChildren().add(ciudades);
 

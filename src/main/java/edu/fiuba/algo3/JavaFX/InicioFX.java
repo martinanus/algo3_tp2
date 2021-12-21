@@ -135,7 +135,7 @@ public class InicioFX extends Application {
         Button botonVer = new Button();
         botonVer.setText("Ver");
         botonVer.setPrefSize(80,50);
-        BotonVerHandler botonVerHandler = new BotonVerHandler(botonVer, cuadroAccion);
+        BotonVerHandler botonVerHandler = new BotonVerHandler(botonVer, cuadroAccion, juego);
         botonVer.setOnAction(botonVerHandler);
 
         Button botonViajar = new Button();
