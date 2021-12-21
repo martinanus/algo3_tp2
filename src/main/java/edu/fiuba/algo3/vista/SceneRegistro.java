@@ -33,10 +33,7 @@ public class SceneRegistro {
         VBox cajaNombre = new VBox(nombre, textNombre, botonContinuar, descripcionJugador);
         cajaNombre.setAlignment(Pos.CENTER);
 
-        SceneCaso sceneParaCaso = new SceneCaso();
-        Scene sceneCaso = new Scene(sceneParaCaso.crearSceneCaso(stage, juego), 640, 480);
-
-        BotonContinuarHandler botonContinuarHandler = new BotonContinuarHandler(botonContinuar, sceneCaso, stage, textNombre, nombre, juego);
+        BotonContinuarHandler botonContinuarHandler = new BotonContinuarHandler(botonContinuar, stage, textNombre, nombre, juego);
         botonContinuar.setOnAction(botonContinuarHandler);
 
         return cajaNombre;

@@ -20,7 +20,7 @@ public class SceneCiudad{
 
     public HBox crearSceneCiudad(AlgoThief juego) {
         Label ciudadActual = new Label();
-        //ciudadActual.setText(juego.ciudadActual());
+        ciudadActual.setText(juego.ciudadActual());
         ciudadActual.setFont(Font.font(20));
         ciudadActual.setPrefSize(320, 80);
         ciudadActual.setAlignment(Pos.CENTER);
