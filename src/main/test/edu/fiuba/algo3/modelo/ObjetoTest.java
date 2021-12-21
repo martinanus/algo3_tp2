@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class ObjetoTest {
 
@@ -21,9 +23,7 @@ public class ObjetoTest {
 
         ArrayList<Ciudad> recorrido = objeto.generarRecorrido(ciudades);
 
-        for (Ciudad ciudad: recorrido){
-                System.out.println(ciudad.getNombre());
-        }
+        assertEquals(4, recorrido.size());
 
     }
 
@@ -35,9 +35,7 @@ public class ObjetoTest {
 
         ArrayList<Ciudad> recorrido = objeto.generarRecorrido(ciudades);
 
-        for (Ciudad ciudad: recorrido){
-            System.out.println(ciudad.getNombre());
-        }
+        assertEquals(5, recorrido.size());
 
     }
 
@@ -49,10 +47,7 @@ public class ObjetoTest {
 
         ArrayList<Ciudad> recorrido = objeto.generarRecorrido(ciudades);
 
-        for (Ciudad ciudad: recorrido){
-            System.out.println(ciudad.getNombre());
-        }
-
+        assertEquals(7, recorrido.size());
     }
 
 }
