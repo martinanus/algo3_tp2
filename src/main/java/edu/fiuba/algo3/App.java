@@ -32,9 +32,6 @@ public class App extends Application {
         AlgoThief juego = new AlgoThief();
 
         SceneRegistro sceneParaRegistro = new SceneRegistro();
-        //SceneCiudad sceneParaCiudad = new SceneCiudad();
-        //Scene sceneCiudad = new Scene(sceneParaCiudad.crearSceneCiudad(juego), 640, 480);
-        //Scene sceneRegistro = new Scene(sceneParaRegistro.crearSceneRegistro(sceneCiudad, stage, juego), 640, 480);
         Scene sceneRegistro = new Scene(sceneParaRegistro.crearSceneRegistro(stage, juego), 640, 480);
         SceneInicial inicial = new SceneInicial();
         Scene sceneInicial = new Scene(inicial.crearSceneInicial(sceneRegistro, stage), 640, 480);
