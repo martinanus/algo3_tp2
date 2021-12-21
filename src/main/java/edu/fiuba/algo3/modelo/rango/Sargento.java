@@ -14,9 +14,11 @@ import java.util.HashMap;
 public class Sargento implements Rango {
     private double velocidad;
     private int contadorArrestos;
+    private String rango;
 
 
     public Sargento() {
+        rango = "sargento";
         velocidad = 1500;
         contadorArrestos = 20;
     }
@@ -46,6 +48,11 @@ public class Sargento implements Rango {
             ciudad.tomarPistasDificil();
         }
         return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
+    }
+
+    @Override
+    public String mostrarRango() {
+        return this.rango;
     }
 
 }

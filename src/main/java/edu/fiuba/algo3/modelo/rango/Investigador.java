@@ -13,9 +13,11 @@ import java.util.HashMap;
 public class Investigador implements Rango {
     private double velocidad;
     private int contadorArrestos;
+    private String rango;
 
 
     public Investigador() {
+        rango = "investigador";
         velocidad = 1300;
         contadorArrestos = 10;
     }
@@ -48,5 +50,10 @@ public class Investigador implements Rango {
         }
 
         return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
+    }
+
+    @Override
+    public String mostrarRango() {
+        return this.rango;
     }
 }

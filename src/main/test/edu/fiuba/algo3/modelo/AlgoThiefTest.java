@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo;
 
-import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
-import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.interactuable.Pista;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import org.junit.jupiter.api.Test;
@@ -12,12 +10,12 @@ public class AlgoThiefTest {
 
     @Test
     public void test01SeCreaUnCasoYSeVisitaLos3EdificiosDeLaCiudadOrigen(){
-        AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepe");
-        juego.generarPartida(unPolicia);
-        Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
+        AlgoThief juego = new AlgoThief(unPolicia);
+        juego.generarPartida();
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
         assertEquals("Su moneda principal es el peso",interactuable.mostrar()  );
         assertEquals("Moto",interactuable2.mostrar());
         assertEquals("Bandera Verde, Blanca y Roja",interactuable3.mostrar());
@@ -25,13 +23,13 @@ public class AlgoThiefTest {
 
     @Test
     public void test02SeCreaUnCasoYSeViajaAUnPaisDondeNoEstuvoElLadron(){
-        AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepe");
-        juego.generarPartida(unPolicia);
-        juego.viajar("Lima",unPolicia);
-        Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
+        AlgoThief juego = new AlgoThief(unPolicia);
+        juego.generarPartida();
+        juego.viajar("Lima");
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
 
         assertEquals("No hemos visto al ladron",interactuable.mostrar()  );
         assertEquals("No hemos visto al ladron",interactuable2.mostrar());
@@ -40,42 +38,42 @@ public class AlgoThiefTest {
 
     @Test
     public void test03ElPoliciaAtrapaAlLadronHabiendoEmitidoLaOrdenDeArresto(){
-        AlgoThief juego = new AlgoThief();
+        Policia unPolicia = new Policia("Pepito");
+        AlgoThief juego = new AlgoThief(unPolicia);
         int ladronesIniciales = juego.getCantidadLadrones();
         int objetosIniciales = juego.getCantidadObjetosRobados();
-        Policia unPolicia = new Policia("Pepito");
-        juego.generarPartida(unPolicia);
-        Pista interactuable0 = (Pista) juego.visitar(unPolicia,"biblioteca");
+        juego.generarPartida();
+        Pista interactuable0 = (Pista) juego.visitar("biblioteca");
 
         assertEquals("Moto",interactuable0.mostrar());
 
-        juego.viajar("Ciudad de Mexico",unPolicia);
-        Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
+        juego.viajar("Ciudad de Mexico");
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
 
 
         assertEquals("Su moneda principal es el won",interactuable.mostrar()  );
         assertEquals("Anillo", interactuable2.mostrar());
         assertEquals("Bandera roja y azul",interactuable3.mostrar());
 
-        juego.viajar("Seul",unPolicia); //(11+13)=24
-        Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");//(24+1)=25
-        Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");//(25+1)=26
-        Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
+        juego.viajar("Seul"); //(11+13)=24
+        Pista interactuable4 = (Pista) juego.visitar("banco");//(24+1)=25
+        Pista interactuable5 = (Pista) juego.visitar("biblioteca");//(25+1)=26
+        Pista interactuable6 = (Pista) juego.visitar("puerto");//(26+1)=27
 
         assertEquals("Su moneda principal es el euro",interactuable4.mostrar()  );
         assertEquals("Negro",interactuable5.mostrar());
         assertEquals("Idioma frances",interactuable6.mostrar());
 
-        juego.viajar("Paris",unPolicia);//(27+10)=37
+        juego.viajar("Paris");//(27+10)=37
         Descripcion descripcion = new Descripcion("","Masculino","Croquet","","","");
         juego.cargarDescripcion(descripcion);
-        juego.generarOrdenDeArresto(unPolicia); //refactor generar orden de arresto incluido cargarDescripcion.
+        juego.generarOrdenDeArresto(); //refactor generar orden de arresto incluido cargarDescripcion.
 
-        juego.visitar(unPolicia,"banco");
-        juego.visitar(unPolicia,"puerto");
-        juego.visitar(unPolicia,"biblioteca");
+        juego.visitar("banco");
+        juego.visitar("puerto");
+        juego.visitar("biblioteca");
 
 
         assertEquals(new Tiempo(0), juego.getReloj().tiempoTranscurrido());
@@ -85,45 +83,42 @@ public class AlgoThiefTest {
 
     @Test
     public void test04ElPoliciaAtrapaAlLadronSinHaberEmitidoLaOrdenDeArresto(){
-        AlgoThief juego = new AlgoThief();
+        Policia unPolicia = new Policia("Pepito");
+        AlgoThief juego = new AlgoThief(unPolicia);
         int ladronesIniciales = juego.getCantidadLadrones();
         int objetosIniciales = juego.getCantidadObjetosRobados();
-        Policia unPolicia = new Policia("Pepito");
-        juego.generarPartida(unPolicia);
-        Pista interactuable0 = (Pista) juego.visitar(unPolicia,"biblioteca");
+        juego.generarPartida();
+        Pista interactuable0 = (Pista) juego.visitar("biblioteca");
 
         assertEquals("Moto",interactuable0.mostrar());
 
-        juego.viajar("Ciudad de Mexico",unPolicia);
-        Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
+        juego.viajar("Ciudad de Mexico");
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
 
 
         assertEquals("Su moneda principal es el won",interactuable.mostrar()  );
         assertEquals("Anillo",interactuable2.mostrar());
         assertEquals("Bandera roja y azul",interactuable3.mostrar());
 
-        juego.viajar("Seul",unPolicia);
-        Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");
+        juego.viajar("Seul");
+        Pista interactuable4 = (Pista) juego.visitar("banco");
+        Pista interactuable5 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable6 = (Pista) juego.visitar("puerto");
 
         assertEquals("Su moneda principal es el euro",interactuable4.mostrar()  );
         assertEquals("Negro",interactuable5.mostrar());
         assertEquals("Idioma frances",interactuable6.mostrar());
 
-        juego.viajar("Paris",unPolicia);
+        juego.viajar("Paris");
 
-        juego.visitar(unPolicia,"banco");//38
-        juego.visitar(unPolicia,"puerto");//40
-        juego.visitar(unPolicia,"biblioteca");
+        juego.visitar("banco");//38
+        juego.visitar("puerto");//40
+        juego.visitar("biblioteca");
 
         assertEquals(new Tiempo(0), juego.getReloj().tiempoTranscurrido());
         assertEquals(ladronesIniciales, juego.getCantidadLadrones());
         assertEquals(objetosIniciales, juego.getCantidadObjetosRobados());
     }
-
-
-
 }

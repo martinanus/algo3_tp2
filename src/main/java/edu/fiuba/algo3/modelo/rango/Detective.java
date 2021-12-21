@@ -14,9 +14,11 @@ public class Detective implements Rango {
     private double velocidad;
     private int contadorArrestos;
     private ArrayList<Objeto> objetos;
+    private String rango;
 
 
     public Detective() {
+        rango = "detective";
         velocidad = 1100;
         contadorArrestos = 5;
         objetos = new ArrayList<>();
@@ -50,5 +52,10 @@ public class Detective implements Rango {
         }
 
         return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
+    }
+
+    @Override
+    public String mostrarRango() {
+        return this.rango;
     }
 }

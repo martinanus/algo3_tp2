@@ -18,5 +18,7 @@ public interface Rango {
 
     Caso generarCaso(ArrayList<Objeto> objetosRobados, HashMap<String, ArrayList<Ciudad>> recorridoLadron, Ladron ladron, AlgoThief algoThief);
 
+    String mostrarRango();
+
     //Caso generarCaso();
 }

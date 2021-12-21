@@ -18,31 +18,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Entrega3Test {
     @Test
     public void test01JugadorSeLeAsignaUnCasoRealizaUnArrestoAtrapaAlLadronYSeLeAsignaOtroCaso() {
-        AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepito");
-        juego.generarPartida(unPolicia);
-        juego.viajar("Ciudad de Mexico",unPolicia);
-        Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
+        AlgoThief juego = new AlgoThief(unPolicia);
+        juego.generarPartida();
+        juego.viajar("Ciudad de Mexico");
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
 
-        juego.viajar("Seul",unPolicia); //(11+13)=24
-        Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");//(24+1)=25
-        Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");//(25+1)=26
-        Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
+        juego.viajar("Seul"); //(11+13)=24
+        Pista interactuable4 = (Pista) juego.visitar("banco");//(24+1)=25
+        Pista interactuable5 = (Pista) juego.visitar("biblioteca");//(25+1)=26
+        Pista interactuable6 = (Pista) juego.visitar("puerto");//(26+1)=27
 
-        juego.viajar("Paris",unPolicia);//(27+10)=37
+        juego.viajar("Paris");//(27+10)=37
         Descripcion descripcion = new Descripcion("","Masculino","Croquet","","","");
         juego.cargarDescripcion(descripcion);
-        juego.generarOrdenDeArresto(unPolicia); //refactor generar orden de arresto incluido cargarDescripcion.
+        juego.generarOrdenDeArresto(); //refactor generar orden de arresto incluido cargarDescripcion.
 
-        ArmaDeFuego interactuable7 = (ArmaDeFuego) juego.visitar(unPolicia,"banco");
-        Cuchillo interactuable9 = (Cuchillo) juego.visitar(unPolicia,"puerto");
-        Ladron interactuable8 = (Ladron) juego.visitar(unPolicia,"biblioteca");
+        ArmaDeFuego interactuable7 = (ArmaDeFuego) juego.visitar("banco");
+        Cuchillo interactuable9 = (Cuchillo) juego.visitar("puerto");
+        Ladron interactuable8 = (Ladron) juego.visitar("biblioteca");
 
-        juego.generarPartida(unPolicia);
-        juego.visitar(unPolicia,"biblioteca");
-        juego.visitar(unPolicia,"banco");
+        juego.generarPartida();
+        juego.visitar("biblioteca");
+        juego.visitar("banco");
 
         assertEquals(new Tiempo(2), juego.getReloj().tiempoTranscurrido());
 
@@ -53,30 +53,29 @@ public class Entrega3Test {
 
     @Test
     public void test02JugadorInvestigadorRealiza9ArrestosSeLeAsiganUnCasoYCapturAlLadron() {
-
-        AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepito", new Investigador());
+        AlgoThief juego = new AlgoThief(unPolicia);
         unPolicia.sumarArresto(9);
-        juego.generarPartida(unPolicia);
-        juego.viajar("Ciudad de Mexico",unPolicia); // 5 hs viaje
-        Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
+        juego.generarPartida();
+        juego.viajar("Ciudad de Mexico"); // 5 hs viaje
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
 
-        juego.viajar("Seul",unPolicia); // 9 hs viaje
-        Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");//(24+1)=25
-        Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");//(25+1)=26
-        Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
+        juego.viajar("Seul"); // 9 hs viaje
+        Pista interactuable4 = (Pista) juego.visitar("banco");//(24+1)=25
+        Pista interactuable5 = (Pista) juego.visitar("biblioteca");//(25+1)=26
+        Pista interactuable6 = (Pista) juego.visitar("puerto");//(26+1)=27
 
-        juego.viajar("Paris",unPolicia); // 6 hs viaje
+        juego.viajar("Paris"); // 6 hs viaje
         Descripcion descripcion = new Descripcion("","Masculino","Croquet","","","");
         juego.cargarDescripcion(descripcion);
         assertEquals(34, juego.getReloj().tiempoTranscurrido().getTiempo());
-        juego.generarOrdenDeArresto(unPolicia); //refactor generar orden de arresto incluido cargarDescripcion.
+        juego.generarOrdenDeArresto(); //refactor generar orden de arresto incluido cargarDescripcion.
         assertEquals(37, juego.getReloj().tiempoTranscurrido().getTiempo());
-        juego.visitar(unPolicia,"banco");
-        juego.visitar(unPolicia,"puerto");
-        juego.visitar(unPolicia,"biblioteca");
+        juego.visitar("banco");
+        juego.visitar("puerto");
+        juego.visitar("biblioteca");
 
         assertEquals(Sargento.class, unPolicia.rangoPolicia().getClass());
 
@@ -84,82 +83,80 @@ public class Entrega3Test {
 
     @Test
     public void test03ArmaDeFuegoAumentaLaCantidadEnCinco() {
-        AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepito");
-        juego.generarPartida(unPolicia);
-        juego.viajar("Ciudad de Mexico",unPolicia); // 8 hs viaje
-        Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
+        AlgoThief juego = new AlgoThief(unPolicia);
+        juego.generarPartida();
+        juego.viajar("Ciudad de Mexico"); // 8 hs viaje
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
 
-        juego.viajar("Seul",unPolicia); // 32 hs // 13 hs viaje
-        Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");//(24+1)=25
-        Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");//(25+1)=26
-        Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
+        juego.viajar("Seul"); // 32 hs // 13 hs viaje
+        Pista interactuable4 = (Pista) juego.visitar("banco");//(24+1)=25
+        Pista interactuable5 = (Pista) juego.visitar("biblioteca");//(25+1)=26
+        Pista interactuable6 = (Pista) juego.visitar("puerto");//(26+1)=27
 
-        juego.viajar("Paris",unPolicia); // 9 hs
+        juego.viajar("Paris"); // 9 hs
         Descripcion descripcion = new Descripcion("","Masculino","Croquet","","","");
         juego.cargarDescripcion(descripcion);
-        juego.generarOrdenDeArresto(unPolicia); //refactor generar orden de arresto incluido cargarDescripcion.
+        juego.generarOrdenDeArresto(); //refactor generar orden de arresto incluido cargarDescripcion.
         assertEquals(55, juego.getReloj().tiempoTranscurrido().getTiempo());
-        ArmaDeFuego interactuable7 = (ArmaDeFuego) juego.visitar(unPolicia,"banco");
+        ArmaDeFuego interactuable7 = (ArmaDeFuego) juego.visitar("banco");
         assertEquals(60, juego.getReloj().tiempoTranscurrido().getTiempo());
-        Cuchillo interactuable9 = (Cuchillo) juego.visitar(unPolicia,"puerto");
-        Ladron interactuable8 = (Ladron) juego.visitar(unPolicia,"biblioteca");
+        Cuchillo interactuable9 = (Cuchillo) juego.visitar("puerto");
+        Ladron interactuable8 = (Ladron) juego.visitar("biblioteca");
 
     }
     @Test
     public void test04JugadorNovatoRealiza4ArrestosSeLeAsiganUnCasoYCapturAlLadron() {
-
-        AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepito");
+        AlgoThief juego = new AlgoThief(unPolicia);
         unPolicia.sumarArresto(4);
-        juego.generarPartida(unPolicia);
-        juego.viajar("Ciudad de Mexico",unPolicia);
-        Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
+        juego.generarPartida();
+        juego.viajar("Ciudad de Mexico");
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
 
-        juego.viajar("Seul",unPolicia);
-        Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");//(24+1)=25
-        Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");//(25+1)=26
-        Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
+        juego.viajar("Seul");
+        Pista interactuable4 = (Pista) juego.visitar("banco");//(24+1)=25
+        Pista interactuable5 = (Pista) juego.visitar("biblioteca");//(25+1)=26
+        Pista interactuable6 = (Pista) juego.visitar("puerto");//(26+1)=27
 
-        juego.viajar("Paris",unPolicia);
+        juego.viajar("Paris");
         Descripcion descripcion = new Descripcion("","Masculino","Croquet","","","");
         juego.cargarDescripcion(descripcion);
-        juego.generarOrdenDeArresto(unPolicia); //refactor generar orden de arresto incluido cargarDescripcion.
-        juego.visitar(unPolicia,"banco");
-        juego.visitar(unPolicia,"puerto");
-        juego.visitar(unPolicia,"biblioteca");
+        juego.generarOrdenDeArresto(); //refactor generar orden de arresto incluido cargarDescripcion.
+        juego.visitar("banco");
+        juego.visitar("puerto");
+        juego.visitar("biblioteca");
 
         assertEquals(Detective.class, unPolicia.rangoPolicia().getClass());
 
     }
     @Test
     public void test05JugadorDetectiveRealiza4ArrestosSeLeAsiganUnCasoYCapturAlLadron() {
-
-        AlgoThief juego = new AlgoThief();
         Policia unPolicia = new Policia("Pepito",new Detective());
+        AlgoThief juego = new AlgoThief(unPolicia);
         unPolicia.sumarArresto(4);
-        juego.generarPartida(unPolicia);
-        juego.viajar("Ciudad de Mexico",unPolicia);
-        Pista interactuable = (Pista) juego.visitar(unPolicia,"banco");
-        Pista interactuable2 = (Pista) juego.visitar(unPolicia,"biblioteca");
-        Pista interactuable3 = (Pista) juego.visitar(unPolicia,"puerto");
+        juego.generarPartida();
+        juego.viajar("Ciudad de Mexico");
+        Pista interactuable = (Pista) juego.visitar("banco");
+        Pista interactuable2 = (Pista) juego.visitar("biblioteca");
+        Pista interactuable3 = (Pista) juego.visitar("puerto");
 
-        juego.viajar("Seul",unPolicia);
-        Pista interactuable4 = (Pista) juego.visitar(unPolicia,"banco");//(24+1)=25
-        Pista interactuable5 = (Pista) juego.visitar(unPolicia,"biblioteca");//(25+1)=26
-        Pista interactuable6 = (Pista) juego.visitar(unPolicia,"puerto");//(26+1)=27
+        juego.viajar("Seul");
+        Pista interactuable4 = (Pista) juego.visitar("banco");//(24+1)=25
+        Pista interactuable5 = (Pista) juego.visitar("biblioteca");//(25+1)=26
+        Pista interactuable6 = (Pista) juego.visitar("puerto");//(26+1)=27
 
-        juego.viajar("Paris",unPolicia);
+        juego.viajar("Paris");
         Descripcion descripcion = new Descripcion("","Masculino","Croquet","","","");
         juego.cargarDescripcion(descripcion);
-        juego.generarOrdenDeArresto(unPolicia); //refactor generar orden de arresto incluido cargarDescripcion.
-        juego.visitar(unPolicia,"banco");
-        juego.visitar(unPolicia,"puerto");
-        juego.visitar(unPolicia,"biblioteca");
+        juego.generarOrdenDeArresto(); //refactor generar orden de arresto incluido cargarDescripcion.
+        juego.visitar("banco");
+        juego.visitar("puerto");
+        juego.visitar("biblioteca");
 
         assertEquals(Investigador.class, unPolicia.rangoPolicia().getClass());
 

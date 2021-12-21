@@ -22,8 +22,9 @@ public class AlgoThief {
     private ArrayList<Ladron> ladrones;
     private Reloj reloj;
     private Descripcion descripcionSospechoso;
+    private Policia jugador;
 
-    public AlgoThief(){
+    public AlgoThief(Policia jugador){
         descripcionSospechoso = new Descripcion();
         computadora = new Computadora();
         cargarLadrones();
@@ -32,17 +33,30 @@ public class AlgoThief {
         cargarRutasLadron(ciudades);
         cargarPistas(ciudades);
         reloj = new Reloj(new Tiempo(168)); // 17+24*6+17=178
+        this.jugador = jugador;
+    }
+
+    public AlgoThief() {
+        descripcionSospechoso = new Descripcion();
+        computadora = new Computadora();
+        cargarLadrones();
+        cargarCiudades();
+        cargarObjetosRobados();
+        cargarRutasLadron(ciudades);
+        cargarPistas(ciudades);
+        reloj = new Reloj(new Tiempo(168)); // 17+24*6+17=178
+        jugador = new Policia();
     }
 
     public void inicializarDia() {
         reloj.incrementar(new Tiempo(7));
     }
 
-    public void generarPartida(Policia policia) {
+    public void generarPartida() {
         Ladron ladron= ladrones.get(0);
         //ladrones.remove(0); Si gana el ladron refactor de esto
         //System.out.println(recorridoLadron);
-        policia.generarCaso(objetosRobados,recorridoLadron,ladron, this); //refactor nombre
+        jugador.generarCaso(objetosRobados,recorridoLadron,ladron, this); //refactor nombre
 
     }
 
@@ -69,18 +83,18 @@ public class AlgoThief {
         this.ladrones = this.computadora.cargarDatos();
     }
 
-    public Interactuable visitar(Policia policia, String nombreEdificio) {
+    public Interactuable visitar(String nombreEdificio) {
         /*if(reloj.horaDormir()){
             policia.duerme(reloj);
         }*/
-        return policia.visitar(nombreEdificio,reloj);
+        return jugador.visitar(nombreEdificio,reloj);
     }
 
 
-    public void viajar(String nombreCiudad,Policia policia) {
+    public void viajar(String nombreCiudad) {
         for(Ciudad ciudad: ciudades){
             if(Objects.equals(ciudad.getNombre(), nombreCiudad )){ //falta verificar la lista de ciudades destino
-                policia.viajar(ciudad,reloj);
+                jugador.viajar(ciudad,reloj);
             }
         }
     }
@@ -93,9 +107,9 @@ public class AlgoThief {
 
     }
 
-    public void generarOrdenDeArresto(Policia policia) {
+    public void generarOrdenDeArresto() {
         Ladron ladronSopechoso = new Ladron(descripcionSospechoso);
-        policia.emitirOrdenArresto(computadora,ladronSopechoso,reloj);
+        jugador.emitirOrdenArresto(computadora,ladronSopechoso,reloj);
     }
 
     private void cargarPistas(ArrayList<Ciudad> ciudades){
@@ -119,5 +133,32 @@ public class AlgoThief {
 
     public int getCantidadObjetosRobados() {
         return objetosRobados.size();
+    }
+
+    public String descripcionCiudad() {
+        return "Egipto fue cuna de la antigua civilización \n" +
+                "egipcia, que junto con la mesopotámica \n" +
+                "fue el origen de la actual cultura \n" +
+                "occidental";
+    }
+
+    public String ciudadActual() {
+        return jugador.mostrarCiudadActual();
+    }
+
+    public void setNombreJugador(String nombre) {
+        jugador.setNombre(nombre);
+    }
+
+    public String mostrarRango() {
+        return jugador.mostrarRango();
+    }
+
+    public String mostrarReloj() {
+        return reloj.getDia() + ", " + Double.toString(reloj.getHoraActual()) + "hs";
+    }
+
+    public String pathImagenCiudad() {
+        return "imgs/egipto.jpg";
     }
 }

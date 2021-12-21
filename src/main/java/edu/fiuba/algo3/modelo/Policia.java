@@ -45,6 +45,11 @@ public class Policia {
         this.nombre = nombre;
     }
 
+    public Policia() {
+        this.rango = new Novato();
+        this.nombre = "";
+    }
+
     public Interactuable visitar(Edificio edificio , Reloj reloj ){
         Interactuable interac =ciudadActual.visitar(edificio,reloj);
         interac.interactuar(this,reloj);
@@ -98,6 +103,18 @@ public class Policia {
         this.ciudadActual= (unCaso.getCiudadOrigen());
         this.caso = unCaso;
 
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String mostrarCiudadActual() {
+        return ciudadActual.getNombre();
+    }
+
+    public String mostrarRango() {
+        return rango.mostrarRango();
     }
 }
 
