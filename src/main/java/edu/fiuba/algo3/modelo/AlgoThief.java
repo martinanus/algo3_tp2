@@ -26,7 +26,7 @@ public class AlgoThief {
     private Descripcion descripcionSospechoso;
     private Policia jugador;
 
-    public AlgoThief(Policia jugador){
+    public AlgoThief(){
         descripcionSospechoso = new Descripcion();
         computadora = new Computadora();
         cargarLadrones();
