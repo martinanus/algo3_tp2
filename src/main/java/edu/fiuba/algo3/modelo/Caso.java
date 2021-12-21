@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -60,6 +61,7 @@ public class Caso {
     }
 
     public void completarListasCiudadeDestino(ArrayList<Ciudad> ciudades){
+        ArrayList<Ciudad> ciudadesCopia = new ArrayList<>(ciudades);
         for(int i =0;i<ciudadesVisitaLadron.size()-1;i++){
             if(i<1){
                 ciudadesVisitaLadron.get(i).getCiudadesDestino().add(ciudadesVisitaLadron.get(i+1));
@@ -69,10 +71,60 @@ public class Caso {
                 ciudadesVisitaLadron.get(i).getCiudadesDestino().add(ciudadesVisitaLadron.get(i+1));
                 ciudadesVisitaLadron.get(i+1).getCiudadesDestino().add(ciudadesVisitaLadron.get(i));
             }
+            ciudadesCopia.remove(ciudadesVisitaLadron.get(i));
         }
+        ciudadesCopia.remove(ciudadesVisitaLadron.get(ciudadesVisitaLadron.size()-1 ));
 
+        ArrayList<Ciudad> ciudadesUsadas = new ArrayList<>();
+        for(Ciudad ciudadLadron: ciudadesVisitaLadron){
+                Ciudad ciudad1 = generarCiudadRandom(ciudadesCopia,ciudadesUsadas);
+                Ciudad ciudad2 = generarCiudadRandom(ciudadesCopia,ciudadesUsadas);
+                Ciudad ciudad3 = generarCiudadRandom(ciudadesCopia,ciudadesUsadas);
+                ciudadLadron.agregarCiudadDestino(ciudad1);
+                ciudad1.agregarCiudadDestino(ciudadLadron);
+                ciudadLadron.agregarCiudadDestino(ciudad2);
+                ciudad2.agregarCiudadDestino(ciudadLadron);
+            if(ciudadLadron.getCiudadesDestino().size()<=3) {
+                ciudadLadron.agregarCiudadDestino(ciudad3);
+                ciudad3.agregarCiudadDestino(ciudadLadron);
+            }
+            ciudadesUsadas.clear();
+        }
+        ArrayList<Ciudad> listaConPocasCiudades= new ArrayList<>();
+        for (Ciudad ciudad: ciudades){
+            if(ciudad.getCiudadesDestino().size()<=1){
+                listaConPocasCiudades.add(ciudad);
+            }
+        }
+        llenarCiudadesConPocasDestinos(listaConPocasCiudades);
 
     }
+
+    public void llenarCiudadesConPocasDestinos(ArrayList<Ciudad> listaConPocasCiudades) {
+        for(int i =0;i<listaConPocasCiudades.size()-1;i++){
+            if(i<1){
+                listaConPocasCiudades.get(i).getCiudadesDestino().add(listaConPocasCiudades.get(i+1));
+                listaConPocasCiudades.get(i+1).getCiudadesDestino().add(listaConPocasCiudades.get(i));
+            }
+            else{
+                listaConPocasCiudades.get(i).getCiudadesDestino().add(listaConPocasCiudades.get(i+1));
+                listaConPocasCiudades.get(i+1).getCiudadesDestino().add(listaConPocasCiudades.get(i));
+            }
+        }
+    }
+
+    public  Ciudad generarCiudadRandom(ArrayList<Ciudad> ciudadesCopia, ArrayList<Ciudad> ciudadesUsadas) {
+        Ciudad ciudadRandom = ciudadesCopia.get((int)(Math.random()* ciudadesCopia.size()));
+        while(ciudadesUsadas.contains(ciudadRandom)){
+            ciudadRandom = ciudadesCopia.get((int)(Math.random()* ciudadesCopia.size()));
+        }
+        ciudadesUsadas.add(ciudadRandom);
+        return ciudadRandom;
+    }
+    public ArrayList<Ciudad> ciudadesLadron(){
+        return ciudadesVisitaLadron;
+    }
+
 
 }
 

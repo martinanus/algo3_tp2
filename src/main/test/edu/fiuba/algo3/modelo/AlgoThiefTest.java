@@ -68,7 +68,13 @@ public class AlgoThiefTest {
         AlgoThief juego = new AlgoThief();
         juego.setPolicia(unPolicia);
         juego.generarPartida();
-        System.out.println(juego.ciudadActual() );
+        ArrayList<Ciudad> ciudades123 = unPolicia.getCaso().ciudadesLadron();
+        System.out.println("Aca tenemos la lista de ciudades que recorrio del ladron ");
+        for(Ciudad ciudad: ciudades123){
+            System.out.println(ciudad.getNombre());
+        }
+        System.out.println("Se termino de imprimri la lista de ciudades del ladron ");
+        //System.out.println(juego.ciudadActual() );
         ArrayList<Ciudad> ciudades = juego.obtenerCiudades();
         for(Ciudad ciudad: ciudades){
             System.out.println(ciudad.getNombre());
@@ -77,7 +83,6 @@ public class AlgoThiefTest {
                 System.out.println(ciudad1.getNombre());
             }
         }
-        System.out.println(juego.mostrarCiudadesDisponibles());
     }
 
 

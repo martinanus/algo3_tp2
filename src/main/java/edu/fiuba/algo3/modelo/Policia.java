@@ -120,6 +120,9 @@ public class Policia {
     public String mostrarCiudadesDisponibles() {
         return ciudadActual.mostrarCiudadesDisponibles();
     }
+    public Caso getCaso(){
+        return caso;
+    }
 }
 
 
