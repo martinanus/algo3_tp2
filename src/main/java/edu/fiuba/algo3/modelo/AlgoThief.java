@@ -35,6 +35,19 @@ public class AlgoThief {
         cargarRutasLadron(ciudades);
         cargarPistas(ciudades);
         reloj = new Reloj(new Tiempo(154)); // Lunes 7 a.m. + 154 hs = Domingo 5 p.m. (17)
+        jugador = new Policia();
+    }
+
+    public AlgoThief(Policia jugador){
+        descripcionSospechoso = new Descripcion();
+        computadora = new Computadora();
+        cargarLadrones();
+        cargarCiudades();
+        cargarObjetosRobados();
+        cargarRutasLadron(ciudades);
+        cargarPistas(ciudades);
+        reloj = new Reloj(new Tiempo(154)); // Lunes 7 a.m. + 154 hs = Domingo 5 p.m. (17)
+        this.jugador = jugador;
     }
 
     public void inicializarDia() {
@@ -72,14 +85,16 @@ public class AlgoThief {
         this.ladrones = this.computadora.cargarDatos();
     }
 
-    public Interactuable visitar(Policia policia, String nombreEdificio) {
+
+    public Interactuable visitar(String nombreEdificio) {
         try {
-            return policia.visitar(nombreEdificio,reloj);
+            return jugador.visitar(nombreEdificio,reloj);
         } catch(TiempoExcedidoError e) {
             this.finalizar();
         }
         return null;
     }
+
 
 
     public void viajar(String nombreCiudad) {
