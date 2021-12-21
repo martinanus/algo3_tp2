@@ -72,15 +72,12 @@ public class Policia {
 
 
     public void arrestar() {
-        if (caso != null)
             try {
                 this.orden.arrestar(this);
                 caso.finalizar();
             } catch(OrdenNoEmitidadError e) {
                 caso.finalizarSinExito();
             }
-        else
-            this.orden.arrestar(this);
     }
 
     public void sumarArresto(int arrestoASumar) {
@@ -101,7 +98,7 @@ public class Policia {
         Caso unCaso =  rango.generarCaso(objetosRobados, ciudades,ladron, algoThief);
         unCaso.completarListasCiudadeDestino(ciudades);
         this.ciudadActual= (unCaso.getCiudadOrigen());
-        this.caso = unCaso;
+        this.setCaso(unCaso);
 
     }
 
@@ -122,6 +119,9 @@ public class Policia {
     }
     public Caso getCaso(){
         return caso;
+    }
+    public void setCaso(Caso caso){
+        this.caso= caso;
     }
 }
 

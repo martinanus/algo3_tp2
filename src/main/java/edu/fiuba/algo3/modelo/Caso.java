@@ -25,6 +25,11 @@ public class Caso {
         this.cargarEdificios();
         this.cargarPistasLadron();
     }
+
+    public Caso(AlgoThief juego) {
+        this.algoThief = juego;
+    }
+
     private void  cargarEdificios(){
         Iterator<Ciudad> iterador = ciudadesVisitaLadron.iterator();
         Ciudad ciudadActual = iterador.next(); //Devuelve Primera ciudad
