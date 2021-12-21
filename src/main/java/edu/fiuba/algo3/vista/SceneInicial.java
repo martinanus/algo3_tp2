@@ -20,7 +20,7 @@ import java.io.File;
 
 public class SceneInicial {
 
-    public VBox crearSceneInicial(Scene sceneCiudad, Stage stage, AlgoThief juego) {
+    public VBox crearSceneInicial(Scene sceneCiudad, Stage stage) {
 
         Label titulo = new Label();
         titulo.setText("Bienvenido a Algo-Thief");

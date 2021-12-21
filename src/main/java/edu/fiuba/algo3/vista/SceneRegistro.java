@@ -22,7 +22,7 @@ import java.io.File;
 
 public class SceneRegistro {
 
-    public VBox crearSceneRegistro(Scene sceneCiudad, Stage stage, AlgoThief juego) {
+    public VBox crearSceneRegistro(Stage stage, AlgoThief juego) {
         Label nombre = new Label("Ingrese su nombre");
         nombre.setFont(Font.font(20));
         Button botonContinuar = new ButtonContinuar();
@@ -33,7 +33,10 @@ public class SceneRegistro {
         VBox cajaNombre = new VBox(nombre, textNombre, botonContinuar, descripcionJugador);
         cajaNombre.setAlignment(Pos.CENTER);
 
-        BotonContinuarHandler botonContinuarHandler = new BotonContinuarHandler(botonContinuar, sceneCiudad, stage, textNombre, nombre);
+        SceneCaso sceneParaCaso = new SceneCaso();
+        Scene sceneCaso = new Scene(sceneParaCaso.crearSceneCaso(stage, juego), 640, 480);
+
+        BotonContinuarHandler botonContinuarHandler = new BotonContinuarHandler(botonContinuar, sceneCaso, stage, textNombre, nombre, juego);
         botonContinuar.setOnAction(botonContinuarHandler);
 
         return cajaNombre;

@@ -1,5 +1,8 @@
 package edu.fiuba.algo3.controlador;
 
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.modelo.Policia;
+import edu.fiuba.algo3.modelo.rango.Novato;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -15,12 +18,14 @@ public class BotonContinuarHandler implements EventHandler<ActionEvent> {
     private Stage miStage;
     private Label label;
     private TextField textField;
+    private AlgoThief juego;
 
-    public BotonContinuarHandler(Button botonContinuar, Scene sceneCiudad, Stage stage, TextField textoNombre, Label label) {
+    public BotonContinuarHandler(Button botonContinuar, Scene sceneCiudad, Stage stage, TextField textoNombre, Label label, AlgoThief juego) {
         this.textField = textoNombre;
         this.label = label;
         this.miScene = sceneCiudad;
         this.miStage = stage;
+        this.juego = juego;
     }
 
     @Override
@@ -31,8 +36,11 @@ public class BotonContinuarHandler implements EventHandler<ActionEvent> {
             this.textField.requestFocus();
 
         } else {
+            Policia policia = new Policia(textField.getText(), new Novato());
+            juego.setPolicia(policia);
+            juego.generarPartida();
             miStage.setScene(miScene);
-            miStage.setTitle("Juego - Pantalla Ciudad");
+            miStage.setTitle("Juego - Pantalla Caso");
         }
 
     }
