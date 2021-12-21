@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class CiudadParser {
 
     public ArrayList<Ciudad> parser(String ruta) {
+
         Lector lector = new Lector();
         ArrayList<Ciudad> ciudades = new ArrayList<>();
         JSONArray ciudadesJson = lector.leer(ruta);

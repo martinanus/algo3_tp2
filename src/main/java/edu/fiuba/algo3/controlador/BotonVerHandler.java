@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.JavaFX;
+package edu.fiuba.algo3.controlador;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
 import javafx.event.ActionEvent;
@@ -7,8 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-
-import java.security.AlgorithmConstraints;
 
 public class BotonVerHandler implements EventHandler<ActionEvent> {
     private AlgoThief juego;

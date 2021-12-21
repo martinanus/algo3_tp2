@@ -2,7 +2,6 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
-import edu.fiuba.algo3.modelo.lector.PistaParser;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
@@ -28,13 +27,8 @@ public class AlgoThief {
         this.ladrones = cargadorDatos.cargarLadrones(computadora);
         this.ciudades = cargadorDatos.cargarCiudades();
         this.objetosRobados = cargadorDatos.cargarObjetosRobados();
-        cargarPistas(ciudades);
+        cargadorDatos.cargarPistas(ciudades);
         reloj = new Reloj(new Tiempo(154)); // Lunes 7 a.m. + 154 hs = Domingo 5 p.m. (17)
-    }
-
-
-    public void inicializarDia() {
-        reloj.incrementar(new Tiempo(7));
     }
 
     public void generarPartida() {
@@ -54,7 +48,7 @@ public class AlgoThief {
 
     public void viajar(String nombreCiudad) {
         for(Ciudad ciudad: ciudades){
-            if(Objects.equals(ciudad.getNombre(), nombreCiudad )){ //falta verificar la lista de ciudades destino
+            if(Objects.equals(ciudad.getNombre(), nombreCiudad )){
                 try {
                     jugador.viajar(ciudad,reloj);
                 } catch(TiempoExcedidoError e) {
@@ -79,11 +73,6 @@ public class AlgoThief {
         } catch(TiempoExcedidoError e) {
             this.finalizar();
         }
-    }
-
-    private void cargarPistas(ArrayList<Ciudad> ciudades){
-        PistaParser parseador = new PistaParser();
-        parseador.parser("/jsons/pistas.json",ciudades); //Puede haber un refactor
     }
 
     public void finalizar(Objeto objetoRobado, Ladron ladron) {
