@@ -68,7 +68,7 @@ public class Entrega2Test {
     }
 
     @Test
-    public void SeBuscaEnLaComputadoraUnSospechosoConSexoMasculino() {
+    public void SeBuscayEmiteOrdenDeArrestoEnLaComputadoraUnSospechosoConSexoMasculinoYTranscurren3Horas() {
         Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
         Ladron sospechoso1 = new Ladron(descripcion1);
         Descripcion descripcion2 = new Descripcion("sospechoso2","femenino","musica","negro","anillo","deportivo");
@@ -82,8 +82,10 @@ public class Entrega2Test {
         computadora.agregarSopechoso(sospechoso2);
         computadora.agregarSopechoso(sospechoso3);
         Reloj reloj = new Reloj(new Tiempo(168));
+        computadora.emitirOrdenDeArresto(sospechosoBuscado,reloj);
 
-        assertEquals(OrdenEmitida.class, computadora.emitirOrdenDeArresto(sospechosoBuscado,reloj).getClass());
+        assertEquals(new Tiempo(3),reloj.tiempoTranscurrido());
+
     }
 
     @Test
@@ -99,9 +101,14 @@ public class Entrega2Test {
         Rango rango = new Novato();
 
         Policia policia = new Policia(montreal, rango);
-        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
 
-        assertThrows(OrdenNoEmitidadError.class, ()-> policia.visitar(banco, reloj));
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+        AlgoThief juego = new AlgoThief();
+        Caso caso = new Caso(juego);
+        policia.setCaso(caso);
+        policia.visitar(banco, reloj);
+        assertEquals(new Tiempo(1),reloj.tiempoTranscurrido());
+
     }
 
     @Test
@@ -111,7 +118,10 @@ public class Entrega2Test {
         Ciudad mexico = new Ciudad(new Posicion(19.42833333, -99.1275));
         Ciudad lima = new Ciudad(new Posicion(-12.04318,  -77.02824));
         Rango rango = new Novato();
-        Policia policia = new Policia(lima, rango);
+        Policia policia = new Policia(lima, rango); // policia parado en lima
+        AlgoThief juego = new AlgoThief();
+        Caso caso = new Caso(juego);
+        policia.setCaso(caso);
 
         policia.sumarArresto(4);  //rango deberia conocer la # de arrestos
         Descripcion descripcion1 = new Descripcion("","Masculino","Croquet","","","");
@@ -125,14 +135,17 @@ public class Entrega2Test {
 
         mexico.agregarEdificio(puerto);
         lima.agregarEdificio(biblioteca);
-        policia.visitar(biblioteca,reloj);
+        policia.visitar(biblioteca,reloj); //1 hora
 
-        policia.viajar(mexico,reloj);
+        policia.viajar(mexico,reloj); //demora  4 horas.
 
-        policia.emitirOrdenArresto(computadora,ladron,reloj);
+        policia.emitirOrdenArresto(computadora,ladron,reloj);//demora 3 horas
 
-        policia.visitar(puerto,reloj);
+        policia.visitar(puerto,reloj); //1 hora por visitar
 
-        assertEquals(Detective.class, policia.rangoPolicia().getClass());
+        policia.viajar(lima,reloj);//demora 3 horas por ser detective, ya no demora 4 horas como antes.
+
+        assertEquals(new Tiempo(12),reloj.tiempoTranscurrido());
+
     }
 }
