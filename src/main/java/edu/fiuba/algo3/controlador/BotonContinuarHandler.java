@@ -15,7 +15,6 @@ import javafx.stage.Stage;
 
 public class BotonContinuarHandler implements EventHandler<ActionEvent> {
 
-    private Scene miScene;
     private Stage miStage;
     private Label label;
     private TextField textField;

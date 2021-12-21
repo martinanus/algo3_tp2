@@ -25,16 +25,16 @@ public class SceneRegistro {
     public VBox crearSceneRegistro(Stage stage, AlgoThief juego) {
         Label nombre = new Label("Ingrese su nombre");
         nombre.setFont(Font.font(20));
-        Button botonContinuar = new ButtonContinuar();
         TextField textNombre = new TextField();
         textNombre.setMaxWidth(150);
+
+        Button botonContinuar = new ButtonContinuar(stage, textNombre, nombre, juego);
+
         Label descripcionJugador = new Label();
         descripcionJugador.setFont(Font.font(20));
         VBox cajaNombre = new VBox(nombre, textNombre, botonContinuar, descripcionJugador);
         cajaNombre.setAlignment(Pos.CENTER);
 
-        BotonContinuarHandler botonContinuarHandler = new BotonContinuarHandler(botonContinuar, stage, textNombre, nombre, juego);
-        botonContinuar.setOnAction(botonContinuarHandler);
 
         return cajaNombre;
     }
