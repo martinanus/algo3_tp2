@@ -115,4 +115,7 @@ public class AlgoThief {
     public String mostrarCiudadesDisponibles() {
         return jugador.mostrarCiudadesDisponibles();
     }
+    public ArrayList<Ciudad> obtenerCiudades(){
+        return ciudades;
+    }
 }

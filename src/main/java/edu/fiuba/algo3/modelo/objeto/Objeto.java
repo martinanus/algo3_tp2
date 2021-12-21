@@ -21,7 +21,6 @@ public abstract class Objeto {
             }
             ciudadesParaElegir.removeIf(c -> c.conNombreIgualA(nombreCiudad));
         }
-
         int contadorCiudades = 0;
         for(Ciudad ciudad: ciudades){
             if(contadorCiudades < numeroCiudades){
@@ -31,7 +30,6 @@ public abstract class Objeto {
                 ciudadesParaElegir.remove(ciudadRandom);
             }
         }
-
         return recorridoLadron;
     }
 }

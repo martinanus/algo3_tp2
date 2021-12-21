@@ -99,6 +99,7 @@ public class Policia {
 
     public void generarCaso(ArrayList<Objeto> objetosRobados, ArrayList<Ciudad> ciudades,Ladron ladron, AlgoThief algoThief) {
         Caso unCaso =  rango.generarCaso(objetosRobados, ciudades,ladron, algoThief);
+        unCaso.completarListasCiudadeDestino(ciudades);
         this.ciudadActual= (unCaso.getCiudadOrigen());
         this.caso = unCaso;
 

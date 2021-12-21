@@ -3,6 +3,8 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AlgoThiefTest {
@@ -60,5 +62,23 @@ public class AlgoThiefTest {
         juego.generarPartida();
 
     }
+    @Test
+    public void test05SeTesteaLaListasDestinoDeLasCiudadesQueRecorrioElLadron(){
+        Policia unPolicia = new Policia("Pepe");
+        AlgoThief juego = new AlgoThief();
+        juego.setPolicia(unPolicia);
+        juego.generarPartida();
+        System.out.println(juego.ciudadActual() );
+        ArrayList<Ciudad> ciudades = juego.obtenerCiudades();
+        for(Ciudad ciudad: ciudades){
+            System.out.println(ciudad.getNombre());
+            System.out.println(ciudad.getCiudadesDestino().size() );
+            for(Ciudad ciudad1: ciudad.getCiudadesDestino()){
+                System.out.println(ciudad1.getNombre());
+            }
+        }
+        System.out.println(juego.mostrarCiudadesDisponibles());
+    }
+
 
 }
