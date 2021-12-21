@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import edu.fiuba.algo3.modelo.tiempo.TiempoExcedidoError;
@@ -97,5 +98,19 @@ public class RelojTest {
         /* Assert */
         assertEquals(reloj.getDia(), "Miercoles");
         assertEquals(reloj.getHoraActual(), 11);
+    }
+
+    @Test
+    public void SeRealizaUnViajeDesdeCiudadDeMexicoASeulElLunesALas11Pm() {
+        Ciudad ciudadDeMexico = new Ciudad(new Posicion(19.42847, -99.12766));
+        Ciudad seul = new Ciudad(new Posicion(37.566, 126.9784));
+        Policia policia = new Policia(ciudadDeMexico, new Novato());
+        Reloj reloj = new Reloj(new Tiempo(154));
+        reloj.incrementar(new Tiempo(16));
+
+        policia.viajar(seul, reloj);
+
+        assertEquals(reloj.getDia(), "Martes");
+        assertEquals(reloj.getHoraActual(), 12);
     }
 }
