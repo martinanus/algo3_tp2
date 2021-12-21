@@ -1,0 +1,39 @@
+package edu.fiuba.algo3.controlador;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+public class BotonContinuarHandler implements EventHandler<ActionEvent> {
+
+    private Scene miScene;
+    private Stage miStage;
+    private Label label;
+    private TextField textField;
+
+    public BotonContinuarHandler(Button botonContinuar, Scene sceneCiudad, Stage stage, TextField textoNombre, Label label) {
+        this.textField = textoNombre;
+        this.label = label;
+        this.miScene = sceneCiudad;
+        this.miStage = stage;
+    }
+
+    @Override
+    public void handle(ActionEvent actionEvent) {
+        if (this.textField.getText().trim().equals("")) {
+            this.label.setText("Debe Ingresar un nombre");
+            this.label.setTextFill(Color.RED);
+            this.textField.requestFocus();
+
+        } else {
+            miStage.setScene(miScene);
+            miStage.setTitle("Juego - Pantalla Ciudad");
+        }
+
+    }
+}

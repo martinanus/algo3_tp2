@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.Policia;
 import edu.fiuba.algo3.vista.SceneCiudad;
 import edu.fiuba.algo3.vista.SceneInicial;
+import edu.fiuba.algo3.vista.SceneRegistro;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -30,16 +31,15 @@ public class App extends Application {
     public void start(Stage stage) {
         AlgoThief juego = new AlgoThief();
 
+        SceneRegistro sceneParaRegistro = new SceneRegistro();
         SceneCiudad sceneParaCiudad = new SceneCiudad();
         Scene sceneCiudad = new Scene(sceneParaCiudad.crearSceneCiudad(juego), 640, 480);
-
+        Scene sceneRegistro = new Scene(sceneParaRegistro.crearSceneRegistro(sceneCiudad, stage, juego), 640, 480);
         SceneInicial inicial = new SceneInicial();
-        Scene sceneInicial = new Scene(inicial.crearSceneInicial(sceneCiudad, stage, juego), 640, 480);
-
+        Scene sceneInicial = new Scene(inicial.crearSceneInicial(sceneRegistro, stage, juego), 640, 480);
         stage.setScene(sceneInicial);
         stage.setResizable(false);
         stage.show();
-
     }
 
     public static void main(String[] args) {
