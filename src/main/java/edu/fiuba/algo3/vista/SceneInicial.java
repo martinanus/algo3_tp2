@@ -28,7 +28,7 @@ public class SceneInicial {
         titulo.setBackground(new Background(new BackgroundFill(Color.rgb(20, 0, 80, 0.9), new CornerRadii(5.0), new Insets(-5.0))));
         titulo.setTextFill(Color.rgb(255, 255, 255, 0.7));
 
-        Label nombre = new Label("Ingrese su nombre");
+        /*Label nombre = new Label("Ingrese su nombre");
         nombre.setFont(Font.font(20));
         Button botonContinuar = new Button();
         botonContinuar.setText("Continuar");
@@ -37,16 +37,16 @@ public class SceneInicial {
         Label descripcionJugador = new Label();
         descripcionJugador.setFont(Font.font(20));
         VBox cajaNombre = new VBox(nombre, textNombre, botonContinuar, descripcionJugador);
-        cajaNombre.setAlignment(Pos.CENTER);
+        cajaNombre.setAlignment(Pos.CENTER);*/
 
         Button botonInicio = new ButtonInicio(sceneCiudad, stage);
 
 
-        botonContinuar.setOnAction(value ->  {
+        /*botonContinuar.setOnAction(value ->  {
             juego.setPolicia(new Policia(textNombre.getText()));
             juego.generarPartida();
             descripcionJugador.setText("Hola " + textNombre.getText() + " tienes rango " + juego.mostrarRango());
-        });
+        });*/
 
         Button botonCerrar = new ButtonCerrar(stage);
 
@@ -60,7 +60,8 @@ public class SceneInicial {
         layoutBotones.setSpacing(50);
         layoutBotones.setAlignment(Pos.CENTER);
 
-        VBox layout = new VBox( titulo, cajaNombre, layoutBotones);
+        //VBox layout = new VBox( titulo, cajaNombre, layoutBotones);
+        VBox layout = new VBox( titulo, layoutBotones);
         layout.setAlignment(Pos.CENTER);
         layout.setSpacing(100);
         layout.setBackground(new Background(myBI));
