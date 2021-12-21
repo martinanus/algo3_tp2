@@ -121,4 +121,18 @@ public class AlgoThiefTest {
         assertEquals(ladronesIniciales, juego.getCantidadLadrones());
         assertEquals(objetosIniciales, juego.getCantidadObjetosRobados());
     }
+
+    @Test
+    public void test05SeAlcanzaElTiempoLimiteDelCasoAsignado() {
+        Policia unPolicia = new Policia("Pepe");
+        AlgoThief juego = new AlgoThief(unPolicia);
+        juego.generarPartida();
+
+
+        for (int j = 0; j < 36; j++)
+            juego.visitar("banco");
+        juego.visitar("biblioteca");
+
+        assertEquals(new Tiempo(0), juego.getReloj().tiempoTranscurrido());
+    }
 }

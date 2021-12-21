@@ -9,6 +9,7 @@ import edu.fiuba.algo3.modelo.lector.RutasDeEscapeParser;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
+import edu.fiuba.algo3.modelo.tiempo.TiempoExcedidoError;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +33,7 @@ public class AlgoThief {
         cargarObjetosRobados();
         cargarRutasLadron(ciudades);
         cargarPistas(ciudades);
-        reloj = new Reloj(new Tiempo(168)); // 17+24*6+17=178
+        reloj = new Reloj(new Tiempo(154)); // Lunes 7 a.m. + 154 hs = Domingo 5 p.m. (17)
         this.jugador = jugador;
     }
 
@@ -84,17 +85,24 @@ public class AlgoThief {
     }
 
     public Interactuable visitar(String nombreEdificio) {
-        /*if(reloj.horaDormir()){
-            policia.duerme(reloj);
-        }*/
-        return jugador.visitar(nombreEdificio,reloj);
+        try {
+            return jugador.visitar(nombreEdificio,reloj);
+        } catch(TiempoExcedidoError e) {
+            this.finalizar();
+        }
+        return null;
     }
+
 
 
     public void viajar(String nombreCiudad) {
         for(Ciudad ciudad: ciudades){
             if(Objects.equals(ciudad.getNombre(), nombreCiudad )){ //falta verificar la lista de ciudades destino
-                jugador.viajar(ciudad,reloj);
+                try {
+                    jugador.viajar(ciudad,reloj);
+                } catch(TiempoExcedidoError e) {
+                    this.finalizar();
+                }
             }
         }
     }
@@ -109,7 +117,11 @@ public class AlgoThief {
 
     public void generarOrdenDeArresto() {
         Ladron ladronSopechoso = new Ladron(descripcionSospechoso);
-        jugador.emitirOrdenArresto(computadora,ladronSopechoso,reloj);
+        try {
+            jugador.emitirOrdenArresto(computadora,ladronSopechoso,reloj);
+        } catch(TiempoExcedidoError e) {
+            this.finalizar();
+        }
     }
 
     private void cargarPistas(ArrayList<Ciudad> ciudades){
@@ -120,11 +132,11 @@ public class AlgoThief {
     public void finalizar(Objeto objetoRobado, Ladron ladron) {
         this.ladrones.remove(ladron);
         this.objetosRobados.remove(objetoRobado);
-        this.reloj = new Reloj(new Tiempo(168));
+        this.reloj = new Reloj(new Tiempo(154));
     }
 
     public void finalizar() {
-        this.reloj = new Reloj(new Tiempo(168));
+        this.reloj = new Reloj(new Tiempo(154));
     }
 
     public int getCantidadLadrones() {
