@@ -89,9 +89,6 @@ public class AlgoThief {
         return jugador.getCiudadActual().getInformacion();
     }
 
-    public String ciudadActual() {
-        return jugador.mostrarCiudadActual();
-    }
 
     public void setPolicia(Policia unPolicia){
         this.jugador = unPolicia;
@@ -99,6 +96,11 @@ public class AlgoThief {
 
     public String mostrarReloj() {
         return reloj.getDia() + ", " + Double.toString(reloj.getHoraActual()) + "hs";
+    }
+
+
+    public String mostrarCiudadActual() {
+        return jugador.mostrarCiudadActual();
     }
 
     public String mostrarCiudadesDisponibles() {

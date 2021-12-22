@@ -12,8 +12,7 @@ public class BotonCrimenHandler implements EventHandler<ActionEvent> {
     private Button miBoton;
     private VBox cuadroAccion;
 
-    public BotonCrimenHandler(Button botonVer, VBox cuadroAccion) {
-        miBoton = botonVer;
+    public BotonCrimenHandler( VBox cuadroAccion) {
         this.cuadroAccion = cuadroAccion;
     }
 

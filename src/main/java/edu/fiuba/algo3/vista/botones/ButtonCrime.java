@@ -6,10 +6,8 @@ import javafx.scene.layout.VBox;
 
 public class ButtonCrime extends Button {
 
-    public ButtonCrime(VBox cuadroAccion){
-        super.setText("Crimen");
-        super.setPrefSize(80,50);
-        BotonCrimenHandler botonCrimenHandler = new BotonCrimenHandler(this, cuadroAccion);
-        super.setOnAction(botonCrimenHandler);
+
+    public ButtonCrime() {
+
     }
 }

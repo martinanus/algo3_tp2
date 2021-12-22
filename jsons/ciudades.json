@@ -8,7 +8,7 @@
             "Moneda": "Soles",
             "Monumento": "Machu Picchu",
             "Idioma": "Español",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un LIMA con gente "
         }
     },
     {
@@ -20,7 +20,7 @@
             "Moneda": "Pesos",
             "Monumento":"El Obelisco",
             "Idioma": "Español",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un ARG con gente "
         }
     },
     {
@@ -32,7 +32,7 @@
             "Moneda": "Pesos",
             "Monumento":"Templo de Kukulkan",
             "Idioma": "Español",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un MEX con gente "
         }
     },
     {
@@ -44,7 +44,7 @@
             "Moneda": "Euros",
             "Monumento":"Puerta de Alcalá",
             "Idioma": "Español",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un ESPa con gente "
         }
     },
     {
@@ -56,7 +56,7 @@
             "Moneda": "yuan",
             "Monumento":"La gran muralla",
             "Idioma": "Mandarin",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un BEIJ con gente "
         }
     },
     {
@@ -68,7 +68,7 @@
             "Moneda": "Won",
             "Monumento":"Fortaleza de Hwasong",
             "Idioma": "Coreano",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un SEU con gente "
         }
     },
     {
@@ -80,7 +80,7 @@
             "Moneda": "euro",
             "Monumento":"La torre Eiffel",
             "Idioma": "Frances",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un FR con gente "
         }
     },
     {
@@ -92,7 +92,7 @@
             "Moneda": "Dolar",
             "Monumento":"Monumento a George-Étienne Cartier",
             "Idioma": "Francés e Inglés",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un MONTREAL con gente "
         }
     },
     {
@@ -104,7 +104,7 @@
             "Moneda": "yen",
             "Monumento":"Templo de Sensō-ji",
             "Idioma": "Japones",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un TOK con gente "
         }
     },
     {
@@ -116,7 +116,7 @@
             "Moneda": "La Libra",
             "Monumento": "La gran piramide de Guiza",
             "Idioma": "Árabe",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un CAI con gente "
         }
     },
     {
@@ -128,7 +128,7 @@
             "Moneda": "euro",
             "Monumento":"El Gran coliseo",
             "Idioma": "Italiano",
-            "Descripcion": "Es un paises con gente "
+            "Descripcion": "Es un ROMA con gente "
         }
     }
 

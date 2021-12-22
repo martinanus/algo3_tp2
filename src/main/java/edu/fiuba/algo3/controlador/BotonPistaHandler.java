@@ -8,11 +8,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
 public class BotonPistaHandler implements EventHandler<ActionEvent> {
-    private Button miBoton;
     private VBox cuadroAccion;
 
-    public BotonPistaHandler(Button botonVer, VBox cuadroAccion) {
-        miBoton = botonVer;
+    public BotonPistaHandler( VBox cuadroAccion) {
         this.cuadroAccion = cuadroAccion;
     }
 

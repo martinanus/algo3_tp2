@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.controlador.BotonCrimenHandler;
+import edu.fiuba.algo3.controlador.BotonPistaHandler;
 import edu.fiuba.algo3.controlador.BotonVerHandler;
+import edu.fiuba.algo3.controlador.BotonViajarHandler;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.vista.botones.ButtonCrime;
 import edu.fiuba.algo3.vista.botones.ButtonPista;
@@ -14,7 +17,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
 
 import java.io.File;
 
@@ -28,7 +30,7 @@ public class ContenedorCiudad extends HBox {
 
 
         Label ciudadActual = new Label();
-        ciudadActual.setText(juego.ciudadActual());
+        ciudadActual.setText(juego.mostrarCiudadActual());
         ciudadActual.setFont(Font.font(20));
         ciudadActual.setPrefSize(320, 80);
         ciudadActual.setAlignment(Pos.CENTER);
@@ -70,13 +72,25 @@ public class ContenedorCiudad extends HBox {
         BotonVerHandler botonVerHandler = new BotonVerHandler(botonVer, cuadroAccion, juego);
         botonVer.setOnAction(botonVerHandler);
 
+        Button botonViajar = new ButtonViajar();
+        botonViajar.setText("Viajar");
+        botonViajar.setPrefSize(80,50);
+        BotonViajarHandler botonViajarHandler = new BotonViajarHandler(cuadroAccion, fecha, juego, ciudadActual );
+        botonViajar.setOnAction(botonViajarHandler);
 
-        Button botonViajar = new ButtonViajar(cuadroAccion, fecha, juego);
 
-        Button botonPista = new ButtonPista(cuadroAccion);
+        Button botonPista = new ButtonPista();
+        botonPista.setText("Pista");
+        botonPista.setPrefSize(80,50);
+        BotonPistaHandler botonPistaHandler = new BotonPistaHandler(cuadroAccion);
+        botonPista.setOnAction(botonPistaHandler);
 
+        Button botonCrimen = new ButtonCrime();
+        botonCrimen.setText("Crimen");
+        botonCrimen.setPrefSize(80,50);
+        BotonCrimenHandler botonCrimenHandler = new BotonCrimenHandler(cuadroAccion);
+        botonCrimen.setOnAction(botonCrimenHandler);
 
-        Button botonCrimen = new ButtonCrime(cuadroAccion);
 
         HBox contenedorBotones = new HBox(botonVer, botonViajar, botonPista, botonCrimen);
         contenedorBotones.setPrefSize(320, 50);

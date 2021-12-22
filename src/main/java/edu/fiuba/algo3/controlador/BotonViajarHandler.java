@@ -10,15 +10,17 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class BotonViajarHandler implements EventHandler<ActionEvent> {
-    private Label reloj;
+    private Label labelReloj;
+    private Label labelCiudad;
     private VBox cuadroAccion;
     private AlgoThief juego;
 
-    public BotonViajarHandler(Button botonVer, VBox cuadroAccion, Label reloj, AlgoThief juego) {
+    public BotonViajarHandler( VBox cuadroAccion, Label labelReloj, AlgoThief juego, Label labelCiudad) {
 
         this.cuadroAccion = cuadroAccion;
         this.juego = juego;
-        this.reloj = reloj;
+        this.labelReloj = labelReloj;
+        this.labelCiudad = labelCiudad;
     }
 
     @Override
@@ -30,8 +32,9 @@ public class BotonViajarHandler implements EventHandler<ActionEvent> {
             Button botonViaje = new ButtonViaje();
             nombreCiudad = ciudad.getNombre();
             botonViaje.setText(nombreCiudad);
-            botonViaje.setPrefSize(80,50);
-            BotonDestinoHandler botonDestinoHandler = new BotonDestinoHandler(nombreCiudad, juego, reloj);
+            botonViaje.setPrefSize(200,50);
+            cuadroAccion.setSpacing(30);
+            BotonDestinoHandler botonDestinoHandler = new BotonDestinoHandler(nombreCiudad, juego, labelReloj, labelCiudad, cuadroAccion);
             botonViaje.setOnAction(botonDestinoHandler);
 
             cuadroAccion.getChildren().add(botonViaje);

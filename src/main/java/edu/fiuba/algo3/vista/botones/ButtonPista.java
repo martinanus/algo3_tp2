@@ -6,10 +6,8 @@ import javafx.scene.layout.VBox;
 
 public class ButtonPista extends Button {
 
-    public ButtonPista(VBox cuadroAccion){
-        super.setText("Pista");
-        super.setPrefSize(80,50);
-        BotonPistaHandler botonPistaHandler = new BotonPistaHandler(this, cuadroAccion);
-        super.setOnAction(botonPistaHandler);
+
+    public ButtonPista() {
+
     }
 }

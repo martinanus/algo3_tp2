@@ -8,10 +8,9 @@ import javafx.scene.layout.VBox;
 
 public class ButtonViajar extends Button {
 
-    public ButtonViajar(VBox cuadroAccion, Label reloj, AlgoThief juego){
-        super.setText("Viajar");
-        super.setPrefSize(80,50);
-        BotonViajarHandler botonViajarHandler = new BotonViajarHandler(this, cuadroAccion, reloj, juego);
-        super.setOnAction(botonViajarHandler);
+
+
+    public ButtonViajar() {
+
     }
 }
