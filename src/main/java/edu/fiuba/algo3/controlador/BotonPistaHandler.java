@@ -11,10 +11,12 @@ import javafx.scene.text.Font;
 public class BotonPistaHandler implements EventHandler<ActionEvent> {
     private VBox cuadroAccion;
     private AlgoThief juego;
+    private Label labelReloj;
 
-    public BotonPistaHandler(VBox cuadroAccion, AlgoThief juego) {
+    public BotonPistaHandler(VBox cuadroAccion, AlgoThief juego, Label labelReloj) {
         this.cuadroAccion = cuadroAccion;
         this.juego = juego;
+        this.labelReloj = labelReloj;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class BotonPistaHandler implements EventHandler<ActionEvent> {
         Button botonBanco = new Button();
         botonBanco.setText("Banco");
         botonBanco.setPrefSize(200,50);
-        BotonEdificioHandler botonBancoHandler = new BotonEdificioHandler(cuadroAccion, juego, "banco");
+        BotonEdificioHandler botonBancoHandler = new BotonEdificioHandler(cuadroAccion, juego, "banco", labelReloj);
         botonBanco.setOnAction(botonBancoHandler);
 
 
@@ -42,14 +44,14 @@ public class BotonPistaHandler implements EventHandler<ActionEvent> {
         Button botonBiblioteca = new Button();
         botonBiblioteca.setText("Bibliotecta");
         botonBiblioteca.setPrefSize(200,50);
-        BotonEdificioHandler botonBibliotecaHandler = new BotonEdificioHandler(cuadroAccion, juego, "biblioteca");
+        BotonEdificioHandler botonBibliotecaHandler = new BotonEdificioHandler(cuadroAccion, juego, "biblioteca", labelReloj);
         botonBiblioteca.setOnAction(botonBibliotecaHandler);
 
 
         Button botonPuerto = new Button();
         botonPuerto.setText("Puerto");
         botonPuerto.setPrefSize(200,50);
-        BotonEdificioHandler botonPuertoHandler = new BotonEdificioHandler(cuadroAccion, juego, "puerto");
+        BotonEdificioHandler botonPuertoHandler = new BotonEdificioHandler(cuadroAccion, juego, "puerto", labelReloj);
         botonPuerto.setOnAction(botonPuertoHandler);
 
 

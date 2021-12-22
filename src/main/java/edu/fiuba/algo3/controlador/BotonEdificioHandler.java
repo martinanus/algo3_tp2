@@ -10,14 +10,17 @@ import javafx.scene.text.Font;
 
 public class BotonEdificioHandler implements EventHandler<ActionEvent> {
 
+
     private VBox cuadroAccion;
     private AlgoThief juego;
     private String tipoEdificio;
+    private Label relojLabel;
 
-    public BotonEdificioHandler(VBox cuadroAccion, AlgoThief juego, String tipoEdificio) {
+    public BotonEdificioHandler(VBox cuadroAccion, AlgoThief juego, String tipoEdificio, Label relojLabel) {
         this.cuadroAccion = cuadroAccion;
         this.juego = juego;
         this.tipoEdificio = tipoEdificio;
+        this.relojLabel = relojLabel;
     }
 
 
@@ -25,6 +28,7 @@ public class BotonEdificioHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {
 
         String contenidoEdificio = (juego.visitar(tipoEdificio)).mostrar();
+        relojLabel.setText(juego.mostrarReloj());
 
         cuadroAccion.getChildren().clear();
         Label descrPista = new Label();
