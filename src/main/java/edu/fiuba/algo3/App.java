@@ -28,7 +28,7 @@ public class App extends Application {
         Media musica = new Media(direccionParaMedia);
         AudioClip mediaPlayer = new AudioClip(musica.getSource());
         mediaPlayer.setCycleCount(AudioClip.INDEFINITE);
-        mediaPlayer.play();
+        //mediaPlayer.play();
         mediaPlayer.setVolume(1);
 
         ContenedorRegistro contenedorRegistro = new ContenedorRegistro(stage, juego);

@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.BotonInicioHandler;
 import edu.fiuba.algo3.controlador.BotonVolverAJugarHandler;
+import edu.fiuba.algo3.modelo.AlgoThief;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -15,7 +16,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class ContenedorCasoFinalizado extends VBox {
-    public ContenedorCasoFinalizado(Stage stage) {
+    public ContenedorCasoFinalizado(Stage stage, AlgoThief juego ) {
         super();
         this.setAlignment(Pos.CENTER);
         this.setSpacing(40);
@@ -27,7 +28,7 @@ public class ContenedorCasoFinalizado extends VBox {
 
         Button botonVolverAJugar = new Button();
         botonVolverAJugar.setText("Volver a Jugar");
-        BotonVolverAJugarHandler botonVolverAJugarHandler = new BotonVolverAJugarHandler(stage);
+        BotonVolverAJugarHandler botonVolverAJugarHandler = new BotonVolverAJugarHandler(stage, juego);
         botonVolverAJugar.setOnAction(botonVolverAJugarHandler);
 
         this.getChildren().addAll(titulo, botonVolverAJugar);

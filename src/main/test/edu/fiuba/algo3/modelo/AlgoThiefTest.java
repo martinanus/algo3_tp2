@@ -125,7 +125,7 @@ public class AlgoThiefTest {
     }
 
     @Test
-    public void  IntentarAtraparSospechoSinOrdenDeArrestoEmitidaRangoSargento(){
+    public void  IntentarAtraparSospechoSinOrdenDeArrestoEmitidaRangoSargento() {
         Rango rango = new Sargento();
         Policia policia = new Policia(rango);
         AlgoThief juego = new AlgoThief();
@@ -136,4 +136,21 @@ public class AlgoThiefTest {
         juego.visitar("banco");
         assertEquals(new Tiempo(1), juego.getReloj().tiempoTranscurrido());
     }
+
+
+    @Test
+    public void  FinalizoPartidaYGeneroUnaNueva(){
+        Rango rango = new Sargento();
+        Policia policia = new Policia(rango);
+        AlgoThief juego = new AlgoThief();
+
+        juego.setPolicia(policia);
+        juego.generarPartida();
+
+        juego.finalizar();
+
+        juego.generarPartida();
+
+    }
 }
+

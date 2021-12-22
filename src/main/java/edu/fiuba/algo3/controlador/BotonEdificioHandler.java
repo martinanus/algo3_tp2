@@ -37,7 +37,7 @@ public class BotonEdificioHandler implements EventHandler<ActionEvent> {
             contenidoEdificio = (juego.visitar(tipoEdificio)).mostrar();
             relojLabel.setText(juego.mostrarReloj());
         }catch( CasoFinalizadoSinExitoError e) {
-            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage);
+            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego);
             Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
             stage.setScene(sceneCasoFinalizado);
 
