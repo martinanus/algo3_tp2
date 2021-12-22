@@ -14,7 +14,8 @@ public class Descripcion {
     String seña;
     String vehiculo;
     ArrayList<String> pistas;
-    Iterator<String> iterador;
+    int contador;
+    //Iterator<String> iterador;
 
     public Descripcion(String nombre, String sexo, String Hobby, String cabello, String seña, String vehiculo){
             this.nombre = nombre;
@@ -26,7 +27,7 @@ public class Descripcion {
             this.pistas = new ArrayList<>() {{
                 add(vehiculo); add(seña); add(cabello); add(hobby);
             }};
-            this.iterador = pistas.iterator();
+            this.contador = 0;
     }
 
     public Descripcion(String sexo, String Hobby, String cabello, String seña, String vehiculo) {
@@ -83,8 +84,10 @@ public class Descripcion {
     }
 
     public Pista generarPista() {
-        iterador = pistas.iterator();
-        String pistaLadron = iterador.next();
+        String pistaLadron = pistas.get(contador);
+        contador++;
+        if (contador > 3)
+            contador = 0;
         return new Pista(pistaLadron);
     }
 
