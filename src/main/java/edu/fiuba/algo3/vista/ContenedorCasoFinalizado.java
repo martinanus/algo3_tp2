@@ -21,15 +21,9 @@ public class ContenedorCasoFinalizado extends VBox {
 
 
         Button botonVolverAJugar = new Button();
-<<<<<<< HEAD
         botonVolverAJugar.setText("Volver a Jugar");
         BotonNuevoCasoHandler botonNuevoCasoHandler = new BotonNuevoCasoHandler(stage, juego);
         botonVolverAJugar.setOnAction(botonNuevoCasoHandler);
-=======
-        botonVolverAJugar.setText("Nuevo Caso");
-        BotonVolverAJugarHandler botonVolverAJugarHandler = new BotonVolverAJugarHandler(stage, juego);
-        botonVolverAJugar.setOnAction(botonVolverAJugarHandler);
->>>>>>> 784964b9027c3746ce256c6d87e308fe5236ee4e
 
         this.getChildren().addAll(titulo, botonVolverAJugar);
         stage.setTitle("Juego - Caso Finalizado");
