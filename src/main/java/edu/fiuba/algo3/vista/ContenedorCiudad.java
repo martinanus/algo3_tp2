@@ -14,13 +14,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 import java.io.File;
 
 public class ContenedorCiudad extends HBox {
 
 
-    public ContenedorCiudad(AlgoThief juego) {
+    public ContenedorCiudad(AlgoThief juego, Stage stage) {
         super();
         this.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
@@ -74,7 +75,7 @@ public class ContenedorCiudad extends HBox {
         Button botonViajar = new Button();
         botonViajar.setText("Viajar");
         botonViajar.setPrefSize(80,50);
-        BotonViajarHandler botonViajarHandler = new BotonViajarHandler(cuadroAccion, fecha, juego, ciudadActual, imagenPane );
+        BotonViajarHandler botonViajarHandler = new BotonViajarHandler(cuadroAccion, fecha, juego, ciudadActual, imagenPane, stage);
         botonViajar.setOnAction(botonViajarHandler);
 
 

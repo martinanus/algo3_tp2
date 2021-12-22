@@ -42,8 +42,8 @@ public class AlgoThief {
             return jugador.visitar(nombreEdificio,reloj);
         } catch(TiempoExcedidoError e) {
             this.finalizar();
+            throw new CasoFinalizadoSinExitoError();
         }
-        return null;
     }
 
     public void viajar(String nombreCiudad) {
@@ -53,6 +53,7 @@ public class AlgoThief {
                     jugador.viajar(ciudad,reloj);
                 } catch(TiempoExcedidoError e) {
                     this.finalizar();
+                    throw new CasoFinalizadoSinExitoError();
                 }
             }
         }
@@ -72,6 +73,7 @@ public class AlgoThief {
             jugador.emitirOrdenArresto(computadora,ladronSopechoso,reloj);
         } catch(TiempoExcedidoError e) {
             this.finalizar();
+            throw new CasoFinalizadoSinExitoError();
         }
     }
 
@@ -83,6 +85,7 @@ public class AlgoThief {
 
     public void finalizar() {
         this.reloj = new Reloj(new Tiempo(154));
+
     }
 
     public String descripcionCiudad() {

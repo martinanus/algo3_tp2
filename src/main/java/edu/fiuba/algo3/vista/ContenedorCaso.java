@@ -25,7 +25,7 @@ public class ContenedorCaso extends VBox {
         descripcionCaso.setFont(Font.font(14));
         descripcionCaso.setText(juego.descripcionCaso());
 
-        ContenedorCiudad contenedorCiudad = new ContenedorCiudad(juego);
+        ContenedorCiudad contenedorCiudad = new ContenedorCiudad(juego, stage);
         Scene sceneCiudad = new Scene(contenedorCiudad, 640, 480);
 
 

@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.File;
 
@@ -20,14 +21,17 @@ public class BotonViajarHandler implements EventHandler<ActionEvent> {
     private VBox cuadroAccion;
     private AlgoThief juego;
     private  StackPane imagenPane;
+    private Stage stage;
 
-    public BotonViajarHandler(VBox cuadroAccion, Label labelReloj, AlgoThief juego, Label labelCiudad, StackPane imagenPane) {
+    public BotonViajarHandler(VBox cuadroAccion, Label labelReloj,
+                              AlgoThief juego, Label labelCiudad, StackPane imagenPane, Stage stage) {
 
         this.cuadroAccion = cuadroAccion;
         this.juego = juego;
         this.labelReloj = labelReloj;
         this.labelCiudad = labelCiudad;
         this.imagenPane = imagenPane;
+        this.stage = stage;
     }
 
     @Override
@@ -41,7 +45,7 @@ public class BotonViajarHandler implements EventHandler<ActionEvent> {
             botonViaje.setText(nombreCiudad);
             botonViaje.setPrefSize(200,50);
             cuadroAccion.setSpacing(30);
-            BotonDestinoHandler botonDestinoHandler = new BotonDestinoHandler(nombreCiudad, juego, labelReloj, labelCiudad, cuadroAccion, imagenPane);
+            BotonDestinoHandler botonDestinoHandler = new BotonDestinoHandler(nombreCiudad, juego, labelReloj, labelCiudad, cuadroAccion, imagenPane, stage);
             botonViaje.setOnAction(botonDestinoHandler);
             cuadroAccion.getChildren().add(botonViaje);
         }
