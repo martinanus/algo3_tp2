@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.ArchivoNoEncontradoError;
+import edu.fiuba.algo3.modelo.rango.*;
+import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import org.junit.jupiter.api.Test;
 
@@ -91,4 +94,72 @@ public class AlgoThiefTest {
     }
 
 
+    @Test
+    public void  IntentarAtraparSospechoSinOrdenDeArrestoEmitidaRangoDetective(){
+        Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
+        Ladron ladron = new Ladron(descripcion1);
+
+        Edificio banco = new Edificio(ladron);
+
+        Ciudad montreal = new Ciudad();
+        montreal.agregarEdificio(banco);
+
+        Rango rango = new Detective();
+
+        Policia policia = new Policia(montreal, rango);
+
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+        AlgoThief juego = new AlgoThief();
+        Caso caso = new Caso(juego);
+        policia.setCaso(caso);
+        policia.visitar(banco, reloj);
+        assertEquals(new Tiempo(1),reloj.tiempoTranscurrido());
+
+    }
+
+    @Test
+    public void  IntentarAtraparSospechoSinOrdenDeArrestoEmitidaRangoInvestigador(){
+        Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
+        Ladron ladron = new Ladron(descripcion1);
+
+        Edificio banco = new Edificio(ladron);
+
+        Ciudad montreal = new Ciudad();
+        montreal.agregarEdificio(banco);
+
+        Rango rango = new Investigador();
+
+        Policia policia = new Policia(montreal, rango);
+
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+        AlgoThief juego = new AlgoThief();
+        Caso caso = new Caso(juego);
+        policia.setCaso(caso);
+        policia.visitar(banco, reloj);
+        assertEquals(new Tiempo(1),reloj.tiempoTranscurrido());
+
+    }
+
+    @Test
+    public void  IntentarAtraparSospechoSinOrdenDeArrestoEmitidaRangoSargento(){
+        Descripcion descripcion1 = new Descripcion("sospechoso1","masculino","tenis","castaño","tatuaje","moto");
+        Ladron ladron = new Ladron(descripcion1);
+
+        Edificio banco = new Edificio(ladron);
+
+        Ciudad montreal = new Ciudad();
+        montreal.agregarEdificio(banco);
+
+        Rango rango = new Sargento();
+
+        Policia policia = new Policia(montreal, rango);
+
+        Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
+        AlgoThief juego = new AlgoThief();
+        Caso caso = new Caso(juego);
+        policia.setCaso(caso);
+        policia.visitar(banco, reloj);
+        assertEquals(new Tiempo(1),reloj.tiempoTranscurrido());
+
+    }
 }
