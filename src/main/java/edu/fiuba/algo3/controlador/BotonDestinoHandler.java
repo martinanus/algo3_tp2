@@ -5,12 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.layout.VBox;
 
-public class BotonViajeHandler implements EventHandler<ActionEvent> {
+public class BotonDestinoHandler implements EventHandler<ActionEvent> {
     private VBox cuadroAccion;
     private AlgoThief juego;
     private String nombreCiudad;
 
-    public BotonViajeHandler(String nombreCiudad, AlgoThief juego) {
+    public BotonDestinoHandler(String nombreCiudad, AlgoThief juego) {
         this.nombreCiudad = nombreCiudad;
         this.juego = juego;
     }

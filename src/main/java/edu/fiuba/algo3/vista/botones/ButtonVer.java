@@ -7,10 +7,7 @@ import javafx.scene.layout.VBox;
 
 public class ButtonVer extends Button {
 
-    public ButtonVer(VBox cuadroAccion, AlgoThief juego){
-        super.setText("Ver");
-        super.setPrefSize(80,50);
-        BotonVerHandler botonVerHandler = new BotonVerHandler(this, cuadroAccion, juego);
-        super.setOnAction(botonVerHandler);
+
+    public ButtonVer(){
     }
 }

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.controlador.BotonVerHandler;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.vista.botones.ButtonCrime;
 import edu.fiuba.algo3.vista.botones.ButtonPista;
@@ -62,7 +63,13 @@ public class ContenedorCiudad extends HBox {
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
 
 
-        Button botonVer = new ButtonVer(cuadroAccion, juego);
+
+        Button botonVer = new ButtonVer();
+        botonVer.setText("Ver");
+        botonVer.setPrefSize(80,50);
+        BotonVerHandler botonVerHandler = new BotonVerHandler(botonVer, cuadroAccion, juego);
+        botonVer.setOnAction(botonVerHandler);
+
 
         Button botonViajar = new ButtonViajar(cuadroAccion, juego);
 
