@@ -3,13 +3,11 @@ package edu.fiuba.algo3.modelo.rango;
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
-import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
 import edu.fiuba.algo3.modelo.objeto.ObjetoMuyValioso;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Sargento implements Rango {
     private double velocidad;
@@ -48,11 +46,6 @@ public class Sargento implements Rango {
             ciudad.tomarPistasDificil();
         }
         return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
-    }
-
-    @Override
-    public String mostrarRango() {
-        return this.rango;
     }
 
 }

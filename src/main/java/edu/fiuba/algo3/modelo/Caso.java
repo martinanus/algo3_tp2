@@ -4,12 +4,8 @@ import edu.fiuba.algo3.modelo.interactuable.ArmaDeFuego;
 import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
-
-
 
 public class Caso {
     private AlgoThief algoThief;

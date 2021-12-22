@@ -110,16 +110,14 @@ public class Policia {
         return ciudadActual.getNombre();
     }
 
-    public String mostrarRango() {
-        return rango.mostrarRango();
-    }
-
     public String mostrarCiudadesDisponibles() {
         return ciudadActual.mostrarCiudadesDisponibles();
     }
+
     public Caso getCaso(){
         return caso;
     }
+
     public void setCaso(Caso caso){
         this.caso= caso;
     }

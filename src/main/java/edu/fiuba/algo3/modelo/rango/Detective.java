@@ -6,22 +6,15 @@ import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Detective implements Rango {
     private double velocidad;
     private int contadorArrestos;
-    private ArrayList<Objeto> objetos;
-    private String rango;
-
 
     public Detective() {
-        rango = "detective";
         velocidad = 1100;
         contadorArrestos = 5;
-        objetos = new ArrayList<>();
     }
 
     @Override
@@ -54,8 +47,4 @@ public class Detective implements Rango {
         return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
     }
 
-    @Override
-    public String mostrarRango() {
-        return this.rango;
-    }
 }

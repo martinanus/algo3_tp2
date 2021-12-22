@@ -20,7 +20,6 @@ public class AlgoThiefTest {
         juego.visitar("puerto");
 
         assertEquals(new Tiempo(3), juego.getReloj().tiempoTranscurrido());
-
     }
 
     @Test
@@ -33,7 +32,6 @@ public class AlgoThiefTest {
         juego.cargarDescripcion(new Descripcion("","Masculino","Croquet","","",""));
 
         juego.generarOrdenDeArresto();
-
 
         assertEquals(new Tiempo(3), juego.getReloj().tiempoTranscurrido());
     }
@@ -70,24 +68,24 @@ public class AlgoThiefTest {
         juego.setPolicia(unPolicia);
         juego.generarPartida();
         ArrayList<Ciudad> ciudades123 = unPolicia.getCaso().ciudadesLadron();
-        System.out.println("Aca tenemos la lista de ciudades que recorrio del ladron ");
-        for(Ciudad ciudad: ciudades123){
-            System.out.println(ciudad.getNombre());
-        }
 
         ArrayList<Ciudad> ciudades = juego.obtenerCiudades();
-        for(Ciudad ciudad: ciudades){
-            System.out.println(ciudad.getNombre());
-            System.out.println(ciudad.getCiudadesDestino().size() );
-            for(Ciudad ciudad1: ciudad.getCiudadesDestino()){
-                System.out.println(ciudad1.getNombre());
-            }
-        }
 
+        assertEquals(4, ciudades123.size());
         assertEquals(11, ciudades.size());
-        System.out.println(ciudades.get(0).getInformacion());
     }
 
+    @Test
+    public void test06eTesteaLaListasDestinoDeLasCiudades(){
+        Policia unPolicia = new Policia("Pepe");
+        AlgoThief juego = new AlgoThief();
+        juego.setPolicia(unPolicia);
+        juego.generarPartida();
+
+        ArrayList<Ciudad> ciudades = juego.mostrarCiudadesDestino();
+
+        assertEquals(4, ciudades.size());
+    }
 
 
 }

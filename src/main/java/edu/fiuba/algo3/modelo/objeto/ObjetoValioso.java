@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo.objeto;
 
 import edu.fiuba.algo3.modelo.Ciudad;
-
 import java.util.ArrayList;
 
 public class ObjetoValioso extends Objeto {

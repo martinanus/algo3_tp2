@@ -52,9 +52,4 @@ public class Novato implements Rango {
         return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
     }
 
-    @Override
-    public String mostrarRango() {
-        return this.rango;
-    }
-
 }

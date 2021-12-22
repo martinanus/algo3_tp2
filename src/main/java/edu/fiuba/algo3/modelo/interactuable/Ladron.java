@@ -20,8 +20,6 @@ public class Ladron implements Interactuable{
         return this.descripcion.comparar(otraDescripcion);
     }
 
-
-
     @Override
     public void interactuar(Policia policia, Reloj reloj) {
 

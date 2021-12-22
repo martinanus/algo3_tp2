@@ -4,6 +4,8 @@ import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.ArchivoNoEncontradoError;
 import edu.fiuba.algo3.modelo.lector.CiudadParser;
 import edu.fiuba.algo3.modelo.lector.LadronParser;
+import edu.fiuba.algo3.modelo.lector.ObjetoParser;
+import edu.fiuba.algo3.modelo.objeto.Objeto;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -43,6 +45,22 @@ public class LectorTest {
 
         assertThrows(ArchivoNoEncontradoError.class, ()-> {
             ciudadParser.parser("/jsons/ladron.json");  //
+        } );
+    }
+
+    @Test
+    public void SeCarganDatosDeCObjetosCorrectamente() {
+        ObjetoParser parseador = new ObjetoParser();
+        ArrayList<Objeto> objetosRobados  =  parseador.parser("/jsons/objetosRobados.json");
+        assertEquals(4,objetosRobados.size());
+    }
+
+    @Test
+    public void SeCarganDatosDeObjetosConRutaInadecuada() {
+        ObjetoParser objetoParser = new ObjetoParser();
+
+        assertThrows(ArchivoNoEncontradoError.class, ()-> {
+            objetoParser.parser("/jsons/objdsatosRobados.json");  //
         } );
     }
 }

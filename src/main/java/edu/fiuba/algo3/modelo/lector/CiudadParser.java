@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo.lector;
 
 import edu.fiuba.algo3.modelo.Ciudad;
-import edu.fiuba.algo3.modelo.DescripcionCiudad;
 import edu.fiuba.algo3.modelo.Edificio;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.interactuable.Pista;
