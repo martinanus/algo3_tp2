@@ -2,11 +2,7 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.BotonContinuarHandler;
 import edu.fiuba.algo3.modelo.AlgoThief;
-import edu.fiuba.algo3.modelo.Policia;
-import edu.fiuba.algo3.vista.botones.ButtonCerrar;
 import edu.fiuba.algo3.vista.botones.ButtonContinuar;
-import edu.fiuba.algo3.vista.botones.ButtonInicio;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;

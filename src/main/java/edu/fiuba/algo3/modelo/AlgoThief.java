@@ -86,10 +86,7 @@ public class AlgoThief {
     }
 
     public String descripcionCiudad() {
-        return "Egipto fue cuna de la antigua civilización \n" +
-                "egipcia, que junto con la mesopotámica \n" +
-                "fue el origen de la actual cultura \n" +
-                "occidental";
+        return jugador.getCiudadActual().getInformacion();
     }
 
     public String ciudadActual() {
@@ -100,16 +97,8 @@ public class AlgoThief {
         this.jugador = unPolicia;
     }
 
-    public String mostrarRango() {
-        return jugador.mostrarRango();
-    }
-
     public String mostrarReloj() {
         return reloj.getDia() + ", " + Double.toString(reloj.getHoraActual()) + "hs";
-    }
-
-    public String pathImagenCiudad() {
-        return "imgs/egipto.jpg";
     }
 
     public String mostrarCiudadesDisponibles() {

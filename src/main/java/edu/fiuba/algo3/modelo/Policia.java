@@ -123,6 +123,10 @@ public class Policia {
     public void setCaso(Caso caso){
         this.caso= caso;
     }
+
+    public Ciudad getCiudadActual() {
+        return ciudadActual;
+    }
 }
 
 
