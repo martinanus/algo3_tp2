@@ -25,14 +25,14 @@ public class AlgoThief {
         computadora = new Computadora();
         cargadorDatos = new CargadorDatos();
         this.ladrones = cargadorDatos.cargarLadrones(computadora);
-        this.ciudades = cargadorDatos.cargarCiudades();
         this.objetosRobados = cargadorDatos.cargarObjetosRobados();
-        cargadorDatos.cargarPistas(ciudades);
         reloj = new Reloj(new Tiempo(154)); // Lunes 7 a.m. + 154 hs = Domingo 5 p.m. (17)
     }
 
     public void generarPartida() {
         Ladron ladron= ladrones.get(0);
+        this.ciudades = cargadorDatos.cargarCiudades();
+        cargadorDatos.cargarPistas(ciudades);
         jugador.generarCaso(objetosRobados,ciudades,ladron, this); //refactor nombre
     }
 

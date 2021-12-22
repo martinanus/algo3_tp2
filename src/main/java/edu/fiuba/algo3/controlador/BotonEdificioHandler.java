@@ -35,18 +35,30 @@ public class BotonEdificioHandler implements EventHandler<ActionEvent> {
         String contenidoEdificio = "";
         try{
             contenidoEdificio = (juego.visitar(tipoEdificio)).mostrar();
+            cuadroAccion.getChildren().clear();
+            Label descrPista = new Label();
+            descrPista.setText(contenidoEdificio);
+            descrPista.setFont(Font.font(14));
+            cuadroAccion.getChildren().add(descrPista);
             relojLabel.setText(juego.mostrarReloj());
+
+            if (contenidoEdificio.equals("Has encontrado al ladrón.")) {
+                if (juego.getMensajeOrden().equals("No hay suficientes datos del ladrón")) {
+                    throw new CasoFinalizadoSinExitoError();
+                }
+                else {
+                    String mensaje = "Mision Completada";
+                    ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego, mensaje);
+                    Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
+                    stage.setScene(sceneCasoFinalizado);
+                }
+            }
         }catch( CasoFinalizadoSinExitoError e) {
-            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego);
+            String mensaje = "Mision Fallida";
+            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego, mensaje);
             Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
             stage.setScene(sceneCasoFinalizado);
 
         }
-
-        cuadroAccion.getChildren().clear();
-        Label descrPista = new Label();
-        descrPista.setText(contenidoEdificio);
-        descrPista.setFont(Font.font(14));
-        cuadroAccion.getChildren().add(descrPista);
     }
 }

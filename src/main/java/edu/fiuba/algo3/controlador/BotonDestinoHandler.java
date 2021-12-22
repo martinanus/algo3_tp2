@@ -45,7 +45,7 @@ public class BotonDestinoHandler implements EventHandler<ActionEvent> {
         try{
             juego.viajar(nombreCiudad);
         }catch( CasoFinalizadoSinExitoError e) {
-            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego);
+            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego, "Mision Fallida");
             Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
             stage.setScene(sceneCasoFinalizado);
 
