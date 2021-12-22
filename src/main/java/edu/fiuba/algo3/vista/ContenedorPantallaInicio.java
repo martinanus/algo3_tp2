@@ -3,6 +3,7 @@ package edu.fiuba.algo3.vista;
 import edu.fiuba.algo3.controlador.BotonCerrarHandler;
 import edu.fiuba.algo3.controlador.BotonInicioHandler;
 
+import edu.fiuba.algo3.controlador.BotonSonidoHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -18,7 +20,7 @@ import java.io.File;
 
 public class ContenedorPantallaInicio extends VBox{
 
-    public ContenedorPantallaInicio(Stage stage, Scene sceneRegistro) {
+    public ContenedorPantallaInicio(Stage stage, Scene sceneRegistro, AudioClip mediaPlayer) {
 
         super();
         this.setAlignment(Pos.CENTER);
@@ -56,10 +58,14 @@ public class ContenedorPantallaInicio extends VBox{
         layoutBotones.setSpacing(50);
         layoutBotones.setAlignment(Pos.CENTER);
 
+        Button botonSonido = new Button();
+        botonSonido.setText("Silenciar");
+        BotonSonidoHandler botonSonidoHandler = new BotonSonidoHandler(stage, mediaPlayer, botonSonido);
+        botonSonido.setOnAction(botonSonidoHandler);
 
         stage.setTitle("Juego - Pantalla Inicio");
 
-        this.getChildren().addAll(titulo, layoutBotones);
+        this.getChildren().addAll(titulo, layoutBotones, botonSonido);
 
     }
 }
