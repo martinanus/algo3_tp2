@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.objeto.ObjetoMuyValioso;
+import edu.fiuba.algo3.modelo.objeto.ObjetoValioso;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 
@@ -12,11 +13,9 @@ import java.util.ArrayList;
 public class Sargento implements Rango {
     private double velocidad;
     private int contadorArrestos;
-    private String rango;
 
 
     public Sargento() {
-        rango = "sargento";
         velocidad = 1500;
         contadorArrestos = 20;
     }
@@ -27,7 +26,6 @@ public class Sargento implements Rango {
         reloj.incrementar(new Tiempo(tiempo));
     }
 
-
     @Override
     public Rango sumarArrestos(int arrestoASumar) {
         contadorArrestos += arrestoASumar;
@@ -35,17 +33,19 @@ public class Sargento implements Rango {
     }
     @Override
     public Caso generarCaso(ArrayList<Objeto> objetosRobados,  ArrayList<Ciudad> ciudades, Ladron ladron, AlgoThief algoThief) {
-        Objeto objetoRobado= new ObjetoMuyValioso();
+        Objeto objetoRobado= new ObjetoValioso();
         for (Objeto objeto : objetosRobados) {
-            if (objeto instanceof ObjetoMuyValioso) {
+            if (objeto instanceof ObjetoValioso) {
                 objetoRobado = objeto;
             }
         }
-        ArrayList<Ciudad> ciudadesRecorridas = objetoRobado.generarRecorrido(ciudades);;
+        ArrayList<Ciudad> ciudadesRecorridas = objetoRobado.generarRecorrido(ciudades);
         for(Ciudad ciudad: ciudadesRecorridas){
             ciudad.tomarPistasDificil();
         }
+
         return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
     }
+
 
 }
