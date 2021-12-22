@@ -14,12 +14,10 @@ import javafx.stage.Stage;
 
 public class ContenedorCaso extends VBox {
 
-    private Stage stage;
 
 
     public ContenedorCaso(Stage stage, AlgoThief juego) {
         super();
-        this.stage = stage;
         this.setAlignment(Pos.CENTER);
 
 
@@ -27,13 +25,14 @@ public class ContenedorCaso extends VBox {
         descripcionCaso.setFont(Font.font(20));
 
         ContenedorCiudad contenedorCiudad = new ContenedorCiudad(juego);
-        
         Scene sceneCiudad = new Scene(contenedorCiudad, 640, 480);
 
-        Button botonContinuar = new ButtonContinuar(sceneCiudad, stage);
 
-        BotonContinuarCasoHandler botonContinuarCasoHandler = new BotonContinuarCasoHandler(botonContinuar, sceneCiudad, stage);
-        botonContinuar.setOnAction(botonContinuarCasoHandler);
+        Button botonContinuar = new ButtonContinuar();
+        botonContinuar.setText("Continuar");
+        BotonContinuarCasoHandler botonContinuarHandler = new BotonContinuarCasoHandler(sceneCiudad, stage);
+        botonContinuar.setOnAction(botonContinuarHandler);
+
 
         this.getChildren().addAll(descripcionCaso, botonContinuar);
 

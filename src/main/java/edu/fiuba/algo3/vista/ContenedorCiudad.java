@@ -19,7 +19,6 @@ import java.io.File;
 
 public class ContenedorCiudad extends HBox {
 
-    private Stage stage;
 
     public ContenedorCiudad(AlgoThief juego) {
         super();

@@ -20,10 +20,9 @@ public class BotonContinuarHandler implements EventHandler<ActionEvent> {
     private TextField textField;
     private AlgoThief juego;
 
-    public BotonContinuarHandler(Button botonContinuar, Stage stage, TextField textoNombre, Label label, AlgoThief juego) {
+    public BotonContinuarHandler( Stage stage, TextField textoNombre, Label label, AlgoThief juego) {
         this.textField = textoNombre;
         this.label = label;
-        //this.miScene = sceneCiudad;
         this.miStage = stage;
         this.juego = juego;
     }

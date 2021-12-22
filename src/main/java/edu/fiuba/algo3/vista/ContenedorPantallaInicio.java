@@ -18,15 +18,11 @@ import java.io.File;
 
 public class ContenedorPantallaInicio extends VBox{
 
-    private Stage stage;
-
     public ContenedorPantallaInicio(Stage stage, Scene sceneRegistro) {
 
         super();
-        this.stage = stage;
         this.setAlignment(Pos.CENTER);
         this.setSpacing(100);
-
 
 
         Label titulo = new Label();
@@ -36,10 +32,7 @@ public class ContenedorPantallaInicio extends VBox{
         titulo.setTextFill(Color.rgb(255, 255, 255, 0.7));
 
 
-
         Button botonInicio = new ButtonInicio(sceneRegistro, stage);
-
-
 
         Button botonCerrar = new ButtonCerrar(stage);
 

@@ -13,11 +13,9 @@ import javafx.stage.Stage;
 
 public class ContenedorRegistro extends VBox {
 
-    private Stage stage;
 
     public ContenedorRegistro(Stage stage, AlgoThief juego) {
         super();
-        this.stage = stage;
         this.setAlignment(Pos.CENTER);
 
 
@@ -25,16 +23,14 @@ public class ContenedorRegistro extends VBox {
         nombre.setFont(Font.font(20));
 
 
-        //Button botonContinuar = new ButtonContinuar();
-
-        //TextField textNombre = new TextField();
-        //textNombre.setMaxWidth(150);
-
 
         TextField textNombre = new TextField();
         textNombre.setMaxWidth(150);
 
-        Button botonContinuar = new ButtonContinuar(stage, textNombre, nombre, juego);
+        Button botonContinuar = new ButtonContinuar();
+        botonContinuar.setText("Continuar");
+        BotonContinuarHandler botonContinuarHandler = new BotonContinuarHandler( stage, textNombre, nombre, juego);
+        botonContinuar.setOnAction(botonContinuarHandler);
 
         Label descripcionJugador = new Label();
         descripcionJugador.setFont(Font.font(20));

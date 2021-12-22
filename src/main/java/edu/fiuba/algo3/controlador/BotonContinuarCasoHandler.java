@@ -12,7 +12,7 @@ public class BotonContinuarCasoHandler implements EventHandler<ActionEvent> {
     private Scene miScene;
     private Stage miStage;
 
-    public BotonContinuarCasoHandler(Button botonContinuar, Scene sceneCiudad, Stage stage) {
+    public BotonContinuarCasoHandler( Scene sceneCiudad, Stage stage) {
         this.miScene = sceneCiudad;
         this.miStage = stage;
     }
