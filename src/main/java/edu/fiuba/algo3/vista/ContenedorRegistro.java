@@ -2,7 +2,7 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.BotonContinuarHandler;
 import edu.fiuba.algo3.modelo.AlgoThief;
-import edu.fiuba.algo3.vista.botones.ButtonContinuar;
+
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -27,7 +27,7 @@ public class ContenedorRegistro extends VBox {
         TextField textNombre = new TextField();
         textNombre.setMaxWidth(150);
 
-        Button botonContinuar = new ButtonContinuar();
+        Button botonContinuar = new Button();
         botonContinuar.setText("Continuar");
         BotonContinuarHandler botonContinuarHandler = new BotonContinuarHandler( stage, textNombre, nombre, juego);
         botonContinuar.setOnAction(botonContinuarHandler);

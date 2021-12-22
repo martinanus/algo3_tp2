@@ -2,7 +2,6 @@ package edu.fiuba.algo3.controlador;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.Ciudad;
-import edu.fiuba.algo3.vista.botones.ButtonViaje;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -37,7 +36,7 @@ public class BotonViajarHandler implements EventHandler<ActionEvent> {
         String nombreCiudad;
 
         for(Ciudad ciudad: juego.mostrarCiudadesDestino()){
-            Button botonViaje = new ButtonViaje();
+            Button botonViaje = new Button();
             nombreCiudad = ciudad.getNombre();
             botonViaje.setText(nombreCiudad);
             botonViaje.setPrefSize(200,50);

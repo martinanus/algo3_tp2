@@ -7,11 +7,9 @@ import javafx.stage.Stage;
 
 public class BotonCerrarHandler implements EventHandler<ActionEvent> {
 
-    private Button miBoton;
     private Stage mistage;
 
-    public BotonCerrarHandler(Button botonCerrar, Stage stage) {
-        this.miBoton = botonCerrar;
+    public BotonCerrarHandler( Stage stage) {
         this.mistage = stage;
     }
 

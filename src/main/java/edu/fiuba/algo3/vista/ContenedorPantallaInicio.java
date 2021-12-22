@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.modelo.AlgoThief;
-import edu.fiuba.algo3.vista.botones.ButtonCerrar;
-import edu.fiuba.algo3.vista.botones.ButtonInicio;
+import edu.fiuba.algo3.controlador.BotonCerrarHandler;
+import edu.fiuba.algo3.controlador.BotonInicioHandler;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -32,9 +32,17 @@ public class ContenedorPantallaInicio extends VBox{
         titulo.setTextFill(Color.rgb(255, 255, 255, 0.7));
 
 
-        Button botonInicio = new ButtonInicio(sceneRegistro, stage);
+        Button botonInicio = new Button();
+        botonInicio.setText("Iniciar Juego");
+        BotonInicioHandler botonInicioHandler = new BotonInicioHandler(botonInicio , sceneRegistro, stage);
+        botonInicio.setOnAction(botonInicioHandler);
 
-        Button botonCerrar = new ButtonCerrar(stage);
+
+        Button botonCerrar = new Button();
+        botonCerrar.setText("Cerrar");
+        BotonCerrarHandler botonCerrarHandler = new BotonCerrarHandler( stage);
+        botonCerrar.setOnAction(botonCerrarHandler);
+
 
         File file = new File("imgs/img_portada.jpg");
         BackgroundImage myBI= new BackgroundImage(new Image(file.toURI().toString(),

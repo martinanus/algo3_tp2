@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.controlador.BotonContinuarCasoHandler;
-import edu.fiuba.algo3.controlador.BotonContinuarHandler;
+
 import edu.fiuba.algo3.modelo.AlgoThief;
-import edu.fiuba.algo3.vista.botones.ButtonContinuar;
+
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -29,7 +29,7 @@ public class ContenedorCaso extends VBox {
         Scene sceneCiudad = new Scene(contenedorCiudad, 640, 480);
 
 
-        Button botonContinuar = new ButtonContinuar();
+        Button botonContinuar = new Button();
         botonContinuar.setText("Continuar");
         BotonContinuarCasoHandler botonContinuarHandler = new BotonContinuarCasoHandler(sceneCiudad, stage);
         botonContinuar.setOnAction(botonContinuarHandler);

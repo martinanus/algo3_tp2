@@ -5,10 +5,7 @@ import edu.fiuba.algo3.controlador.BotonPistaHandler;
 import edu.fiuba.algo3.controlador.BotonVerHandler;
 import edu.fiuba.algo3.controlador.BotonViajarHandler;
 import edu.fiuba.algo3.modelo.AlgoThief;
-import edu.fiuba.algo3.vista.botones.ButtonCrime;
-import edu.fiuba.algo3.vista.botones.ButtonPista;
-import edu.fiuba.algo3.vista.botones.ButtonVer;
-import edu.fiuba.algo3.vista.botones.ButtonViajar;
+
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -68,20 +65,20 @@ public class ContenedorCiudad extends HBox {
 
 
 
-        Button botonVer = new ButtonVer();
+        Button botonVer = new Button();
         botonVer.setText("Ver");
         botonVer.setPrefSize(80,50);
         BotonVerHandler botonVerHandler = new BotonVerHandler(botonVer, cuadroAccion, juego);
         botonVer.setOnAction(botonVerHandler);
 
-        Button botonViajar = new ButtonViajar();
+        Button botonViajar = new Button();
         botonViajar.setText("Viajar");
         botonViajar.setPrefSize(80,50);
         BotonViajarHandler botonViajarHandler = new BotonViajarHandler(cuadroAccion, fecha, juego, ciudadActual, imagenPane );
         botonViajar.setOnAction(botonViajarHandler);
 
 
-        Button botonPista = new ButtonPista();
+        Button botonPista = new Button();
         botonPista.setText("Pista");
         botonPista.setPrefSize(80,50);
         BotonPistaHandler botonPistaHandler = new BotonPistaHandler(cuadroAccion, juego);
@@ -89,7 +86,7 @@ public class ContenedorCiudad extends HBox {
 
 
 
-        Button botonCrimen = new ButtonCrime();
+        Button botonCrimen = new Button();
         botonCrimen.setText("Crimen");
         botonCrimen.setPrefSize(80,50);
         BotonCrimenHandler botonCrimenHandler = new BotonCrimenHandler(cuadroAccion);
