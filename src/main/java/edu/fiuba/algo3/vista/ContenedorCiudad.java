@@ -64,7 +64,7 @@ public class ContenedorCiudad extends HBox {
 
         Button botonVer = new ButtonVer(cuadroAccion, juego);
 
-        Button botonViajar = new ButtonViajar(cuadroAccion, juego);
+        Button botonViajar = new ButtonViajar(cuadroAccion, fecha, juego);
 
         Button botonPista = new ButtonPista(cuadroAccion);
 
