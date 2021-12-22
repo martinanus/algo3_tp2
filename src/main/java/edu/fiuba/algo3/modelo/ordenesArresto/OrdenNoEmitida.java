@@ -8,4 +8,9 @@ public class OrdenNoEmitida implements EstadoOrdenArresto {
     public void arrestar(Policia policia) {
         throw new  OrdenNoEmitidadError();
     }
+
+    @Override
+    public String mostrarOrden(String nombreLadron) {
+        return "No hay suficientes datos del ladrón";
+    }
 }

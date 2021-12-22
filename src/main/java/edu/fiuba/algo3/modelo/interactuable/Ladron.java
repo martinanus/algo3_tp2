@@ -34,4 +34,8 @@ public class Ladron implements Interactuable{
     public String mostrar(){
         return "Has encontrado al ladrón.";
     }
+
+    public String getNombre() {
+        return this.descripcion.getNombre();
+    }
 }

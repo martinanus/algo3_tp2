@@ -90,7 +90,7 @@ public class ContenedorCiudad extends HBox {
         Button botonCrimen = new Button();
         botonCrimen.setText("Crimen");
         botonCrimen.setPrefSize(80,50);
-        BotonCrimenHandler botonCrimenHandler = new BotonCrimenHandler(cuadroAccion);
+        BotonCrimenHandler botonCrimenHandler = new BotonCrimenHandler(cuadroAccion, juego, fecha, stage);
         botonCrimen.setOnAction(botonCrimenHandler);
 
 

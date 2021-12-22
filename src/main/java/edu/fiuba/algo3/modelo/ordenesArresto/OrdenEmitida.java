@@ -10,4 +10,10 @@ public class OrdenEmitida implements EstadoOrdenArresto {
 
     }
 
+    @Override
+    public String mostrarOrden(String nombreLadron) {
+        return "Se ha emitido una Orden de Arresto contra " + nombreLadron + ".";
+    }
+
+
 }

@@ -37,6 +37,7 @@ public class AlgoThiefTest {
         juego.cargarDescripcion(new Descripcion("","Masculino","Croquet","","",""));
 
         juego.generarOrdenDeArresto();
+        System.out.println(juego.getMensajeOrden());
 
         assertEquals(new Tiempo(3), juego.getReloj().tiempoTranscurrido());
     }

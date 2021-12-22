@@ -132,39 +132,8 @@ public class Caso {
                 + ".\nTenes hasta el Domingo 17hs para recuperar el objeto. \n" +
                 "¡Buena suerte!";
     }
-}
 
-/**                     4
- * for(int i =0;i<ciudadesVisitaLadron.size()-1;i++){
- *     if(i<0){
- *         ciudadesVisitaLadron.get(i).getCiudadesDestino().add(ciudadesVisitaLadron.get(i+1);
- *         ciudadesVisitaLadron.get(i+1).getCiudadesDestino().add(ciudadesVisitaLadron.get(i);
- *     }
- *     else{
- *         ciudadesVisitaLadron.get(i).getCiudadesDestino().add(ciudadesVisitaLadron.get(i+1);
- *         ciudadesVisitaLadron.get(i+1).getCiudadesDestino().add(ciudadesVisitaLadron.get(i);
- *     }
- *     corrida si i=0:
- *     agrego ciudestino.get(0).add(1)
- *     agrego ciudestino.get(1).add(0)
- *     corrida si i=1:
- *     agrego ciudestino.get(1).add(2)
- *     agrego ciudestino.get(2).add(1)
- *     corrido si i=2:
- *     agrego ciudestino.get(2).add(3)
- *     agrego ciudestino.get(3).add(2)
- * }
- *Hasta ahora "conectamos todas las ciudades que recorrio el ladron entre si"
- * Ahora necesitamos poder llenar la lista de ciudades destino de todas las ciudades:
- * for(int i =0;i<ciudades.size()-1;i++){
- *     if(ciudades.get(i).getCiudadesDestino().size()<4){ //si tiene menos de 4 seguimos completando.
- *         ciudad.get(i).getCiudadesDestino().add( ciudades.get(i+1) )
- *         ciudad.get(i+1).getCiudadesDestino().add(ciudades.get(i+1) )
- *     }
- *
- * }
- *
- *
- *
- *
- */
+    public String getNombreLadron() {
+        return this.ladron.getNombre();
+    }
+}

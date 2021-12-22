@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
+import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
 import edu.fiuba.algo3.modelo.rango.Novato;
@@ -87,6 +88,8 @@ public class Policia {
 
     public void emitirOrdenArresto(Computadora computadora, Ladron ladron, Reloj reloj){
         orden = computadora.emitirOrdenDeArresto(ladron, reloj);
+        if (orden instanceof OrdenEmitida)
+            System.out.println(true);
     }
 
     public Rango rangoPolicia() {
@@ -129,6 +132,10 @@ public class Policia {
     public String getDescripcionCaso() {
         return caso.getDescripcion();
 
+    }
+
+    public String mostrarOrden() {
+        return this.orden.mostrarOrden(this.caso.getNombreLadron());
     }
 }
 

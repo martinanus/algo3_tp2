@@ -122,5 +122,9 @@ public class AlgoThief {
         return jugador.getDescripcionCaso();
     }
 
+    public String getMensajeOrden() {
+        return this.jugador.mostrarOrden();
+    }
+
 
 }

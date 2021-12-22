@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.controlador;
 
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.modelo.Descripcion;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -7,13 +9,20 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 public class BotonCrimenHandler implements EventHandler<ActionEvent> {
     private Button miBoton;
     private VBox cuadroAccion;
+    private AlgoThief juego;
+    private Label labelFecha;
+    private Stage stage;
 
-    public BotonCrimenHandler( VBox cuadroAccion) {
+    public BotonCrimenHandler(VBox cuadroAccion, AlgoThief juego, Label labelFecha, Stage stage) {
         this.cuadroAccion = cuadroAccion;
+        this.juego = juego;
+        this.labelFecha = labelFecha;
+        this.stage = stage;
     }
 
     @Override
@@ -45,22 +54,20 @@ public class BotonCrimenHandler implements EventHandler<ActionEvent> {
         vehiculoText.setPromptText("Vehiculo");
         cuadroAccion.getChildren().add(vehiculoText);
 
-
-        Label msjResultado = new Label();
-        msjResultado.setFont(Font.font(18));
+        Descripcion descripcionLadron = new Descripcion(sexoText.getText(), hobbyText.getText(),
+                cabelloText.getText(), señaText.getText(), vehiculoText.getText());
 
 
         Button botonComputar = new Button();
         botonComputar.setText("COMPUTAR");
         botonComputar.setPrefSize(180,40);
-        botonComputar.setOnAction(e-> {
-            msjResultado.setText("Computado!");
-
-        });
+        BotonComputarHandler botonComputarHandler = new BotonComputarHandler(cuadroAccion, juego, descripcionLadron,
+                labelFecha, stage);
+        botonComputar.setOnAction(botonComputarHandler);
         cuadroAccion.getChildren().add(botonComputar);
-        cuadroAccion.getChildren().add(msjResultado);
-
         cuadroAccion.setSpacing(25);
+
+
 
 
 

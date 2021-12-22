@@ -29,6 +29,14 @@ public class Descripcion {
             this.iterador = pistas.iterator();
     }
 
+    public Descripcion(String sexo, String Hobby, String cabello, String seña, String vehiculo) {
+        this.sexo = sexo;
+        this.hobby = Hobby;
+        this.cabello = cabello;
+        this.seña = seña;
+        this.vehiculo = vehiculo;
+    }
+
     public Descripcion() {
 
     }
@@ -76,5 +84,9 @@ public class Descripcion {
     public Pista generarPista() {
         String pistaLadron = iterador.next();
         return new Pista(pistaLadron);
+    }
+
+    public String getNombre() {
+        return this.nombre;
     }
 }
