@@ -5,32 +5,39 @@ import edu.fiuba.algo3.controlador.BotonContinuarHandler;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.vista.botones.ButtonContinuar;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class SceneCaso {
+public class ContenedorCaso extends VBox {
 
-    public VBox crearSceneCaso(Stage stage, AlgoThief juego) {
+    private Stage stage;
+
+
+    public ContenedorCaso(Stage stage, AlgoThief juego) {
+        super();
+        this.stage = stage;
+        this.setAlignment(Pos.CENTER);
+
         Button botonContinuar = new ButtonContinuar();
         Label descripcionCaso = new Label();
         descripcionCaso.setFont(Font.font(20));
 
-        SceneCiudad sceneParaCiudad = new SceneCiudad();
-        Scene sceneCiudad = new Scene(sceneParaCiudad.crearSceneCiudad(juego), 640, 480);
+        ContenedorCiudad contenedorCiudad = new ContenedorCiudad(juego);
+
+        Scene sceneCiudad = new Scene(contenedorCiudad, 640, 480);
+
 
         BotonContinuarCasoHandler botonContinuarCasoHandler = new BotonContinuarCasoHandler(botonContinuar, sceneCiudad, stage);
         botonContinuar.setOnAction(botonContinuarCasoHandler);
 
-        VBox cajaNombre = new VBox(descripcionCaso, botonContinuar);
-        cajaNombre.setAlignment(Pos.CENTER);
+        this.getChildren().addAll(descripcionCaso, botonContinuar);
 
 
-        return cajaNombre;
+
+
     }
 }

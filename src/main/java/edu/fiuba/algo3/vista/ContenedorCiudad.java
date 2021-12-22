@@ -13,12 +13,20 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 import java.io.File;
 
-public class SceneCiudad{
+public class ContenedorCiudad extends HBox {
 
-    public HBox crearSceneCiudad(AlgoThief juego) {
+    private Stage stage;
+
+    public ContenedorCiudad(AlgoThief juego) {
+        super();
+        this.setBorder(new Border(new BorderStroke(Color.BLACK,
+                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
+
+
         Label ciudadActual = new Label();
         ciudadActual.setText(juego.ciudadActual());
         ciudadActual.setFont(Font.font(20));
@@ -72,10 +80,8 @@ public class SceneCiudad{
         VBox contenedorPantallaDerecha = new VBox(cuadroAccion, contenedorBotones);
         VBox contenedorPantallaIzquierda = new VBox( cuadroCiudadFecha, imagenPane );
 
-        HBox contenedorPrincipal = new HBox(contenedorPantallaIzquierda, contenedorPantallaDerecha);
-        contenedorPrincipal.setBorder(new Border(new BorderStroke(Color.BLACK,
-                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
 
-        return contenedorPrincipal;
+        this.getChildren().addAll(contenedorPantallaIzquierda, contenedorPantallaDerecha);
+
     }
 }
