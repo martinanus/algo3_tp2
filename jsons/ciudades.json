@@ -4,10 +4,6 @@
             "Nombre": "Lima",
             "Latitud": -12.04318,
             "Longitud": -77.02824,
-            "Bandera": "Rojo y Blanco",
-            "Moneda": "Soles",
-            "Monumento": "Machu Picchu",
-            "Idioma": "Español",
             "Descripcion": "Lima (que proviene del quechua Limaq) es la capital del Perú. Se encuentra situada en la costa central del país, a orillas del Océano Pacífico"
         }
     },
@@ -16,10 +12,6 @@
             "Nombre": "Buenos Aires",
             "Latitud":-34.61315,
             "Longitud":-58.37723,
-            "Bandera":"Celeste, Blanco y un sol al medio ",
-            "Moneda": "Pesos",
-            "Monumento":"El Obelisco",
-            "Idioma": "Español",
             "Descripcion": "La Provincia de Buenos Aires, una de las más ricas de la Argentina, encierra paisajes muy diferentes entre sí, como el campo, las sierras, las grandes urbes, las lagunas, el delta del Paraná y, por supuesto, todo el abanico de playas que se extiende por la costa atlántica. "
         }
     },
@@ -28,10 +20,6 @@
             "Nombre": "Ciudad de Mexico",
             "Latitud":19.42847,
             "Longitud":-99.12766,
-            "Bandera":"Verde, blanca y roja",
-            "Moneda": "Pesos",
-            "Monumento":"Templo de Kukulkan",
-            "Idioma": "Español",
             "Descripcion": "La Ciudad de México es la capital del país, de carácter vibrante, multifacético y siempre en movimiento, es el núcleo, político, económico y cultural de la República Mexicana "
         }
     },
@@ -39,11 +27,7 @@
         "Ciudad":{
             "Nombre": "Madrid",
             "Latitud":40.4165,
-            "Longitud":-3.70256,
-            "Bandera":"amarillo y rojo ",
-            "Moneda": "Euros",
-            "Monumento":"Puerta de Alcalá",
-            "Idioma": "Español",
+            "Longitud":-3.70256, ,
             "Descripcion": "Madrid, capital de Reino de España y ciudad cosmopolita donde las haya, es uno de los destinos europeos con mejores infraestructuras turísticas. "
         }
     },
@@ -52,10 +36,6 @@
             "Nombre": "Beijing",
             "Latitud":39.9075,
             "Longitud":116.39723,
-            "Bandera":"rojo y amarilla con estrellas ",
-            "Moneda": "yuan",
-            "Monumento":"La gran muralla",
-            "Idioma": "Mandarin",
             "Descripcion": "Beijing es la capital de República Popular China, la sede del Comité Central del Partido Comunista de China y la del Gobierno Popular Central de China.  "
         }
     },
@@ -64,10 +44,6 @@
             "Nombre": "Seul",
             "Latitud":37.566,
             "Longitud":126.9784,
-            "Bandera":"blanca, roja y azul",
-            "Moneda": "Won",
-            "Monumento":"Fortaleza de Hwasong",
-            "Idioma": "Coreano",
             "Descripcion": "Seúl es un municipio bajo jurisdicción central, el distrito capital de Corea del Sur. Está dividida en 25 gu (en hangul, 구); distritos,  "
         }
     },
@@ -76,10 +52,6 @@
             "Nombre": "Paris",
             "Latitud":48.85341,
             "Longitud":2.3488,
-            "Bandera":"roja, azul y blanca",
-            "Moneda": "euro",
-            "Monumento":"La torre Eiffel",
-            "Idioma": "Frances",
             "Descripcion": "Capital de Francia y de la región que ocupa, la Isla de Francia, París tiene una población de casi doce millones de habitantes, la más grande de Europa"
         }
     },
@@ -88,10 +60,6 @@
             "Nombre": "Montreal",
             "Latitud":45.50884,
             "Longitud":-73.58781,
-            "Bandera":"roja y blanca",
-            "Moneda": "Dolar",
-            "Monumento":"Monumento a George-Étienne Cartier",
-            "Idioma": "Francés e Inglés",
             "Descripcion": "Montreal es la segunda ciudad más poblada de Canadá ubicada al suroeste de la Provincia de Quebec, a orillas del río San Lorenzo. "
         }
     },
@@ -100,10 +68,6 @@
             "Nombre": "Tokyo",
             "Latitud":35.6895,
             "Longitud":139.69171,
-            "Bandera":"Roja y blanca ",
-            "Moneda": "yen",
-            "Monumento":"Templo de Sensō-ji",
-            "Idioma": "Japones",
             "Descripcion": "Es la capital de Japón y la metrópolis más grande del mundo con 34,5 millones de habitantes. La densidad de población es el doble que la de, por ejemplo, Nueva York "
         }
     },
@@ -112,10 +76,6 @@
             "Nombre": "El Cairo",
             "Latitud": 30.06263,
             "Longitud": 31.24967,
-            "Bandera": "Roja, blanca y negra ",
-            "Moneda": "La Libra",
-            "Monumento": "La gran piramide de Guiza",
-            "Idioma": "Árabe",
             "Descripcion": "Es la mayor ciudad del mundo árabe, de Oriente Próximo y de África, y los egipcios la denominan a menudo sencillamente con el nombre del país, مصر "
         }
     },
@@ -124,10 +84,6 @@
             "Nombre": "Roma",
             "Latitud":41.89193,
             "Longitud":12.51133,
-            "Bandera":"Roja, verde y blanca ",
-            "Moneda": "euro",
-            "Monumento":"El Gran coliseo",
-            "Idioma": "Italiano",
             "Descripcion": "Roma es una ciudad italiana de 2 815 951 habitantes, capital de la región del Lacio y de Italia.  "
         }
     }
