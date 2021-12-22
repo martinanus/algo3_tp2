@@ -31,10 +31,11 @@ public class App extends Application {
         mediaPlayer.play();
         mediaPlayer.setVolume(1);
 
+
         ContenedorRegistro contenedorRegistro = new ContenedorRegistro(stage, juego);
         Scene sceneRegistro = new Scene(contenedorRegistro, 640, 480);
 
-        ContenedorPantallaInicio contenedorPantallaInicio = new ContenedorPantallaInicio(stage, sceneRegistro);
+        ContenedorPantallaInicio contenedorPantallaInicio = new ContenedorPantallaInicio(stage, sceneRegistro, mediaPlayer);
         Scene sceneInicial = new Scene(contenedorPantallaInicio, 640, 480);
 
         Image icono = new Image("file:"+System.getProperty("user.dir") + "/imgs/icono.jpg");

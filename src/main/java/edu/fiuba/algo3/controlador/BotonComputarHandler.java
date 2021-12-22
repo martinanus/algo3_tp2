@@ -53,7 +53,7 @@ public class BotonComputarHandler implements EventHandler<ActionEvent> {
             cuadroAccion.getChildren().add(mensajeOrden);
             labelFecha.setText(juego.mostrarReloj());
         }catch( CasoFinalizadoSinExitoError e) {
-            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage);
+            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego);
             Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
             stage.setScene(sceneCasoFinalizado);
 

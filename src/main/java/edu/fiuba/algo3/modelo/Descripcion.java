@@ -83,6 +83,7 @@ public class Descripcion {
     }
 
     public Pista generarPista() {
+        iterador = pistas.iterator();
         String pistaLadron = iterador.next();
         return new Pista(pistaLadron);
     }
