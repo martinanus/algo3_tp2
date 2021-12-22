@@ -32,5 +32,12 @@ public abstract class Objeto {
         }
         return recorridoLadron;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public String getNombreCiudad() {
+        return nombreCiudad;
+    }
 }
 

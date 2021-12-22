@@ -131,6 +131,11 @@ public class Caso {
     }
 
 
+    public String getDescripcion() {
+        return "El objeto " + objeto.getNombre() + " ha sido robado en la ciudad de " + objeto.getNombreCiudad()
+                + ".\nTenes hasta el Domingo 17hs para recuperar el objeto. \n" +
+                "¡Buena suerte!";
+    }
 }
 
 /**                     4

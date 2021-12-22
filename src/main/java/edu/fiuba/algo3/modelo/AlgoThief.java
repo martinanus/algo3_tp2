@@ -111,4 +111,11 @@ public class AlgoThief {
     public ArrayList<Ciudad> mostrarCiudadesDestino() {
         return  jugador.getCiudadActual().mostrarCiudadesDestino();
     }
+
+    public String descripcionCaso()
+    {
+        return jugador.getDescripcionCaso();
+    }
+
+
 }

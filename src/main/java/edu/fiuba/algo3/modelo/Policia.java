@@ -127,6 +127,11 @@ public class Policia {
     public Ciudad getCiudadActual() {
         return ciudadActual;
     }
+
+    public String getDescripcionCaso() {
+        return caso.getDescripcion();
+
+    }
 }
 
 
