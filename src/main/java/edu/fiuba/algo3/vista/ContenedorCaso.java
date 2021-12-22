@@ -22,14 +22,15 @@ public class ContenedorCaso extends VBox {
         this.stage = stage;
         this.setAlignment(Pos.CENTER);
 
-        Button botonContinuar = new ButtonContinuar();
+
         Label descripcionCaso = new Label();
         descripcionCaso.setFont(Font.font(20));
 
         ContenedorCiudad contenedorCiudad = new ContenedorCiudad(juego);
-
+        
         Scene sceneCiudad = new Scene(contenedorCiudad, 640, 480);
 
+        Button botonContinuar = new ButtonContinuar(sceneCiudad, stage);
 
         BotonContinuarCasoHandler botonContinuarCasoHandler = new BotonContinuarCasoHandler(botonContinuar, sceneCiudad, stage);
         botonContinuar.setOnAction(botonContinuarCasoHandler);

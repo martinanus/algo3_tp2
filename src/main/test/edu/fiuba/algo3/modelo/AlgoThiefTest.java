@@ -85,7 +85,9 @@ public class AlgoThiefTest {
         }
 
         assertEquals(11, ciudades.size());
+        System.out.println(ciudades.get(0).getInformacion());
     }
+
 
 
 }

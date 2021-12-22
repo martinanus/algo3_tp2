@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.lector;
 
 import edu.fiuba.algo3.modelo.Ciudad;
+import edu.fiuba.algo3.modelo.DescripcionCiudad;
 import edu.fiuba.algo3.modelo.Edificio;
 import edu.fiuba.algo3.modelo.Posicion;
 import edu.fiuba.algo3.modelo.interactuable.Pista;
@@ -20,10 +21,12 @@ public class CiudadParser {
             JSONObject js = (JSONObject) ciudad;
             JSONObject jcity = (JSONObject) js.get("Ciudad");
             String NombreCiudad = (String) jcity.get("Nombre");
+            String informacionCiudad = (String) jcity.get("Descripcion");
             double latitud = (double) jcity.get("Latitud");
             double longitud = (double) jcity.get("Longitud");
             Posicion posicion = new Posicion(latitud, longitud);
             Ciudad ciudadActual = new Ciudad(posicion,NombreCiudad);
+            ciudadActual.setInformacion(informacionCiudad);
             Edificio banco = new Edificio(new Pista("No hemos visto al ladron"),"banco");
             Edificio biblioteca = new Edificio(new Pista("No hemos visto al ladron"),"biblioteca");
             Edificio puerto = new Edificio(new Pista("No hemos visto al ladron"),"puerto");

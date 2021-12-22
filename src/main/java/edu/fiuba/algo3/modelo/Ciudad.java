@@ -13,12 +13,16 @@ public class Ciudad {
     private Posicion posicion;
     private String nombre;
     private ArrayList<DescripcionCiudad> descripcionCiudades;
+    private String informacion;
     private DescripcionCiudad descripcionCiudad;
     private ArrayList<Ciudad> ciudadesDestino; // van a tener una ciudad por la que la paso el ladorn y otras al azar
 
 
     public Ciudad() {
         this.edificios = new ArrayList<>();
+    }
+    public void setInformacion(String informacion){
+        this.informacion = informacion;
     }
 
     public Ciudad(Posicion posicion,String Nombre) {
@@ -121,4 +125,9 @@ public class Ciudad {
         }
         return nombreCiudades;
     }
+
+    public String getInformacion() {
+        return informacion;
+    }
+
 }

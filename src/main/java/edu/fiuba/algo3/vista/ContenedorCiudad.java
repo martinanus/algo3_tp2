@@ -43,7 +43,7 @@ public class ContenedorCiudad extends HBox {
         cuadroCiudadFecha.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
 
-        File file = new File(juego.pathImagenCiudad());
+        File file = new File("imgs/egipto.jpg");
         Image imagenCiudad = new Image(file.toURI().toString(),
                 316,396,false,true);
         StackPane imagenPane = new StackPane(new ImageView(imagenCiudad));
