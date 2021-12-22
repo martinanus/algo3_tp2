@@ -7,16 +7,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 public class BotonPistaHandler implements EventHandler<ActionEvent> {
     private VBox cuadroAccion;
     private AlgoThief juego;
     private Label labelReloj;
+    private Stage stage;
 
-    public BotonPistaHandler(VBox cuadroAccion, AlgoThief juego, Label labelReloj) {
+    public BotonPistaHandler(VBox cuadroAccion, AlgoThief juego, Label labelReloj, Stage stage) {
         this.cuadroAccion = cuadroAccion;
         this.juego = juego;
         this.labelReloj = labelReloj;
+        this.stage = stage;
     }
 
     @Override
@@ -36,7 +39,7 @@ public class BotonPistaHandler implements EventHandler<ActionEvent> {
         Button botonBanco = new Button();
         botonBanco.setText("Banco");
         botonBanco.setPrefSize(200,50);
-        BotonEdificioHandler botonBancoHandler = new BotonEdificioHandler(cuadroAccion, juego, "banco", labelReloj);
+        BotonEdificioHandler botonBancoHandler = new BotonEdificioHandler(cuadroAccion, juego, "banco", labelReloj, stage);
         botonBanco.setOnAction(botonBancoHandler);
 
 
@@ -44,14 +47,14 @@ public class BotonPistaHandler implements EventHandler<ActionEvent> {
         Button botonBiblioteca = new Button();
         botonBiblioteca.setText("Bibliotecta");
         botonBiblioteca.setPrefSize(200,50);
-        BotonEdificioHandler botonBibliotecaHandler = new BotonEdificioHandler(cuadroAccion, juego, "biblioteca", labelReloj);
+        BotonEdificioHandler botonBibliotecaHandler = new BotonEdificioHandler(cuadroAccion, juego, "biblioteca", labelReloj, stage);
         botonBiblioteca.setOnAction(botonBibliotecaHandler);
 
 
         Button botonPuerto = new Button();
         botonPuerto.setText("Puerto");
         botonPuerto.setPrefSize(200,50);
-        BotonEdificioHandler botonPuertoHandler = new BotonEdificioHandler(cuadroAccion, juego, "puerto", labelReloj);
+        BotonEdificioHandler botonPuertoHandler = new BotonEdificioHandler(cuadroAccion, juego, "puerto", labelReloj, stage);
         botonPuerto.setOnAction(botonPuertoHandler);
 
 

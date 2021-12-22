@@ -1,12 +1,16 @@
 package edu.fiuba.algo3.controlador;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.modelo.CasoFinalizadoSinExitoError;
 import edu.fiuba.algo3.modelo.interactuable.Interactuable;
+import edu.fiuba.algo3.vista.ContenedorCasoFinalizado;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 public class BotonEdificioHandler implements EventHandler<ActionEvent> {
 
@@ -15,20 +19,29 @@ public class BotonEdificioHandler implements EventHandler<ActionEvent> {
     private AlgoThief juego;
     private String tipoEdificio;
     private Label relojLabel;
+    private Stage stage;
 
-    public BotonEdificioHandler(VBox cuadroAccion, AlgoThief juego, String tipoEdificio, Label relojLabel) {
+    public BotonEdificioHandler(VBox cuadroAccion, AlgoThief juego, String tipoEdificio, Label relojLabel, Stage stage) {
         this.cuadroAccion = cuadroAccion;
         this.juego = juego;
         this.tipoEdificio = tipoEdificio;
         this.relojLabel = relojLabel;
+        this.stage = stage;
     }
 
 
     @Override
     public void handle(ActionEvent event) {
+        String contenidoEdificio = "";
+        try{
+            contenidoEdificio = (juego.visitar(tipoEdificio)).mostrar();
+            relojLabel.setText(juego.mostrarReloj());
+        }catch( CasoFinalizadoSinExitoError e) {
+            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage);
+            Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
+            stage.setScene(sceneCasoFinalizado);
 
-        String contenidoEdificio = (juego.visitar(tipoEdificio)).mostrar();
-        relojLabel.setText(juego.mostrarReloj());
+        }
 
         cuadroAccion.getChildren().clear();
         Label descrPista = new Label();
