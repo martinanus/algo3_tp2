@@ -11,12 +11,11 @@ import javafx.scene.layout.VBox;
 
 public class BotonViajarHandler implements EventHandler<ActionEvent> {
     private Label reloj;
-    private Button miBoton;
     private VBox cuadroAccion;
     private AlgoThief juego;
 
     public BotonViajarHandler(Button botonVer, VBox cuadroAccion, Label reloj, AlgoThief juego) {
-        miBoton = botonVer;
+
         this.cuadroAccion = cuadroAccion;
         this.juego = juego;
         this.reloj = reloj;
@@ -25,11 +24,23 @@ public class BotonViajarHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         cuadroAccion.getChildren().clear();
+        String nombreCiudad;
 
         for(Ciudad ciudad: juego.mostrarCiudadesDestino()){
-            Button botonViaje = new ButtonViaje(ciudad.getNombre(), reloj, juego);
+            Button botonViaje = new ButtonViaje();
+            nombreCiudad = ciudad.getNombre();
+            botonViaje.setText(nombreCiudad);
+            botonViaje.setPrefSize(80,50);
+            BotonDestinoHandler botonDestinoHandler = new BotonDestinoHandler(nombreCiudad, juego, reloj);
+            botonViaje.setOnAction(botonDestinoHandler);
+
             cuadroAccion.getChildren().add(botonViaje);
         }
+
+
+
+
+
 
     }
 }
