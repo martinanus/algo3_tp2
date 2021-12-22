@@ -16,23 +16,23 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class ContenedorCasoFinalizado extends VBox {
-    public ContenedorCasoFinalizado(Stage stage, AlgoThief juego ) {
+    public ContenedorCasoFinalizado(Stage stage, AlgoThief juego, String mensaje) {
         super();
         this.setAlignment(Pos.CENTER);
         this.setSpacing(40);
 
         Label titulo = new Label();
-        titulo.setText("Mision Fallida");
+        titulo.setText(mensaje);
         titulo.setFont(Font.font(30));
 
 
         Button botonVolverAJugar = new Button();
-        botonVolverAJugar.setText("Volver a Jugar");
+        botonVolverAJugar.setText("Nuevo Caso");
         BotonVolverAJugarHandler botonVolverAJugarHandler = new BotonVolverAJugarHandler(stage, juego);
         botonVolverAJugar.setOnAction(botonVolverAJugarHandler);
 
         this.getChildren().addAll(titulo, botonVolverAJugar);
-        stage.setTitle("Juego - Mision Fallida");
+        stage.setTitle("Juego - Caso Finalizado");
 
 
     }
