@@ -54,14 +54,12 @@ public class BotonCrimenHandler implements EventHandler<ActionEvent> {
         vehiculoText.setPromptText("Vehiculo");
         cuadroAccion.getChildren().add(vehiculoText);
 
-        Descripcion descripcionLadron = new Descripcion(sexoText.getText(), hobbyText.getText(),
-                cabelloText.getText(), señaText.getText(), vehiculoText.getText());
-
 
         Button botonComputar = new Button();
         botonComputar.setText("COMPUTAR");
         botonComputar.setPrefSize(180,40);
-        BotonComputarHandler botonComputarHandler = new BotonComputarHandler(cuadroAccion, juego, descripcionLadron,
+        BotonComputarHandler botonComputarHandler = new BotonComputarHandler(cuadroAccion, juego,
+                sexoText, hobbyText, cabelloText, señaText, vehiculoText,
                 labelFecha, stage);
         botonComputar.setOnAction(botonComputarHandler);
         cuadroAccion.getChildren().add(botonComputar);

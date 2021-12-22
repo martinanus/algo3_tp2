@@ -30,6 +30,7 @@ public class Descripcion {
     }
 
     public Descripcion(String sexo, String Hobby, String cabello, String seña, String vehiculo) {
+        this.nombre = "";
         this.sexo = sexo;
         this.hobby = Hobby;
         this.cabello = cabello;
@@ -77,7 +78,7 @@ public class Descripcion {
         return hobby;
     }
 
-    private String getSexo() {
+    public String getSexo() {
         return sexo;
     }
 

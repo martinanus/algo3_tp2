@@ -136,4 +136,8 @@ public class Caso {
     public String getNombreLadron() {
         return this.ladron.getNombre();
     }
+
+    public Ladron getLadron() {
+        return this.ladron;
+    }
 }

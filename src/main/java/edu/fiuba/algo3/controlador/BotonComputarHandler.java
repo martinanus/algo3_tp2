@@ -19,22 +19,34 @@ public class BotonComputarHandler implements EventHandler<ActionEvent> {
     private AlgoThief juego;
     private Label labelFecha;
     private Stage stage;
-    private Descripcion descripcionLadron;
+    private TextField sexoText;
+    private TextField hobbyText;
+    private TextField cabelloText;
+    private TextField señaText;
+    private TextField vehiculoText;
 
-    public BotonComputarHandler(VBox cuadroAccion, AlgoThief juego, Descripcion descripcionLadron,
-                                Label labelFecha, Stage stage) {
+    public BotonComputarHandler(VBox cuadroAccion, AlgoThief juego, TextField sexoText, TextField hobbyText, TextField cabelloText, TextField señaText, TextField vehiculoText,
+    Label labelFecha, Stage stage) {
         this.cuadroAccion = cuadroAccion;
-        this.juego = juego;
         this.labelFecha = labelFecha;
         this.stage = stage;
-        this.descripcionLadron = descripcionLadron;
+        this.juego = juego;
+        this.sexoText = sexoText;
+        this.hobbyText = hobbyText;
+        this.cabelloText = cabelloText;
+        this.señaText = señaText;
+        this.vehiculoText = vehiculoText;
 
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
         try{
-            juego.cargarDescripcion(descripcionLadron);
+            String sexo = sexoText.getText();
+            String seña = señaText.getText();
+            String pelo = cabelloText.getText();
+            juego.cargarDescripcion(new Descripcion(sexo, hobbyText.getText(),
+                    pelo, seña, vehiculoText.getText()));
             juego.generarOrdenDeArresto();
             cuadroAccion.getChildren().clear();
             Label mensajeOrden = new Label(juego.getMensajeOrden());

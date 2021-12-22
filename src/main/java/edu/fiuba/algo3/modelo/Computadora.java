@@ -36,6 +36,21 @@ public class Computadora {
         return new OrdenNoEmitida();
     }
 
+    public EstadoOrdenArresto emitirOrdenDeArresto2(Ladron sospechosoBuscado, Reloj reloj, Ladron ladron) {
+        ArrayList<Ladron> sospechososEncotrados = new ArrayList<>();
+        reloj.incrementar(new Tiempo(3));
+        for (Ladron sospechoso : sospechosos) {
+            if(sospechosoBuscado.compararCon(sospechoso)){
+                sospechososEncotrados.add(sospechoso);
+            }
+        }
+        if (sospechososEncotrados.size()==1){
+            if (sospechososEncotrados.get(0).compararCon(ladron))
+                return new OrdenEmitida();
+        }
+        return new OrdenNoEmitida();
+    }
+
     public ArrayList<Ladron> cargarDatos() {
         LadronParser ladronParser = new LadronParser();
         ArrayList<Ladron> ladrones = ladronParser.parser("/jsons/ladrones.json");

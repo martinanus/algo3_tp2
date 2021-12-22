@@ -34,7 +34,7 @@ public class AlgoThiefTest {
         juego.setPolicia(unPolicia);
         juego.generarPartida();
 
-        juego.cargarDescripcion(new Descripcion("","Masculino","Croquet","","",""));
+        juego.cargarDescripcion(new Descripcion("Masculino","Alpinismo","","Anillo",""));
 
         juego.generarOrdenDeArresto();
         System.out.println(juego.getMensajeOrden());
