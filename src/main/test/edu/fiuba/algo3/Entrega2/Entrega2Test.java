@@ -119,14 +119,15 @@ public class Entrega2Test {
         Ciudad lima = new Ciudad(new Posicion(-12.04318,  -77.02824));
         Rango rango = new Novato();
         Policia policia = new Policia(lima, rango); // policia parado en lima
+        Descripcion descripcion1 = new Descripcion("","Masculino","Croquet","","","");
+        Ladron ladron = new Ladron(descripcion1);
         AlgoThief juego = new AlgoThief();
         Caso caso = new Caso(juego);
+        caso.setLadron(ladron);
         policia.setCaso(caso);
 
         policia.sumarArresto(4);  //rango deberia conocer la # de arrestos
-        Descripcion descripcion1 = new Descripcion("","Masculino","Croquet","","","");
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
-        Ladron ladron = new Ladron(descripcion1);
 
         Pista pista = new Pista("Una pista "); //
 
@@ -145,7 +146,7 @@ public class Entrega2Test {
 
         policia.viajar(lima,reloj);//demora 3 horas por ser detective, ya no demora 4 horas como antes.
 
-        assertEquals(new Tiempo(12),reloj.tiempoTranscurrido());
+        assertEquals(new Tiempo(13),reloj.tiempoTranscurrido());
 
     }
 }

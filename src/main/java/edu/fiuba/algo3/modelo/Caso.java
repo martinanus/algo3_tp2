@@ -140,4 +140,8 @@ public class Caso {
     public Ladron getLadron() {
         return this.ladron;
     }
+
+    public void setLadron(Ladron ladron) {
+        this.ladron = ladron;
+    }
 }
