@@ -15,8 +15,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         AlgoThief juego = new AlgoThief();
-
-
+        
         ContenedorRegistro contenedorRegistro = new ContenedorRegistro(stage, juego);
         Scene sceneRegistro = new Scene(contenedorRegistro, 640, 480);
 

@@ -107,4 +107,8 @@ public class AlgoThief {
     public ArrayList<Ciudad> obtenerCiudades(){
         return ciudades;
     }
+
+    public ArrayList<Ciudad> mostrarCiudadesDestino() {
+        return  jugador.getCiudadActual().mostrarCiudadesDestino();
+    }
 }

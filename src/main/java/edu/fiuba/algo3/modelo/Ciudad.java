@@ -130,4 +130,7 @@ public class Ciudad {
         return informacion;
     }
 
+    public ArrayList<Ciudad> mostrarCiudadesDestino() {
+        return ciudadesDestino;
+    }
 }
