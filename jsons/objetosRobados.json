@@ -26,6 +26,27 @@
       "Rareza":"Muy Valioso",
       "CiudadOrigen":"Ciudad de Mexico"
     }
+  },
+  {
+    "ObjetoRobado": {
+      "Nombre": "La calavera de cristal",
+      "Rareza":"Comun",
+      "CiudadOrigen":"Tokyo"
+    }
+  },
+  {
+    "ObjetoRobado": {
+      "Nombre": "Biblia satánica",
+      "Rareza":"Comun",
+      "CiudadOrigen":"Lima"
+    }
+  },
+  {
+    "ObjetoRobado": {
+      "Nombre": "Buda de Oro con Diamantes",
+      "Rareza":"Comun",
+      "CiudadOrigen":"Roma"
+    }
   }
 
 ]

@@ -74,7 +74,7 @@
   {
     "Pista": {
       "Ciudad": "Montreal",
-      "PistasFacil":["Su moneda principal es el euro","Lugar famoso Basilica Notre-Dame","Bandera blanca y roja"],
+      "PistasFacil":["Su moneda principal es el dólar canadiense","Lugar famoso Basilica Notre-Dame","Bandera blanca y roja"],
       "PistasMedia":["Comercio", "Lugar Famoso Estadio Olimpico","Idioma Frances e Ingles" ],
       "PistasDificil":["Turismo","Lugar Famoso Oratorio de San Jose","El escudo tiene un trebol"]
     }
@@ -82,7 +82,7 @@
   {
     "Pista": {
       "Ciudad": "Tokyo",
-      "PistasFacil":["Su moneda principal es la libra","Lugar famoso Gimnasio Nacional Yoyogi","Bandera roja y blanca"],
+      "PistasFacil":["Su moneda principal es la Yen","Lugar famoso Gimnasio Nacional Yoyogi","Bandera roja y blanca"],
       "PistasMedia":["Industria Tecnoligica", "Lugar Famoso Templo de Senso-ji","La bandera tiene un circulo rojo" ],
       "PistasDificil":["Turismo","Lugar Famoso Santuario Meiji","Idioma japones"]
     }

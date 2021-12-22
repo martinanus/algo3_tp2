@@ -8,7 +8,7 @@
             "Moneda": "Soles",
             "Monumento": "Machu Picchu",
             "Idioma": "Español",
-            "Descripcion": "Es un LIMA con gente "
+            "Descripcion": "Lima (que proviene del quechua Limaq) es la capital del Perú. Se encuentra situada en la costa central del país, a orillas del Océano Pacífico"
         }
     },
     {
@@ -20,7 +20,7 @@
             "Moneda": "Pesos",
             "Monumento":"El Obelisco",
             "Idioma": "Español",
-            "Descripcion": "Es un ARG con gente "
+            "Descripcion": "La Provincia de Buenos Aires, una de las más ricas de la Argentina, encierra paisajes muy diferentes entre sí, como el campo, las sierras, las grandes urbes, las lagunas, el delta del Paraná y, por supuesto, todo el abanico de playas que se extiende por la costa atlántica. "
         }
     },
     {
@@ -32,7 +32,7 @@
             "Moneda": "Pesos",
             "Monumento":"Templo de Kukulkan",
             "Idioma": "Español",
-            "Descripcion": "Es un MEX con gente "
+            "Descripcion": "La Ciudad de México es la capital del país, de carácter vibrante, multifacético y siempre en movimiento, es el núcleo, político, económico y cultural de la República Mexicana "
         }
     },
     {
@@ -44,7 +44,7 @@
             "Moneda": "Euros",
             "Monumento":"Puerta de Alcalá",
             "Idioma": "Español",
-            "Descripcion": "Es un ESPa con gente "
+            "Descripcion": "Madrid, capital de Reino de España y ciudad cosmopolita donde las haya, es uno de los destinos europeos con mejores infraestructuras turísticas. "
         }
     },
     {
@@ -56,7 +56,7 @@
             "Moneda": "yuan",
             "Monumento":"La gran muralla",
             "Idioma": "Mandarin",
-            "Descripcion": "Es un BEIJ con gente "
+            "Descripcion": "Beijing es la capital de República Popular China, la sede del Comité Central del Partido Comunista de China y la del Gobierno Popular Central de China.  "
         }
     },
     {
@@ -68,7 +68,7 @@
             "Moneda": "Won",
             "Monumento":"Fortaleza de Hwasong",
             "Idioma": "Coreano",
-            "Descripcion": "Es un SEU con gente "
+            "Descripcion": "Seúl es un municipio bajo jurisdicción central, el distrito capital de Corea del Sur. Está dividida en 25 gu (en hangul, 구); distritos,  "
         }
     },
     {
@@ -80,7 +80,7 @@
             "Moneda": "euro",
             "Monumento":"La torre Eiffel",
             "Idioma": "Frances",
-            "Descripcion": "Es un FR con gente "
+            "Descripcion": "Capital de Francia y de la región que ocupa, la Isla de Francia, París tiene una población de casi doce millones de habitantes, la más grande de Europa"
         }
     },
     {
@@ -92,7 +92,7 @@
             "Moneda": "Dolar",
             "Monumento":"Monumento a George-Étienne Cartier",
             "Idioma": "Francés e Inglés",
-            "Descripcion": "Es un MONTREAL con gente "
+            "Descripcion": "Montreal es la segunda ciudad más poblada de Canadá ubicada al suroeste de la Provincia de Quebec, a orillas del río San Lorenzo. "
         }
     },
     {
@@ -104,7 +104,7 @@
             "Moneda": "yen",
             "Monumento":"Templo de Sensō-ji",
             "Idioma": "Japones",
-            "Descripcion": "Es un TOK con gente "
+            "Descripcion": "Es la capital de Japón y la metrópolis más grande del mundo con 34,5 millones de habitantes. La densidad de población es el doble que la de, por ejemplo, Nueva York "
         }
     },
     {
@@ -116,7 +116,7 @@
             "Moneda": "La Libra",
             "Monumento": "La gran piramide de Guiza",
             "Idioma": "Árabe",
-            "Descripcion": "Es un CAI con gente "
+            "Descripcion": "Es la mayor ciudad del mundo árabe, de Oriente Próximo y de África, y los egipcios la denominan a menudo sencillamente con el nombre del país, مصر "
         }
     },
     {
@@ -128,7 +128,7 @@
             "Moneda": "euro",
             "Monumento":"El Gran coliseo",
             "Idioma": "Italiano",
-            "Descripcion": "Es un ROMA con gente "
+            "Descripcion": "Roma es una ciudad italiana de 2 815 951 habitantes, capital de la región del Lacio y de Italia.  "
         }
     }
 
