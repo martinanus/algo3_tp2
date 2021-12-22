@@ -7,20 +7,28 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
+import java.io.File;
+
 public class BotonViajarHandler implements EventHandler<ActionEvent> {
+
     private Label labelReloj;
     private Label labelCiudad;
     private VBox cuadroAccion;
     private AlgoThief juego;
+    private  StackPane imagenPane;
 
-    public BotonViajarHandler( VBox cuadroAccion, Label labelReloj, AlgoThief juego, Label labelCiudad) {
+    public BotonViajarHandler(VBox cuadroAccion, Label labelReloj, AlgoThief juego, Label labelCiudad, StackPane imagenPane) {
 
         this.cuadroAccion = cuadroAccion;
         this.juego = juego;
         this.labelReloj = labelReloj;
         this.labelCiudad = labelCiudad;
+        this.imagenPane = imagenPane;
     }
 
     @Override
@@ -34,11 +42,12 @@ public class BotonViajarHandler implements EventHandler<ActionEvent> {
             botonViaje.setText(nombreCiudad);
             botonViaje.setPrefSize(200,50);
             cuadroAccion.setSpacing(30);
-            BotonDestinoHandler botonDestinoHandler = new BotonDestinoHandler(nombreCiudad, juego, labelReloj, labelCiudad, cuadroAccion);
+            BotonDestinoHandler botonDestinoHandler = new BotonDestinoHandler(nombreCiudad, juego, labelReloj, labelCiudad, cuadroAccion, imagenPane);
             botonViaje.setOnAction(botonDestinoHandler);
-
             cuadroAccion.getChildren().add(botonViaje);
         }
+
+
 
 
 
