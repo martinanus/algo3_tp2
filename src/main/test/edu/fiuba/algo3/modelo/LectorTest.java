@@ -52,7 +52,7 @@ public class LectorTest {
     public void SeCarganDatosDeCObjetosCorrectamente() {
         ObjetoParser parseador = new ObjetoParser();
         ArrayList<Objeto> objetosRobados  =  parseador.parser("/jsons/objetosRobados.json");
-        assertEquals(4,objetosRobados.size());
+        assertEquals(7,objetosRobados.size());
     }
 
     @Test
