@@ -42,25 +42,31 @@ public class BotonCrimenHandler implements EventHandler<ActionEvent> {
         cuadroAccion.getChildren().add(msjInfo);
 
         ObservableList<String> opcionesSexo = FXCollections.observableArrayList();
-        opcionesSexo.addAll("Femenino","Masculino");
+        opcionesSexo.addAll("","Femenino","Masculino");
 
         ObservableList<String> opcionesHobby = FXCollections.observableArrayList();
-        opcionesHobby.addAll("Tenis","Música","Alpinismo","Paracaidismo","Natación","Croquet");
+        opcionesHobby.addAll("","Tenis","Música","Alpinismo","Paracaidismo","Natación","Croquet");
 
         ObservableList<String> opcionesCabello = FXCollections.observableArrayList();
-        opcionesCabello.addAll("Castaño","Rubio","Rojo","Negro");
+        opcionesCabello.addAll("","Castaño","Rubio","Rojo","Negro");
 
         ObservableList<String> opcionesSeña = FXCollections.observableArrayList();
-        opcionesSeña.addAll("Anillo","Tatuaje","Cicatriz","Joyas");
+        opcionesSeña.addAll("","Anillo","Tatuaje","Cicatriz","Joyas");
 
         ObservableList<String> opcionesVehiculo = FXCollections.observableArrayList();
-        opcionesVehiculo.addAll("Descapotable","Limusina","Deportivo","Moto");
+        opcionesVehiculo.addAll("","Descapotable","Limusina","Deportivo","Moto");
 
         ComboBox<String> comboSexo = new ComboBox<>(opcionesSexo);
         ComboBox<String> comboHobby = new ComboBox<>(opcionesHobby);
         ComboBox<String> comboCabello = new ComboBox<>(opcionesCabello);
         ComboBox<String> comboSeña = new ComboBox<>(opcionesSeña);
         ComboBox<String> comboVehiculo = new ComboBox<>(opcionesVehiculo);
+
+        comboSexo.getSelectionModel().selectFirst();
+        comboHobby.getSelectionModel().selectFirst();
+        comboCabello.getSelectionModel().selectFirst();
+        comboSeña.getSelectionModel().selectFirst();
+        comboVehiculo.getSelectionModel().selectFirst();
 
         cuadroAccion.getChildren().add(new HBox(new Label("Sexo: "), comboSexo));
         cuadroAccion.getChildren().add(new HBox(new Label("Hobby: "),comboHobby));
