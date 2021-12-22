@@ -21,7 +21,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         AlgoThief juego = new AlgoThief();
-        
+
         File dir = new File(System.getProperty("user.dir") + "/musica/principal.mp3");
         URI path = dir.toURI();
         String direccionParaMedia = path.toString();
@@ -29,7 +29,7 @@ public class App extends Application {
         AudioClip mediaPlayer = new AudioClip(musica.getSource());
         mediaPlayer.setCycleCount(AudioClip.INDEFINITE);
         mediaPlayer.play();
-        mediaPlayer.setVolume(3);
+        mediaPlayer.setVolume(1);
 
         ContenedorRegistro contenedorRegistro = new ContenedorRegistro(stage, juego);
         Scene sceneRegistro = new Scene(contenedorRegistro, 640, 480);

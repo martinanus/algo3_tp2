@@ -1,11 +1,13 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.modelo.lector.ArchivoNoEncontradoError;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class AlgoThiefTest {
 
@@ -47,9 +49,10 @@ public class AlgoThiefTest {
 
         for (int j = 0; j < 36; j++)
             juego.visitar("banco");
-        juego.visitar("biblioteca");
 
-        assertEquals(new Tiempo(0), juego.getReloj().tiempoTranscurrido());
+        assertThrows(CasoFinalizadoSinExitoError.class, ()-> {
+            juego.visitar("biblioteca");  //
+        } );
     }
 
     @Test
