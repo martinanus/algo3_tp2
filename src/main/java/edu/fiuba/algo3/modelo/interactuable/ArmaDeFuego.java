@@ -9,4 +9,9 @@ public class ArmaDeFuego implements Interactuable{
     public void interactuar(Policia policia, Reloj reloj) {
         reloj.incrementar(new Tiempo(4));
     }
+
+    @Override
+    public String mostrar(){
+        return "Has recibido un ataque \ncon arma de fuego.";
+    }
 }

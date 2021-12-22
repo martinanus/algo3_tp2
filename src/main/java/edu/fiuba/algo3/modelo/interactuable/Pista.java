@@ -11,12 +11,13 @@ public class Pista implements Interactuable {
         this.contenido = contenido;
     }
 
+    @Override
     public String mostrar(){
         return contenido;
     }
 
     @Override
     public void interactuar(Policia policia, Reloj reloj) {
-        //Mostar por pantalla
+
     }
 }

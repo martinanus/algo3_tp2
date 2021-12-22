@@ -17,4 +17,9 @@ public class Cuchillo implements Interactuable {
         }
         contadorAtaques++;
     }
+
+    @Override
+    public String mostrar(){
+        return "Te han acuchillado.";
+    }
 }

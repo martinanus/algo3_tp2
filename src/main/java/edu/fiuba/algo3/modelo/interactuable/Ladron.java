@@ -29,4 +29,9 @@ public class Ladron implements Interactuable{
     public Pista generarPista() {
         return this.descripcion.generarPista();
     }
+
+    @Override
+    public String mostrar(){
+        return "Has encontrado al ladrón.";
+    }
 }

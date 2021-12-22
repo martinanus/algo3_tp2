@@ -84,8 +84,10 @@ public class ContenedorCiudad extends HBox {
         Button botonPista = new ButtonPista();
         botonPista.setText("Pista");
         botonPista.setPrefSize(80,50);
-        BotonPistaHandler botonPistaHandler = new BotonPistaHandler(cuadroAccion);
+        BotonPistaHandler botonPistaHandler = new BotonPistaHandler(cuadroAccion, juego);
         botonPista.setOnAction(botonPistaHandler);
+
+
 
         Button botonCrimen = new ButtonCrime();
         botonCrimen.setText("Crimen");

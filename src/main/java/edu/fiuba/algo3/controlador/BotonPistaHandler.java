@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.controlador;
 
+import edu.fiuba.algo3.modelo.AlgoThief;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -9,9 +10,11 @@ import javafx.scene.text.Font;
 
 public class BotonPistaHandler implements EventHandler<ActionEvent> {
     private VBox cuadroAccion;
+    private AlgoThief juego;
 
-    public BotonPistaHandler( VBox cuadroAccion) {
+    public BotonPistaHandler(VBox cuadroAccion, AlgoThief juego) {
         this.cuadroAccion = cuadroAccion;
+        this.juego = juego;
     }
 
     @Override
@@ -28,43 +31,33 @@ public class BotonPistaHandler implements EventHandler<ActionEvent> {
         cuadroAccion.getChildren().add(msjInfo);
 
 
-
-        Button edificio1 = new Button();
-        edificio1.setText("Banco");
-        edificio1.setPrefSize(200,50);
-        edificio1.setOnAction(e-> {
-            pista.setText("¡Lo he visto! \nSe marchó con una bolsa \nrepleta de Yenes.    ");
-            cuadroAccion.getChildren().clear();
-            cuadroAccion.getChildren().add(pista);
-
-        });
-
-        Button edificio2 = new Button();
-        edificio2.setText("Bibliotecta");
-        edificio2.setPrefSize(200,50);
-        edificio2.setOnAction(e-> {
-            pista.setText("Estuvo consultando muchos \nlibros en japonés.\nQué extraño...");
-            cuadroAccion.getChildren().clear();
-            cuadroAccion.getChildren().add(pista);
-
-        });
+        Button botonBanco = new Button();
+        botonBanco.setText("Banco");
+        botonBanco.setPrefSize(200,50);
+        BotonEdificioHandler botonBancoHandler = new BotonEdificioHandler(cuadroAccion, juego, "banco");
+        botonBanco.setOnAction(botonBancoHandler);
 
 
-        Button edificio3 = new Button();
-        edificio3.setText("Puerto");
-        edificio3.setPrefSize(200,50);
-        edificio3.setOnAction(e-> {
-            pista.setText("Se fue cantando \n\"Al sur yo me voy...\".");
-            cuadroAccion.getChildren().clear();
-            cuadroAccion.getChildren().add(pista);
 
-        });
+        Button botonBiblioteca = new Button();
+        botonBiblioteca.setText("Bibliotecta");
+        botonBiblioteca.setPrefSize(200,50);
+        BotonEdificioHandler botonBibliotecaHandler = new BotonEdificioHandler(cuadroAccion, juego, "biblioteca");
+        botonBiblioteca.setOnAction(botonBibliotecaHandler);
+
+
+        Button botonPuerto = new Button();
+        botonPuerto.setText("Puerto");
+        botonPuerto.setPrefSize(200,50);
+        BotonEdificioHandler botonPuertoHandler = new BotonEdificioHandler(cuadroAccion, juego, "puerto");
+        botonPuerto.setOnAction(botonPuertoHandler);
+
 
         cuadroAccion.setSpacing(30);
 
-        cuadroAccion.getChildren().add(edificio1);
-        cuadroAccion.getChildren().add(edificio2);
-        cuadroAccion.getChildren().add(edificio3);
+        cuadroAccion.getChildren().add(botonBanco);
+        cuadroAccion.getChildren().add(botonBiblioteca);
+        cuadroAccion.getChildren().add(botonPuerto);
 
 
 
