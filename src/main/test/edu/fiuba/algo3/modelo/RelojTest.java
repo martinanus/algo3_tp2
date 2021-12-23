@@ -113,4 +113,21 @@ public class RelojTest {
         assertEquals(reloj.getDia(), "Martes");
         assertEquals(reloj.getHoraActual(), 12);
     }
+
+    @Test
+    public void SeChequeaResultadoHoraDormir() {
+        Reloj reloj = new Reloj(new Tiempo(154));
+
+        assertFalse(reloj.horaDormir());
+        assertEquals(reloj.getHoraActual(), 7);
+    }
+
+    @Test
+    public void SeChequeaSiSeDuerme() {
+        Reloj reloj = new Reloj(new Tiempo(154));
+        reloj.incrementar(new Tiempo(46));
+
+        assertFalse(reloj.horaDormir());
+        assertEquals(13, reloj.getHoraActual());
+    }
 }

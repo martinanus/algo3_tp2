@@ -1,10 +1,7 @@
-package edu.fiuba.algo3.Entrega3Test;
+package edu.fiuba.algo3.Entrega3;
 
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.interactuable.Ladron;
-import edu.fiuba.algo3.modelo.lector.ArchivoNoEncontradoError;
 import edu.fiuba.algo3.modelo.rango.*;
-import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import org.junit.jupiter.api.Test;
 
@@ -152,5 +149,6 @@ public class Entrega3Test {
         juego.generarPartida();
 
     }
+
 }
 
