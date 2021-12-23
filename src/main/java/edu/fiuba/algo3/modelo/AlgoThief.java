@@ -31,7 +31,7 @@ public class AlgoThief {
     }
 
     public void generarPartida() {
-        Ladron ladron = ladrones.get((int)(Math.random()* ladrones.size()));
+        Ladron ladron = ladrones.get( (int)(Math.random()* ladrones.size()) );
         this.ciudades = cargadorDatos.cargarCiudades();
         cargadorDatos.cargarPistas(ciudades);
         jugador.generarCaso(objetosRobados,ciudades,ladron, this); //refactor nombre

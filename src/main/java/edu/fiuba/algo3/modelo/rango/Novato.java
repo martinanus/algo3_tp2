@@ -4,6 +4,7 @@ import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
+import edu.fiuba.algo3.modelo.objeto.ObjetoValioso;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
 import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 
@@ -38,12 +39,14 @@ public class Novato implements Rango {
 
     @Override
     public Caso generarCaso(ArrayList<Objeto> objetosRobados, ArrayList<Ciudad> ciudades, Ladron ladron, AlgoThief algoThief) {
-        Objeto objetoRobado= new ObjetoComun();
+        ArrayList<Objeto> objetosNovato = new ArrayList<>();
         for (Objeto objeto : objetosRobados) {
-           if (objeto instanceof ObjetoComun) {
-               objetoRobado = objeto;
+            if (objeto instanceof ObjetoComun) {
+                objetosNovato.add(objeto);
             }
         }
+        Objeto objetoRobado = objetosNovato.get( (int)(Math.random()* objetosNovato.size())   );
+
         ArrayList<Ciudad> ciudadesRecorridas = objetoRobado.generarRecorrido(ciudades);
         for(Ciudad ciudad: ciudadesRecorridas){
             ciudad.tomarPistasFacil();

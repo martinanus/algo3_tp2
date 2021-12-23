@@ -30,7 +30,7 @@
   {
     "ObjetoRobado": {
       "Nombre": "La calavera de cristal",
-      "Rareza":"Comun",
+      "Rareza":"Valioso",
       "CiudadOrigen":"Tokyo"
     }
   },
@@ -51,21 +51,21 @@
   {
     "ObjetoRobado": {
       "Nombre": "Placa de Oro de youtube",
-      "Rareza":"Comun",
+      "Rareza":"Valioso",
       "CiudadOrigen":"El Cairo"
     }
   },
   {
     "ObjetoRobado": {
       "Nombre": "Placa de Oro de Diamante",
-      "Rareza":"Comun",
+      "Rareza":"Valioso",
       "CiudadOrigen":"Buenos Aires"
     }
   },
   {
     "ObjetoRobado": {
       "Nombre": "Trofeo de Oro de juegos olimpicos de 2000",
-      "Rareza":"Comun",
+      "Rareza":"Valioso",
       "CiudadOrigen":"Beijing"
     }
   }

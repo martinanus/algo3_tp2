@@ -2,7 +2,9 @@ package edu.fiuba.algo3.controlador;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.Policia;
+import edu.fiuba.algo3.modelo.rango.Detective;
 import edu.fiuba.algo3.modelo.rango.Novato;
+import edu.fiuba.algo3.modelo.rango.Sargento;
 import edu.fiuba.algo3.vista.ContenedorCaso;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -35,7 +37,7 @@ public class BotonContinuarHandler implements EventHandler<ActionEvent> {
             this.textField.requestFocus();
 
         } else {
-            Policia policia = new Policia(textField.getText(), new Novato());
+            Policia policia = new Policia(textField.getText(), new Detective());
             juego.setPolicia(policia);
             juego.generarPartida();
             ContenedorCaso contenedorCaso = new ContenedorCaso(miStage, juego);

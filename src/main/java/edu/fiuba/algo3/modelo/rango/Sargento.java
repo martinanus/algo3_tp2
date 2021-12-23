@@ -3,6 +3,7 @@ package edu.fiuba.algo3.modelo.rango;
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
+import edu.fiuba.algo3.modelo.objeto.ObjetoComun;
 import edu.fiuba.algo3.modelo.objeto.ObjetoMuyValioso;
 import edu.fiuba.algo3.modelo.objeto.ObjetoValioso;
 import edu.fiuba.algo3.modelo.tiempo.Reloj;
@@ -33,12 +34,14 @@ public class Sargento implements Rango {
     }
     @Override
     public Caso generarCaso(ArrayList<Objeto> objetosRobados,  ArrayList<Ciudad> ciudades, Ladron ladron, AlgoThief algoThief) {
-        Objeto objetoRobado= new ObjetoValioso();
+        ArrayList<Objeto> objetosSargento= new ArrayList<>();
         for (Objeto objeto : objetosRobados) {
-            if (objeto instanceof ObjetoValioso) {
-                objetoRobado = objeto;
+            if (objeto instanceof ObjetoComun || objeto instanceof ObjetoValioso || objeto instanceof ObjetoMuyValioso) {
+                objetosSargento.add(objeto);
             }
         }
+        Objeto objetoRobado = objetosSargento.get( (int)(Math.random()* objetosSargento.size())   );
+
         ArrayList<Ciudad> ciudadesRecorridas = objetoRobado.generarRecorrido(ciudades);
         for(Ciudad ciudad: ciudadesRecorridas){
             ciudad.tomarPistasDificil();

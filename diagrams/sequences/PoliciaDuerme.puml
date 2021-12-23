@@ -1,18 +1,29 @@
 @startuml
 skinparam style strictuml
-title:  El Policía duerme
+title:  El Policía duerme despues de un viaje que termino a las 2 am el dia martes
 
 actor TestCase
 
 participant " : Policia" as jugador
 participant "reloj : Reloj" as reloj
 participant "tiempoTranscurrido : Tiempo" as tiempo
-
+participant "horaActual : Hora" as hora
 
 TestCase -> jugador: dormir(reloj)
 activate jugador
 jugador -> reloj: incrementar( new Tiempo(8))
 activate reloj
+activate tiempo
 reloj -> tiempo: incrementar( 8 horas)
+reloj -> tiempo: actualizar()
+
+reloj -> reloj: horaDeDormir()
+reloj -> tiempo:horaDeDormir(reloj)
+tiempo -> hora : esHoraDeDormir()
+hora --> tiempo: false
+reloj -> reloj: verificarTiempoExcedido()
+reloj -> tiempo: esMayor(tiempoMaximo)
+tiempo --> reloj: false
+
 
 @enduml
