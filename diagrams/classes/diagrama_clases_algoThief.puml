@@ -44,15 +44,17 @@ class CasoNoAsignado {
  + finalizar() : void
  + finalizarSinExito() : void
 }
+abstract class Objeto {
+    - nombre : String;
+    - nombreCiudad : String;
+
+    + {abstract} generarRecorrido(ArrayList<Ciudad>,int , String ):ArrayList<Ciudad>
+}
 
 class AlgoThief {
     - descripcionSospechoso : Descripcion
     - reloj : Reloj
-    + generarPartida(policia : Policia) : void
-    + cargarCiudades() : void
-    + cargarObjetosRobados() : void
-    + cargarRutasLadron(ciudades : ArrayList<Ciudad>) : void
-    + cargarLadrones() : void
+    + generarPartida() : void
     + visitar(policia : Policia , nombreEdificio: String) : Interactuable
     + viajar(nombreCiudad : String ,policia : Policia ) : void
     + generarOrdenDeArresto(policia : Policia) : void
@@ -69,20 +71,16 @@ class Ciudad {
     + visitar(edificio : Edificio, r : Reloj): Interactuable
 }
 
-abstract class Objeto {
-    - nombre : String;
-    - nombreCiudad : String;
-
-    + getCiudadOrigen() : String
-}
-
 class ObjetoComun {
+    +generarRecorrido(ArrayList<Ciudad>,int , String ):ArrayList<Ciudad>
 }
 
 class ObjetoValioso {
+    + generarRecorrido(ArrayList<Ciudad>,int , String ):ArrayList<Ciudad>
 }
 
 class ObjetoMuyValioso {
+    + generarRecorrido(ArrayList<Ciudad>,int , String ):ArrayList<Ciudad>
 }
 
 
