@@ -9,6 +9,7 @@ participant "banco : Edificio" as banco
 participant "reloj : Reloj" as reloj
 participant "tiempo : Tiempo" as tiempo
 participant "pista : Pista" as pista
+participant "tiempoTranscurrido : Tiempo" as tiempoTranscurrido
 
 TestCase -> policia: visitar(banco, reloj): Interactuable
 activate policia
@@ -19,10 +20,15 @@ ciudad -> banco: visitar(reloj): Interactuable
 activate banco
 banco -> tiempo ** : Tiempo(1)
 activate reloj
-deactivate reloj
 banco -> reloj: incrementar(tiempo):
-return pista
-return pista
+activate tiempoTranscurrido
+reloj -> tiempoTranscurrido:incrementar()
+reloj -> tiempoTranscurrido:actualizar()
+reloj -> reloj:horaDeDormir()
+reloj -> reloj:verificarTiempoExcedido()
+banco --> ciudad:pista
+ciudad -->policia:pista
+
 policia -> pista : interactuar(policia,reloj) : void
-return pista
+policia --> TestCase:pista
 @enduml

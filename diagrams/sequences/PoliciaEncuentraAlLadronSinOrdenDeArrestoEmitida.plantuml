@@ -10,6 +10,7 @@ participant "reloj : Reloj" as reloj
 participant "tiempo : Tiempo" as tiempo
 participant "ladron : Ladron" as ladron
 participant "orden : OrdenNoEmitida" as ordenArresto
+participant "tiempoTranscurrido : Tiempo" as tiempoTranscurrido
 
 TestCase -> policia: visitar(banco, reloj): Interactuable
 activate policia
@@ -21,6 +22,11 @@ activate banco
 banco -> tiempo ** : Tiempo(1)
 banco -> reloj: incrementar(tiempo):
 activate reloj
+activate tiempoTranscurrido
+reloj -> tiempoTranscurrido:incrementar()
+reloj -> tiempoTranscurrido:actualizar()
+reloj -> reloj:horaDeDormir()
+reloj -> reloj: verificarTiempoExcedido()
 policia -> ladron : interactuar(policia,reloj) : void
 activate ladron
 ladron -> policia : arrestar() : void

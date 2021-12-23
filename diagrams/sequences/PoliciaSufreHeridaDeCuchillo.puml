@@ -9,7 +9,8 @@ participant "banco : Edificio" as banco
 participant "reloj : Reloj" as reloj
 participant "tiempoVisita : Tiempo" as tiempoVisita
 participant "tiempoHerida : Tiempo" as tiempoHerida
-participant "arma : Cuchillo" as arma
+participant "cuchillo : Cuchillo" as cuchillo
+participant "tiempoTranscurrido : Tiempo" as tiempoTranscurrido
 
 TestCase -> policia: visitar(banco, reloj): Interactuable
 activate policia
@@ -21,7 +22,20 @@ activate banco
 banco -> tiempoVisita ** : Tiempo(1)
 banco -> reloj: incrementar(tiempoVisita):
 activate reloj
-policia -> arma : interactuar(policia,reloj) : void
-arma -> tiempoHerida ** : Tiempo(2)
-arma -> reloj: incrementar(tiempoHerida)
+activate tiempoTranscurrido
+reloj -> tiempoTranscurrido:incrementar()
+reloj -> tiempoTranscurrido:actualizar()
+reloj -> reloj:horaDeDormir()
+reloj -> reloj: verificarTiempoExcedido()
+banco --> ciudad:cuchillo
+activate cuchillo
+ciudad -->policia:cuchillo
+policia -> cuchillo : interactuar(policia,reloj) : void
+cuchillo -> tiempoHerida ** : Tiempo(2)
+cuchillo -> reloj: incrementar(tiempoHerida)
+reloj -> tiempoTranscurrido:incrementar()
+reloj -> tiempoTranscurrido:actualizar()
+reloj -> reloj:horaDeDormir()
+reloj -> reloj: verificarTiempoExcedido()
+
 @enduml
