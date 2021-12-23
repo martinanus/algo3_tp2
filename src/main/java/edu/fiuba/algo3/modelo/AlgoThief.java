@@ -127,5 +127,9 @@ public class AlgoThief {
         return this.jugador.mostrarOrden();
     }
 
+    public String getRangoPolicia() {
+        return this.jugador.mostrarRango();
+    }
+
 
 }

@@ -59,6 +59,7 @@ public class BotonDestinoHandler implements EventHandler<ActionEvent> {
 
         cuadroAccion.getChildren().clear();
         Label descrPais = new Label();
+        descrPais.setWrapText(true);
         descrPais.setText(juego.descripcionCiudad());
         descrPais.setFont(Font.font(14));
         cuadroAccion.getChildren().add(descrPais);

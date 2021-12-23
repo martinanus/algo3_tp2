@@ -137,6 +137,10 @@ public class Policia {
     public String mostrarOrden() {
         return this.orden.mostrarOrden(this.caso.getNombreLadron());
     }
+
+    public String mostrarRango() {
+        return this.rango.mostrar();
+    }
 }
 
 

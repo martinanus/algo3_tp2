@@ -55,6 +55,7 @@ public class ContenedorCiudad extends HBox {
         cuadroCiudadFecha.setPrefSize(320, 400);
 
         Label descrPais = new Label();
+        descrPais.setWrapText(true);
         descrPais.setText(juego.descripcionCiudad());
         descrPais.setFont(Font.font(14));
 

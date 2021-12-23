@@ -47,4 +47,9 @@ public class Detective implements Rango {
         return new Caso(objetoRobado,ciudadesRecorridas,ladron, algoThief);
     }
 
+    @Override
+    public String mostrar() {
+        return "Detective";
+    }
+
 }

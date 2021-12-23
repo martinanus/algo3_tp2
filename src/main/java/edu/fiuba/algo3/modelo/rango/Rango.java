@@ -18,4 +18,5 @@ public interface Rango {
 
     Caso generarCaso(ArrayList<Objeto> objetosRobados, ArrayList<Ciudad> ciudades, Ladron ladron, AlgoThief algoThief);
 
+    String mostrar();
 }
