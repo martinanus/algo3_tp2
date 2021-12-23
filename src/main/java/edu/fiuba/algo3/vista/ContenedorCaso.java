@@ -21,6 +21,10 @@ public class ContenedorCaso extends VBox {
         this.setAlignment(Pos.CENTER);
 
 
+        Label descripcionRango = new Label();
+        descripcionRango.setFont(Font.font(14));
+        descripcionRango.setText("Tu Rango actual es " + juego.getRangoPolicia());
+
         Label descripcionCaso = new Label();
         descripcionCaso.setFont(Font.font(14));
         descripcionCaso.setText(juego.descripcionCaso());
@@ -35,7 +39,7 @@ public class ContenedorCaso extends VBox {
         botonContinuar.setOnAction(botonContinuarHandler);
 
 
-        this.getChildren().addAll(descripcionCaso, botonContinuar);
+        this.getChildren().addAll(descripcionRango, descripcionCaso, botonContinuar);
 
 
 
