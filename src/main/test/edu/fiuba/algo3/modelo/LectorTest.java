@@ -20,7 +20,7 @@ public class LectorTest {
     public void SeCarganDatosDeLadronCorrectamente() {
         LadronParser ladronParser = new LadronParser();
         ArrayList<Ladron> ladrones = ladronParser.parser("/jsons/ladrones.json");
-        assertEquals(6, ladrones.size());
+        assertEquals(9, ladrones.size());
     }
 
     @Test
@@ -52,7 +52,7 @@ public class LectorTest {
     public void SeCarganDatosDeCObjetosCorrectamente() {
         ObjetoParser parseador = new ObjetoParser();
         ArrayList<Objeto> objetosRobados  =  parseador.parser("/jsons/objetosRobados.json");
-        assertEquals(7,objetosRobados.size());
+        assertEquals(10,objetosRobados.size());
     }
 
     @Test

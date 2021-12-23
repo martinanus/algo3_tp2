@@ -14,6 +14,6 @@ public class ObjetoParserTest {
     public void test01LosObjetosRobadosSeCarganCorrectamente() {
         ObjetoParser parseador = new ObjetoParser();
         ArrayList<Objeto> objetosRobados  =  parseador.parser("/jsons/objetosRobados.json");
-        assertEquals(7,objetosRobados.size());
+        assertEquals(10,objetosRobados.size());
     }
 }

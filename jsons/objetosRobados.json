@@ -47,6 +47,29 @@
       "Rareza":"Comun",
       "CiudadOrigen":"Roma"
     }
+  },
+  {
+    "ObjetoRobado": {
+      "Nombre": "Placa de Oro de youtube",
+      "Rareza":"Comun",
+      "CiudadOrigen":"El Cairo"
+    }
+  },
+  {
+    "ObjetoRobado": {
+      "Nombre": "Placa de Oro de Diamante",
+      "Rareza":"Comun",
+      "CiudadOrigen":"Buenos Aires"
+    }
+  },
+  {
+    "ObjetoRobado": {
+      "Nombre": "Trofeo de Oro de juegos olimpicos de 2000",
+      "Rareza":"Comun",
+      "CiudadOrigen":"Beijing"
+    }
   }
+
+
 
 ]

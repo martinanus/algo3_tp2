@@ -59,6 +59,36 @@
 			"Seña": "Joyeria",
 			"Vehiculo": "Descapotable"
 		}
+	},
+	{
+		"ladron": {
+			"Nombre": "Abraham",
+			"Sexo": "Masculino",
+			"Hobby": "Natación",
+			"Cabello": "Negro",
+			"Seña": "Cicatriz",
+			"Vehiculo": "Moto"
+		}
+	},
+	{
+		"ladron": {
+			"Nombre": "Juan Carlos ",
+			"Sexo": "Masculino",
+			"Hobby": "Paracaidismo",
+			"Cabello": "Negro",
+			"Seña": "Tatuaje",
+			"Vehiculo": "Descapotable"
+		}
+	},
+	{
+		"ladron": {
+			"Nombre": "Miguel Anguel",
+			"Sexo": "Masculino",
+			"Hobby": "Música",
+			"Cabello": "Rojo",
+			"Seña": "Joyas",
+			"Vehiculo": "Deportivo"
+		}
 	}
 ]
 
