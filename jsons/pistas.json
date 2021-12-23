@@ -86,5 +86,21 @@
       "PistasMedia":["Industria Tecnoligica", "Lugar Famoso Templo de Senso-ji","La bandera tiene un circulo rojo" ],
       "PistasDificil":["Turismo","Lugar Famoso Santuario Meiji","Idioma japones"]
     }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Estocolmo",
+      "PistasFacil":["Se marchó con una bolsa llena de coronas suecas","Quería visitar el museo Nobel","Se fue a un país nórdico"],
+      "PistasMedia":["Viajó al principal centro de sedes corporativas en los países nórdicos", "Quería visitar el museo Nobel","Se fue en un avión con una bandera azul y amarilla" ],
+      "PistasDificil":["Viajó al principal centro de sedes corporativas en los países nórdicos","Quería visitar el museo Nobel","Se fue en un avión con una bandera azul y amarilla"]
+    }
+  },
+  {
+    "Pista": {
+      "Ciudad": "Wellington",
+      "PistasFacil":["Se marchó con una bolsa llena de dolares neozelandeses","Quería contemplar el estrecho de Cook desde el monte Victoria.","Se fue a un país de Oceanía"],
+      "PistasMedia":["Estaba interesado en la cultura Maorí", "Se fue a un país situado a 2000 kilómetros al sureste de Australia","Se marchó en un avión con una bandera británica azul que contenía 4 estrellas rojas" ],
+      "PistasDificil":["Se marchó con una bolsa llena de dolares neozelandeses","Se fue a un país situado a 2000 kilómetros al sureste de Australia","Se marchó en un avión con una bandera británica azul que contenía 4 estrellas rojas"]
+    }
   }
 ]

@@ -39,6 +39,7 @@ public class BotonEdificioHandler implements EventHandler<ActionEvent> {
             Label descrPista = new Label();
             descrPista.setText(contenidoEdificio);
             descrPista.setFont(Font.font(14));
+            descrPista.setWrapText(true);
             cuadroAccion.getChildren().add(descrPista);
             relojLabel.setText(juego.mostrarReloj());
 

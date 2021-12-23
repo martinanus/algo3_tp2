@@ -4,7 +4,7 @@
             "Nombre": "Lima",
             "Latitud": -12.04318,
             "Longitud": -77.02824,
-            "Descripcion": "Lima (que proviene del quechua Limaq) es la capital del Perú. Se encuentra situada en la costa central del país, a orillas del Océano Pacífico"
+            "Descripcion": "Lima (que proviene del quechua Limaq) es la capital del Perú. Se encuentra situada en la costa central del país, a orillas del Océano Pacífico."
         }
     },
     {
@@ -20,14 +20,14 @@
             "Nombre": "Ciudad de Mexico",
             "Latitud":19.42847,
             "Longitud":-99.12766,
-            "Descripcion": "La Ciudad de México es la capital del país, de carácter vibrante, multifacético y siempre en movimiento, es el núcleo, político, económico y cultural de la República Mexicana "
+            "Descripcion": "La Ciudad de México es la capital del país, de carácter vibrante, multifacético y siempre en movimiento, es el núcleo, político, económico y cultural de la República Mexicana. "
         }
     },
     {
         "Ciudad":{
             "Nombre": "Madrid",
             "Latitud":40.4165,
-            "Longitud":-3.70256, ,
+            "Longitud":-3.70256,
             "Descripcion": "Madrid, capital de Reino de España y ciudad cosmopolita donde las haya, es uno de los destinos europeos con mejores infraestructuras turísticas. "
         }
     },
@@ -52,7 +52,7 @@
             "Nombre": "Paris",
             "Latitud":48.85341,
             "Longitud":2.3488,
-            "Descripcion": "Capital de Francia y de la región que ocupa, la Isla de Francia, París tiene una población de casi doce millones de habitantes, la más grande de Europa"
+            "Descripcion": "Capital de Francia y de la región que ocupa, la Isla de Francia, París tiene una población de casi doce millones de habitantes, la más grande de Europa."
         }
     },
     {
@@ -85,6 +85,22 @@
             "Latitud":41.89193,
             "Longitud":12.51133,
             "Descripcion": "Roma es una ciudad italiana de 2 815 951 habitantes, capital de la región del Lacio y de Italia.  "
+        }
+    },
+    {
+        "Ciudad":{
+            "Nombre": "Estocolmo",
+            "Latitud":59.32938,
+            "Longitud":18.06871,
+            "Descripcion": "Estocolmo es la capital y ciudad más grande de Suecia, en la que residen 972 647 personas y 2.4 millones en su área metropolitana.  Ha sido poblada por humanos desde la Edad de Piedra, en el sexto milenio antes de Cristo, y fue fundada como ciudad en 1252 por el estadista sueco Birger Jarl.  "
+        }
+    },
+    {
+        "Ciudad":{
+            "Nombre": "Wellington",
+            "Latitud":-41.28664,
+            "Longitud":174.77557,
+            "Descripcion": "Wellington (en maorí: Te Whanganui-a-Tara o Pōneke) es la capital de Nueva Zelanda, así como de la región de Wellington. Está localizada al sur de la isla Norte y es la tercera ciudad más poblada del país, después de Auckland y Christchurch  "
         }
     }
 

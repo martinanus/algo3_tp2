@@ -56,13 +56,13 @@
 			"Sexo": "Femenino",
 			"Hobby": "Tenis",
 			"Cabello": "Castaño",
-			"Seña": "Joyeria",
+			"Seña": "Joyas",
 			"Vehiculo": "Descapotable"
 		}
 	},
 	{
 		"ladron": {
-			"Nombre": "Abraham",
+			"Nombre": "Abraham Osco",
 			"Sexo": "Masculino",
 			"Hobby": "Natación",
 			"Cabello": "Negro",
@@ -72,7 +72,7 @@
 	},
 	{
 		"ladron": {
-			"Nombre": "Juan Carlos ",
+			"Nombre": "Juan Carlos Gomez",
 			"Sexo": "Masculino",
 			"Hobby": "Paracaidismo",
 			"Cabello": "Negro",
@@ -82,7 +82,7 @@
 	},
 	{
 		"ladron": {
-			"Nombre": "Miguel Anguel",
+			"Nombre": "Miguel Angel Buonarroti",
 			"Sexo": "Masculino",
 			"Hobby": "Música",
 			"Cabello": "Rojo",

@@ -79,7 +79,7 @@ public class Entrega3Test {
         ArrayList<Ciudad> ciudades = juego.obtenerCiudades();
 
         assertEquals(4, ciudades123.size());
-        assertEquals(11, ciudades.size());
+        assertEquals(13, ciudades.size());
     }
 
     @Test

@@ -13,7 +13,7 @@ public class CiudadParserTest {
     public void test01LasCiudadesSeCarganCorrectamente() {
         CiudadParser parseador = new CiudadParser();
         ArrayList<Ciudad> ciudades  =  parseador.parser("/jsons/ciudades.json");
-        assertEquals(11,ciudades.size());
+        assertEquals(13,ciudades.size());
     }
 
 }

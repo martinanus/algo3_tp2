@@ -36,7 +36,7 @@ public class LectorTest {
     public void SeCarganDatosDeCiudadesCorrectamente() {
         CiudadParser ciudadParser = new CiudadParser();
         ArrayList<Ciudad> ciudades = ciudadParser.parser("/jsons/ciudades.json");
-        assertEquals(11, ciudades.size());
+        assertEquals(13, ciudades.size());
     }
 
     @Test
