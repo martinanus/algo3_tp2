@@ -17,6 +17,7 @@ public class ContenedorRegistro extends VBox {
     public ContenedorRegistro(Stage stage, AlgoThief juego) {
         super();
         this.setAlignment(Pos.CENTER);
+        this.setSpacing(15);
 
 
         Label nombre = new Label("Ingrese su nombre");

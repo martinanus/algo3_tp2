@@ -16,7 +16,6 @@ public class Descripcion {
     ArrayList<String> pistas;
     int contador;
     ArrayList<String> pistasString;
-    //Iterator<String> iterador;
 
     public Descripcion(String nombre, String sexo, String Hobby, String cabello, String seña, String vehiculo){
             this.nombre = nombre;

@@ -4,13 +4,17 @@ import edu.fiuba.algo3.controlador.BotonContinuarCasoHandler;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 public class ContenedorCaso extends VBox {
 
@@ -20,14 +24,18 @@ public class ContenedorCaso extends VBox {
         super();
         this.setAlignment(Pos.CENTER);
 
+        VBox caja = new VBox();
 
         Label descripcionRango = new Label();
         descripcionRango.setFont(Font.font(14));
         descripcionRango.setText("Tu Rango actual es " + juego.getRangoPolicia());
+        descripcionRango.setStyle("-fx-text-fill: white; -fx-font-size: 16px");
 
         Label descripcionCaso = new Label();
         descripcionCaso.setFont(Font.font(14));
         descripcionCaso.setText(juego.descripcionCaso());
+        descripcionCaso.setStyle("-fx-text-fill: white; -fx-font-size: 16px");
+        descripcionCaso.setWrapText(true);
 
         ContenedorCiudad contenedorCiudad = new ContenedorCiudad(juego, stage);
         Scene sceneCiudad = new Scene(contenedorCiudad, 640, 480);
@@ -38,8 +46,22 @@ public class ContenedorCaso extends VBox {
         BotonContinuarCasoHandler botonContinuarHandler = new BotonContinuarCasoHandler(sceneCiudad, stage);
         botonContinuar.setOnAction(botonContinuarHandler);
 
+        caja.getChildren().addAll(descripcionRango, descripcionCaso, botonContinuar);
+        caja.setAlignment(Pos.CENTER);
+        caja.setPadding(new Insets(15, 15, 15, 15));
+        caja.setSpacing(3);
 
-        this.getChildren().addAll(descripcionRango, descripcionCaso, botonContinuar);
+        File file = new File("imgs/interpol.jpeg");
+        BackgroundImage myBI= new BackgroundImage(new Image(file.toURI().toString(),
+                640,480,false,true),
+                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+
+        this.setBackground(new Background(myBI));
+
+
+        this.getChildren().addAll(caja);
+        this.setAlignment(Pos.BOTTOM_CENTER);
 
 
 

@@ -54,7 +54,7 @@ public class Caso {
     }
 
     public void finalizar() {
-        this.algoThief.finalizar(this.objeto, this.ladron);
+        this.algoThief.finalizar(this.objeto);
     }
 
     public void finalizarSinExito() {

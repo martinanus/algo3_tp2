@@ -8,6 +8,7 @@ import edu.fiuba.algo3.modelo.tiempo.Tiempo;
 import edu.fiuba.algo3.modelo.tiempo.TiempoExcedidoError;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Objects;
 
 public class AlgoThief {
@@ -30,7 +31,7 @@ public class AlgoThief {
     }
 
     public void generarPartida() {
-        Ladron ladron= ladrones.get(0);
+        Ladron ladron = ladrones.get((int)(Math.random()* ladrones.size()));
         this.ciudades = cargadorDatos.cargarCiudades();
         cargadorDatos.cargarPistas(ciudades);
         jugador.generarCaso(objetosRobados,ciudades,ladron, this); //refactor nombre
@@ -77,8 +78,7 @@ public class AlgoThief {
         }
     }
 
-    public void finalizar(Objeto objetoRobado, Ladron ladron) {
-        this.ladrones.remove(ladron);
+    public void finalizar(Objeto objetoRobado) {
         this.objetosRobados.remove(objetoRobado);
         this.reloj = new Reloj(new Tiempo(154));
     }

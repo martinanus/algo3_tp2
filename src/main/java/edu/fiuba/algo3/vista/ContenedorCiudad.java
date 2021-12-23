@@ -44,6 +44,8 @@ public class ContenedorCiudad extends HBox {
         cuadroCiudadFecha.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
 
+        cuadroCiudadFecha.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+
 
 
         File file = new File("imgs/"+ juego.mostrarCiudadActual()  +".jpg");
