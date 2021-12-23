@@ -25,6 +25,10 @@ public class Reloj {
             throw new TiempoExcedidoError();
         }
     }
+    public void restaTiempo(Tiempo tiempo){
+
+
+    }
 
     public Tiempo tiempoTranscurrido() {
         return tiempoTranscurrido;

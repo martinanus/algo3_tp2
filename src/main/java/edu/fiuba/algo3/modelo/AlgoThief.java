@@ -10,7 +10,12 @@ import edu.fiuba.algo3.modelo.tiempo.TiempoExcedidoError;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
-
+//boton que se puede descansar con un pais de la ciudad en la que esta es X
+//cuando el policia descansa el policia recupera tiempo, lo que avanzo el reloj vuelve para atras
+//Si la letra es a recupera media hora, tambien puede descansar en una ciudad que empieze con m
+//Si la letra es b recupera una hora
+// si la ciudad es otra no aplica .
+//El boton de descansar se puede hacer si la letra de las ciudades es a y b .
 public class AlgoThief {
     private ArrayList<Ciudad> ciudades;
     private ArrayList<Objeto> objetosRobados;
@@ -35,6 +40,7 @@ public class AlgoThief {
         this.ciudades = cargadorDatos.cargarCiudades();
         cargadorDatos.cargarPistas(ciudades);
         jugador.generarCaso(objetosRobados,ciudades,ladron, this); //refactor nombre
+        this.jugador.reiniciarOrden();
     }
 
 
@@ -85,7 +91,6 @@ public class AlgoThief {
 
     public void finalizar() {
         this.reloj = new Reloj(new Tiempo(154));
-
     }
 
     public String descripcionCiudad() {

@@ -147,6 +147,10 @@ public class Policia {
     public String getNombreLadron() {
         return this.caso.getNombreLadron();
     }
+
+    public void reiniciarOrden(){
+        this.orden = new OrdenNoEmitida();
+    }
 }
 
 
