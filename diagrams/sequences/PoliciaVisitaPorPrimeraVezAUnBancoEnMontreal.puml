@@ -1,0 +1,22 @@
+@startuml
+skinparam style strictuml
+title:  Un policía visita por primera vez a un banco en montreal
+actor TestCase
+
+participant "policia : Policia" as policia
+participant "montreal : Ciudad" as ciudad
+participant "banco : Edificio" as banco
+participant "reloj : Reloj" as reloj
+participant "tiempo : Tiempo" as tiempo
+
+TestCase -> policia: visitar(banco, reloj): Interactuable
+activate policia
+policia -> ciudad: visitar(banco, reloj): Interactuable
+activate ciudad
+ciudad -> ciudad: buscarEdificio(banco)
+ciudad -> banco: visitar(reloj): Interactuable
+activate banco
+banco -> tiempo ** : Tiempo(1)
+banco -> reloj: incrementar(tiempo)
+policia -> interactuable : interactuar(policia,reloj) : void
+@enduml

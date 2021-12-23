@@ -1,0 +1,13 @@
+@startuml
+skinparam style strictuml
+title:  Caso en el que el edificio contiene un arma de fuego
+
+participant "policia : Policia" as policia
+participant "reloj : Reloj" as reloj
+participant "tiempoHerida : Tiempo" as tiempoHerida
+participant "armaDeFuego : ArmaDeFuego" as arma
+
+policia -> arma : interactuar(policia,reloj) : void
+arma -> tiempoHerida ** : Tiempo(4)
+arma -> reloj: incrementar(tiempoHerida)
+@enduml

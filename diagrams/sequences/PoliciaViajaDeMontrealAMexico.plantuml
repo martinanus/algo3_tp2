@@ -12,7 +12,6 @@ participant " mexico : Ciudad" as mexico
 participant " posMontreal : Posicion" as posicionMontreal
 participant " posMexico : Posicion" as posicionMexico
 participant "reloj : Reloj" as reloj
-participant "tiempoTranscurrido :Tiempo" as tiempoTranscurrido
 participant "tiempo : Tiempo" as tiempo
 
 TestCase -> policia: viajar(mexico, reloj): void
@@ -34,10 +33,4 @@ return 3728.32 km / 900 km/hora = 4 horas
 rango -> tiempo ** :Tiempo(4)
 activate reloj
 rango -> reloj: incrementar(tiempo): void
-activate tiempoTranscurrido
-reloj -> tiempoTranscurrido:incrementar()
-reloj -> tiempoTranscurrido:actualizar()
-reloj -> reloj:horaDeDormir()
-reloj -> reloj: verificarTiempoExcedido()
-
 @enduml

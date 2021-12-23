@@ -1,0 +1,31 @@
+@startuml
+skinparam style strictuml
+title:  Incrementar el reloj un cierto tiempo
+actor TestCase
+
+participant "reloj : Reloj" as reloj
+participant "tiempo : Tiempo" as tiempo
+participant "tiempoTranscurrido : Tiempo" as tiempoTranscurrido
+participant "diaActual:Dia" as dia
+participant "horaActual:Hora" as hora
+
+TestCase -> reloj: incrementar(tiempo):
+activate reloj
+activate tiempoTranscurrido
+reloj -> tiempoTranscurrido:incrementar(tiempo)
+tiempoTranscurrido -> tiempo:incrementar(horas)
+reloj -> tiempoTranscurrido:actualizar()
+tiempoTranscurrido -> tiempoTranscurrido:verificarDia(horas+horaInicial)
+tiempoTranscurrido -> dia:actualizar(horas+horaInicial,horaActual)
+dia -> hora:actualizar(horas+horaInicial,horaMin)
+reloj -> reloj:horaDeDormir()
+reloj -> tiempoTranscurrido: horaDeDormir(reloj)
+alt horaActual.esHoraDeDormir()
+    tiempoTranscurrido -> reloj:incrementar(tiempo)
+end
+reloj -> reloj: verificarTiempoExcedido()
+alt tiempoTranscurrido.esMayor(tiempoMax)
+    reloj -> tiempoExcedidoError **
+end
+
+@enduml

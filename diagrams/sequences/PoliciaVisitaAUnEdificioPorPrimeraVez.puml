@@ -1,15 +1,13 @@
 @startuml
 skinparam style strictuml
-title:  Un policia novato entra por primera vez a un banco en montreal y recibe una pista
+title:  Un policia novato visita por primera vez a un banco en montreal y recibe una pista
 actor TestCase
 
 participant "policia : Policia" as policia
 participant "montreal : Ciudad" as ciudad
 participant "banco : Edificio" as banco
 participant "reloj : Reloj" as reloj
-participant "tiempo : Tiempo" as tiempo
 participant "pista : Pista" as pista
-participant "tiempoTranscurrido : Tiempo" as tiempoTranscurrido
 
 TestCase -> policia: visitar(banco, reloj): Interactuable
 activate policia
@@ -18,14 +16,8 @@ activate ciudad
 ciudad -> ciudad: buscarEdificio(banco)
 ciudad -> banco: visitar(reloj): Interactuable
 activate banco
-banco -> tiempo ** : Tiempo(1)
 activate reloj
 banco -> reloj: incrementar(tiempo):
-activate tiempoTranscurrido
-reloj -> tiempoTranscurrido:incrementar()
-reloj -> tiempoTranscurrido:actualizar()
-reloj -> reloj:horaDeDormir()
-reloj -> reloj:verificarTiempoExcedido()
 banco --> ciudad:pista
 ciudad -->policia:pista
 

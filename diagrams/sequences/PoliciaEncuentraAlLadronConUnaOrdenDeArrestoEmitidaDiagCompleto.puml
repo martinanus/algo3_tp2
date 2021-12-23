@@ -1,0 +1,53 @@
+@startuml
+skinparam style strictuml
+title:  Un policía visita por primera vez a un banco en montreal y encuentra al ladrón con una orden de arresto emitida
+actor TestCase
+
+participant "policia : Policia" as policia
+participant "montreal : Ciudad" as ciudad
+participant "banco : Edificio" as banco
+participant "reloj : Reloj" as reloj
+participant "tiempo : Tiempo" as tiempo
+participant "ladron : Ladron" as ladron
+participant "orden : OrdenEmitida" as ordenArresto
+participant "tiempoTranscurrido : Tiempo" as tiempoTranscurrido
+participant "caso : Caso" as caso
+participant "juego : AlgoThief" as juego
+participant "diaActual:Dia" as dia
+participant "horaActual:Hora" as hora
+TestCase -> policia: visitar(banco, reloj): Interactuable
+activate policia
+policia -> ciudad: visitar(banco, reloj): Interactuable
+activate ciudad
+ciudad -> ciudad: buscarEdificio(banco)
+ciudad -> banco: visitar(reloj): Interactuable
+activate banco
+banco -> tiempo ** : Tiempo(1)
+banco -> reloj: incrementar(tiempo):
+activate reloj
+activate tiempoTranscurrido
+reloj -> tiempoTranscurrido:incrementar(tiempo)
+tiempoTranscurrido -> tiempo:incrementar(horas)
+reloj -> tiempoTranscurrido:actualizar()
+tiempoTranscurrido -> tiempoTranscurrido:verificarDia(horas+horaInicial)
+tiempoTranscurrido -> dia:actualizar(horas+horaInicial,horaActual)
+dia -> hora:actualizar(horas+horaInicial,horaMin)
+reloj -> reloj:horaDeDormir()
+reloj -> tiempoTranscurrido: horaDeDormir(reloj)
+alt horaActual.esHoraDeDormir()
+    tiempoTranscurrido -> reloj:incrementar(tiempo)
+end
+reloj -> reloj: verificarTiempoExcedido()
+alt tiempoTranscurrido.esMayor(tiempoMax)
+    reloj -> tiempoExcedidoError **
+end
+policia -> ladron : interactuar(policia,reloj) : void
+activate ladron
+ladron -> policia : arrestar() : void
+policia -> ordenArresto : arrestar(policia)
+activate ordenArresto
+ordenArresto -> policia: sumarArresto(1)
+policia -> caso:finalizar()
+caso -> juego:finalizar(caso)
+
+@enduml

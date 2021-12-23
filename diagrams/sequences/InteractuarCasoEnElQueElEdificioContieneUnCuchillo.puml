@@ -1,0 +1,13 @@
+@startuml
+skinparam style strictuml
+title:  Caso en el que el edificio contiene un cuchillo
+
+participant "policia : Policia" as policia
+participant "reloj : Reloj" as reloj
+participant "tiempoHerida : Tiempo" as tiempoHerida
+participant "cuchillo : Cuchillo" as cuchillo
+
+policia -> cuchillo : interactuar(policia,reloj) : void
+cuchillo -> tiempoHerida ** : Tiempo(2)
+cuchillo -> reloj: incrementar(tiempoHerida)
+@enduml

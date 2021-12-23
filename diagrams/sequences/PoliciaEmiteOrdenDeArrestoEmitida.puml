@@ -1,0 +1,20 @@
+@startuml
+skinparam style strictuml
+title:  Policia emite orden de arresto para un ladron encontrado
+actor TestCase
+
+participant "computadora : Computadora" as computadora
+participant "ladronSospechoso : Ladron" as ladronSopechoso
+participant "reloj : Reloj" as reloj
+participant "tiempoEmitir : Tiempo" as tiempoEmitir
+participant "ordenEmitida : OrdenEmitida" as ordenEmitida
+
+TestCase -> policia:EmitirOrdenDeArresto(computadora,ladronSopechoso,reloj)
+policia -> computadora:emitirOrdenDeArresto(ladron, reloj, ladron)
+computadora -> tiempoEmitir **: Tiempo(3)
+computadora -> reloj:incrementar(tiempoEmitir)
+computadora -> ordenEmitida **:OrdenEmitida()
+computadora --> policia : ordenEmitida
+policia --> TestCase : ordenEmitida
+
+@enduml
