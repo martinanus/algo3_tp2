@@ -2,7 +2,6 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.interactuable.ArmaDeFuego;
 import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
-import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.interactuable.Pista;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
@@ -29,8 +28,8 @@ public class InteractuableTest {
 
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
         AlgoThief juego = new AlgoThief();
-        Caso caso = new Caso(juego);
-        policia.setCaso(caso);
+        CasoAsignado casoAsignado = new CasoAsignado(juego);
+        policia.setCaso(casoAsignado);
         policia.visitar(banco, reloj);
         assertEquals(new Tiempo(5),reloj.tiempoTranscurrido());
 
@@ -51,8 +50,8 @@ public class InteractuableTest {
 
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
         AlgoThief juego = new AlgoThief();
-        Caso caso = new Caso(juego);
-        policia.setCaso(caso);
+        CasoAsignado casoAsignado = new CasoAsignado(juego);
+        policia.setCaso(casoAsignado);
         policia.visitar(banco, reloj);
         assertEquals(new Tiempo(3),reloj.tiempoTranscurrido());
 
@@ -73,8 +72,8 @@ public class InteractuableTest {
 
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
         AlgoThief juego = new AlgoThief();
-        Caso caso = new Caso(juego);
-        policia.setCaso(caso);
+        CasoAsignado casoAsignado = new CasoAsignado(juego);
+        policia.setCaso(casoAsignado);
         policia.visitar(banco, reloj);
         assertEquals(new Tiempo(1),reloj.tiempoTranscurrido());
 

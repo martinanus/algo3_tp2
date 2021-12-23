@@ -4,9 +4,6 @@ import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.interactuable.Cuchillo;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.interactuable.Pista;
-import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
-import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
-import edu.fiuba.algo3.modelo.rango.Detective;
 import edu.fiuba.algo3.modelo.rango.Investigador;
 import edu.fiuba.algo3.modelo.rango.Novato;
 import edu.fiuba.algo3.modelo.rango.Rango;
@@ -104,8 +101,8 @@ public class Entrega2Test {
 
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana
         AlgoThief juego = new AlgoThief();
-        Caso caso = new Caso(juego);
-        policia.setCaso(caso);
+        CasoAsignado casoAsignado = new CasoAsignado(juego);
+        policia.setCaso(casoAsignado);
         policia.visitar(banco, reloj);
         assertEquals(new Tiempo(1),reloj.tiempoTranscurrido());
 
@@ -122,9 +119,9 @@ public class Entrega2Test {
         Descripcion descripcion1 = new Descripcion("","Masculino","Croquet","","","");
         Ladron ladron = new Ladron(descripcion1);
         AlgoThief juego = new AlgoThief();
-        Caso caso = new Caso(juego);
-        caso.setLadron(ladron);
-        policia.setCaso(caso);
+        CasoAsignado casoAsignado = new CasoAsignado(juego);
+        casoAsignado.setLadron(ladron);
+        policia.setCaso(casoAsignado);
 
         policia.sumarArresto(4);  //rango deberia conocer la # de arrestos
         Reloj reloj = new Reloj(new Tiempo(168.0)); //hs en 1 semana

@@ -4,7 +4,6 @@ import edu.fiuba.algo3.modelo.interactuable.Interactuable;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.objeto.Objeto;
 import edu.fiuba.algo3.modelo.ordenesArresto.EstadoOrdenArresto;
-import edu.fiuba.algo3.modelo.ordenesArresto.OrdenEmitida;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitida;
 import edu.fiuba.algo3.modelo.ordenesArresto.OrdenNoEmitidadError;
 import edu.fiuba.algo3.modelo.rango.Novato;
@@ -24,12 +23,14 @@ public class Policia {
 
     public Policia(Ciudad ciudad) {
         ciudadActual = ciudad;
+        caso = new CasoNoAsignado();
     }
 
     public Policia(Ciudad ciudad, Rango rango) {
         ciudadActual = ciudad;
         this.rango = rango;
         orden = new OrdenNoEmitida();
+        caso = new CasoNoAsignado();
     }
 
     public Policia(Rango rangoInicial) {
@@ -39,15 +40,18 @@ public class Policia {
     public Policia(String nombre) {
         this.rango = new Novato();
         this.nombre = nombre;
+        caso = new CasoNoAsignado();
     }
     public Policia(String nombre,Rango rangoInicial) {
         this.rango = rangoInicial;
         this.nombre = nombre;
+        caso = new CasoNoAsignado();
     }
 
     public Policia() {
         this.rango = new Novato();
         this.nombre = "";
+        caso = new CasoNoAsignado();
     }
 
     public Interactuable visitar(Edificio edificio , Reloj reloj ){
@@ -96,10 +100,10 @@ public class Policia {
 
 
     public void generarCaso(ArrayList<Objeto> objetosRobados, ArrayList<Ciudad> ciudades,Ladron ladron, AlgoThief algoThief) {
-        Caso unCaso =  rango.generarCaso(objetosRobados, ciudades,ladron, algoThief);
-        unCaso.completarListasCiudadeDestino(ciudades);
-        this.ciudadActual= (unCaso.getCiudadOrigen());
-        this.setCaso(unCaso);
+        Caso caso =  rango.generarCaso(objetosRobados, ciudades,ladron, algoThief);
+        caso.completarListasCiudadeDestino(ciudades);
+        this.ciudadActual= (caso.getCiudadOrigen());
+        this.setCaso(caso);
 
     }
 
@@ -120,7 +124,7 @@ public class Policia {
     }
 
     public void setCaso(Caso caso){
-        this.caso= caso;
+        this.caso = caso;
     }
 
     public Ciudad getCiudadActual() {
