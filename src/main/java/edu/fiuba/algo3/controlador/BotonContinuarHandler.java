@@ -37,7 +37,7 @@ public class BotonContinuarHandler implements EventHandler<ActionEvent> {
             this.textField.requestFocus();
 
         } else {
-            Policia policia = new Policia(textField.getText(), new Detective());
+            Policia policia = new Policia(textField.getText(), new Novato());
             juego.setPolicia(policia);
             juego.generarPartida();
             ContenedorCaso contenedorCaso = new ContenedorCaso(miStage, juego);
