@@ -38,7 +38,7 @@ abstract class Caso {
  + finalizarSinExito() : void
 }
 
-interface CasoNoAsignado {
+class CasoNoAsignado {
  + cargarEdificios() : void
  + cargarPistasLadron() : void
  + finalizar() : void
