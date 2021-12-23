@@ -38,4 +38,8 @@ public class Ladron implements Interactuable{
     public String getNombre() {
         return this.descripcion.getNombre();
     }
+
+    public String getSexo() {
+        return this.descripcion.getSexo();
+    }
 }

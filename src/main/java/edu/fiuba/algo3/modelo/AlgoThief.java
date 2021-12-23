@@ -130,5 +130,12 @@ public class AlgoThief {
         return this.jugador.mostrarRango();
     }
 
+    public String getNombrePolicia() {
+        return this.jugador.getNombre();
+    }
 
+
+    public String getNombreLadron() {
+        return this.jugador.getNombreLadron();
+    }
 }

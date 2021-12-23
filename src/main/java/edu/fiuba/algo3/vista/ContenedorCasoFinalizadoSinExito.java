@@ -9,8 +9,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class ContenedorCasoFinalizado extends VBox {
-    public ContenedorCasoFinalizado(Stage stage, AlgoThief juego, String mensaje) {
+public class ContenedorCasoFinalizadoSinExito extends VBox {
+    public ContenedorCasoFinalizadoSinExito(Stage stage, AlgoThief juego, String mensaje) {
         super();
         this.setAlignment(Pos.CENTER);
         this.setSpacing(40);

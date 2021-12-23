@@ -128,9 +128,10 @@ public class Caso {
 
 
     public String getDescripcion() {
-        return "El objeto " + objeto.getNombre() + " ha sido robado en la ciudad de " + objeto.getNombreCiudad()
-                + ".\nTenes hasta el Domingo 17hs para recuperar el objeto. \n" +
-                "¡Buena suerte!";
+        return "El objeto " + objeto.getNombre() + " ha sido robado en la ciudad de " + objeto.getNombreCiudad() +
+                ". El sospechoso es de sexo " + ladron.getSexo() + ".\n"
+                + "Tenes hasta el Domingo 17hs para recuperar el objeto.\n" +
+                 "¡Buena suerte " + algoThief.getNombrePolicia() + "!";
     }
 
     public String getNombreLadron() {

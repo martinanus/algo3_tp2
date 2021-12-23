@@ -3,13 +3,12 @@ package edu.fiuba.algo3.controlador;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.CasoFinalizadoSinExitoError;
 import edu.fiuba.algo3.modelo.Descripcion;
-import edu.fiuba.algo3.vista.ContenedorCasoFinalizado;
+import edu.fiuba.algo3.vista.ContenedorCasoFinalizadoSinExito;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -50,11 +49,12 @@ public class BotonComputarHandler implements EventHandler<ActionEvent> {
             juego.generarOrdenDeArresto();
             cuadroAccion.getChildren().clear();
             Label mensajeOrden = new Label(juego.getMensajeOrden());
+            mensajeOrden.setWrapText(true);
             cuadroAccion.getChildren().add(mensajeOrden);
             labelFecha.setText(juego.mostrarReloj());
         }catch( CasoFinalizadoSinExitoError e) {
             String mensaje = "Misión Fallida";
-            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego, mensaje);
+            ContenedorCasoFinalizadoSinExito contenedorCasoFinalizado = new ContenedorCasoFinalizadoSinExito(stage, juego, mensaje);
             Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
             stage.setScene(sceneCasoFinalizado);
 

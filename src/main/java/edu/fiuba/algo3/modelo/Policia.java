@@ -139,6 +139,14 @@ public class Policia {
     public String mostrarRango() {
         return this.rango.mostrar();
     }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public String getNombreLadron() {
+        return this.caso.getNombreLadron();
+    }
 }
 
 

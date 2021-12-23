@@ -2,8 +2,7 @@ package edu.fiuba.algo3.controlador;
 
 import edu.fiuba.algo3.modelo.CasoFinalizadoSinExitoError;
 import edu.fiuba.algo3.modelo.AlgoThief;
-import edu.fiuba.algo3.vista.ContenedorCasoFinalizado;
-import edu.fiuba.algo3.vista.ContenedorPantallaInicio;
+import edu.fiuba.algo3.vista.ContenedorCasoFinalizadoSinExito;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -45,7 +44,7 @@ public class BotonDestinoHandler implements EventHandler<ActionEvent> {
         try{
             juego.viajar(nombreCiudad);
         }catch( CasoFinalizadoSinExitoError e) {
-            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego, "Mision Fallida");
+            ContenedorCasoFinalizadoSinExito contenedorCasoFinalizado = new ContenedorCasoFinalizadoSinExito(stage, juego, "Mision Fallida");
             Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
             stage.setScene(sceneCasoFinalizado);
 

@@ -2,8 +2,8 @@ package edu.fiuba.algo3.controlador;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.CasoFinalizadoSinExitoError;
-import edu.fiuba.algo3.modelo.interactuable.Interactuable;
-import edu.fiuba.algo3.vista.ContenedorCasoFinalizado;
+import edu.fiuba.algo3.vista.ContenedorCasoFinalizadoConExito;
+import edu.fiuba.algo3.vista.ContenedorCasoFinalizadoSinExito;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -47,15 +47,14 @@ public class BotonEdificioHandler implements EventHandler<ActionEvent> {
                     throw new CasoFinalizadoSinExitoError();
                 }
                 else {
-                    String mensaje = "Mision Completada";
-                    ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego, mensaje);
-                    Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
+                    ContenedorCasoFinalizadoConExito contenedorCasoFinalizadoConExito = new ContenedorCasoFinalizadoConExito(stage, juego);
+                    Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizadoConExito, 640, 480);
                     stage.setScene(sceneCasoFinalizado);
                 }
             }
         }catch( CasoFinalizadoSinExitoError e) {
             String mensaje = "Mision Fallida";
-            ContenedorCasoFinalizado contenedorCasoFinalizado = new ContenedorCasoFinalizado(stage, juego, mensaje);
+            ContenedorCasoFinalizadoSinExito contenedorCasoFinalizado = new ContenedorCasoFinalizadoSinExito(stage, juego, mensaje);
             Scene sceneCasoFinalizado = new Scene(contenedorCasoFinalizado, 640, 480);
             stage.setScene(sceneCasoFinalizado);
 
