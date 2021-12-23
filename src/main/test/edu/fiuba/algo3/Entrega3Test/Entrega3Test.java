@@ -1,5 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.Entrega3Test;
 
+import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.interactuable.Ladron;
 import edu.fiuba.algo3.modelo.lector.ArchivoNoEncontradoError;
 import edu.fiuba.algo3.modelo.rango.*;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class AlgoThiefTest {
+public class Entrega3Test {
 
     @Test
     public void test01SeCreaUnCasoYSeVisitaLos3EdificiosDeLaCiudadOrigen(){
@@ -37,7 +38,6 @@ public class AlgoThiefTest {
         juego.cargarDescripcion(new Descripcion("Masculino","Alpinismo","","Anillo",""));
 
         juego.generarOrdenDeArresto();
-        System.out.println(juego.getMensajeOrden());
 
         assertEquals(new Tiempo(3), juego.getReloj().tiempoTranscurrido());
     }

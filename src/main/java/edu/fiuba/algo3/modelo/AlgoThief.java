@@ -64,7 +64,6 @@ public class AlgoThief {
 
     public void cargarDescripcion(Descripcion descripcion) {
         this.descripcionSospechoso = descripcion;
-        System.out.println(this.descripcionSospechoso.getSexo());
 
     }
 

@@ -6,6 +6,7 @@ import edu.fiuba.algo3.controlador.BotonVerHandler;
 import edu.fiuba.algo3.controlador.BotonViajarHandler;
 import edu.fiuba.algo3.modelo.AlgoThief;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -64,6 +65,8 @@ public class ContenedorCiudad extends HBox {
         cuadroAccion.setPrefSize(320, 430);
         cuadroAccion.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
+        cuadroAccion.setPadding(new Insets(15, 15, 15, 15));
+        cuadroAccion.setSpacing(15);
 
 
 

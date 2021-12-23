@@ -88,8 +88,6 @@ public class Policia {
 
     public void emitirOrdenArresto(Computadora computadora, Ladron ladron, Reloj reloj){
         orden = computadora.emitirOrdenDeArresto2(ladron, reloj, this.caso.getLadron());
-        if (orden instanceof OrdenEmitida)
-            System.out.println(true);
     }
 
     public Rango rangoPolicia() {
