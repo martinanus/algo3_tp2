@@ -44,7 +44,7 @@ public class ContenedorCiudad extends HBox {
         cuadroCiudadFecha.setBorder(new Border(new BorderStroke(Color.BLACK,
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
 
-        cuadroCiudadFecha.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+        cuadroCiudadFecha.setBackground(new Background(new BackgroundFill(Color.DARKGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
 
 
 
@@ -69,6 +69,7 @@ public class ContenedorCiudad extends HBox {
                 BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(2))));
         cuadroAccion.setPadding(new Insets(15, 15, 15, 15));
         cuadroAccion.setSpacing(15);
+        cuadroAccion.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
 
 
 
