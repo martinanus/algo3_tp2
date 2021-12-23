@@ -14,9 +14,31 @@ Objeto <|-- ObjetoMuyValioso
 Caso o-- AlgoThief
 Caso o-- Objeto
 Caso o-- Ladron
-Caso o-- Ciudades
+Caso <|-- CasoAsignado
+Caso <|-- CasoNoAsignado
+Policia o-"1" Caso
+AlgoThief ->"1" Policia
 
- class Caso {
+class Policia {
+    + visitar(e : Edificio, r : Reloj): Interactuable
+    + viajar(c : Ciudad, r : Reloj): void
+}
+
+abstract class Caso {
+ + {abstract} cargarEdificios() : void
+ + {abstract} cargarPistasLadron() : void
+ + {abstract} finalizar() : void
+ + {abstract} finalizarSinExito() : void
+}
+
+ class CasoAsignado {
+ + cargarEdificios() : void
+ + cargarPistasLadron() : void
+ + finalizar() : void
+ + finalizarSinExito() : void
+}
+
+interface CasoNoAsignado {
  + cargarEdificios() : void
  + cargarPistasLadron() : void
  + finalizar() : void
