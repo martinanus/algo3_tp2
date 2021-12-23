@@ -27,14 +27,13 @@ public class ContenedorCaso extends VBox {
         VBox caja = new VBox();
 
         Label descripcionRango = new Label();
-        descripcionRango.setFont(Font.font(14));
         descripcionRango.setText("Tu Rango actual es " + juego.getRangoPolicia());
-        descripcionRango.setStyle("-fx-text-fill: white; -fx-font-size: 16px");
+        descripcionRango.setStyle("-fx-text-fill: white; -fx-font-size: 15px");
 
         Label descripcionCaso = new Label();
         descripcionCaso.setFont(Font.font(14));
         descripcionCaso.setText(juego.descripcionCaso());
-        descripcionCaso.setStyle("-fx-text-fill: white; -fx-font-size: 16px");
+        descripcionCaso.setStyle("-fx-text-fill: white; -fx-font-size: 15px");
         descripcionCaso.setWrapText(true);
 
         ContenedorCiudad contenedorCiudad = new ContenedorCiudad(juego, stage);
@@ -48,8 +47,8 @@ public class ContenedorCaso extends VBox {
 
         caja.getChildren().addAll(descripcionRango, descripcionCaso, botonContinuar);
         caja.setAlignment(Pos.CENTER);
-        caja.setPadding(new Insets(15, 15, 15, 15));
-        caja.setSpacing(3);
+        caja.setPadding(new Insets(10,10,10, 10));
+        caja.setSpacing(2);
 
         File file = new File("imgs/interpol.jpeg");
         BackgroundImage myBI= new BackgroundImage(new Image(file.toURI().toString(),
