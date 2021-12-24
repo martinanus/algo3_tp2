@@ -1,11 +1,11 @@
 @startuml
 skinparam style strictuml
-title:  Caso en el que el edificio contiene un ladrón y el policía tiene un orden de arresto emitido
+title:  Caso en el que el edificio contiene un ladrón y el policía tiene un orden de arresto emitido con caso asignado
 
 participant "policia : Policia" as policia
 participant "ladron : Ladron" as ladron
 participant "orden : OrdenEmitida" as ordenArresto
-participant "caso : Caso" as caso
+participant "caso : CasoAsignado" as caso
 participant "juego : AlgoThief" as juego
 
 policia -> ladron : interactuar(policia,reloj) : void
