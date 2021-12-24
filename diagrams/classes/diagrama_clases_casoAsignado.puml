@@ -14,9 +14,10 @@ class AlgoThief {
  + finalizar(Objeto objetoRobado): void
 }
 
-class Objeto {
+abstract class Objeto {
     -  nombre : String
     -  nombreCiudad : String
+    + {abstract} generarRecorrido() : void
 
 }
 
