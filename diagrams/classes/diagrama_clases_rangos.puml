@@ -1,37 +1,46 @@
 @startuml
 
 interface Rango {
-    {abstract} + viajar(c: Ciudad,  r : Reloj) : void
-    + {abstract} verificarCantidadArrestos(arrestos : int): Rango
+    {abstract} +viajar(ciudadOrigen : Ciudad, ciudadDestino : Ciudad, reloj : Reloj) : void
+    {abstract} +sumarArrestos(arrestoASumar : int) : Rango
+    {abstract} +generarCaso(objetosRobados : ArrayList<Objeto>, ciudades : ArrayList<Objeto>, ladron : Ladron , algoThief : AlgoThief) : CasoAsignado
 }
 
 class Novato {
-    - velocidad
-    + viajar(c: Ciudad,  r : Reloj) : void
-    + verificarCantidadArrestos(arrestos : int): Rango
+    -velocidad : double
+    -contadorArrestos : int
+    -rango : String
+    +viajar(ciudadOrigen : Ciudad, ciudadDestino : Ciudad, reloj : Reloj) : void
+    +sumarArrestos(arrestoASumar : int) : Rango
+    +generarCaso(objetosRobados : ArrayList<Objeto>, ciudades : ArrayList<Objeto>, ladron : Ladron , algoThief : AlgoThief) : CasoAsignado
 }
 
 class Detective {
-    - velocidad
-    + viajar(c: Ciudad,  r : Reloj) : void
-    + verificarCantidadArrestos(arrestos : int): Rango
+    -velocidad : double
+    -contadorArrestos : int
+    +viajar(ciudadOrigen : Ciudad, ciudadDestino : Ciudad, reloj : Reloj) : void
+    +sumarArrestos(arrestoASumar : int) : Rango
+    +generarCaso(objetosRobados : ArrayList<Objeto>, ciudades : ArrayList<Objeto>, ladron : Ladron , algoThief : AlgoThief) : CasoAsignado
 }
 
 class Investigador {
-    - velocidad
-    + viajar(c: Ciudad,  r : Reloj) : void
-    + verificarCantidadArrestos(arrestos : int): Rango
+    -velocidad : double
+    -contadorArrestos : int
+    +viajar(ciudadOrigen : Ciudad, ciudadDestino : Ciudad, reloj : Reloj) : void
+    +sumarArrestos(arrestoASumar : int) : Rango
+    +generarCaso(objetosRobados : ArrayList<Objeto>, ciudades : ArrayList<Objeto>, ladron : Ladron , algoThief : AlgoThief) : CasoAsignado
 }
 
 class Sargento{
-    - velocidad
-    + viajar(c: Ciudad,  r : Reloj) : void
-    + verificarCantidadArrestos(arrestos : int): Rango
+    -velocidad : double
+    +viajar(ciudadOrigen : Ciudad, ciudadDestino : Ciudad, reloj : Reloj) : void
+    +sumarArrestos(arrestoASumar : int) : Rango
+    +generarCaso(objetosRobados : ArrayList<Objeto>, ciudades : ArrayList<Objeto>, ladron : Ladron , algoThief : AlgoThief) : CasoAsignado
 }
 
 Novato ..up|> Rango
 Detective ..up|> Rango
-Investigador ..up|> Rango
-Sargento ..up|> Rango
+Investigador ..down|> Rango
+Sargento ..down|> Rango
 
 @enduml
