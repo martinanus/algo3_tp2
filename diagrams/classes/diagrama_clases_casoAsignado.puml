@@ -55,11 +55,11 @@ class Descripcion{
 
 }
 
-AlgoThief --upo CasoAsignado
-Objeto --upo CasoAsignado
-Ciudad --upo CasoAsignado
-Ladron --upo CasoAsignado
-Descripcion --upo Ladron
-DescripcionCiudad --upo Ciudad
+AlgoThief "1" --upo  CasoAsignado
+Objeto "1" --upo CasoAsignado
+Ciudad "3...n" --upo CasoAsignado
+Ladron "1"--upo CasoAsignado
+Descripcion "1" --upo Ladron
+DescripcionCiudad "1" --upo Ciudad
 
 @enduml
