@@ -1,0 +1,64 @@
+@startuml
+
+class CasoAsignado {
+    + finalizar() : void
+    + finalizarSinExito() : void
+
+    + cargarEdificios() : void
+    + cargarPistasLadron() : void
+}
+
+class AlgoThief {
+ + generarPartida() : void
+ + finalizar(): void
+ + finalizar(Objeto objetoRobado): void
+}
+
+class Objeto {
+    -  nombre : String
+    -  nombreCiudad : String
+
+}
+
+class Ladron {
+    + interactuar() : void
+    + generarPista() : void
+
+}
+
+class Ciudad{
+    - posicion :  Posicion
+    - nombre :  String
+    - informacion :  String
+
+
+}
+
+class DescripcionCiudad{
+            - bandera : String
+        - moneda  : String
+        - monumento :String
+        + generarPista () : void
+}
+
+class Descripcion{
+    - nombre : String
+    - sexo  : String
+    - hobby :String
+    -  cabello : String
+    - seña : String
+    - String  : vehiculo
+    -  contador : int;
+    + comparar(d : Descripcion) : boolean
+
+
+}
+
+AlgoThief --upo CasoAsignado
+Objeto --upo CasoAsignado
+Ciudad --upo CasoAsignado
+Ladron --upo CasoAsignado
+Descripcion --upo Ladron
+DescripcionCiudad --upo Ciudad
+
+@enduml
